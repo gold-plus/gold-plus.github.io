@@ -1,0 +1,38 @@
+{
+  "title": {
+    "ru": "My Site",
+    "en": "My Site"
+  },
+  "tagline": {
+    "ru": "Dinosaurs are cool",
+    "en": "Dinosaurs are cool"
+  },
+  "navbar.title": {
+    "ru" : "Главная",
+    "en" : "Home"
+  },
+  "navbar.tutorial": {
+    "ru" : "Руководство",
+    "en" : "Tutorial"
+  },
+  "navbar.changelog": {
+    "ru" : "Изменения",
+    "en" : "Changelog"
+  },
+  "navbar.blog": {
+    "ru" : "Дневник",
+    "en" : "Blog"
+  },
+  "changelog.title": {
+    "ru" : "Changelog",
+    "en" : "Изменения"
+  },
+  "changelog.description": {
+    "ru" : "Keep yourself up-to-date about new features in every release",
+    "en" : "Keep yourself up-to-date about new features in every release"
+  },
+  "changelog.sidebar.title": {
+    "ru" : "Изменения",
+    "en" : "Changelog"
+  }
+}

@@ -1,45 +1,73 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import * as path from 'path';
+import ConfigLocalized from './docusaurus.config.localized.json';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+const defaultLocale = 'ru';
+
+function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
+  const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
+  const values = ConfigLocalized[key];
+  if (!values) {
+    throw new Error(`Localized config key=${key} not found`);
+  }
+  const value = values[currentLocale] ?? values[defaultLocale];
+  if (!value) {
+    throw new Error(
+      `Localized value for config key=${key} not found for both currentLocale=${currentLocale} or defaultLocale=${defaultLocale}`,
+    );
+  }
+  return value;
+}
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: getLocalizedConfigValue('title'),
+  tagline: getLocalizedConfigValue('tagline'),
   favicon: 'img/favicon.ico',
-
+  customFields: {
+    currentVersion: '2.5.6.0'
+  },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://gold-plus.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: '', // Usually your GitHub org/user name.
+  projectName: 'gold-plus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', //'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: defaultLocale,
+    locales: ['ru', 'en'],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      ru: {
+        label: "Русский",
+      },
+    },
   },
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
+        debug: true, // This will enable the plugin in production
         docs: {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
@@ -71,23 +99,28 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
     navbar: {
-      title: 'My Site',
+      title: getLocalizedConfigValue('navbar.title'),
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'GoldClient Plus',
+        src: 'img/cs_logo.svg'
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: getLocalizedConfigValue('navbar.tutorial'),
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/changelog', label: getLocalizedConfigValue('navbar.changelog'), position: 'left'},
+        {to: '/blog', label: getLocalizedConfigValue('navbar.blog'), position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: "localeDropdown",
+          position: "right",
+        },
+        {
+          href: 'https://github.com/goldclient-plus/GoldSrc-Tracker',
           label: 'GitHub',
           position: 'right',
         },
@@ -95,54 +128,82 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      //links: [
+      //  {
+      //    title: 'Docs',
+      //    items: [
+      //      {
+      //        label: 'Tutorial',
+      //        to: '/docs/intro',
+      //      },
+      //    ],
+      //  },
+      //  {
+      //    title: 'Community',
+      //    items: [
+      //      {
+      //        label: 'Stack Overflow',
+      //        href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+      //      },
+      //      {
+      //        label: 'Discord',
+      //        href: 'https://discordapp.com/invite/docusaurus',
+      //      },
+      //      {
+      //        label: 'X',
+      //        href: 'https://x.com/docusaurus',
+      //      },
+      //    ],
+      //  },
+      //  {
+      //    title: 'More',
+      //    items: [
+      //      {
+      //        label: 'Blog',
+      //        to: '/blog',
+      //      },
+      //      {
+      //        label: 'GitHub',
+      //        href: 'https://github.com/facebook/docusaurus',
+      //      },
+      //    ],
+      //  },
+      //],
+      //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+      [
+        './src/plugins/changelog/index.ts',
+        {
+          blogTitle: getLocalizedConfigValue('changelog.title'),
+          // Not useful, but permits to run git commands earlier
+          // Otherwise the sitemap plugin will run them in postBuild()
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          blogDescription: getLocalizedConfigValue('changelog.description'),
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: getLocalizedConfigValue('changelog.sidebar.title'),
+          routeBasePath: '/changelog',
+          showReadingTime: false,
+          postsPerPage: 20,
+          archiveBasePath: null,
+          authorsMapPath: 'authors.json',
+          feedOptions: {
+            type: 'all',
+            title: getLocalizedConfigValue('changelog.title'),
+            description: getLocalizedConfigValue('changelog.description'),
+//            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            language: defaultLocale,
+          },
+          onInlineAuthors: 'warn',
+        },
+      ],
+  ],
 };
 
 export default config;

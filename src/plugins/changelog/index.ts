@@ -1,0 +1,219 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import path from 'path';
+import fs from 'fs-extra';
+import pluginContentBlog from '@docusaurus/plugin-content-blog';
+import {
+  aliasedSitePath,
+  docuHash,
+  normalizeUrl,
+  safeGlobby,
+} from '@docusaurus/utils';
+
+import {createBlogFiles, toChangelogEntries} from './utils';
+export {validateOptions} from '@docusaurus/plugin-content-blog';
+
+const MonorepoRoot = path.resolve(path.join(__dirname, '../../..'));
+
+const ChangelogFilePattern = 'CHANGELOG(-v[0-9]*)?.md';
+
+async function getChangelogFiles2() {
+  const files = await safeGlobby([ChangelogFilePattern], {
+    cwd: MonorepoRoot,
+  });
+  // As of today, there are 1 changelog files
+  // and this is only going to increase
+  if (files.length < 1) {
+    throw new Error(
+      "Looks like the changelog plugin didn't detect changelog files",
+    );
+  }
+  // Note: the returned file order doesn't matter.
+  return files;
+}
+async function getChangelogFiles(currentLocale: string, defaultLocale: string): Promise<string[]> {
+  const allFiles = await safeGlobby(['CHANGELOG*.md'], {
+    cwd: MonorepoRoot,
+  });
+
+  const hasLocaleSpecific = allFiles.some((filename) =>
+    filename.endsWith(`.${currentLocale}.md`)
+  );
+
+  const matchedFiles = allFiles.filter((filename) => {
+    // if there's any locale-specific changelog, skip non-locale ones
+    const isLocaleSpecific = filename.endsWith(`.${currentLocale}.md`);
+    const isNonLocale = !/\.[a-z]{2}\.md$/i.test(filename);
+
+    if (hasLocaleSpecific) return isLocaleSpecific;
+
+    // fallback: allow non-locale only for defaultLocale
+    if (currentLocale === defaultLocale && isNonLocale)
+      return true;
+    return false;
+  });
+
+  if (matchedFiles.length === 0) {
+      throw new Error(`[changelog-plugin] No changelog files found for locale: ${currentLocale}`);
+  }
+
+  return matchedFiles.map((f) => f);
+}
+
+function readChangelogFile(filename: string) {
+  return fs.readFile(path.join(MonorepoRoot, filename), 'utf-8');
+}
+
+async function loadChangelogEntries(changelogFiles: string[]) {
+  const filesContent = await Promise.all(changelogFiles.map(readChangelogFile));
+  return toChangelogEntries(filesContent);
+}
+
+//const ChangelogPlugin
+export default async function ChangelogPlugin(context, options) {
+    const generateDir = path.join(context.siteDir, 'changelog/',
+      (context.i18n.currentLocale == context.i18n.defaultLocale) ? 'default' : context.i18n.currentLocale);
+
+//  const generateDir = path.join(context.siteDir, 'changelog/source',
+//    context.i18n.currentLocale == context.i18n.defaultLocale ? '' : context.i18n.currentLocale);
+
+//    const generateDir = path.join(context.siteDir, 'changelog/source');
+
+    const blogPlugin = await pluginContentBlog(context, {
+      ...options,
+      path: generateDir,
+      id: 'changelog',
+      blogListComponent: '@theme/ChangelogList',
+      blogPostComponent: '@theme/ChangelogPage',
+    });
+
+    const changelogFiles = await getChangelogFiles(context.i18n.currentLocale, context.i18n.defaultLocale);
+
+    console.log(`Language current = ${context.i18n.currentLocale}`);
+    console.log(`Generate directory = ${generateDir}`);
+    console.log(`Changelog files = `, changelogFiles);
+
+    return {
+      ...blogPlugin,
+      name: 'changelog-plugin',
+
+      async loadContent() {
+        const changelogEntries = await loadChangelogEntries(changelogFiles);
+
+        // we have to create intermediate files here
+        // unfortunately Docusaurus doesn't have yet any concept of virtual file
+        await createBlogFiles(generateDir, changelogEntries);
+
+        // read the files we actually just wrote
+        const content = (await blogPlugin.loadContent?.())!;
+
+        content.blogPosts.forEach((post, index) => {
+          const pageIndex = Math.floor(
+            index / (options.postsPerPage as number),
+          );
+          // @ts-expect-error: TODO Docusaurus use interface declaration merging
+          post.metadata.listPageLink = normalizeUrl([
+            context.baseUrl,
+            options.routeBasePath,
+            pageIndex === 0 ? '/' : `/page/${pageIndex + 1}`,
+          ]);
+        });
+        //console.log(`blogPosts `, content.blogPosts);
+        return content;
+      },
+
+      contentLoaded: async function (params) {
+        const { content, actions } = params;
+
+        async function createPage(blogPost, index) {
+          return {
+            // inject the metadata you need for each recent releases
+            metadata: await actions.createData(
+              `release-metadata-${index}.json`,
+              JSON.stringify({
+                source: blogPost.metadata.source,
+                title: blogPost.metadata.title,
+                date: blogPost.metadata.date,
+                description: blogPost.metadata.description,
+                permalink: blogPost.metadata.permalink,
+                frontMatter: blogPost.metadata.frontMatter,
+              })
+            ),
+
+            // inject the MDX excerpt as a JSX component prop
+            // (what's above the <!-- truncate --> marker)
+            Preview: {
+              __import: true,
+              // the markdown file for the blog releases will be loaded by webpack
+              path: blogPost.metadata.source,
+              query: { truncated: true },
+            },
+          };
+        }
+
+        const modules = await Promise.all(
+          content.blogPosts.map((release, idx) => createPage(release, idx))
+        );
+
+        actions.addRoute({
+          // add route for the home page
+          path: context.baseUrl,
+          exact: true,
+
+          // the component to use for the "Home" page route
+          component: '@site/src/components/Home/index.tsx',
+
+          // these are the props that will be passed to our "Home" page component
+          modules: {
+          config: '@generated/docusaurus.config',
+            releases: modules,
+          },
+
+
+          metadata: {
+            sourceFilePath: 'src/pages/index.tsx',
+            lastUpdatedAt: undefined
+          }
+
+
+        });
+
+        // Call the default overridden `contentLoaded` implementation
+        return blogPlugin.contentLoaded(params);
+      },
+
+      configureWebpack(config, isServer, utils, content) {
+        const webpackConfig = blogPlugin.configureWebpack?.(config, isServer, utils, content);
+        const pluginDataDirRoot = path.join(
+          context.generatedFilesDir,
+          'changelog-plugin',
+          'default',
+        );
+        // Redirect the metadata path to our folder
+        // @ts-expect-error: unsafe but works
+        const mdxLoader = webpackConfig.module.rules[0].use[0];
+        mdxLoader.options.metadataPath = (mdxPath: string) => {
+          // Note that metadataPath must be the same/in-sync as
+          // the path from createData for each MDX.
+          const aliasedPath = aliasedSitePath(mdxPath, context.siteDir);
+          return path.join(pluginDataDirRoot, `${docuHash(aliasedPath)}.json`);
+        };
+        return webpackConfig;
+      },
+
+      getThemePath() {
+        return './theme';
+      },
+
+      getPathsToWatch() {
+        return [path.join(MonorepoRoot, 'CHANGELOG*.md')];
+      },
+    };
+  };
+
+//export default ChangelogPlugin;
