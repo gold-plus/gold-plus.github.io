@@ -1,0 +1,41 @@
+s1lent:
+  title: Разработчик
+  image_url: https://github.com/s1lentq.png
+  page: true
+  socials:
+    github: s1lentq
+
+Nord1cWarr1or:
+  title: Участник и тестировщик
+  url: https://github.com/Nord1cWarr1or
+  image_url: https://github.com/Nord1cWarr1or.png
+  socials:
+    github: Nord1cWarr1or
+
+Vaqtincha:
+  title: Участник и тестировщик
+  url: https://github.com/Vaqtincha
+  image_url: https://github.com/Vaqtincha.png
+  socials:
+    github: Vaqtincha
+
+wopox1337:
+  title: Участник и тестировщик
+  url: https://github.com/wopox1337
+  image_url: https://github.com/wopox1337.png
+  socials:
+    github: wopox1337
+
+resobatata:
+  title: Участник и тестировщик
+  url: https://github.com/resobatata
+  image_url: https://github.com/resobatata.png
+  socials:
+    github: resobatata
+
+Polarhigh:
+  title: Участник и тестировщик
+  url: https://github.com/Polarhigh
+  image_url: https://github.com/Polarhigh.png
+  socials:
+    github: Polarhigh

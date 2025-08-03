@@ -77,14 +77,15 @@
 - Fixed jitter viewmodel moving from 1st person in eye spectator mode (vanilla bug)
 - Fixed map outline for HUD radar (@Nord1cWarr1or)
 - Fixed a crash for custom mods of Half-Life
-- Fixed `NumPad ENTER` button not handling button press in VGUI2 dialogs (@Vaqtincha) (vanilla bug)
-- Fixed a bug with brush entity where the impact sound from weapon shots was not emitted (@Vaqtincha) (vanilla bug)
+- Fixed `NumPad ENTER` button not handling button press in VGUI2 dialogs (vanilla bug) (@Vaqtincha)
+- Fixed a bug with brush entity where the impact sound from weapon shots was not emitted (vanilla bug) (@Vaqtincha)
 - Fixed prediction bug ducking of a player spectating by a 1st-person observer (vanilla bug)
 - Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo (vanilla bug)
 
-#### Testers: 3
+#### Testers: 4
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
@@ -172,9 +173,10 @@
 - Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map (vanilla bug)
 - Minor bugfixes
 
-#### Testers: 3
+#### Testers: 4
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
@@ -331,9 +333,10 @@
 - Fixed a hang in client function `UTIL_GetNextBestWeapon` (@wopox1337)
 - Position simulation is disabled when observing players (`cl_smoothtime` no longer works in eye mode)
 
-#### Testers: 2
+#### Testers: 3
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
@@ -356,9 +359,10 @@
 - Fixed a bug with a locked mouse in the game after changing level
 - Fixed a bug with a jumping cursor when the game is not in focus
 
-#### Testers: 1
+#### Testers: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 
 
@@ -374,9 +378,10 @@
 
 <!-- truncate -->
 
-#### Testers: 1
+#### Testers: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - resobatata ([@resobatata](https://github.com/resobatata))
 
 
@@ -446,9 +451,10 @@
 - Removed restriction ConVar `r_dynamic`
   You can feel free to disable dynamic light in multi-player for performance reasons on `AMD/nVidia` GPU's
 
-#### Testers: 2
+#### Testers: 3
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - Polarhigh ([@Polarhigh](https://github.com/Polarhigh))
 
@@ -479,9 +485,10 @@
 - Fixed memory leak `DetailTextures` with `r_detailtextures 0`
 - Fixed memory leak VOX sentence system
 
-#### Testers: 1
+#### Testers: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
 

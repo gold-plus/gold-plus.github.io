@@ -1,24 +1,24 @@
 {
   "changelog.backLink": {
-    "message": "← Back to index page"
+    "message": "← Назад к списку"
   },
   "theme.changelog.post.paginator.navAriaLabel": {
-    "message": "Changelog item navigation",
+    "message": "Навигация по выпускам",
     "description": "The ARIA label for the changelog pagination"
   },
   "theme.changelog.post.paginator.newerRelease": {
-    "message": "Newer release",
+    "message": "Следующий выпуск",
     "description": "The changelog button label to navigate to the newer release"
   },
   "theme.changelog.post.paginator.olderRelease": {
-    "message": "Older release",
+    "message": "Предыдущий выпуск",
     "description": "The changelog button label to navigate to the older release"
   },
   "changelog.description.rssLink": {
-    "message": "RSS feeds"
+    "message": "RSS лента"
   },
   "changelog.description": {
-    "message": "Subscribe through {rssLink} or follow us on {xLink} to stay up-to-date with new releases!"
+    "message": "Подпишитесь через {rssLink}, чтобы не пропустить новые релизы!"
   },
   "theme.ErrorPageContent.title": {
     "message": "На странице произошёл сбой.",
@@ -65,7 +65,7 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "Системный режим",
     "description": "The name for the system color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
@@ -184,7 +184,7 @@
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
-    "message": "warning",
+    "message": "предупреждение",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.blog.sidebar.navAriaLabel": {
@@ -192,15 +192,15 @@
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "Развернуть категорию '{label}'",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "Свернуть категорию '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Основное меню",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
@@ -260,7 +260,7 @@
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "Меню документации",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
@@ -276,11 +276,11 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "Развернуть",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "Свернуть",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
@@ -312,23 +312,23 @@
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "У этого автора пока нет записей.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "Не в списке",
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "Эта страница не индексируется. Доступна только по прямой ссылке.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "Черновик",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "Это черновик. Видно только в режиме разработки.",
     "description": "The draft content banner message"
   },
   "theme.ErrorPageContent.tryAgain": {

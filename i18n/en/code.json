@@ -18,7 +18,7 @@
     "message": "RSS feeds"
   },
   "changelog.description": {
-    "message": "Subscribe through {rssLink} or follow us on {xLink} to stay up-to-date with new releases!"
+    "message": "Subscribe through {rssLink} to stay up-to-date with new releases!"
   },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",

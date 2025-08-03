@@ -101,7 +101,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/logo.svg',
     navbar: {
-      title: getLocalizedConfigValue('navbar.title'),
+      title: 'Home',
       logo: {
         alt: 'GoldClient Plus',
         src: 'img/cs_logo.svg'
@@ -111,10 +111,10 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: getLocalizedConfigValue('navbar.tutorial'),
+          label: 'Tutorial',
         },
-        {to: '/changelog', label: getLocalizedConfigValue('navbar.changelog'), position: 'left'},
-        {to: '/blog', label: getLocalizedConfigValue('navbar.blog'), position: 'left'},
+        {to: '/changelog', label: 'Changelog', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: "localeDropdown",
           position: "right",
@@ -169,7 +169,7 @@ const config: Config = {
       //    ],
       //  },
       //],
-      //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: getLocalizedConfigValue('footer.copyright').replace("{year}", String(new Date().getFullYear())),
     },
     prism: {
       theme: prismThemes.github,
@@ -180,24 +180,24 @@ const config: Config = {
       [
         './src/plugins/changelog/index.ts',
         {
-          blogTitle: getLocalizedConfigValue('changelog.title'),
+          blogTitle: 'Changelog',
           // Not useful, but permits to run git commands earlier
           // Otherwise the sitemap plugin will run them in postBuild()
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          blogDescription: getLocalizedConfigValue('changelog.description'),
+          blogDescription: 'Keep yourself up-to-date about new features in every release',
           blogSidebarCount: 'ALL',
-          blogSidebarTitle: getLocalizedConfigValue('changelog.sidebar.title'),
+          blogSidebarTitle: 'Changelog',
           routeBasePath: '/changelog',
           showReadingTime: false,
           postsPerPage: 20,
           archiveBasePath: null,
-          authorsMapPath: 'authors.json',
+          authorsMapPath: 'authors.yml',
           feedOptions: {
             type: 'all',
-            title: getLocalizedConfigValue('changelog.title'),
-            description: getLocalizedConfigValue('changelog.description'),
-//            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            title: getLocalizedConfigValue('feed.title'),
+            description: getLocalizedConfigValue('feed.description'),
+            copyright: `Copyright © ${new Date().getFullYear()} GoldClient, Inc.`,
             language: defaultLocale,
           },
           onInlineAuthors: 'warn',

@@ -137,3 +137,18 @@
   align-items: center;
 }
 
+/*
+.plugin-blog-changelog .container .row .col--3:has(nav.thin-scrollbar) {
+  --ifm-col-width: 25% !important;
+  max-width: 25% !important;
+}
+.container .row .col--3 {
+  --ifm-col-width: calc(3 / 12 * 100%);
+}
+.container .row .col--7  {
+  --ifm-col-width: calc(7 / 12 * 100%);
+}
+.container .row .col--2  {
+  --ifm-col-width: calc(2 / 12 * 100%);
+}
+*/

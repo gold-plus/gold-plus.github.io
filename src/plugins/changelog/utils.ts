@@ -7,6 +7,7 @@
 
 import fs from 'fs-extra';
 import path from 'path';
+import yaml from 'js-yaml';
 
 /**
  * Multiple versions may be published on the same day, causing the order to be
@@ -38,11 +39,15 @@ function parseAuthor(committerLine: string): Author {
 }
 
 function parseAuthors(content: string): Author[] {
-  const sectionMarkers = ['committers', 'testers', 'credits'];
+//  const sectionMarkers = ['maintainers', 'committers', 'testers', 'credits'];
+  const sectionMarkers = ['authors', 'testers', 'contributors'];
   const authorsSet = new Map<string, Author>();
 
   for (const marker of sectionMarkers) {
-    const sectionContent = content.match(new RegExp(`<!--\\s*${marker}\\s*-->\\s*((?:- .*\\n?)*)`, 'i'))?.[1];
+    const sectionContent = content.match(new RegExp(
+      //`<!--\\s*${marker}\\s*-->(?:[\\s]*)(?:\\n)([\\s\\S]*)`, 'i'
+      `<!--\\s*${marker}\\s*-->(?:[\\s\\n]*)([\\s\\S]*?)(?=\\n#{2,}|$)`, 'i'
+    ))?.[1];
     if (!sectionContent) continue;
 
     const lines = sectionContent.match(/- .*/g);
@@ -78,11 +83,17 @@ function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
   if (!title) {
     return null;
   }
-  const content = sectionContent
+  let content = sectionContent
     .replace(/\n## .*/, '')
     .trim();
 
   const authors = parseAuthors(content);
+  if (authors.length > 0) {
+    content = content.replace(/\(@([a-zA-Z0-9_-]+)\)/g, (match, id) => {
+      const author = authors.find((author) => author.name == id );
+      return author?.url ? `[@${author.name}](${author.url})` : `@${id}`;
+    });
+  }
 
   let hour = 20;
   const date = title.match(/ \((?<date>.*)\)/)?.groups!.date;

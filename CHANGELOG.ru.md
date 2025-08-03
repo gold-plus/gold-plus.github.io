@@ -77,18 +77,22 @@
 - Исправлено дерганное покачивание оружия в руках от 1-го лица в режиме наблюдателя (vanilla bug)
 - Исправлена обводка карты для HUD радара (@Nord1cWarr1or)
 - Исправлен сбой в пользовательских модах Half-Life
-- Исправлена кнопка `NumPad ENTER`, в диалоговых окнах VGUI2 не обрабатывается нажатие кнопки (@Vaqtincha) (vanilla bug)
-- Исправлен баг с браш-энтити, при котором звук попадания от выстрелов оружия не издавались (@Vaqtincha) (vanilla bug)
+- Исправлена кнопка `NumPad ENTER`, в диалоговых окнах VGUI2 не обрабатывается нажатие кнопки (vanilla bug) (@Vaqtincha)
+- Исправлен баг с браш-энтити, при котором звук попадания от выстрелов оружия не издавались (vanilla bug) (@Vaqtincha)
 - Исправлена ошибка предикта приседания игрока за которым наблюдает зритель от 1-го лица (vanilla bug)
 - Исправлена временная шкала GameUI во время просмотра демо, временная шкала не соответствовала стартовой позиции демки (vanilla bug)
 
-#### Тестеры: 3
+#### Авторы: 1
+<!-- authors -->
+
+- s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 4
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
-
 
 ## 2.5.0.0 (2024-10-21)
 
@@ -172,9 +176,10 @@
 - Исправлена ошибка с очень низкими FPS на карте, которая не содержит lightmaps, например если карта скомпилирована без hlrad (vanilla bug)
 - Незначительные исправления ошибок
 
-#### Тестеры: 3
+#### Тестеры: 4
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
@@ -331,9 +336,10 @@
 - Исправлено зависание в клиентской функции `UTIL_GetNextBestWeapon` (@wopox1337)
 - Выключено плавное перемещение к позиции других игроков при наблюдении за игроком (`cl_smoothtime` больше не работает в режима от 1-го лица)
 
-#### Тестеры: 2
+#### Тестеры: 3
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
@@ -356,9 +362,10 @@
 - Исправлен баг с блокировкой мыши в игре после смены карты
 - Исправлен баг с прыгающим курсором, если окно игры было не в фокусе
 
-#### Тестеры: 1
+#### Тестеры: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 
 
@@ -374,9 +381,10 @@
 
 <!-- truncate -->
 
-#### Тестеры: 1
+#### Тестеры: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - resobatata ([@resobatata](https://github.com/resobatata))
 
 
@@ -446,9 +454,10 @@
 - Снято ограничение с ConVar `r_dynamic`
   Можно отключать динамическое освещение в многопользовательском режиме, из-за слабой производительности на некоторых видеокартах `AMD/nVidia`
 
-#### Тестеры: 2
+#### Тестеры: 3
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - Polarhigh ([@Polarhigh](https://github.com/Polarhigh))
 
@@ -479,9 +488,10 @@
 - Исправлена утечка памяти `DetailTextures` с `r_detailtextures 0`
 - Исправлена утечка памяти в системе коротких фраз VOX
 
-#### Тестеры: 1
+#### Тестеры: 2
 <!-- testers -->
 
+- s1lent ([@s1lent](https://github.com/s1lentq))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
 

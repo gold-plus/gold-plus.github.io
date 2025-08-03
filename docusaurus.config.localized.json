@@ -1,38 +1,22 @@
 {
   "title": {
-    "ru": "My Site",
-    "en": "My Site"
+    "ru": "GoldClient",
+    "en": "GoldClient"
   },
   "tagline": {
-    "ru": "Dinosaurs are cool",
-    "en": "Dinosaurs are cool"
+    "ru": "Альтернативный клиент для CS 1.6 с улучшениями и повышенной стабильностью",
+    "en": "Alternative CS 1.6 client with improvements and enhanced stability"
   },
-  "navbar.title": {
-    "ru" : "Главная",
-    "en" : "Home"
+  "footer.copyright": {
+    "ru" : "© {year} GoldClient. Построено с использованием Docusaurus.",
+    "en" : "© {year} GoldClient. Built with Docusaurus."
   },
-  "navbar.tutorial": {
-    "ru" : "Руководство",
-    "en" : "Tutorial"
-  },
-  "navbar.changelog": {
-    "ru" : "Изменения",
+  "feed.title": {
+    "ru" : "Информация о выпуске",
     "en" : "Changelog"
   },
-  "navbar.blog": {
-    "ru" : "Дневник",
-    "en" : "Blog"
-  },
-  "changelog.title": {
-    "ru" : "Changelog",
-    "en" : "Изменения"
-  },
-  "changelog.description": {
-    "ru" : "Keep yourself up-to-date about new features in every release",
+  "feed.description": {
+    "ru" : "Будьте в курсе новых функций, появляющихся в каждом выпуске",
     "en" : "Keep yourself up-to-date about new features in every release"
-  },
-  "changelog.sidebar.title": {
-    "ru" : "Изменения",
-    "en" : "Changelog"
   }
 }

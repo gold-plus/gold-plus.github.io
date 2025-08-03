@@ -22,20 +22,6 @@ const MonorepoRoot = path.resolve(path.join(__dirname, '../../..'));
 
 const ChangelogFilePattern = 'CHANGELOG(-v[0-9]*)?.md';
 
-async function getChangelogFiles2() {
-  const files = await safeGlobby([ChangelogFilePattern], {
-    cwd: MonorepoRoot,
-  });
-  // As of today, there are 1 changelog files
-  // and this is only going to increase
-  if (files.length < 1) {
-    throw new Error(
-      "Looks like the changelog plugin didn't detect changelog files",
-    );
-  }
-  // Note: the returned file order doesn't matter.
-  return files;
-}
 async function getChangelogFiles(currentLocale: string, defaultLocale: string): Promise<string[]> {
   const allFiles = await safeGlobby(['CHANGELOG*.md'], {
     cwd: MonorepoRoot,
@@ -79,19 +65,15 @@ export default async function ChangelogPlugin(context, options) {
     const generateDir = path.join(context.siteDir, 'changelog/',
       (context.i18n.currentLocale == context.i18n.defaultLocale) ? 'default' : context.i18n.currentLocale);
 
-//  const generateDir = path.join(context.siteDir, 'changelog/source',
-//    context.i18n.currentLocale == context.i18n.defaultLocale ? '' : context.i18n.currentLocale);
-
-//    const generateDir = path.join(context.siteDir, 'changelog/source');
-
-    const blogPlugin = await pluginContentBlog(context, {
+    const blogOptions = {
       ...options,
       path: generateDir,
       id: 'changelog',
       blogListComponent: '@theme/ChangelogList',
       blogPostComponent: '@theme/ChangelogPage',
-    });
+    };
 
+    const blogPlugin = await pluginContentBlog(context, blogOptions);
     const changelogFiles = await getChangelogFiles(context.i18n.currentLocale, context.i18n.defaultLocale);
 
     console.log(`Language current = ${context.i18n.currentLocale}`);
@@ -100,7 +82,7 @@ export default async function ChangelogPlugin(context, options) {
 
     return {
       ...blogPlugin,
-      name: 'changelog-plugin',
+      name: 'docusaurus-plugin-content-blog-changelog',
 
       async loadContent() {
         const changelogEntries = await loadChangelogEntries(changelogFiles);
@@ -123,7 +105,6 @@ export default async function ChangelogPlugin(context, options) {
             pageIndex === 0 ? '/' : `/page/${pageIndex + 1}`,
           ]);
         });
-        //console.log(`blogPosts `, content.blogPosts);
         return content;
       },
 
@@ -170,17 +151,8 @@ export default async function ChangelogPlugin(context, options) {
 
           // these are the props that will be passed to our "Home" page component
           modules: {
-          config: '@generated/docusaurus.config',
             releases: modules,
           },
-
-
-          metadata: {
-            sourceFilePath: 'src/pages/index.tsx',
-            lastUpdatedAt: undefined
-          }
-
-
         });
 
         // Call the default overridden `contentLoaded` implementation
@@ -191,7 +163,7 @@ export default async function ChangelogPlugin(context, options) {
         const webpackConfig = blogPlugin.configureWebpack?.(config, isServer, utils, content);
         const pluginDataDirRoot = path.join(
           context.generatedFilesDir,
-          'changelog-plugin',
+          'docusaurus-plugin-content-blog-changelog',
           'default',
         );
         // Redirect the metadata path to our folder

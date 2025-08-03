@@ -1,23 +1,23 @@
 {
   "title": {
-    "message": "HOME",
+    "message": "Home",
     "description": "The title in the navbar"
   },
   "logo.alt": {
     "message": "GoldClient Plus",
     "description": "The alt text of navbar logo"
   },
-  "item.label.TUTORIAL": {
-    "message": "TUTORIAL",
-    "description": "Navbar item with label TUTORIAL"
+  "item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "Navbar item with label Tutorial"
   },
-  "item.label.CHANGELOG": {
-    "message": "CHANGELOG",
-    "description": "Navbar item with label CHANGELOG"
+  "item.label.Changelog": {
+    "message": "Changelog",
+    "description": "Navbar item with label Changelog"
   },
-  "item.label.BLOG": {
-    "message": "BLOG",
-    "description": "Navbar item with label BLOG"
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
   },
   "item.label.GitHub": {
     "message": "GitHub",

@@ -1,20 +1,18 @@
 import React, { useState, useRef, useEffect, useCallback, Suspense } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import HomepageHeader from '@site/src/components/HomepageHeader';
+import HomeHeader from '@site/src/components/HomeHeader';
 import RecentReleases from '@site/src/components/RecentReleases';
 import styles from './index.module.css';
 
 export default function HomePage({ releases }) {
   const { siteConfig } = useDocusaurusContext();
-  //console.log(`releases = `, releases);
   const releaseInitialOnLoad = 3;
   const releasesPerPage = 1;
   const [page, setPage] = useState(1);
   const [loadedReleases, setLoadedReleases] = useState(releases.slice(0, releaseInitialOnLoad));
   const isLoadingRef = useRef(false);
   const lastDocHeightRef = useRef(null);
-//  console.log(`releases = `, releases);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +21,7 @@ export default function HomePage({ releases }) {
       const docHeight = document.documentElement.scrollHeight;
 
       const scrolledPercent = (scrollTop + windowHeight) / docHeight;
-      if ((!isLoadingRef.current && scrolledPercent > 0.95)){// && lastDocHeightRef.current != docHeight) {
+      if ((!isLoadingRef.current && scrolledPercent > 0.90)) {
         const maxPages = Math.ceil((releases.length - releaseInitialOnLoad) / releasesPerPage) + 1;
         setPage((prevPage) => {
           if (prevPage < maxPages) {
@@ -70,9 +68,9 @@ export default function HomePage({ releases }) {
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      <HomeHeader />
       <main className={styles.main}>
         <RecentReleases versions={loadedReleases} />
       </main>
