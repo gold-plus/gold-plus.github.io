@@ -4,6 +4,14 @@
  * work well for content-centric websites.
  */
 
+@font-face {
+  font-family: 'Stratum2';
+  src: url('/fonts/Stratum2-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ifm-color-primary: #111;
   --ifm-color-primary-dark: #000;
@@ -12,6 +20,23 @@
   --ifm-color-primary-light: #333;
   --ifm-color-primary-lighter: #555;
   --ifm-color-primary-lightest: #777;
+
+  --ifm-color-blue: #4a90e2;           /* насыщенный синий */
+  --ifm-color-blue-dark: #3d7cc9;      /* темнее основной */
+  --ifm-color-blue-darker: #2e62af;
+  --ifm-color-blue-darkest: #244c85;
+  --ifm-color-blue-light: #6aa7f7;     /* светло-синий */
+  --ifm-color-blue-lighter: #8abcf9;
+  --ifm-color-blue-lightest: #bedaff;  /* очень светлый голубой */
+
+  --ifm-color-gray: #f5f7fa;
+  --ifm-color-gray-dark: #e1e5eb;
+  --ifm-color-gray-darker: #c7ccd6;
+  --ifm-color-gray-darkest: #aeb5bf;
+  --ifm-color-gray-light: #939ca7;
+  --ifm-color-gray-lighter: #727a84;
+  --ifm-color-gray-lightest: #545b63;
+  --ifm-color-gray-contrast: #767676;
 
   --ifm-background-color: #ffffff;
   --ifm-font-color-base: #111111;
@@ -34,6 +59,23 @@
   --ifm-color-primary-light: #fff;
   --ifm-color-primary-lighter: #fff;
   --ifm-color-primary-lightest: #fff;
+  --ifm-color-gray-contrast: #b3b3b3;
+
+  --ifm-color-blue: #5bb0f5;
+  --ifm-color-blue-dark: #4791d9;
+  --ifm-color-blue-darker: #3775bf;
+  --ifm-color-blue-darkest: #2a5e91;
+  --ifm-color-blue-light: #7cc4fc;
+  --ifm-color-blue-lighter: #9ed3ff;
+  --ifm-color-blue-lightest: #c7e3ff;
+
+  --ifm-color-gray: #1a1f29;
+  --ifm-color-gray-dark: #9399a3;
+  --ifm-color-gray-darker: #434a59;
+  --ifm-color-gray-darkest: #58606f;
+  --ifm-color-gray-light: #707783;
+  --ifm-color-gray-lighter: #8991a0;
+  --ifm-color-gray-lightest: #a3aad1;
 
   --ifm-background-color: #111111;
   --ifm-font-color-base: #eeeeee;
@@ -45,6 +87,34 @@
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [data-theme='dark'] .navbar__link--active {
   color: white !important;
 }
@@ -80,14 +150,21 @@
 
 
 
-
+/*.footer {
+    background-color: var(--ifm-footer-background-color);
+    color: var(--ifm-footer-color);
+    padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
+}*/
 
 .navbar__title,
 .navbar__item,
 .navbar__link {
-  font-family: 'StratumNo2', sans-serif;
+  font-family: 'Stratum2', arial;
 }
 
+.navbar__title, .navbar__item {
+  text-transform: uppercase;
+}
 
 
 

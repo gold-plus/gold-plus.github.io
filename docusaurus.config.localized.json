@@ -3,10 +3,6 @@
     "ru": "GoldClient",
     "en": "GoldClient"
   },
-  "tagline": {
-    "ru": "Альтернативный клиент для CS 1.6 с улучшениями и повышенной стабильностью",
-    "en": "Alternative CS 1.6 client with improvements and enhanced stability"
-  },
   "footer.copyright": {
     "ru" : "© {year} GoldClient. Построено с использованием Docusaurus.",
     "en" : "© {year} GoldClient. Built with Docusaurus."

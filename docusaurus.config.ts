@@ -22,8 +22,7 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
 }
 
 const config: Config = {
-  title: getLocalizedConfigValue('title'),
-  tagline: getLocalizedConfigValue('tagline'),
+  title: 'GoldClient',
   favicon: 'img/favicon.ico',
   customFields: {
     currentVersion: '2.5.6.0'
@@ -177,32 +176,30 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
-      [
-        './src/plugins/changelog/index.ts',
-        {
-          blogTitle: 'Changelog',
-          // Not useful, but permits to run git commands earlier
-          // Otherwise the sitemap plugin will run them in postBuild()
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          blogDescription: 'Keep yourself up-to-date about new features in every release',
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'Changelog',
-          routeBasePath: '/changelog',
-          showReadingTime: false,
-          postsPerPage: 20,
-          archiveBasePath: null,
-          authorsMapPath: 'authors.yml',
-          feedOptions: {
-            type: 'all',
-            title: getLocalizedConfigValue('feed.title'),
-            description: getLocalizedConfigValue('feed.description'),
-            copyright: `Copyright © ${new Date().getFullYear()} GoldClient, Inc.`,
-            language: defaultLocale,
-          },
-          onInlineAuthors: 'warn',
+      ['./src/plugins/changelog/index.ts', {
+        blogTitle: 'Changelog',
+        // Not useful, but permits to run git commands earlier
+        // Otherwise the sitemap plugin will run them in postBuild()
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        blogDescription: 'Keep yourself up-to-date about new features in every release',
+        blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'Changelog',
+        routeBasePath: '/changelog',
+        showReadingTime: false,
+        postsPerPage: 20,
+        archiveBasePath: null,
+        authorsMapPath: 'authors.yml',
+        feedOptions: {
+          type: 'all',
+          title: getLocalizedConfigValue('feed.title'),
+          description: getLocalizedConfigValue('feed.description'),
+          copyright: `Copyright © ${new Date().getFullYear()} GoldClient, Inc.`,
+          language: defaultLocale,
         },
-      ],
+        onInlineAuthors: 'warn',
+      }],
+      './src/plugins/home-generate-preview/index.ts',
   ],
 };
 

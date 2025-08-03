@@ -1,5 +1,29 @@
 {
-  "changelog.backLink": {
+  "theme.home.title": {
+    "message": "GoldClient"
+  },
+  "theme.home.tagline": {
+    "message": "Alternative CS 1.6 client - built with stability and performance in mind."
+  },
+  "theme.home.download": {
+    "message": "Download"
+  },
+  "theme.home.download.latest": {
+    "message": "Latest"
+  },
+  "theme.home.feature.addons": {
+    "message": "Enhanced security, modern visual add-ons like radar, killfeed and customizable crosshairs."
+  },
+  "theme.home.feature.play_offline": {
+    "message": "Up-to-date ReHLDS and ReGameDLL builds with full offline bot support."
+  },
+  "theme.home.feature.bugfixes": {
+    "message": "Tons of bug fixes, QoL improvements, and performance tweaks."
+  },
+  "theme.changelog.item.readMore": {
+    "message": "Read more"
+  },
+  "theme.changelog.item.backLink": {
     "message": "← Back to index page"
   },
   "theme.changelog.post.paginator.navAriaLabel": {

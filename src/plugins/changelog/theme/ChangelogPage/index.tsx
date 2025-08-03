@@ -28,7 +28,7 @@ function BackToIndexLink() {
   const {listPageLink} = metadata;
   return (
     <Link to={listPageLink}>
-      <Translate id="changelog.backLink">← Back to index page</Translate>
+      <Translate id="theme.changelog.item.backLink">← Back to index page</Translate>
     </Link>
   );
 }

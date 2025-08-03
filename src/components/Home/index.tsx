@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect, useCallback, Suspense } from 'react
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomeHeader from '@site/src/components/HomeHeader';
-import RecentReleases from '@site/src/components/RecentReleases';
+import HomeChangelog from '@site/src/components/HomeChangelog';
+
 import styles from './index.module.css';
 
 export default function HomePage({ releases }) {
@@ -72,7 +73,7 @@ export default function HomePage({ releases }) {
       description="Description will go into a meta tag in <head />">
       <HomeHeader />
       <main className={styles.main}>
-        <RecentReleases versions={loadedReleases} />
+        <HomeChangelog versions={loadedReleases} />
       </main>
     </Layout>
   );

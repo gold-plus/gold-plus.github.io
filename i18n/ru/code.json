@@ -1,5 +1,29 @@
 {
-  "changelog.backLink": {
+  "theme.home.title": {
+    "message": "GoldClient"
+  },
+  "theme.home.tagline": {
+    "message": "Альтернативный клиент CS 1.6 - создан с учетом стабильности и производительности."
+  },
+  "theme.home.download": {
+    "message": "Скачать"
+  },
+  "theme.home.download.latest": {
+    "message": "Версия"
+  },
+  "theme.home.feature.addons": {
+    "message": "Повышенная безопасность, различные визуальные дополнения: радар, киллфид и настраиваемый прицел, и другое."
+  },
+  "theme.home.feature.play_offline": {
+    "message": "Актуальные сборки ReHLDS и ReGameDLL с поддержкой ботов."
+  },
+  "theme.home.feature.bugfixes": {
+    "message": "Большее количество исправлений, улучшений удобства и оптимизации."
+  },
+  "theme.changelog.item.readMore": {
+    "message": "Читать дальше"
+  },
+  "theme.changelog.item.backLink": {
     "message": "← Назад к списку"
   },
   "theme.changelog.post.paginator.navAriaLabel": {
