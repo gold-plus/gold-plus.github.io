@@ -18,7 +18,7 @@ export default function DownloadButton() {
     siteConfig: {customFields},
   } = useDocusaurusContext();
   return (
-    <Link className={styles['button']} to={`/${customFields.downloadProduct}`}>
+    <Link className={styles['button']} to={`${customFields.downloadProduct}`}>
       <div className={styles['row']}>
         <span className={styles['icon']}>
           <Icon />
