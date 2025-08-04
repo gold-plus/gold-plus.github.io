@@ -12,6 +12,7 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
   if (!values) {
     throw new Error(`Localized config key=${key} not found`);
   }
+
   const value = values[currentLocale] ?? values[defaultLocale];
   if (!value) {
     throw new Error(
@@ -66,11 +67,18 @@ const config: Config = {
   presets: [
     ['@docusaurus/preset-classic',
       {
-        debug: true, // This will enable the plugin in production
+        //debug: true, // this will enable the plugin in production
         docs: false,
         theme: {
           customCss: './src/css/theme.css',
         },
+        gtag: {
+          trackingID: 'G-TC9Z5M38TV',
+          anonymizeIP: false,
+        },
+        googleTagManager: {
+          containerId: 'GTM-WRVHFXCM',
+        }
       } satisfies Preset.Options
     ],
   ],
@@ -134,11 +142,6 @@ const config: Config = {
         webvisor: true,
         trackHash: true
       }],
-      ["@docusaurus/plugin-google-gtag", {
-          trackingID: "G-TC9Z5M38TV",
-          anonymizeIP: false,
-        },
-      ],
       './src/plugins/home-generate-preview/index.ts',
   ],
 };
