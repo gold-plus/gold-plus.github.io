@@ -129,6 +129,16 @@ const config: Config = {
         },
         onInlineAuthors: 'warn',
       }],
+      ["docusaurus-plugin-yandex-metrica", {
+        counterID: "103594554",
+        webvisor: true,
+        trackHash: true
+      }],
+      ["@docusaurus/plugin-google-gtag", {
+          trackingID: "G-TC9Z5M38TV",
+          anonymizeIP: false,
+        },
+      ],
       './src/plugins/home-generate-preview/index.ts',
   ],
 };
