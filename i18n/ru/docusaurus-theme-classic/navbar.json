@@ -12,7 +12,7 @@
     "description": "Navbar item with label Tutorial"
   },
   "item.label.Changelog": {
-    "message": "История изменений",
+    "message": "Изменения",
     "description": "Navbar item with label Changelog"
   },
   "item.label.Blog": {

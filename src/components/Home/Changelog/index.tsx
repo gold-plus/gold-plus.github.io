@@ -17,13 +17,13 @@ function ChangelogItem({ version }) {
   });
   const formattedDate = dateTimeFormat.format(atDate);
   return (
-    <div key={metadata.permalink} className={clsx('card', styles.card)}>
-      <div className={clsx('card__header', styles.header)}>
+    <div key={metadata.permalink} className={clsx('card', styles['card'])}>
+      <div className={clsx('card__header', styles['header'])}>
         <div>
-          <Link to={metadata.permalink} className={styles.title}>{metadata.title}</Link>
+          <Link to={metadata.permalink} className={styles['title']}>{metadata.title}</Link>
         </div>
         <div>
-          <time dateTime={atDate.toISOString()} itemProp="dateModified" className={styles.time}>
+          <time dateTime={atDate.toISOString()} itemProp="dateModified" className={styles['time']}>
             {formattedDate}
           </time>
         </div>
@@ -32,7 +32,7 @@ function ChangelogItem({ version }) {
         <Preview />
       </div>
       <div className="card__footer">
-        <Link to={metadata.permalink} className={styles.readMore}>
+        <Link to={metadata.permalink} className={styles['read-more']}>
           <Translate id="theme.changelog.item.readMore">Read more</Translate>
         </Link>
       </div>
@@ -40,10 +40,10 @@ function ChangelogItem({ version }) {
   );
 }
 
-export default function HomeChangelog({ versions }) {
+export default function Changelog({ versions }) {
   return (
     <section>
-        <div className={styles.wrapper}>
+        <div className={styles['wrapper']}>
             {versions.map((release, idx) => (
                 <ChangelogItem key={idx} version={release} />
             ))}

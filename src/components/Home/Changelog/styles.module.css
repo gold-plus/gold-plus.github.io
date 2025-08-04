@@ -21,21 +21,6 @@
   /*padding: 1.5rem 2rem;*/
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card {
   border-radius: 0;
   margin: 0;
 }
@@ -54,22 +39,11 @@
   content: '';
   display: block;
   height: 2px;
-  margin: 0.35rem 0;
-  background-image: linear-gradient(to right, rgba(128,128,128,0.3) 33%, transparent 0%);
+  margin: 2rem 0;
+  background-image: linear-gradient(to right, rgb(122, 122, 122, 0.8) 33%, transparent 0%);
   background-size: 8px 1px;
   background-repeat: repeat-x;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .time {
   font-size: 0.75rem;
@@ -87,7 +61,7 @@
   color: var(--ifm-link-color);
 }
 
-.readMore {
+.read-more {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--ifm-link-color);
@@ -96,6 +70,6 @@
   transition: border-bottom 0.2s ease;
 }
 
-.readMore:hover {
+.read-more:hover {
   border-bottom: 1px solid var(--ifm-link-color);
 }

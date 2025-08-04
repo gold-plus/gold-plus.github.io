@@ -25,7 +25,8 @@ const config: Config = {
   title: 'GoldClient',
   favicon: 'img/favicon.ico',
   customFields: {
-    currentVersion: '2.5.6.0'
+    currentVersion: '2.5.6.0',
+    downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe'
   },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -63,57 +64,27 @@ const config: Config = {
   },
 
   presets: [
-    [
-      '@docusaurus/preset-classic',
+    ['@docusaurus/preset-classic',
       {
         debug: true, // This will enable the plugin in production
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        docs: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/theme.css',
         },
-      } satisfies Preset.Options,
+      } satisfies Preset.Options
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/logo.svg',
     navbar: {
       title: 'Home',
       logo: {
         alt: 'GoldClient Plus',
-        src: 'img/cs_logo.svg'
+        src: 'img/logo.svg'
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
         {to: '/changelog', label: 'Changelog', position: 'left'},
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: "localeDropdown",
           position: "right",
@@ -127,47 +98,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      //links: [
-      //  {
-      //    title: 'Docs',
-      //    items: [
-      //      {
-      //        label: 'Tutorial',
-      //        to: '/docs/intro',
-      //      },
-      //    ],
-      //  },
-      //  {
-      //    title: 'Community',
-      //    items: [
-      //      {
-      //        label: 'Stack Overflow',
-      //        href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //      },
-      //      {
-      //        label: 'Discord',
-      //        href: 'https://discordapp.com/invite/docusaurus',
-      //      },
-      //      {
-      //        label: 'X',
-      //        href: 'https://x.com/docusaurus',
-      //      },
-      //    ],
-      //  },
-      //  {
-      //    title: 'More',
-      //    items: [
-      //      {
-      //        label: 'Blog',
-      //        to: '/blog',
-      //      },
-      //      {
-      //        label: 'GitHub',
-      //        href: 'https://github.com/facebook/docusaurus',
-      //      },
-      //    ],
-      //  },
-      //],
       copyright: getLocalizedConfigValue('footer.copyright').replace("{year}", String(new Date().getFullYear())),
     },
     prism: {

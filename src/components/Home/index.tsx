@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect, useCallback, Suspense } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import HomeHeader from '@site/src/components/HomeHeader';
-import HomeChangelog from '@site/src/components/HomeChangelog';
+import Header from '@site/src/components/Home/Header';
+import Changelog from '@site/src/components/Home/Changelog';
 
-import styles from './index.module.css';
+import styles from './styles.module.css';
 
-export default function HomePage({ releases }) {
+export default function Home({ releases }) {
   const { siteConfig } = useDocusaurusContext();
   const releaseInitialOnLoad = 3;
-  const releasesPerPage = 1;
+  const releasesPerPage = 3;
   const [page, setPage] = useState(1);
   const [loadedReleases, setLoadedReleases] = useState(releases.slice(0, releaseInitialOnLoad));
   const isLoadingRef = useRef(false);
@@ -40,14 +40,11 @@ export default function HomePage({ releases }) {
   }, [releasesPerPage, releases]);
 
   useEffect(() => {
-    if (page === 1) return;
-
+    if (releaseInitialOnLoad > 0 && page === 1) return;
     const start = releaseInitialOnLoad + (page - 2) * releasesPerPage;
     const end = Math.min(start + releasesPerPage, releases.length);
     const nextBatch = releases.slice(start, end);
-    if (nextBatch.length === 0)
-    {
-      console.log('No more releases to load');
+    if (nextBatch.length === 0) {
       isLoadingRef.current = false;
       return;
     }
@@ -55,9 +52,6 @@ export default function HomePage({ releases }) {
     setLoadedReleases((prev) => {
       const prevPermalinks = new Set(prev.map((r) => r.metadata.permalink));
       const filteredNext = nextBatch.filter((r) => !prevPermalinks.has(r.metadata.permalink));
-      if (filteredNext.length > 0) {
-        console.log(`Appending ${filteredNext.length} new releases`, filteredNext);
-      }
       return [...prev, ...filteredNext];
     });
 
@@ -68,12 +62,10 @@ export default function HomePage({ releases }) {
   }, [page, releases]);
 
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomeHeader />
-      <main className={styles.main}>
-        <HomeChangelog versions={loadedReleases} />
+    <Layout title={`${siteConfig.title}`} description={`${siteConfig.customFields.description}`}>
+      <Header />
+      <main className={styles['main']}>
+        <Changelog versions={loadedReleases} />
       </main>
     </Layout>
   );

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-export default function HomeGeneratePreviewList(context, options) {
+export default function CreateList(context, options) {
   return {
     name: 'docusaurus-plugin-home-preview-list',
     async loadContent() {
@@ -16,7 +16,7 @@ export default function HomeGeneratePreviewList(context, options) {
     async contentLoaded({ content, actions }) {
       const { createData } = actions;
       await createData(
-        'preview-list.json',
+        'images.json',
         JSON.stringify(content, null, 2)
       );
     }

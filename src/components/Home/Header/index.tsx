@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
-import DownloadButton from '@site/src/components/DownloadButton';
-import HomeHeaderHeroSlider from '@site/src/components/HomeHeaderHeroSlider';
+import DownloadButton from '@site/src/components/Home/DownloadButton';
+import Preview from '@site/src/components/Home/Preview';
 
 import styles from './styles.module.css';
 
-function ShineFrame({ children }) {
+function Gold({ children }) {
   const [shineTrigger, setShineTrigger] = useState(false);
 
   useEffect(() => {
@@ -37,13 +37,13 @@ function ShineFrame({ children }) {
   }, []);
 
   return (
-    <div className={`${styles.heroHeader} ${shineTrigger ? styles.shine : ''}`}>
+    <div className={`${styles['hero-header']} ${shineTrigger ? styles['shine'] : ''}`}>
       {children}
     </div>
   );
 }
 
-export default function HomepageHeader() {
+export default function Header() {
   const features = [
     translate({
       id: 'theme.home.feature.addons',
@@ -59,20 +59,20 @@ export default function HomepageHeader() {
     }),
   ];
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero hero--primary', styles['hero-banner'])}>
       <div className="container">
-        <div className={styles.heroContent}>
-            <div className={styles.heroLeft}>
-              <div className={styles.heroContainerTitle}>
-                  <ShineFrame>
-                      <div className={`${styles.heroTitle}`}>
+        <div className={styles['hero-content']}>
+            <div className={styles['hero-left']}>
+              <div className={styles['hero-container-title']}>
+                  <Gold>
+                      <div className={`${styles['hero-title']}`}>
                         <Translate id="theme.home.title">GoldClient</Translate>
                       </div>
-                      <div className={styles.heroSubtitle}>
+                      <div className={styles['hero-subtitle']}>
                         <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
                       </div>
-                  </ShineFrame>
-                  <div className={styles.heroDescription}>
+                  </Gold>
+                  <div className={styles['hero-description']}>
                       <ul>
                         {features.map((text, idx) => (
                           <li key={idx}>{text}</li>
@@ -82,8 +82,8 @@ export default function HomepageHeader() {
                   <DownloadButton />
               </div>
             </div>
-            <div className={styles.heroRight}>
-              <HomeHeaderHeroSlider />
+            <div className={styles['hero-right']}>
+              <Preview />
             </div>
         </div>
       </div>

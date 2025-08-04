@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -8,7 +9,7 @@ import 'swiper/css/pagination';
 import 'react-photo-view/dist/react-photo-view.css';
 
 import styles from './styles.module.css';
-import HomePreviewImages from '@generated/docusaurus-plugin-home-preview-list/default/preview-list.json';
+import Images from '@generated/docusaurus-plugin-home-preview-list/default/images.json';
 
 export default function HomeHeaderHeroSlider() {
   const swiperRef = useRef<any>(null);
@@ -24,7 +25,7 @@ export default function HomeHeaderHeroSlider() {
 
   return (
     <div
-      className={styles.wrapper}
+      className={styles['wrapper']}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -47,12 +48,12 @@ export default function HomeHeaderHeroSlider() {
           spaceBetween={0}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
-          className={styles.swiper}
+          className={styles['swiper']}
         >
-          {HomePreviewImages.map((src, i) => (
+          {Images.map((src, i) => (
             <SwiperSlide key={i}>
               <PhotoView src={src}>
-                <img src={src} alt={`Preview ${i}`} className={styles.preview} />
+                <img src={src} alt={`Preview ${i}`} className={styles['preview']} />
               </PhotoView>
             </SwiperSlide>
           ))}
