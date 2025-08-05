@@ -27,7 +27,8 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   customFields: {
     currentVersion: '2.5.6.0',
-    downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe'
+    downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe',
+    useLangAsIcon: true
   },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
