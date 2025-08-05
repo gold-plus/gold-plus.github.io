@@ -45,7 +45,7 @@ export default function HomeHeaderHeroSlider() {
             clickable: true
           }}
           loop={true}
-          spaceBetween={0}
+          spaceBetween={1}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
           className={styles['swiper']}
@@ -53,7 +53,9 @@ export default function HomeHeaderHeroSlider() {
           {Images.map((src, i) => (
             <SwiperSlide key={i}>
               <PhotoView src={src}>
-                <img src={src} alt={`Preview ${i}`} className={styles['preview']} />
+                <div className={styles['preview-overlay']}>
+                  <img src={src} alt={`Preview ${i}`} className={styles['preview']} />
+                </div>
               </PhotoView>
             </SwiperSlide>
           ))}

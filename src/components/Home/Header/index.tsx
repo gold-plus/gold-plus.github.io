@@ -18,7 +18,7 @@ function Gold({ children }) {
       setTimeout(() => setShineTrigger(false), 2000);
     };
 
-    const getRandomDelay = () => 10000 + Math.random() * 20000;
+    const getRandomDelay = () => 7000 + Math.random() * 14000;
 
     const tick = () => {
       startShine();
@@ -60,7 +60,7 @@ export default function Header() {
   ];
   return (
     <header className={clsx('hero hero--primary', styles['hero-banner'])}>
-      <div className="container">
+      <div className={clsx('container', styles['container'])}>
         <div className={styles['hero-content']}>
             <div className={styles['hero-left']}>
               <div className={styles['hero-container-title']}>

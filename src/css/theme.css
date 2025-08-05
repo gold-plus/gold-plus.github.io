@@ -220,3 +220,19 @@
     display: none !important;
   }
 }
+
+.navbar {
+  background: var(--ifm-navbar-background-color);
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--ifm-main-background-color), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
