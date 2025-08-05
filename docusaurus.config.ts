@@ -109,6 +109,9 @@ const config: Config = {
       style: 'dark',
       copyright: getLocalizedConfigValue('footer.copyright').replace("{year}", String(new Date().getFullYear())),
     },
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

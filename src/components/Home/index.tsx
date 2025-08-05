@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 export default function Home({ releases }) {
   const { siteConfig } = useDocusaurusContext();
-  const releaseInitialOnLoad = 3;
+  const releaseInitialOnLoad = 5;
   const releasesPerPage = 3;
   const [page, setPage] = useState(1);
   const [loadedReleases, setLoadedReleases] = useState(releases.slice(0, releaseInitialOnLoad));
