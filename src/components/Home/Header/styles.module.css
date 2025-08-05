@@ -95,8 +95,8 @@
   font-family: 'Stratum2', sans-serif;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   color: #554a0a;
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 110%);
-  mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 110%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 130%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 130%);
 }
 
 .hero-description {
@@ -117,6 +117,8 @@
     0 5px 15px rgba(0, 0, 0, 0.3);
   border: 0.85px solid #777;
   backdrop-filter: blur(var(--blur, 2.5px));
+
+  background: linear-gradient(135deg, #616972 20%, #9e9d9d 115%);
 }
 
 .hero-description li {

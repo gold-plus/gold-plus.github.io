@@ -8,7 +8,7 @@
   width: 100%;
   display: inline-flex;
   flex-direction: column;
-  background-color: #3db447;
+  background-color: #499b12;
   /*background-color: #4db4d3;*/
   transition: background-color 0.2s ease;
   /*box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);*/
@@ -32,7 +32,7 @@
 }
 
 .button:hover {
-  background-color: #52d65d;
+  background-color: #52b411;
   /*background-color: #13a6d3;*/
 }
 
@@ -40,6 +40,7 @@
   flex-shrink: 0;
   user-select: none;
   pointer-events: none;
+  margin-right: 10px;
 }
 
 .version {
@@ -49,13 +50,15 @@
   text-transform: none;
 }
 
-.icon,
-.filler {
+.icon {
   width: 30px;
-  display: flexbox;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
+
+.icon {
+  margin-right: 10px;
 }
 
 .icon svg {

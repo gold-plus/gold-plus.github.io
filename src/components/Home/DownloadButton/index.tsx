@@ -26,7 +26,6 @@ export default function DownloadButton() {
         <span className={styles['text']}>
           <Translate id="theme.home.download">Download</Translate>
         </span>
-        <span className={styles['filler']}></span>
       </div>
       <div className={styles['wrap']}>
         <div className={styles['version']}>
