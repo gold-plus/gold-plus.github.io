@@ -7,7 +7,6 @@
 
 import fs from 'fs-extra';
 import path from 'path';
-import yaml from 'js-yaml';
 
 /**
  * Multiple versions may be published on the same day, causing the order to be
@@ -39,13 +38,10 @@ function parseAuthor(committerLine: string): Author {
 }
 
 function parseAuthors(content: string): Author[] {
-//  const sectionMarkers = ['maintainers', 'committers', 'testers', 'credits'];
   const sectionMarkers = ['authors', 'testers', 'contributors'];
   const authorsSet = new Map<string, Author>();
-
   for (const marker of sectionMarkers) {
     const sectionContent = content.match(new RegExp(
-      //`<!--\\s*${marker}\\s*-->(?:[\\s]*)(?:\\n)([\\s\\S]*)`, 'i'
       `<!--\\s*${marker}\\s*-->(?:[\\s\\n]*)([\\s\\S]*?)(?=\\n#{2,}|$)`, 'i'
     ))?.[1];
     if (!sectionContent) continue;
@@ -149,19 +145,4 @@ export async function createBlogFiles(
     path.join(generateDir, 'authors.json'),
     JSON.stringify(createAuthorsMap(changelogEntries), null, 2),
   );
-
-
-  /*await Promise.all(
-    changelogEntries.map((changelogEntry) =>
-      fs.outputFile(
-        path.join(generateDir, `${changelogEntry.title}.md`),
-        changelogEntry.content,
-      ),
-    ),
-  );
-
-  await fs.outputFile(
-    path.join(generateDir, 'authors.json'),
-    JSON.stringify(createAuthorsMap(changelogEntries), null, 2),
-  );*/
 }
