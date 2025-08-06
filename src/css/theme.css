@@ -14,7 +14,7 @@
 
 :root {
   --ifm-container-width: 1280px;
-  --ifm-container-width-xl: 1500px;
+  --ifm-container-width-xl: 1460px;
   --ifm-color-primary: #111;
   --ifm-color-primary-dark: #000;
   --ifm-color-primary-darker: #000;
@@ -90,6 +90,12 @@
   --ifm-link-color: #45caff;
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1460px) {
+  .container {
+    max-width: var(--ifm-container-width);
+  }
 }
 
 /*.footer {

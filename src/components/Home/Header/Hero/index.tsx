@@ -70,29 +70,29 @@ export default function Header() {
     <header className={clsx('hero hero--primary', styles['hero-banner'])}>
       <div className={clsx('container', styles['container'])}>
         <div className={styles['hero-content']}>
-            <div className={styles['hero-left']}>
-              <div className={styles['hero-container-title']}>
-                  <Gold>
-                      <div className={`${styles['hero-title']}`}>
-                        <Translate id="theme.home.title">GoldClient</Translate>
-                      </div>
-                      <div className={styles['hero-subtitle']}>
-                        <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
-                      </div>
-                  </Gold>
-                  <div className={styles['hero-description']}>
-                      <ul>
-                        {features.map((text, idx) => (
-                          <li key={idx}>{text}</li>
-                        ))}
-                      </ul>
-                  </div>
-                  <DownloadButton />
-              </div>
+          <div className={styles['hero-left']}>
+            <div className={styles['hero-container-title']}>
+                <Gold>
+                    <div className={`${styles['hero-title']}`}>
+                      <Translate id="theme.home.title">GoldClient</Translate>
+                    </div>
+                    <div className={styles['hero-subtitle']}>
+                      <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
+                    </div>
+                </Gold>
+                <div className={styles['hero-description']}>
+                    <ul>
+                      {features.map((text, idx) => (
+                        <li key={idx}>{text}</li>
+                      ))}
+                    </ul>
+                </div>
+                <DownloadButton />
             </div>
-            <div className={styles['hero-right']}>
-              <Preview />
-            </div>
+          </div>
+          <div className={styles['hero-right']}>
+            <Preview />
+          </div>
         </div>
       </div>
     </header>
