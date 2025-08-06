@@ -43,11 +43,13 @@ export default function LocaleDropdownNavbarItem({
     const to = `${baseTo}${search}${hash}${queryString}`;
     return {
       label: (
-        <> {
-            useLangAsIcon ?
-                <IconLanguageFlag locale={locale}/> :
-            localeConfigs[locale]!.label
-        }</>
+        <>
+          {useLangAsIcon ?
+              (<IconLanguageFlag locale={locale}/>
+          ) : (
+              localeConfigs[locale]!.label
+          )}
+        </>
       ),
       lang: localeConfigs[locale]!.htmlLang,
       to,
@@ -63,6 +65,14 @@ export default function LocaleDropdownNavbarItem({
             ? 'menu__link--active'
             : 'dropdown__link--active'
           : '',
+
+      onClick: () => {
+        try {
+          localStorage.setItem('preferred_locale', locale);
+        } catch (e) {
+          console.warn('Failed to save locale to localStorage', e);
+        }
+      }
     };
   });
 

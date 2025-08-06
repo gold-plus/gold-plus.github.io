@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 import DownloadButton from '@site/src/components/Home/DownloadButton';
-import Preview from '@site/src/components/Home/Preview';
+import Preview from '@site/src/components/Home/Header/Preview';
 
 import styles from './styles.module.css';
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, Suspense } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Header from '@site/src/components/Home/Header';
+import Header from '@site/src/components/Home/Header/Hero';
 import Changelog from '@site/src/components/Home/Changelog';
 
 import styles from './styles.module.css';

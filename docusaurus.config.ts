@@ -148,6 +148,9 @@ const config: Config = {
       }],
       './src/plugins/home-generate-preview/index.ts',
   ],
+  clientModules: [
+    require.resolve('./src/clientModules/locale-redirect.js')
+  ]
 };
 
 export default config;
