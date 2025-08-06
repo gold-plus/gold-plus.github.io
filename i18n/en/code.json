@@ -20,6 +20,12 @@
   "theme.home.feature.bugfixes": {
     "message": "Tons of bug fixes, QoL improvements, and performance tweaks."
   },
+  "theme.home.feature.steam": {
+    "message": "Full Steam compatibility - automatic account sync when Steam is running."
+  },
+  "theme.home.feature.updates": {
+    "message": "Regular updates with improvements and fixes."
+  },
   "theme.changelog.item.readMore": {
     "message": "Read more"
   },

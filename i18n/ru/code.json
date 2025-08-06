@@ -20,6 +20,12 @@
   "theme.home.feature.bugfixes": {
     "message": "Большее количество исправлений, улучшений удобства и оптимизации."
   },
+  "theme.home.feature.steam": {
+    "message": "Полная совместимость с Steam - автоматическая синхронизация аккаунта при запущенном Steam."
+  },
+  "theme.home.feature.updates": {
+    "message": "Регулярные обновления с улучшениями и исправлениями."
+  },
   "theme.changelog.item.readMore": {
     "message": "Читать дальше"
   },

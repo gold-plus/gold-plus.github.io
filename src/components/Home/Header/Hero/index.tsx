@@ -18,7 +18,7 @@ function Gold({ children }) {
       setTimeout(() => setShineTrigger(false), 2000);
     };
 
-    const getRandomDelay = () => 7000 + Math.random() * 14000;
+    const getRandomDelay = () => 5000 + Math.random() * 10000;
 
     const tick = () => {
       startShine();
@@ -56,6 +56,14 @@ export default function Header() {
     translate({
       id: 'theme.home.feature.bugfixes',
       message: 'Tons of bug fixes, QoL improvements, and performance tweaks.',
+    }),
+    translate({
+      id: 'theme.home.feature.steam',
+      message: 'Full Steam compatibility - automatic account sync when Steam is running.',
+    }),
+    translate({
+      id: 'theme.home.feature.updates',
+      message: 'Regular updates with improvements and fixes.',
     }),
   ];
   return (

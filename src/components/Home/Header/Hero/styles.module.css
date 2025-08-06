@@ -58,6 +58,8 @@
 }
 
 .hero-header {
+  user-select: none;
+  pointer-events: none;
   /*background: linear-gradient(135deg, #d4af37 0%, #f6e27f 50%, #c9b037 100%);*/
   border-radius: 8px;
   padding: 12px 28px;
@@ -110,37 +112,27 @@
 }
 
 .hero-description {
-  min-height: 250px;
+  min-height: 150px;
   color: #ffffff;
   font-weight: 0;
   font-size: 0.95rem;
-  line-height: 1.2;
+  line-height: 1.0;
   max-width: 100%;
   font-family: 'Tahoma', Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 20px;
   z-index: 0;
   position: relative;
-  margin-top: -46px;
-  margin-bottom: 0;
-  bottom: -10px;
   background: #727a84;
-  padding: 3rem 1rem 0.5rem 1rem;
+  margin-top: -0.5rem;
+  padding: 1.5rem 1rem 0.5rem 0.5rem;
   box-shadow:
     0 5px 15px rgba(0, 0, 0, 0.3);
   border: 0.85px solid #777;
   backdrop-filter: blur(var(--blur, 2.5px));
-
   background: linear-gradient(135deg, #616972 20%, #9e9d9d 115%);
 }
 
-.hero-preview {
-  min-width: 650px;
-  min-height: 365px;
-  background: red;
-}
-
 .hero-description li {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.7rem;
 }
 
 .hero-container-title {
@@ -149,21 +141,21 @@
 
 .gold {
   /*Silver gold*/
-  background: radial-gradient(ellipse farthest-corner at right bottom, #404040 0%, #848484 8%, #EDEDED 30%, #E2E2E2 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #898989 0%, #E2E2E2 8%, #FDFDFD 25%, #A4A4A4 62.5%, #A8A8A8 100%);
+  /*background: radial-gradient(ellipse farthest-corner at right bottom, #404040 0%, #848484 8%, #EDEDED 30%, #E2E2E2 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #898989 0%, #E2E2E2 8%, #FDFDFD 25%, #A4A4A4 62.5%, #A8A8A8 100%);*/
 
   /*Straight gold*/
-  background: linear-gradient(135deg, #d4af37 0%, #f6e27f 50%, #c9b037 100%);
+  /*background: linear-gradient(135deg, #d4af37 0%, #f6e27f 50%, #c9b037 100%);*/
 
   /*Neutral gold*/
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FFEBA8 0%, #E5C787 8%, #F2D792 30%, #D2B360 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #F2D792 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  /*background: radial-gradient(ellipse farthest-corner at right bottom, #FFEBA8 0%, #E5C787 8%, #F2D792 30%, #D2B360 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #F2D792 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
 
   /*Neutral gold2*/
-  background:
+  /*background:
     radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  background: linear-gradient(137.5deg, #d4af37, #f5ebcd, #d4af37);
+  background: linear-gradient(137.5deg, #d4af37, #f5ebcd, #d4af37);*/
 
   /*Light gold*/
   background: linear-gradient(135deg, rgba(254,191,1,1) 0%,rgba(252,231,169,1) 34%,rgba(249,191,29,1) 54%,rgba(247,224,163,1) 76%,rgba(254,191,1,1) 100%);
