@@ -32,7 +32,7 @@ function ChangelogItem({ version }) {
         <Preview />
       </div>
       <div className="card__footer">
-        <Link to={metadata.permalink} className={styles['read-more']}>
+        <Link to={metadata.permalink} className="read-more">
           <Translate id="theme.changelog.item.readMore">Read more</Translate>
         </Link>
       </div>

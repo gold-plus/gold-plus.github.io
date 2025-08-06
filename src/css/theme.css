@@ -236,3 +236,29 @@
   pointer-events: none;
   z-index: -1;
 }
+
+.read-more {
+  font-weight: bold;
+  color: var(--ifm-link-color);
+  -webkit-text-decoration: var(--ifm-link-decoration);
+  text-decoration: var(--ifm-link-decoration);
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.read-more:hover {
+  color: var(--ifm-link-hover-color);
+  -webkit-text-decoration: var(--ifm-link-hover-decoration);
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+.container .row .col--3 {
+  --ifm-col-width: calc(3 / 17 * 100%);
+}
+
+.container .row .col--7 {
+  --ifm-col-width: calc(12 / 17 * 100%);
+}
+
+.container .row .col--2 {
+  --ifm-col-width: calc(2 / 17 * 100%);
+}

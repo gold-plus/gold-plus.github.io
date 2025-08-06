@@ -61,7 +61,7 @@ function ChangelogPageContent({
       }>
       <BackToIndexLink />
 
-      <ChangelogItem>{children}</ChangelogItem>
+      <ChangelogItem showReadMoreButton={false}>{children}</ChangelogItem>
 
       {(nextItem || prevItem) && (
         <ChangelogPaginator nextItem={nextItem} prevItem={prevItem} />
