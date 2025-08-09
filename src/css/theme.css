@@ -13,8 +13,6 @@
 }
 
 :root {
-  --ifm-container-width: 1280px;
-  --ifm-container-width-xl: 1460px;
   --ifm-color-primary: #111;
   --ifm-color-primary-dark: #000;
   --ifm-color-primary-darker: #000;
@@ -92,11 +90,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
 
-@media (min-width: 1460px) {
-  .container {
-    max-width: var(--ifm-container-width);
-  }
-}
 
 /*.footer {
     background-color: var(--ifm-footer-background-color);
@@ -156,6 +149,7 @@
 .navbar__item--active {
   color: var(--ifm-color-primary);
 }
+
 .navbar__link--active {
   font-weight: bold;
   text-decoration: underline;
@@ -270,3 +264,132 @@
 .container .row .col--2 {
   --ifm-col-width: calc(2 / 17 * 100%);
 }
+
+/* DOCS */
+/*
+html.plugin-docs.docs-wrapper .container {
+  max-width: 90%;
+}*/
+
+.docs-table {
+    width:100%;
+    display:table;
+    overflow: hidden;
+}
+
+table.docs-table th,
+table.docs-table td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table.docs-table th,
+table.docs-table .title,
+table.docs-table .value,
+table.docs-table .status {
+  text-align: center;
+}
+
+table.docs-table .status {
+  color: '#f9a825';
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 996px) {
+  table.docs-table,
+  thead.docs-table,
+  tbody.docs-table,
+  th.docs-table,
+  td.docs-table,
+  tr.docs-table {
+    display: block;
+  }
+  table.docs-table tr {
+    margin-bottom: 15px;
+  }
+  table.docs-table th {
+    display: none;
+  }
+  table.docs-table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+  table.docs-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+table.docs-table .added {
+  background-color: #e8f5e9;
+}
+
+table.docs-table .added.status {
+  color: #388e3c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+table.docs-table .modified {
+  background-color: #fffde7;
+}
+
+table.docs-table .modified a {
+  color: #f9a825;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+table.docs-table .default {
+  background-color: transparent;
+}
+
+table.docs-table .default {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+}
+.table-legend {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0;
+  user-select: none;
+}
+
+.table-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #222;
+}
+
+.legend-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.legend-icon.added {
+  background-color: #4caf50;
+  box-shadow: 0 0 6px #4caf50aa;
+}
+
+.legend-icon.changed {
+  background-color: #ffeb3b;
+  box-shadow: 0 0 6px #ffeb3baa;
+}
+
+.legend-icon.removed {
+  background-color: #f44336;
+  box-shadow: 0 0 6px #f44336aa;
+}
+

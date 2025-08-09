@@ -7,9 +7,9 @@
     "message": "GoldClient Plus",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Tutorial": {
-    "message": "Руководство",
-    "description": "Navbar item with label Tutorial"
+  "item.label.Docs": {
+    "message": "Документация",
+    "description": "Navbar item with label Docs"
   },
   "item.label.Changelog": {
     "message": "Изменения",

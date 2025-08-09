@@ -6,6 +6,9 @@ import ConfigLocalized from './docusaurus.config.localized.json';
 
 const defaultLocale = 'ru';
 
+const repoName = 'gold-plus';
+const webSite = 'https://gold-plus.github.io';
+
 function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
   const values = ConfigLocalized[key];
@@ -36,15 +39,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://gold-plus.github.io',
+  url: 'https://' + repoName,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: '', // Usually your GitHub org/user name.
-  projectName: 'gold-plus', // Usually your repo name.
+  organizationName: 'gold-plus', // Usually your GitHub org/user name.
+  projectName: 'GoldClient', // Usually your repo name.
 
   onBrokenLinks: 'warn', //'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -69,7 +72,14 @@ const config: Config = {
     ['@docusaurus/preset-classic',
       {
         //debug: true, // this will enable the plugin in production
-        docs: false,
+        //docs: false,
+        docs: {
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/' + repoName + '/' + repoName + '.io/tree/master/',
+        },
         theme: {
           customCss: './src/css/theme.css',
         },
@@ -93,6 +103,12 @@ const config: Config = {
         src: 'img/logo.svg'
       },
       items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'docsSidebar',
+          position: 'left',
+          label: 'Docs',
+        },
         {to: '/changelog', label: 'Changelog', position: 'left'},
         {
           type: "localeDropdown",
@@ -115,6 +131,11 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    algolia: {
+      indexName: "goldcrawl",
+      appId: "0YYKAD61TW",
+      apiKey: "598276f4b53d15258955bf7c304d6bff",
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
