@@ -121,6 +121,9 @@ const config: Config = {
         },
       ],
     },
+    tableOfContents: {
+      maxHeadingLevel: 4, // allow using head 4th level <h4> inside TOC (Table Of Contents)
+    },
     footer: {
       style: 'dark',
       copyright: getLocalizedConfigValue('footer.copyright').replace("{year}", String(new Date().getFullYear())),

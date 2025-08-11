@@ -13,6 +13,8 @@
 }
 
 :root {
+  --ifm-container-width: 1280px;
+  --ifm-container-width-xl: 1460px;
   --ifm-color-primary: #111;
   --ifm-color-primary-dark: #000;
   --ifm-color-primary-darker: #000;
@@ -49,6 +51,12 @@
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+
+  --docs-anchor-highlighted-color: rgba(255, 200, 100, 0.4);
+  --docs-table-added-bg-color-even: rgb(230, 248, 230, 0.4);
+  --docs-table-added-bg-color-odd: rgb(230, 248, 230, 0.65);
+  --docs-table-modified-bg-color-even: rgb(235, 235, 186, 0.2);
+  --docs-table-modified-bg-color-odd: rgb(235, 235, 186, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -88,8 +96,21 @@
   --ifm-link-color: #45caff;
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+
+  --docs-anchor-highlighted-color: rgba(255, 180, 50, 0.35);
+
+  --docs-table-added-bg-color-even: rgba(40, 120, 90, 0.2);
+  --docs-table-added-bg-color-odd: rgba(40, 120, 90, 0.3);
+
+  --docs-table-modified-bg-color-even: rgba(120, 120, 60, 0.3);
+  --docs-table-modified-bg-color-odd: rgba(120, 120, 60, 0.4);
 }
 
+@media (min-width: 1460px) {
+  .container {
+    max-width: var(--ifm-container-width);
+  }
+}
 
 /*.footer {
     background-color: var(--ifm-footer-background-color);
@@ -253,23 +274,50 @@
   text-decoration: var(--ifm-link-hover-decoration);
 }
 
-.container .row .col--3 {
+html.plugin-blog .container .row .col--3,
+html.plugin-blog-changelog .container .row .col--3 {
   --ifm-col-width: calc(3 / 17 * 100%);
 }
 
-.container .row .col--7 {
+html.plugin-blog .container .row .col--7,
+html.plugin-blog-changelog .container .row .col--7 {
   --ifm-col-width: calc(12 / 17 * 100%);
 }
 
-.container .row .col--2 {
+html.plugin-blog .container .row .col--2,
+html.plugin-blog-changelog .container .row .col--2 {
   --ifm-col-width: calc(2 / 17 * 100%);
 }
 
 /* DOCS */
-/*
+
 html.plugin-docs.docs-wrapper .container {
-  max-width: 90%;
+  max-width: 100%;
+}
+
+html.plugin-docs.docs-wrapper .container {
+  max-width: 100%;
+}
+
+/*.col--2 {
+    --ifm-col-width: calc(2 / 12 * 100%);
+}
+
+.col--3 {
+    --ifm-col-width: calc(3 / 12 * 100%);
+}
+.col--7 {
+    --ifm-col-width: calc(7 / 12 * 100%);
 }*/
+
+
+html.plugin-docs {
+  --doc-sidebar-width: 400px;
+}
+
+.container .row .col--3 {
+  --ifm-col-width: calc(3 / 17 * 100%);
+}
 
 .docs-table {
     width:100%;
@@ -285,15 +333,10 @@ table.docs-table td {
 
 table.docs-table th,
 table.docs-table .title,
-table.docs-table .value,
-table.docs-table .status {
+table.docs-table .def,
+table.docs-table .min,
+table.docs-table .max {
   text-align: center;
-}
-
-table.docs-table .status {
-  color: '#f9a825';
-  font-weight: bold;
-  text-decoration: none;
 }
 
 @media (max-width: 996px) {
@@ -326,24 +369,26 @@ table.docs-table .status {
   }
 }
 
-table.docs-table .added {
-  background-color: #e8f5e9;
-}
-
-table.docs-table .added.status {
-  color: #388e3c;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-table.docs-table .modified {
-  background-color: #fffde7;
-}
-
 table.docs-table .modified a {
   color: #f9a825;
   font-weight: bold;
   text-decoration: none;
+}
+
+tbody tr.added:nth-of-type(even) {
+  background-color: var(--docs-table-added-bg-color-even);
+}
+
+tbody tr.added:nth-of-type(odd) {
+  background-color: var(--docs-table-added-bg-color-odd);
+}
+
+tbody tr.modified:nth-of-type(even) {
+  background-color: var(--docs-table-modified-bg-color-even);
+}
+
+tbody tr.modified:nth-of-type(odd) {
+  background-color: var(--docs-table-modified-bg-color-odd);
 }
 
 table.docs-table .default {
@@ -355,6 +400,29 @@ table.docs-table .default {
   font-weight: normal;
   text-decoration: none;
 }
+
+.docs-table .name {
+  width: 30%;
+}
+
+.docs-table .min,
+.docs-table .max {
+  width: 5%;
+}
+
+table.docs-table .def {
+  width: 15%;
+}
+
+table.docs-table .desc {
+  width: auto;
+}
+
+table.docs-table .def.color > div {
+  border-radius: 6px;
+  box-shadow: 0 0 2px 0px var(--ifm-color-primary);
+}
+
 .table-legend {
   display: flex;
   gap: 20px;
@@ -368,7 +436,7 @@ table.docs-table .default {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #222;
+  color: var(--ifm-font-color-base);
 }
 
 .legend-icon {
@@ -393,3 +461,21 @@ table.docs-table .default {
   box-shadow: 0 0 6px #f44336aa;
 }
 
+.anchor-target {
+  position: relative;
+}
+
+.anchor-target::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+	animation: anchor-fade 3s forwards;
+}
+
+@keyframes anchor-fade {
+	from { background-color: var(--docs-anchor-highlighted-color); }
+	to { background-color: transparent; }
+}
