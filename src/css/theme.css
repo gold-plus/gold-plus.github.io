@@ -320,15 +320,17 @@ html.plugin-docs {
 }
 
 .docs-table {
-    width:100%;
-    display:table;
-    overflow: hidden;
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
 }
 
 table.docs-table th,
 table.docs-table td {
   padding: 8px 12px;
   text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 table.docs-table th,
@@ -339,33 +341,37 @@ table.docs-table .max {
   text-align: center;
 }
 
+.docs-table .name {
+  width: 30%;
+}
+
+.docs-table .min,
+.docs-table .max {
+  width: 7%;
+}
+
+table.docs-table .def {
+  width: 15%;
+}
+
+table.docs-table .desc {
+  width: auto;
+}
+
 @media (max-width: 996px) {
-  table.docs-table,
-  thead.docs-table,
-  tbody.docs-table,
-  th.docs-table,
-  td.docs-table,
-  tr.docs-table {
-    display: block;
-  }
-  table.docs-table tr {
-    margin-bottom: 15px;
-  }
-  table.docs-table th {
-    display: none;
-  }
-  table.docs-table td {
-    position: relative;
-    padding-left: 50%;
-    text-align: right;
-  }
-  table.docs-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    font-weight: bold;
+  .docs-table td,
+  .docs-table th {
+    padding: 4px 6px;
     text-align: left;
+  }
+  html.plugin-docs {
+    --doc-sidebar-width: 200px;
+  }
+}
+
+@media (max-width: 1120px) {
+  html.plugin-docs {
+    --doc-sidebar-width: 250px;
   }
 }
 
@@ -399,23 +405,6 @@ table.docs-table .default {
   color: inherit;
   font-weight: normal;
   text-decoration: none;
-}
-
-.docs-table .name {
-  width: 30%;
-}
-
-.docs-table .min,
-.docs-table .max {
-  width: 5%;
-}
-
-table.docs-table .def {
-  width: 15%;
-}
-
-table.docs-table .desc {
-  width: auto;
 }
 
 table.docs-table .def.color > div {
