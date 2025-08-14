@@ -2,13 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
-import type { ImageCompareProps, ImageItem } from './types';
+import type { ImageSliderCompButtonProps, ImageItem } from './types';
 
 import styles from './styles.module.css';
 
 import 'react-photo-view/dist/react-photo-view.css';
 
-export const SliderButtonCompare: React.FC<ImageCompareProps> = ({
+export const SliderButtonCompare: React.FC<ImageSliderCompButtonProps> = ({
   images,
   maskOpacity = 0.9,
   className,

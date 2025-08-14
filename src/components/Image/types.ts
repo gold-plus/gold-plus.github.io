@@ -7,15 +7,16 @@ export interface ImageItem {
 
 export interface ImageSliderProps {
   images: [ImageItem, ImageItem];
-  buttonName: string;
   maskOpacity?: number; // modal overlay opacity
 }
 
 export interface ImagePreviewProps extends ImageSliderProps {
   autoplay?: boolean;
 }
-
-export interface ImageCompareProps extends ImageSliderProps {
+export interface ImageSliderButtonProps extends ImageSliderProps {
+  buttonName: string;
+}
+export interface ImageSliderCompButtonProps extends ImageSliderButtonProps {
   className?: string;
   boundsPadding?: number;
   portrait?: boolean;

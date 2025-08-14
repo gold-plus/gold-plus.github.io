@@ -7,9 +7,9 @@ import 'swiper/css/pagination';
 import 'react-photo-view/dist/react-photo-view.css';
 
 import styles from './styles.module.css';
-import type { ImageSliderProps } from './types';
+import type { ImageSliderButtonProps } from './types';
 
-export const SliderButton: React.FC<ImageSliderProps> = ({
+export const SliderButton: React.FC<ImageSliderButtonProps> = ({
   images,
   buttonName,
   maskOpacity = 0.9
