@@ -87,7 +87,7 @@
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 4
+#### Тестеры: 3
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
@@ -176,10 +176,14 @@
 - Исправлена ошибка с очень низкими FPS на карте, которая не содержит lightmaps, например если карта скомпилирована без hlrad (vanilla bug)
 - Незначительные исправления ошибок
 
-#### Тестеры: 4
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 3
+<!-- testers -->
+
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
@@ -336,10 +340,14 @@
 - Исправлено зависание в клиентской функции `UTIL_GetNextBestWeapon` (@wopox1337)
 - Выключено плавное перемещение к позиции других игроков при наблюдении за игроком (`cl_smoothtime` больше не работает в режима от 1-го лица)
 
-#### Тестеры: 3
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 2
+<!-- testers -->
+
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
@@ -362,10 +370,14 @@
 - Исправлен баг с блокировкой мыши в игре после смены карты
 - Исправлен баг с прыгающим курсором, если окно игры было не в фокусе
 
-#### Тестеры: 2
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 1
+<!-- testers -->
+
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 
 
@@ -381,10 +393,14 @@
 
 <!-- truncate -->
 
-#### Тестеры: 2
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 1
+<!-- testers -->
+
 - resobatata ([@resobatata](https://github.com/resobatata))
 
 
@@ -454,10 +470,14 @@
 - Снято ограничение с ConVar `r_dynamic`
   Можно отключать динамическое освещение в многопользовательском режиме, из-за слабой производительности на некоторых видеокартах `AMD/nVidia`
 
-#### Тестеры: 3
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 2
+<!-- testers -->
+
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
 - Polarhigh ([@Polarhigh](https://github.com/Polarhigh))
 
@@ -488,10 +508,14 @@
 - Исправлена утечка памяти `DetailTextures` с `r_detailtextures 0`
 - Исправлена утечка памяти в системе коротких фраз VOX
 
-#### Тестеры: 2
-<!-- testers -->
+#### Авторы: 1
+<!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Тестеры: 1
+<!-- testers -->
+
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
 
 
