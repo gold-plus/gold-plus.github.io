@@ -609,8 +609,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_icon_scale_min'
           images={[
-            {path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Масштаб иконок', label: 'hud_radar_icon_scale_min 0.3'},
-            {path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Масштаб иконок', label: 'hud_radar_icon_scale_min 1.0'}
+            {path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Масштаб иконок - Средний', label: 'hud_radar_icon_scale_min 0.3'},
+            {path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Масштаб иконок - Маленький', label: 'hud_radar_icon_scale_min 1.0'}
           ]}
         />
       </td>
@@ -621,15 +621,15 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Устанавливает цвет обводки границ карты на радаре<br/>Работает только если задана толщинца обводки <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
+        <div className='text'>Устанавливает цвет обводки границ карты на радаре (RGBA)<br/>Работает только если задана толщинца обводки <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
         <SliderButtonCompare
           buttonName='Пример'
           boundsPadding={29}
           className='radar-halo'
           title='hud_radar_map_outlinecolor'
           images={[
-            {path: '/assets/radar/map_outlinecolor_default.webp', desc: 'Без обводки', label: 'hud_radar_map_outlinecolor 0'},
-            {path:'/assets/radar/map_outlinecolor_white.webp', desc: 'С белой обводкой', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+            {path: '/assets/radar/map_outlinecolor_default.webp', desc: 'Обводка - Не установлена', label: 'hud_radar_map_outlinecolor 0'},
+            {path:'/assets/radar/map_outlinecolor_white.webp', desc: 'Обводка - Белая', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
           ]}
         />
       </td>
@@ -647,8 +647,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_map_outlinethickness'
           images={[
-            {path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Толщина обводки', label: 'hud_radar_map_outlinethickness 2'},
-            {path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Толщина обводки', label: 'hud_radar_map_outlinethickness 4'}
+            {path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Толщина обводки - Тонкая', label: 'hud_radar_map_outlinethickness 2'},
+            {path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Толщина обводки - Средняя', label: 'hud_radar_map_outlinethickness 4'}
           ]}
         />
       </td>
@@ -659,15 +659,15 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Устанавливает цвет оттенка карты</div>
+        <div className='text'>Устанавливает цвет оттенка карты (RGB)</div>
         <SliderButtonCompare
           buttonName='Пример'
           boundsPadding={29}
           className='radar-halo'
           title='hud_radar_map_shadecolor'
           images={[
-            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Без оттенка карты', label: 'hud_radar_map_shadecolor 0'},
-            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Зеленый оттенок карты', label: 'hud_radar_map_shadecolor 4'}
+            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Оттенок карты - Не установлен', label: 'hud_radar_map_shadecolor 0'},
+            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Оттенок карты - Зеленый', label: 'hud_radar_map_shadecolor 0 255 0'}
           ]}
         />
       </td>
@@ -678,15 +678,15 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Устанавливает сплошной цвет карты</div>
+        <div className='text'>Устанавливает сплошной цвет карты (RGB)</div>
         <SliderButtonCompare
           buttonName='Пример'
           boundsPadding={29}
           className='radar-halo'
           title='hud_radar_map_solidcolor'
           images={[
-            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Без сплошного цвета карты', label: 'hud_radar_map_solidcolor 0'},
-            {path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Сплошной серый цвет карты', label: 'hud_radar_map_solidcolor 110 110 110'}
+            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Сплошной цвет карты - Не установлен', label: 'hud_radar_map_solidcolor 0'},
+            {path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Сплошной цвет карты - Серый', label: 'hud_radar_map_solidcolor 110 110 110'}
           ]}
         />
       </td>
@@ -704,8 +704,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_mapscale'
           images={[
-            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Масштаб карты', label: 'hud_radar_mapscale 0.9'},
-            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Отдаленный масштаб карты', label: 'hud_radar_mapscale 0.5'}
+            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Масштаб карты - Увеличенный', label: 'hud_radar_mapscale 0.9'},
+            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Масштаб карты - Уменьшенный', label: 'hud_radar_mapscale 0.5'}
           ]}
         />
       </td>
@@ -723,8 +723,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_mapscale_dynamic'
           images={[
-            {path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Масштаб карты - постоянный', label: 'hud_radar_mapscale_dynamic 0'},
-            {path:'/assets/radar/mapscale_dynamic.webp', desc: 'Масштаб карты - автоматически масштабируется', label: 'hud_radar_mapscale_dynamic 1'}
+            {path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Масштаб карты - Постоянный', label: 'hud_radar_mapscale_dynamic 0'},
+            {path:'/assets/radar/mapscale_dynamic.webp', desc: 'Масштаб карты - Автоматический', label: 'hud_radar_mapscale_dynamic 1'}
           ]}
         />
       </td>
@@ -749,8 +749,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_objectives'
           images={[
-            {path: '/assets/radar/objectives_off.webp', desc: 'На карте не отображаются цели', label: 'hud_radar_objectives 0'},
-            {path:'/assets/radar/objectives_on.webp', desc: 'На карте отображаются цели', label: 'hud_radar_objectives 1'}
+            {path: '/assets/radar/objectives_off.webp', desc: 'Отображение цели на карте - Не установлено', label: 'hud_radar_objectives 0'},
+            {path:'/assets/radar/objectives_on.webp', desc: 'Отображение цели на карте - Установлено', label: 'hud_radar_objectives 1'}
           ]}
         />
       </td>
@@ -775,8 +775,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_rotate'
           images={[
-            {path: '/assets/radar/radar_rotate_off.webp', desc: 'Карта не вращается', label: 'hud_radar_rotate 0'},
-            {path:'/assets/radar/radar_rotate_on.webp', desc: 'Карта вращается вместе с игроком', label: 'hud_radar_rotate 1'}
+            {path: '/assets/radar/radar_rotate_off.webp', desc: 'Вращение карты - Не установлено', label: 'hud_radar_rotate 0'},
+            {path:'/assets/radar/radar_rotate_on.webp', desc: 'Вращение карты - Установлено', label: 'hud_radar_rotate 1'}
           ]}
         />
       </td>
@@ -808,8 +808,8 @@ import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
           className='radar-halo'
           title='hud_radar_shapecolor'
           images={[
-            {path: '/assets/radar/module_shapecolor_default.webp', desc: 'Светло-серый модуль радара', label: 'hud_radar_shapecolor 158 158 158'},
-            {path:'/assets/radar/module_shapecolor_green.webp', desc: 'Зеленый модуль радара', label: 'hud_radar_shapecolor 0 200 0'}
+            {path: '/assets/radar/module_shapecolor_default.webp', desc: 'Цвет модуля радара - Светло-серый', label: 'hud_radar_shapecolor 158 158 158'},
+            {path:'/assets/radar/module_shapecolor_green.webp', desc: 'Цвет модуля радара - Зеленый', label: 'hud_radar_shapecolor 0 200 0'}
           ]}
         />
       </td>

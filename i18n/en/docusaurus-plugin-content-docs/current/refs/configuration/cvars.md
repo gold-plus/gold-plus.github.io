@@ -621,7 +621,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Sets the color of the map border outline on the radar.<br/>Only works if the outline thickness is set with <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
+        <div className='text'>Sets the color of the map border outline on the radar (RGBA)<br/>Only works if the outline thickness is set with <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
         <SliderButtonCompare
           buttonName='Preview'
           boundsPadding={29}
@@ -659,7 +659,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Sets the map's shade color</div>
+        <div className='text'>Sets the map's shade color (RGB)</div>
         <SliderButtonCompare
           buttonName='Preview'
           boundsPadding={29}
@@ -667,7 +667,7 @@ List of all console variables (ConVar) - description, default values.
           title='hud_radar_map_shadecolor'
           images={[
             {path: '/assets/radar/map_shadecolor_default.webp', desc: 'No map shade', label: 'hud_radar_map_shadecolor 0'},
-            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Green map shade', label: 'hud_radar_map_shadecolor 4'}
+            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Green map shade', label: 'hud_radar_map_shadecolor 0 255 0'}
           ]}
         />
       </td>
@@ -678,7 +678,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Sets a solid color for the map</div>
+        <div className='text'>Sets a solid color for the map (RGB)</div>
         <SliderButtonCompare
           buttonName='Preview'
           boundsPadding={29}
@@ -704,8 +704,8 @@ List of all console variables (ConVar) - description, default values.
           className='radar-halo'
           title='hud_radar_mapscale'
           images={[
-            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Map scale', label: 'hud_radar_mapscale 0.9'},
-            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Zoomed-out map scale', label: 'hud_radar_mapscale 0.5'}
+            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Map scale - zoomed-in', label: 'hud_radar_mapscale 0.9'},
+            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Map scale - zoomed-out', label: 'hud_radar_mapscale 0.5'}
           ]}
         />
       </td>
@@ -801,7 +801,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
-        <div className='text'>Color of the module shape around the radar (RGB).<br/><br/>It is not recommended to use red shades, as the radar module pulses red when the bomb is planted</div>
+        <div className='text'>Color of the module shape around the radar (RGB)<br/><br/>It is not recommended to use red shades, as the radar module pulses red when the bomb is planted</div>
         <SliderButtonCompare
           buttonName='Preview'
           boundsPadding={29}
