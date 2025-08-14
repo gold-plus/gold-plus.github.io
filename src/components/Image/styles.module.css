@@ -1,0 +1,302 @@
+:root {
+  --bg-color: #333;
+  --switch-off-color: #ffae00;
+  --switch-on-color: #90EE90;
+  --shadow-color: rgba(190, 190, 190, 1);
+}
+
+[data-theme='dark'] {
+  --switch-off-color: #FFA500;
+  --switch-on-color: #32CD32;
+  --shadow-color: rgba(190, 190, 190, 1);
+}
+
+/*.wrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}*/
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-bottom {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1.2rem 0 1.2rem 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.banner-bottom-layer {
+  grid-area: 1 / 1 / 2 / 2;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.banner-bottom-wrapper {
+  display: grid;
+  width: max-content;
+  max-width: 90%;
+  text-align: left;
+}
+
+.banner-bottom--desc {
+  /*font-style: italic;*/
+}
+
+.banner-bottom--label,
+.banner-bottom--preview {
+  font-weight: 600;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.preview-overlay {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.preview:hover {
+  transform: scale(1.03);
+}
+
+:global(.swiper .swiper-pagination-bullet) {
+  width: 6px;
+  height: 6px;
+  background-color: #e6e6e6;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.4);
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);;
+}
+
+:global(.swiper .swiper-pagination-bullet-active) {
+  width: 14px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.modal-btn-open {
+  background-color: rgba(243, 156, 18, 0.15);
+  color: var(--ifm-font-color-base);
+  border: none;
+  font-size: 12px;
+  font-weight: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  display: table-cell;
+  float: right;
+  margin: 0 0 3px 3px;
+}
+
+.modal-btn-open:hover {
+  background-color: rgba(253, 169, 33, 0.466);
+}
+
+[data-theme='dark'] .modal-btn-open {
+  background-color: rgba(243, 156, 18, 0.5);
+}
+[data-theme='dark'] .modal-btn-open:hover {
+  background-color: rgba(243, 156, 18, 0.8);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /*background-color: white;
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-size: 20px 20px;
+  border-radius: 6px;*/
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px 2px;
+  z-index: 10;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 0;
+  color: #eee;
+  user-select: none;
+  transition: color 0.25s ease;
+}
+
+.modal-btn-close:hover {
+  color: #f39c12;
+}
+
+.toggle-state {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 65px;
+  cursor: default;
+  z-index: 1;
+}
+
+.toggle-state__track {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--bg-color), var(--bg-color) 90%);
+  border-radius: 22px;
+  padding: 3px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 2px 4px var(--shadow-color),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease, background 3s;
+}
+
+.toggle-state__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 14px;
+  background: linear-gradient(to bottom, var(--switch-off-color), var(--switch-off-color));
+  border-radius: 24px;
+  transition: left 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-state--neutral .toggle-state__thumb {
+  border-radius: 10px;
+  width: 18px;
+  left: calc(50% - 10px);
+  background: linear-gradient(to bottom, #C0C0C0, #A9A9A9);
+}
+
+.toggle-state--on .toggle-state__thumb {
+  left: calc(100% - 25px);
+  background: linear-gradient(to bottom, var(--switch-on-color), var(--switch-on-color));
+}
+
+.slider-wrap {
+  pointer-events: none;
+}
+.slider-label {
+  position: absolute;
+  bottom: 10px;
+  padding: 2px 6px;
+  background: linear-gradient(to bottom, var(--bg-color), #555 100%);
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+.slider-label--compare {
+  color: #ddd;
+}
+.slider-label--before {
+  color: rgb(255, 190, 0);
+  left: 10px;
+}
+.slider-label--after {
+  color: rgb(70, 255, 70);
+  right: 10px;
+}
+
+.radar-halo {
+  filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+}
+
+/* CUSTOMIZE LINES STYLE */
+
+:global(.__rcs-handle-line:first-of-type) {
+  width: 2px !important;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 35%,
+    black 100%
+  ) !important;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 35%,
+    black 100%
+  ) !important;
+}
+
+:global(.__rcs-handle-line:last-of-type) {
+  width: 2px !important;
+  mask-image: linear-gradient(
+    to top,
+    transparent 35%,
+    black 100%
+  ) !important;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 35%,
+    black 100%
+  ) !important;
+}

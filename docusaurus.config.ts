@@ -174,18 +174,6 @@ const config: Config = {
   ],
   clientModules: [
     require.resolve('./src/clientModules/locale-redirect.js')
-  ],
-  headTags:[
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        href: '/fonts/Stratum2-Bold.ttf',
-        as: 'font',
-        type: 'font/ttf',
-        crossorigin: 'anonymous',
-      }
-    },
   ]
 };
 

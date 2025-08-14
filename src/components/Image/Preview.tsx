@@ -1,0 +1,66 @@
+import React, { useRef, useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { PhotoSlider, PhotoProvider, PhotoView } from 'react-photo-view';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'react-photo-view/dist/react-photo-view.css';
+
+import styles from './styles.module.css';
+import type { ImagePreviewProps } from './types';
+
+export const Preview: React.FC<ImagePreviewProps> = ({
+  images,
+  autoplay = true,
+  maskOpacity = 0.9
+}) => {
+  const swiperRef = useRef<any>(null);
+  const [visible, setVisible] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  const onMouseEnter = () => { swiperRef.current?.autoplay?.stop(); };
+  const onMouseLeave = () => { swiperRef.current?.autoplay?.start(); };
+
+  return (
+    <PhotoProvider
+      maskOpacity={maskOpacity}
+      onIndexChange={(newIndex) => {
+        swiperRef.current?.slideToLoop?.(newIndex);
+      }}
+      onVisibleChange={(visible) => {
+        setVisible(visible);
+        if (visible) swiperRef.current?.autoplay?.stop();
+        else swiperRef.current?.autoplay?.start();
+      }}
+    >
+      <div
+        className={styles['wrapper']}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          autoplay={autoplay ? { delay: 5000, disableOnInteraction: false } : false }
+          pagination={{ clickable: true }}
+          loop={true}
+          spaceBetween={1}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          slidesPerView={1}
+          className={styles['swiper']}
+        >
+          {images.map((item, i) => (
+            <SwiperSlide key={i}>
+              <PhotoView src={item.path}>
+                <div className={styles['preview-overlay']}>
+                  <img src={item.path} alt={`Preview ${i}`} className={styles['preview']} />
+                </div>
+              </PhotoView>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </PhotoProvider>
+  );
+}

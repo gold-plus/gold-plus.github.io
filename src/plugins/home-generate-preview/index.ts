@@ -9,7 +9,7 @@ export default function CreateList(context, options) {
       const exts = ['.webp', '.png', '.jpg', '.jpeg'];
       const files = fs.readdirSync(previewDir)
         .filter(f => exts.includes(path.extname(f).toLowerCase()))
-        .map(f => `/img/preview/${f}`);
+        .map(f => ({ path: `/img/preview/${f}` }));
 
       return files;
     },
