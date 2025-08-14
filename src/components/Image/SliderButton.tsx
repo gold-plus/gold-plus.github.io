@@ -17,7 +17,7 @@ export const SliderButton: React.FC<ImageSliderProps> = ({
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <button className={styles['modal-btn-open']} onClick={() => setVisible(true)}>${buttonName}</button>
+      <button className={styles['modal-btn-open']} onClick={() => setVisible(true)}>{buttonName}</button>
       <PhotoSlider
         images={images.map((item, i) => ({ src: item.path, key: i }))}
         onClose={() => setVisible(false)}
