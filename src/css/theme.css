@@ -356,6 +356,11 @@ table.docs-table .def {
 
 table.docs-table .desc {
   width: auto;
+  display: table-cell;
+}
+
+table.docs-table .desc > button {
+  display: table-row;
 }
 
 @media (max-width: 996px) {

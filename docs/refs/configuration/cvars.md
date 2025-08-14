@@ -4,6 +4,8 @@ title: Консольные переменные
 sidebar_position: 1
 ---
 
+import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
+
 :::warning Страница в разработке
 Эта страница находится в стадии активного наполнения и корректирования.<br/>
 Возможны ошибки, неточности и пропуски, и отсутствия перевода.<br/>
@@ -443,7 +445,7 @@ sidebar_position: 1
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Регулирует масштабирование размера прицела в зависимости от разрешения экрана. `0` = Авто (Пропорционально), либо значения разрешения, например `640`, `800`, `1024`</td>
+      <td className='desc'>Регулирует масштабирование размера прицела в зависимости от разрешения экрана. `0` = Авто (Пропорционально), либо значения разрешения, например `480`, `640`, `1024`</td>
     </tr>
     <tr className='added' id='cl_crosshairsize'>
       <td className='name'>cl_crosshairsize</td>
@@ -527,91 +529,231 @@ sidebar_position: 1
       <td className='def'>255</td>
       <td className='min'>0</td>
       <td className='max'>255</td>
-      <td className='desc'>Регулирует прозрачность радара (0-255)</td>
+      <td className='desc'>
+        <div className='text'>Регулирует прозрачность радара (0 - 255)</div>
+        <SliderButton
+          buttonName='Пример'
+          images={[
+            {path: '/assets/radar/alpha_255.webp', desc: 'Непрозрачный', label: 'hud_radar_alpha 255'},
+            {path:'/assets/radar/alpha_100.webp', desc: 'Полупрозрачный', label: 'hud_radar_alpha 100'}]}
+          />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_always_centered'>
       <td className='name'>hud_radar_always_centered</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Если `0`, карта на радаре используется полностью. Иначе игрок всегда будет в центре радара, даже у краев карты</td>
+      <td className='desc'>
+        <div className='text'>Если `0`, карта на радаре используется полностью. Иначе игрок всегда будет в центре радара, даже у краев карты</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_always_centered'
+          images={[
+            {path: '/assets/radar/non_centered.webp', desc: 'Игрок движется внутри круга радара', label: 'hud_radar_always_centered 0'},
+            {path:'/assets/radar/centered.webp', desc: 'Игрок всегда зафиксирован в центре круга радара', label: 'hud_radar_always_centered 1'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_bgcolor'>
       <td className='name'>hud_radar_bgcolor</td>
       <td className='def color'><div style={{background: `rgba(0,0,0,1.0)`, color: `#eee`}}>0 0 0 255</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Цвет фона радара (RGBA)</td>
+      <td className='desc'>
+        <div className='text'>Цвет заднего фона радара (RGBA)</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_bgcolor'
+          images={[
+            {path: '/assets/radar/bgcolor_white.webp', desc: 'Задний фон радара - Белый', label: 'hud_radar_bgcolor 255 255 255 255'},
+            {path:'/assets/radar/bgcolor_green.webp', desc: 'Задний фон радара - Зеленый', label: 'hud_radar_bgcolor 0 255 0 255'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_fgcolor'>
       <td className='name'>hud_radar_fgcolor</td>
       <td className='def color'><div style={{background: `rgba(0,0,0,0.8)`, color: `#eee`}}>0 0 0 220</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Цвет элементов (линий) на радаре (RGBA)</td>
+      <td className='desc'>
+        <div className='text'>Цвет переднего фона радара (RGBA)</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_fgcolor'
+          images={[
+            {path: '/assets/radar/fgcolor_white.webp', desc: 'Передний фон радара - Белый', label: 'hud_radar_fgcolor 255 255 255 255'},
+            {path:'/assets/radar/fgcolor_green.webp', desc: 'Передний фон радара - Зеленый', label: 'hud_radar_fgcolor 0 255 0 255'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_icon_scale_min'>
       <td className='name'>hud_radar_icon_scale_min</td>
       <td className='def'>0.3</td>
       <td className='min'>0.05</td>
       <td className='max'>1</td>
-      <td className='desc'>Устанавливает минимальный масштаб иконок на радаре (допустимые значения от 0.05 до 1.0)</td>
+      <td className='desc'>
+        <div className='text'>Устанавливает минимальный масштаб иконок на радаре (допустимые значения от 0.05 до 1.0)</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_icon_scale_min'
+          images={[
+            {path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Масштаб иконок', label: 'hud_radar_icon_scale_min 0.3'},
+            {path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Масштаб иконок', label: 'hud_radar_icon_scale_min 1.0'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_map_outlinecolor'>
       <td className='name'>hud_radar_map_outlinecolor</td>
       <td className='def color'><div style={{background: `rgba(10,10,10,1)`, color: `#eee`}}>10 10 10 255</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет обводки границ карты на радаре</td>
+      <td className='desc'>
+        <div className='text'>Устанавливает цвет обводки границ карты на радаре<br/>Работает только если задана толщинца обводки <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_map_outlinecolor'
+          images={[
+            {path: '/assets/radar/map_outlinecolor_default.webp', desc: 'Без обводки', label: 'hud_radar_map_outlinecolor 0'},
+            {path:'/assets/radar/map_outlinecolor_white.webp', desc: 'С белой обводкой', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_map_outlinethickness'>
       <td className='name'>hud_radar_map_outlinethickness</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает толщину обводки границ карты на радаре</td>
+      <td className='desc'>
+        <div className='text'>Устанавливает толщину обводки границ карты на радаре</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_map_outlinethickness'
+          images={[
+            {path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Толщина обводки', label: 'hud_radar_map_outlinethickness 2'},
+            {path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Толщина обводки', label: 'hud_radar_map_outlinethickness 4'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_map_shadecolor'>
       <td className='name'>hud_radar_map_shadecolor</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет заливки для отрисовки карты</td>
+      <td className='desc'>
+        <div className='text'>Устанавливает цвет оттенка карты</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_map_shadecolor'
+          images={[
+            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Без оттенка карты', label: 'hud_radar_map_shadecolor 0'},
+            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Зеленый оттенок карты', label: 'hud_radar_map_shadecolor 4'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_map_solidcolor'>
       <td className='name'>hud_radar_map_solidcolor</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает сплошной цвет для отрисовки карты</td>
+      <td className='desc'>
+        <div className='text'>Устанавливает сплошной цвет карты</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_map_solidcolor'
+          images={[
+            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'Без сплошного цвета карты', label: 'hud_radar_map_solidcolor 0'},
+            {path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Сплошной серый цвет карты', label: 'hud_radar_map_solidcolor 110 110 110'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_mapscale'>
       <td className='name'>hud_radar_mapscale</td>
       <td className='def'>0.9</td>
       <td className='min'>0.2</td>
       <td className='max'>3.5</td>
-      <td className='desc'>Регулирует масштаб карты на радаре</td>
+      <td className='desc'>
+        <div className='text'>Задает масштаб карты на радаре</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_mapscale'
+          images={[
+            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Масштаб карты', label: 'hud_radar_mapscale 0.9'},
+            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Отдаленный масштаб карты', label: 'hud_radar_mapscale 0.5'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_mapscale_dynamic'>
       <td className='name'>hud_radar_mapscale_dynamic</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает динамическое масштабирование радара, чтобы вместить все обнаруженные объекты</td>
+      <td className='desc'>
+        <div className='text'>Включает динамическое масштабирование карты, чтобы вместить всех видимых игроков на радаре</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_mapscale_dynamic'
+          images={[
+            {path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Масштаб карты - постоянный', label: 'hud_radar_mapscale_dynamic 0'},
+            {path:'/assets/radar/mapscale_dynamic.webp', desc: 'Масштаб карты - автоматически масштабируется', label: 'hud_radar_mapscale_dynamic 1'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_mapscale_dynamic_min'>
       <td className='name'>hud_radar_mapscale_dynamic_min</td>
       <td className='def'>0.5</td>
       <td className='min'>0.01</td>
       <td className='max'>3.5</td>
-      <td className='desc'>Устанавливает минимальный порог масштабирования, чтобы карта не становилась слишком мелкой при динамическом масштабировании. (Масштаб 0.5 в большинстве случаев покрывает всю карту)</td>
+      <td className='desc'>Устанавливает минимальный порог масштабирования, чтобы карта не становилась слишком мелкой при динамическом масштабировании. (Масштаб 0.5 в большинстве случаев покрывает всю карту)<br/><br/>См. <a href='#hud_radar_mapscale_dynamic'>hud_radar_mapscale_dynamic</a></td>
     </tr>
     <tr className='added' id='hud_radar_objectives'>
       <td className='name'>hud_radar_objectives</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отображение целей (например, мест для закладки бомбы) на радаре</td>
+      <td className='desc'>
+        <div className='text'>Включает отображение целей (например, мест для закладки бомбы) на радаре</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_objectives'
+          images={[
+            {path: '/assets/radar/objectives_off.webp', desc: 'На карте не отображаются цели', label: 'hud_radar_objectives 0'},
+            {path:'/assets/radar/objectives_on.webp', desc: 'На карте отображаются цели', label: 'hud_radar_objectives 1'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_panel_pos'>
       <td className='name'>hud_radar_panel_pos</td>
@@ -625,7 +767,19 @@ sidebar_position: 1
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает вращение радара вместе с игроком</td>
+      <td className='desc'>
+        <div className='text'>Включает вращение карты вместе с игроком</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_rotate'
+          images={[
+            {path: '/assets/radar/radar_rotate_off.webp', desc: 'Карта не вращается', label: 'hud_radar_rotate 0'},
+            {path:'/assets/radar/radar_rotate_on.webp', desc: 'Карта вращается вместе с игроком', label: 'hud_radar_rotate 1'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_scale'>
       <td className='name'>hud_radar_scale</td>
@@ -646,7 +800,19 @@ sidebar_position: 1
       <td className='def color'><div style={{background: `rgba(158,158,158,0.85)`, color:`var(--ifm-font-color-base)`}}>158 158 158</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Цвет формы модуля радара (RGB)</td>
+      <td className='desc'>
+        <div className='text'>Цвет формы модуля вокруг радара (RGB)<br/><br/>Не рекомендуется использовать красные оттенки цвета, модуль радара пульсирует только красным цветом во время установленный бомбы</div>
+        <SliderButtonCompare
+          buttonName='Пример'
+          boundsPadding={29}
+          className='radar-halo'
+          title='hud_radar_shapecolor'
+          images={[
+            {path: '/assets/radar/module_shapecolor_default.webp', desc: 'Светло-серый модуль радара', label: 'hud_radar_shapecolor 158 158 158'},
+            {path:'/assets/radar/module_shapecolor_green.webp', desc: 'Зеленый модуль радара', label: 'hud_radar_shapecolor 0 200 0'}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_showhealth'>
       <td className='name'>hud_radar_showhealth</td>
@@ -796,7 +962,7 @@ sidebar_position: 1
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Задает положение списка убийств<br/>`0` слева<br/>1` справа</td>
+      <td className='desc'>Задает положение списка убийств<br/>`0` слева<br/>`1` справа</td>
     </tr>
     <tr className='added' id='hud_deathnotice_style'>
       <td className='name'>hud_deathnotice_style</td>
@@ -4466,6 +4632,9 @@ sidebar_position: 1
       <td><a href='#cl_smokegren_debug'>cl_smokegren_debug</a></td>
       <td><a href='#host_timescale'>host_timescale</a></td>
       <td><a href='#gl_wireframe'>gl_wireframe</a></td>
+    </tr>
+    <tr>
+      <td colSpan='5'><a href='#dev_console'>dev_console</a></td>
     </tr>
   </tbody>
 </table>
