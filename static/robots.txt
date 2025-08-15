@@ -3,5 +3,3 @@ Allow: /
 
 Sitemap: https://gold-plus.github.io/sitemap.xml
 Sitemap: https://gold-plus.github.io/en/sitemap.xml
-
-# Algolia-Crawler-Verif: A204ABF109BAB9AB

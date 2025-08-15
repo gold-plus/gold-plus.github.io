@@ -5,12 +5,12 @@ import * as path from 'path';
 import ConfigLocalized from './docusaurus.config.localized.json';
 
 const defaultLocale = 'ru';
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
 const repoName = 'gold-plus';
 const webSite = 'https://gold-plus.github.io';
 
 function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
-  const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
   const values = ConfigLocalized[key];
   if (!values) {
     throw new Error(`Localized config key=${key} not found`);
@@ -39,7 +39,8 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://' + repoName,
+  url: webSite,
+
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -78,7 +79,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/' + repoName + '/' + repoName + '.io/tree/master/',
+            'https://github.com/' + repoName + '/' + repoName + '.github.io/tree/master/',
         },
         theme: {
           customCss: './src/css/theme.css',
@@ -95,7 +96,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.svg',
+    image: currentLocale === 'en' ?
+      'img/goldclient-social-card-en.png' :
+      'img/goldclient-social-card.png',
     navbar: {
       title: 'Home',
       logo: {

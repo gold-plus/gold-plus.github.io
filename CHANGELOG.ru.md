@@ -82,12 +82,12 @@
 - Исправлена ошибка предикта приседания игрока за которым наблюдает зритель от 1-го лица (vanilla bug)
 - Исправлена временная шкала GameUI во время просмотра демо, временная шкала не соответствовала стартовой позиции демки (vanilla bug)
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 3
+#### Тестеры 3
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
@@ -176,12 +176,12 @@
 - Исправлена ошибка с очень низкими FPS на карте, которая не содержит lightmaps, например если карта скомпилирована без hlrad (vanilla bug)
 - Незначительные исправления ошибок
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 3
+#### Тестеры 3
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -340,12 +340,12 @@
 - Исправлено зависание в клиентской функции `UTIL_GetNextBestWeapon` (@wopox1337)
 - Выключено плавное перемещение к позиции других игроков при наблюдении за игроком (`cl_smoothtime` больше не работает в режима от 1-го лица)
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 2
+#### Тестеры 2
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -370,12 +370,12 @@
 - Исправлен баг с блокировкой мыши в игре после смены карты
 - Исправлен баг с прыгающим курсором, если окно игры было не в фокусе
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 1
+#### Тестеры 1
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -393,12 +393,12 @@
 
 <!-- truncate -->
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 1
+#### Тестеры 1
 <!-- testers -->
 
 - resobatata ([@resobatata](https://github.com/resobatata))
@@ -470,12 +470,12 @@
 - Снято ограничение с ConVar `r_dynamic`
   Можно отключать динамическое освещение в многопользовательском режиме, из-за слабой производительности на некоторых видеокартах `AMD/nVidia`
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 2
+#### Тестеры 2
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -508,12 +508,12 @@
 - Исправлена утечка памяти `DetailTextures` с `r_detailtextures 0`
 - Исправлена утечка памяти в системе коротких фраз VOX
 
-#### Авторы: 1
+#### Авторы 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры: 1
+#### Тестеры 1
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))

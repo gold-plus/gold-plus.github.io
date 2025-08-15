@@ -82,12 +82,12 @@
 - Fixed prediction bug ducking of a player spectating by a 1st-person observer (vanilla bug)
 - Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo (vanilla bug)
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 3
+#### Testers 3
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
@@ -177,12 +177,12 @@
 - Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map (vanilla bug)
 - Minor bugfixes
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 3
+#### Testers 3
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -341,12 +341,12 @@
 - Fixed a hang in client function `UTIL_GetNextBestWeapon` (@wopox1337)
 - Position simulation is disabled when observing players (`cl_smoothtime` no longer works in eye mode)
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 2
+#### Testers 2
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -371,12 +371,12 @@
 - Fixed a bug with a locked mouse in the game after changing level
 - Fixed a bug with a jumping cursor when the game is not in focus
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 1
+#### Testers 1
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -394,12 +394,12 @@
 
 <!-- truncate -->
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 1
+#### Testers 1
 <!-- testers -->
 
 - resobatata ([@resobatata](https://github.com/resobatata))
@@ -471,12 +471,12 @@
 - Removed restriction ConVar `r_dynamic`
   You can feel free to disable dynamic light in multi-player for performance reasons on `AMD/nVidia` GPU's
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 2
+#### Testers 2
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -509,12 +509,12 @@
 - Fixed memory leak `DetailTextures` with `r_detailtextures 0`
 - Fixed memory leak VOX sentence system
 
-#### Authors: 1
+#### Authors 1
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers: 1
+#### Testers 1
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
