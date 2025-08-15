@@ -4,7 +4,7 @@ title: Console variables
 sidebar_position: 1
 ---
 
-import { SliderButton, SliderButtonCompare } from '@site/src/components/Image'
+import { SliderButton } from '@site/src/components/Image'
 
 :::warning Page under construction
 This page is under active filling and correction.<br/>
@@ -533,9 +533,10 @@ List of all console variables (ConVar) - description, default values.
         <div className='text'>Adjusts radar transparency (0 - 255)</div>
         <SliderButton
           buttonName='Preview'
-          images={[
-            {path: '/assets/radar/alpha_255.webp', desc: 'Opaque', label: 'hud_radar_alpha 255'},
-            {path:'/assets/radar/alpha_100.webp', desc: 'Translucent', label: 'hud_radar_alpha 100'}]}
+          slides={[
+            {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Opaque', label: 'hud_radar_alpha 255'},
+            {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Translucent', label: 'hud_radar_alpha 100'}
+          ]}
           />
       </td>
     </tr>
@@ -546,14 +547,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>If `0`, the radar map is fully utilized. Otherwise, the player is always centered on the radar, even at the map edges</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_always_centered'
-          images={[
-            {path: '/assets/radar/non_centered.webp', desc: 'The player moves within the radar circle', label: 'hud_radar_always_centered 0'},
-            {path:'/assets/radar/centered.webp', desc: 'The player is always fixed in the center of the radar circle', label: 'hud_radar_always_centered 1'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/non_centered.webp', desc: 'The player moves within the radar circle', label: 'hud_radar_always_centered 0'},
+                {path:'/assets/radar/centered.webp', desc: 'The player is always fixed in the center of the radar circle', label: 'hud_radar_always_centered 1'}
+              ]}
           ]}
         />
       </td>
@@ -565,14 +568,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Background color of the radar (RGBA)</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_bgcolor'
-          images={[
-            {path: '/assets/radar/bgcolor_white.webp', desc: 'Radar background - White', label: 'hud_radar_bgcolor 255 255 255 255'},
-            {path:'/assets/radar/bgcolor_green.webp', desc: 'Radar background - Green', label: 'hud_radar_bgcolor 0 255 0 255'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/bgcolor_white.webp', desc: 'Radar background - White', label: 'hud_radar_bgcolor 255 255 255 255'},
+                {path:'/assets/radar/bgcolor_green.webp', desc: 'Radar background - Green', label: 'hud_radar_bgcolor 0 255 0 255'}
+              ]}
           ]}
         />
       </td>
@@ -584,14 +589,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Foreground color of the radar (RGBA)</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_fgcolor'
-          images={[
-            {path: '/assets/radar/fgcolor_white.webp', desc: 'Radar foreground - White', label: 'hud_radar_fgcolor 255 255 255 255'},
-            {path:'/assets/radar/fgcolor_green.webp', desc: 'Radar foreground - Green', label: 'hud_radar_fgcolor 0 255 0 255'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/fgcolor_white.webp', desc: 'Radar foreground - White', label: 'hud_radar_fgcolor 255 255 255 255'},
+                {path:'/assets/radar/fgcolor_green.webp', desc: 'Radar foreground - Green', label: 'hud_radar_fgcolor 0 255 0 255'}
+              ]}
           ]}
         />
       </td>
@@ -603,14 +610,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>1</td>
       <td className='desc'>
         <div className='text'>Sets the minimum icon scale on the radar (valid values are 0.05 to 1.0)</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_icon_scale_min'
-          images={[
-            {path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Icon scale', label: 'hud_radar_icon_scale_min 0.3'},
-            {path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Icon scale', label: 'hud_radar_icon_scale_min 1.0'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Icon scale', label: 'hud_radar_icon_scale_min 0.3'},
+                {path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Icon scale', label: 'hud_radar_icon_scale_min 1.0'}
+              ]}
           ]}
         />
       </td>
@@ -622,14 +631,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Sets the color of the map border outline on the radar (RGBA)<br/>Only works if the outline thickness is set with <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_outlinecolor'
-          images={[
-            {path: '/assets/radar/map_outlinecolor_default.webp', desc: 'No outline', label: 'hud_radar_map_outlinecolor 0'},
-            {path:'/assets/radar/map_outlinecolor_white.webp', desc: 'With white outline', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/map_outlinecolor_default.webp', desc: 'No outline', label: 'hud_radar_map_outlinecolor 0'},
+                {path:'/assets/radar/map_outlinecolor_white.webp', desc: 'With white outline', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+              ]}
           ]}
         />
       </td>
@@ -641,14 +652,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Sets the thickness of the map border outline on the radar</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_outlinethickness'
-          images={[
-            {path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Outline thickness', label: 'hud_radar_map_outlinethickness 2'},
-            {path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Outline thickness', label: 'hud_radar_map_outlinethickness 4'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Outline thickness', label: 'hud_radar_map_outlinethickness 2'},
+                {path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Outline thickness', label: 'hud_radar_map_outlinethickness 4'}
+              ]}
           ]}
         />
       </td>
@@ -660,14 +673,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Sets the map's shade color (RGB)</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_shadecolor'
-          images={[
-            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'No map shade', label: 'hud_radar_map_shadecolor 0'},
-            {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Green map shade', label: 'hud_radar_map_shadecolor 0 255 0'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/map_shadecolor_default.webp', desc: 'No map shade', label: 'hud_radar_map_shadecolor 0'},
+                {path:'/assets/radar/map_shadecolor_green.webp', desc: 'Green map shade', label: 'hud_radar_map_shadecolor 0 255 0'}
+              ]}
           ]}
         />
       </td>
@@ -679,14 +694,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Sets a solid color for the map (RGB)</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_solidcolor'
-          images={[
-            {path: '/assets/radar/map_shadecolor_default.webp', desc: 'No solid map color', label: 'hud_radar_map_solidcolor 0'},
-            {path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Solid gray map color', label: 'hud_radar_map_solidcolor 110 110 110'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/map_shadecolor_default.webp', desc: 'No solid map color', label: 'hud_radar_map_solidcolor 0'},
+                {path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Solid gray map color', label: 'hud_radar_map_solidcolor 110 110 110'}
+              ]}
           ]}
         />
       </td>
@@ -698,14 +715,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>3.5</td>
       <td className='desc'>
         <div className='text'>Sets the map scale on the radar</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_mapscale'
-          images={[
-            {path: '/assets/radar/mapscale_0_9.webp', desc: 'Map scale - zoomed-in', label: 'hud_radar_mapscale 0.9'},
-            {path:'/assets/radar/mapscale_0_5.webp', desc: 'Map scale - zoomed-out', label: 'hud_radar_mapscale 0.5'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/mapscale_0_9.webp', desc: 'Map scale - zoomed-in', label: 'hud_radar_mapscale 0.9'},
+                {path:'/assets/radar/mapscale_0_5.webp', desc: 'Map scale - zoomed-out', label: 'hud_radar_mapscale 0.5'}
+              ]}
           ]}
         />
       </td>
@@ -717,14 +736,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Enables dynamic map scaling to fit all available players on the radar.</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_mapscale_dynamic'
-          images={[
-            {path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Map scale - constant', label: 'hud_radar_mapscale_dynamic 0'},
-            {path:'/assets/radar/mapscale_dynamic.webp', desc: 'Map scale - auto-scales', label: 'hud_radar_mapscale_dynamic 1'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Map scale - constant', label: 'hud_radar_mapscale_dynamic 0'},
+                {path:'/assets/radar/mapscale_dynamic.webp', desc: 'Map scale - auto-scales', label: 'hud_radar_mapscale_dynamic 1'}
+              ]}
           ]}
         />
       </td>
@@ -743,14 +764,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Enables the display of objectives (e.g., bomb sites) on the radar</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_objectives'
-          images={[
-            {path: '/assets/radar/objectives_off.webp', desc: 'Objectives are not shown on the map', label: 'hud_radar_objectives 0'},
-            {path:'/assets/radar/objectives_on.webp', desc: 'Objectives are shown on the map', label: 'hud_radar_objectives 1'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/objectives_off.webp', desc: 'Objectives are not shown on the map', label: 'hud_radar_objectives 0'},
+                {path:'/assets/radar/objectives_on.webp', desc: 'Objectives are shown on the map', label: 'hud_radar_objectives 1'}
+              ]}
           ]}
         />
       </td>
@@ -769,14 +792,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Enables map rotation along with the player</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_rotate'
-          images={[
-            {path: '/assets/radar/radar_rotate_off.webp', desc: 'Map does not rotate', label: 'hud_radar_rotate 0'},
-            {path:'/assets/radar/radar_rotate_on.webp', desc: 'Map rotates with the player', label: 'hud_radar_rotate 1'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/radar_rotate_off.webp', desc: 'Map does not rotate', label: 'hud_radar_rotate 0'},
+                {path:'/assets/radar/radar_rotate_on.webp', desc: 'Map rotates with the player', label: 'hud_radar_rotate 1'}
+              ]}
           ]}
         />
       </td>
@@ -802,14 +827,16 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Color of the module shape around the radar (RGB)<br/><br/>It is not recommended to use red shades, as the radar module pulses red when the bomb is planted</div>
-        <SliderButtonCompare
+        <SliderButton
           buttonName='Preview'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_shapecolor'
-          images={[
-            {path: '/assets/radar/module_shapecolor_default.webp', desc: 'Light gray radar module', label: 'hud_radar_shapecolor 158 158 158'},
-            {path:'/assets/radar/module_shapecolor_green.webp', desc: 'Green radar module', label: 'hud_radar_shapecolor 0 200 0'}
+          slides={[
+            {type: 'compare',
+              images: [
+                {path: '/assets/radar/module_shapecolor_default.webp', desc: 'Light gray radar module', label: 'hud_radar_shapecolor 158 158 158'},
+                {path:'/assets/radar/module_shapecolor_green.webp', desc: 'Green radar module', label: 'hud_radar_shapecolor 0 200 0'}
+              ]}
           ]}
         />
       </td>

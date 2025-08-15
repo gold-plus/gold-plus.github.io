@@ -369,6 +369,10 @@
     "message": "Перейти к основному содержимому",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
+  "theme.common.copyFeedback": {
+    "message": "Текст скопирован",
+    "description": "The copy feedback label when text-copy button is pressed"
+  },
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"

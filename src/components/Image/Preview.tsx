@@ -2,16 +2,16 @@ import React, { useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { PhotoSlider, PhotoProvider, PhotoView } from 'react-photo-view';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'react-photo-view/dist/react-photo-view.css';
 
 import styles from './styles.module.css';
-import type { ImagePreviewProps } from './types';
+import type { PreviewProps } from './types';
 
-export const Preview: React.FC<ImagePreviewProps> = ({
+export const Preview: React.FC<PreviewProps> = ({
   images,
   autoplay = true,
   maskOpacity = 0.9

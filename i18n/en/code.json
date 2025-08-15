@@ -369,6 +369,10 @@
     "message": "Skip to main content",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
+  "theme.common.copyFeedback": {
+    "message": "Text copied to clipboard",
+    "description": "The copy feedback label when text-copy button is pressed"
+  },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
