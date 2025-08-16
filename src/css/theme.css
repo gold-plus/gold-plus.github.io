@@ -53,10 +53,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 
   --docs-anchor-highlighted-color: rgba(255, 200, 100, 0.4);
-  --docs-table-added-bg-color-even: rgb(230, 248, 230, 0.4);
-  --docs-table-added-bg-color-odd: rgb(230, 248, 230, 0.65);
-  --docs-table-modified-bg-color-even: rgb(235, 235, 186, 0.2);
-  --docs-table-modified-bg-color-odd: rgb(235, 235, 186, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -98,12 +94,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 
   --docs-anchor-highlighted-color: rgba(255, 180, 50, 0.35);
-
-  --docs-table-added-bg-color-even: rgba(40, 120, 90, 0.2);
-  --docs-table-added-bg-color-odd: rgba(40, 120, 90, 0.3);
-
-  --docs-table-modified-bg-color-even: rgba(120, 120, 60, 0.3);
-  --docs-table-modified-bg-color-odd: rgba(120, 120, 60, 0.4);
 }
 
 @media (min-width: 1460px) {
@@ -310,111 +300,32 @@ html.plugin-docs.docs-wrapper .container {
     --ifm-col-width: calc(7 / 12 * 100%);
 }*/
 
-
-html.plugin-docs {
-  --doc-sidebar-width: 400px;
+@media (min-width: 1920px) {
+  html.plugin-docs {
+    --doc-sidebar-width: 400px;
+  }
 }
 
 .container .row .col--3 {
   --ifm-col-width: calc(3 / 17 * 100%);
 }
 
-.docs-table {
-  width: 100%;
-  display: table;
-  border-collapse: collapse;
-}
-
-table.docs-table th,
-table.docs-table td {
-  padding: 8px 12px;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-table.docs-table th,
-table.docs-table .title,
-table.docs-table .def,
-table.docs-table .min,
-table.docs-table .max {
-  text-align: center;
-}
-
-.docs-table .name {
-  width: 30%;
-}
-
-.docs-table .min,
-.docs-table .max {
-  width: 7%;
-}
-
-table.docs-table .def {
-  width: 15%;
-}
-
-table.docs-table .desc {
-  width: auto;
-  display: table-cell;
-}
-
-table.docs-table .desc > button {
-  display: table-row;
-}
-
-@media (max-width: 996px) {
-  .docs-table td,
-  .docs-table th {
-    padding: 4px 6px;
-    text-align: left;
-  }
+@media (max-width: 1440px) {
   html.plugin-docs {
-    --doc-sidebar-width: 200px;
+    --doc-sidebar-width: 300px;
   }
 }
 
 @media (max-width: 1120px) {
   html.plugin-docs {
-    --doc-sidebar-width: 250px;
+    --doc-sidebar-width: 200px;
   }
 }
 
-table.docs-table .modified a {
-  color: #f9a825;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-tbody tr.added:nth-of-type(even) {
-  background-color: var(--docs-table-added-bg-color-even);
-}
-
-tbody tr.added:nth-of-type(odd) {
-  background-color: var(--docs-table-added-bg-color-odd);
-}
-
-tbody tr.modified:nth-of-type(even) {
-  background-color: var(--docs-table-modified-bg-color-even);
-}
-
-tbody tr.modified:nth-of-type(odd) {
-  background-color: var(--docs-table-modified-bg-color-odd);
-}
-
-table.docs-table .default {
-  background-color: transparent;
-}
-
-table.docs-table .default {
-  color: inherit;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-table.docs-table .def.color > div {
-  border-radius: 6px;
-  box-shadow: 0 0 2px 0px var(--ifm-color-primary);
+@media (max-width: 996px) {
+  html.plugin-docs {
+    --doc-sidebar-width: 100px;
+  }
 }
 
 .table-legend {

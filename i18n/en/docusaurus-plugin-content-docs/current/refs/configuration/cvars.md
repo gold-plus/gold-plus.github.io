@@ -5,6 +5,7 @@ sidebar_position: 1
 ---
 
 import { SliderButton } from '@site/src/components/Image'
+import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 
 :::warning Page under construction
 This page is under active filling and correction.<br/>
@@ -23,7 +24,7 @@ List of all console variables (ConVar) - description, default values.
 </div>
 
 ## User Interface
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='name'>
@@ -69,10 +70,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Enables 'shadow' keybindings when on a game server.<br/>Any keybindings set by the server are not saved to the player's config</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### UI : Preferences
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='cl_servers_history_lastplayed'>
@@ -133,10 +134,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Enables the new VGUI style menu with images and descriptions</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### UI : Console
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='dev_console'>
@@ -182,10 +183,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>When set to `1`, the console opens only when Shift + ~ (tilde) is pressed</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### HUD
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='hud_draw'>
@@ -308,10 +309,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>The print speed of text messages on the screen</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Crosshair
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='crosshair'>
@@ -511,10 +512,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Displays the crosshair in spectator mode</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Radar
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_radar'>
@@ -915,10 +916,10 @@ List of all console variables (ConVar) - description, default values.
       <td colSpan='5' className='name'><a href='#cl_radartype'>cl_radartype</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Death Notice
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_deathnotice_draw'>
@@ -1006,10 +1007,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Time in seconds that kill notifications are displayed</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Scoreboard
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='scoreboard_shortheaders'>
@@ -1062,10 +1063,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Display a speaker icon for talking players in the scoreboard</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Spectator
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='spec_autodirector'>
@@ -1118,10 +1119,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Enables/disables the scoreboard display in spectator mode</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Chat / Text
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_message'>
@@ -1174,10 +1175,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Time chat messages are displayed (in seconds)</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Speedometer
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_speedometer'>
@@ -1209,10 +1210,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Speedometer position on the Y-axis</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Movement
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='cl_upspeed'>
@@ -1272,10 +1273,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Speed of changing the horizontal view angle (left/right) with the keyboard</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Mouse Control
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='sensitivity'>
@@ -1573,10 +1574,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Joystick deadzone for horizontal view</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Camera
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='c_maxdistance'>
@@ -1720,10 +1721,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Index of the model bone for the camera to follow.<br/>`-2` disabled<br/>`-1` root bone<br/>`0+` bone index</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Viewmodel
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='viewsize'>
@@ -1961,10 +1962,10 @@ List of all console variables (ConVar) - description, default values.
       <td colSpan='5' className='name'><a href='#r_drawviewmodel'>r_drawviewmodel</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Visual Effects
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='cl_weather'>
@@ -2258,10 +2259,10 @@ List of all console variables (ConVar) - description, default values.
       <td colSpan='5' className='name'><a href='#r_decals'>r_decals</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Video
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='fps_max'>
@@ -2825,10 +2826,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Sets the quality of smoke sprites.<br/>`0` high quality<br/>`1` medium quality<br/>`2` low quality<br/>Lower quality improves performance</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Audio/Voice
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='volume'>
@@ -3224,10 +3225,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Load sounds in 8-bit quality to save memory</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Network
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='ip'>
@@ -3378,10 +3379,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Port of the remote server for sending rcon commands</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### Network : Client
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='rate'>
@@ -3647,10 +3648,10 @@ List of all console variables (ConVar) - description, default values.
       <td colSpan='5' className='name'><a href='#r_bmodelinterp'>r_bmodelinterp</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### Network : Client : Connection
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='cl_dlmax'>
@@ -3745,10 +3746,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Allow uploading your custom spray to the server upon connection</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Server
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='hostname'>
@@ -4494,10 +4495,10 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Log server activity to a file</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Window & Input Settings
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='sdl_double_click_size'>
@@ -4529,40 +4530,29 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Enable immediate event polling, bypassing SDL_WaitEventTimeout with a zero timeout (for debugging)</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Render Tweaks for Performance
 <h5>CVars related to rendering that can impact game performance, both positively and negatively.<br/>Adjust these settings to optimize FPS or control the number of visual effects like particles, laser beams, etc.</h5>
-<table>
-  <tbody>
-    <tr>
-      <td><a href='#fps_max'>fps_max</a></td>
-      <td><a href='#gl_zmax'>gl_zmax</a></td>
-      <td><a href='#r_maxbeams'>r_maxbeams</a></td>
-    </tr>
-    <tr>
-      <td><a href='#max_shells'>max_shells</a></td>
-      <td><a href='#max_smokepuffs'>max_smokepuffs</a></td>
-      <td><a href='#cl_weather'>cl_weather</a></td>
-    </tr>
-    <tr>
-      <td><a href='#cl_minmodels'>cl_minmodels</a></td>
-      <td><a href='#cl_minviewmodel'>cl_minviewmodel</a></td>
-      <td><a href='#r_dynamic'>r_dynamic</a></td>
-    </tr>
-    <tr>
-      <td><a href='#r_decals'>r_decals</a></td>
-      <td><a href='#r_detailtextures'>r_detailtextures</a></td>
-      <td><a href='#fastsprites'>fastsprites</a></td>
-    </tr>
-    <tr>
-      <td colSpan='3'><a href='#gl_msaa'>gl_msaa</a></td>
-    </tr>
-  </tbody>
-</table>
+<Grid minItemWidth="250px">
+  <div><a href='#fps_max'>fps_max</a></div>
+  <div><a href='#gl_zmax'>gl_zmax</a></div>
+  <div><a href='#r_maxbeams'>r_maxbeams</a></div>
+  <div><a href='#max_shells'>max_shells</a></div>
+  <div><a href='#max_smokepuffs'>max_smokepuffs</a></div>
+  <div><a href='#cl_weather'>cl_weather</a></div>
+  <div><a href='#cl_minmodels'>cl_minmodels</a></div>
+  <div><a href='#cl_minviewmodel'>cl_minviewmodel</a></div>
+  <div><a href='#r_dynamic'>r_dynamic</a></div>
+  <div><a href='#r_decals'>r_decals</a></div>
+  <div><a href='#r_detailtextures'>r_detailtextures</a></div>
+  <div><a href='#fastsprites'>fastsprites</a></div>
+  <div><a href='#gl_msaa'>gl_msaa</a></div>
+</Grid>
+
 
 ## Developer / Debug
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Name</th><th>Default</th><th>Min</th><th>Max</th><th>Description</th></tr></thead>
   <tbody>
     <tr id='developer'>
@@ -4622,46 +4612,32 @@ List of all console variables (ConVar) - description, default values.
       <td className='desc'>Show particle manager statistics</td>
     </tr>
   </tbody>
-</table>
-<table>
-  <tbody>
-    <tr>
-      <td><a href='#cl_showmessages'>cl_showmessages</a></td>
-      <td><a href='#cl_shownet'>cl_shownet</a></td>
-      <td><a href='#cl_showerror'>cl_showerror</a></td>
-      <td><a href='#cl_showevents'>cl_showevents</a></td>
-      <td><a href='#cl_showfps'>cl_showfps</a></td>
-    </tr>
-    <tr>
-      <td><a href='#s_show'>s_show</a></td>
-      <td><a href='#snd_show'>snd_show</a></td>
-      <td><a href='#net_graph'>net_graph</a></td>
-      <td><a href='#net_showdrop'>net_showdrop</a></td>
-      <td><a href='#net_showpackets'>net_showpackets</a></td>
-    </tr>
-    <tr>
-      <td><a href='#voice_showchannels'>voice_showchannels</a></td>
-      <td><a href='#voice_showincoming'>voice_showincoming</a></td>
-      <td><a href='#r_drawentities'>r_drawentities</a></td>
-      <td><a href='#r_showinfo'>r_showinfo</a></td>
-      <td><a href='#r_showparticles'>r_showparticles</a></td>
-    </tr>
-    <tr>
-      <td><a href='#r_speeds'>r_speeds</a></td>
-      <td><a href='#r_novis'>r_novis</a></td>
-      <td><a href='#r_lockcull'>r_lockcull</a></td>
-      <td><a href='#r_lockpvs'>r_lockpvs</a></td>
-      <td><a href='#r_drawviewmodel'>r_drawviewmodel</a></td>
-    </tr>
-    <tr>
-      <td><a href='#weapon_debug_spread_gap'>weapon_debug_spread_gap</a></td>
-      <td><a href='#weapon_debug_spread_show'>weapon_debug_spread_show</a></td>
-      <td><a href='#cl_smokegren_debug'>cl_smokegren_debug</a></td>
-      <td><a href='#host_timescale'>host_timescale</a></td>
-      <td><a href='#gl_wireframe'>gl_wireframe</a></td>
-    </tr>
-    <tr>
-      <td colSpan='5'><a href='#dev_console'>dev_console</a></td>
-    </tr>
-  </tbody>
-</table>
+</Table>
+<Grid minItemWidth="250px">
+  <div><a href='#cl_showmessages'>cl_showmessages</a></div>
+  <div><a href='#cl_shownet'>cl_shownet</a></div>
+  <div><a href='#cl_showerror'>cl_showerror</a></div>
+  <div><a href='#cl_showevents'>cl_showevents</a></div>
+  <div><a href='#cl_showfps'>cl_showfps</a></div>
+  <div><a href='#s_show'>s_show</a></div>
+  <div><a href='#snd_show'>snd_show</a></div>
+  <div><a href='#net_graph'>net_graph</a></div>
+  <div><a href='#net_showdrop'>net_showdrop</a></div>
+  <div><a href='#net_showpackets'>net_showpackets</a></div>
+  <div><a href='#voice_showchannels'>voice_showchannels</a></div>
+  <div><a href='#voice_showincoming'>voice_showincoming</a></div>
+  <div><a href='#r_drawentities'>r_drawentities</a></div>
+  <div><a href='#r_showinfo'>r_showinfo</a></div>
+  <div><a href='#r_showparticles'>r_showparticles</a></div>
+  <div><a href='#r_speeds'>r_speeds</a></div>
+  <div><a href='#r_novis'>r_novis</a></div>
+  <div><a href='#r_lockcull'>r_lockcull</a></div>
+  <div><a href='#r_lockpvs'>r_lockpvs</a></div>
+  <div><a href='#r_drawviewmodel'>r_drawviewmodel</a></div>
+  <div><a href='#weapon_debug_spread_gap'>weapon_debug_spread_gap</a></div>
+  <div><a href='#weapon_debug_spread_show'>weapon_debug_spread_show</a></div>
+  <div><a href='#cl_smokegren_debug'>cl_smokegren_debug</a></div>
+  <div><a href='#host_timescale'>host_timescale</a></div>
+  <div><a href='#gl_wireframe'>gl_wireframe</a></div>
+  <div><a href='#dev_console'>dev_console</a></div>
+</Grid>

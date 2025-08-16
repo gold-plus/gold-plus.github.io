@@ -5,6 +5,7 @@ sidebar_position: 1
 ---
 
 import { SliderButton } from '@site/src/components/Image'
+import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 
 :::warning Страница в разработке
 Эта страница находится в стадии активного наполнения и корректирования.<br/>
@@ -23,7 +24,7 @@ import { SliderButton } from '@site/src/components/Image'
 </div>
 
 ## Интерфейс
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='name'>
@@ -69,10 +70,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Включает возможность использовать 'теневую' привязку клавиш при нахождении на игровом сервере.<br/>Любые привязки клавиш, установленные сервером, не сохраняются в конфиг игрока</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### Интерфейс : Настройки
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='cl_servers_history_lastplayed'>
@@ -133,10 +134,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Включает меню в новом стиле VGUI с изображениями и описаниями</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### Интерфейс : Консоль
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='dev_console'>
@@ -182,10 +183,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>При значении `1` консоль открывается только при нажатии Shift + ~ (тильда)</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### HUD
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='hud_draw'>
@@ -308,10 +309,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Скорость печати текстовых сообщений на экране</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Прицел
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='crosshair'>
@@ -511,10 +512,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Отображает прицел в режиме наблюдателя</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Радар
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_radar'>
@@ -928,10 +929,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td colSpan='5' className='name'><a href='#cl_radartype'>cl_radartype</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Уведомление о смерти
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_deathnotice_draw'>
@@ -1019,10 +1020,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Время отображения уведомлений об убийствах в секундах</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Таблица счета
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='scoreboard_shortheaders'>
@@ -1075,10 +1076,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Отображать иконку говорящего игрока в таблице счёта</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Режим наблюдателя
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='spec_autodirector'>
@@ -1131,10 +1132,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Включает/выключает отображение таблицы счёта в режиме наблюдателя</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Чат / Текст
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_message'>
@@ -1187,10 +1188,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Время отображения сообщений в чате (в секундах)</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### HUD : Спидометр
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr className='added' id='hud_speedometer'>
@@ -1222,10 +1223,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Позиция спидометра по оси Y</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Передвижение
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='cl_upspeed'>
@@ -1285,10 +1286,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Скорость изменения угла обзора по горизонтали (влево/вправо) при использовании клавиатуры</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Настройки мыши
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='sensitivity'>
@@ -1586,10 +1587,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Порог срабатывания джойстика для горизонтального обзора</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Камера
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='c_maxdistance'>
@@ -1733,10 +1734,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Индекс кости модели для следования камеры.<br/>`-2` выключено<br/>`-1` корневая кость<br/>`0+` индекс кости</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Оружие от первого лица
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='viewsize'>
@@ -1974,10 +1975,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td colSpan='5' className='name'><a href='#r_drawviewmodel'>r_drawviewmodel</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Визуальные эффекты
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='cl_weather'>
@@ -2271,10 +2272,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td colSpan='5' className='name'><a href='#r_decals'>r_decals</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Визуализация
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='fps_max'>
@@ -2838,10 +2839,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Устанавливает качество спрайтов дыма.<br/>`0` высокое качество<br/>`1` среднее качество<br/>`2` низкое качество<br/>Более низкое качество повышает производительность</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Звук/Голос
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='volume'>
@@ -3237,10 +3238,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Загружать звуки в 8-битном качестве для экономии памяти</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Сеть
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='ip'>
@@ -3391,10 +3392,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Порт удаленного сервера для отправки rcon-команд</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ### Сеть : Клиент
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='rate'>
@@ -3660,10 +3661,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td colSpan='5' className='name'><a href='#r_bmodelinterp'>r_bmodelinterp</a></td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 #### Сеть : Клиент : Соединение
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='cl_dlmax'>
@@ -3758,10 +3759,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Разрешить загрузку вашего пользовательского спрея на сервер при подключении</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Сервер
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='hostname'>
@@ -4507,10 +4508,10 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Вести лог сервера в файл</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Настройки окна и ввода
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='sdl_double_click_size'>
@@ -4542,40 +4543,28 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Включить немедленный опрос событий, минуя SDL_WaitEventTimeout с нулевым таймаутом (для отладки)</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 ## Параметры визуализации для настройки производительности
 <h5>Консольные переменные, связанные с визуализацией, которые могут как положительно, так и отрицательно влиять на производительность игры.<br/>Настрой их, чтобы улучшить производительность или контролировать количество визуальных эффектов, например частиц, лазерных лучей и т.д.</h5>
-<table>
-  <tbody>
-    <tr>
-      <td><a href='#fps_max'>fps_max</a></td>
-      <td><a href='#gl_zmax'>gl_zmax</a></td>
-      <td><a href='#r_maxbeams'>r_maxbeams</a></td>
-    </tr>
-    <tr>
-      <td><a href='#max_shells'>max_shells</a></td>
-      <td><a href='#max_smokepuffs'>max_smokepuffs</a></td>
-      <td><a href='#cl_weather'>cl_weather</a></td>
-    </tr>
-    <tr>
-      <td><a href='#cl_minmodels'>cl_minmodels</a></td>
-      <td><a href='#cl_minviewmodel'>cl_minviewmodel</a></td>
-      <td><a href='#r_dynamic'>r_dynamic</a></td>
-    </tr>
-    <tr>
-      <td><a href='#r_decals'>r_decals</a></td>
-      <td><a href='#r_detailtextures'>r_detailtextures</a></td>
-      <td><a href='#fastsprites'>fastsprites</a></td>
-    </tr>
-    <tr>
-      <td colSpan='3'><a href='#gl_msaa'>gl_msaa</a></td>
-    </tr>
-  </tbody>
-</table>
+<Grid minItemWidth="250px">
+  <div><a href='#fps_max'>fps_max</a></div>
+  <div><a href='#gl_zmax'>gl_zmax</a></div>
+  <div><a href='#r_maxbeams'>r_maxbeams</a></div>
+  <div><a href='#max_shells'>max_shells</a></div>
+  <div><a href='#max_smokepuffs'>max_smokepuffs</a></div>
+  <div><a href='#cl_weather'>cl_weather</a></div>
+  <div><a href='#cl_minmodels'>cl_minmodels</a></div>
+  <div><a href='#cl_minviewmodel'>cl_minviewmodel</a></div>
+  <div><a href='#r_dynamic'>r_dynamic</a></div>
+  <div><a href='#r_decals'>r_decals</a></div>
+  <div><a href='#r_detailtextures'>r_detailtextures</a></div>
+  <div><a href='#fastsprites'>fastsprites</a></div>
+  <div><a href='#gl_msaa'>gl_msaa</a></div>
+</Grid>
 
 ## Разработчик / Отладка
-<table className='docs-table'>
+<Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
     <tr id='developer'>
@@ -4635,46 +4624,32 @@ import { SliderButton } from '@site/src/components/Image'
       <td className='desc'>Показывать статистика менеджера частиц</td>
     </tr>
   </tbody>
-</table>
-<table>
-  <tbody>
-    <tr>
-      <td><a href='#cl_showmessages'>cl_showmessages</a></td>
-      <td><a href='#cl_shownet'>cl_shownet</a></td>
-      <td><a href='#cl_showerror'>cl_showerror</a></td>
-      <td><a href='#cl_showevents'>cl_showevents</a></td>
-      <td><a href='#cl_showfps'>cl_showfps</a></td>
-    </tr>
-    <tr>
-      <td><a href='#s_show'>s_show</a></td>
-      <td><a href='#snd_show'>snd_show</a></td>
-      <td><a href='#net_graph'>net_graph</a></td>
-      <td><a href='#net_showdrop'>net_showdrop</a></td>
-      <td><a href='#net_showpackets'>net_showpackets</a></td>
-    </tr>
-    <tr>
-      <td><a href='#voice_showchannels'>voice_showchannels</a></td>
-      <td><a href='#voice_showincoming'>voice_showincoming</a></td>
-      <td><a href='#r_drawentities'>r_drawentities</a></td>
-      <td><a href='#r_showinfo'>r_showinfo</a></td>
-      <td><a href='#r_showparticles'>r_showparticles</a></td>
-    </tr>
-    <tr>
-      <td><a href='#r_speeds'>r_speeds</a></td>
-      <td><a href='#r_novis'>r_novis</a></td>
-      <td><a href='#r_lockcull'>r_lockcull</a></td>
-      <td><a href='#r_lockpvs'>r_lockpvs</a></td>
-      <td><a href='#r_drawviewmodel'>r_drawviewmodel</a></td>
-    </tr>
-    <tr>
-      <td><a href='#weapon_debug_spread_gap'>weapon_debug_spread_gap</a></td>
-      <td><a href='#weapon_debug_spread_show'>weapon_debug_spread_show</a></td>
-      <td><a href='#cl_smokegren_debug'>cl_smokegren_debug</a></td>
-      <td><a href='#host_timescale'>host_timescale</a></td>
-      <td><a href='#gl_wireframe'>gl_wireframe</a></td>
-    </tr>
-    <tr>
-      <td colSpan='5'><a href='#dev_console'>dev_console</a></td>
-    </tr>
-  </tbody>
-</table>
+</Table>
+<Grid minItemWidth="250px">
+  <div><a href='#cl_showmessages'>cl_showmessages</a></div>
+  <div><a href='#cl_shownet'>cl_shownet</a></div>
+  <div><a href='#cl_showerror'>cl_showerror</a></div>
+  <div><a href='#cl_showevents'>cl_showevents</a></div>
+  <div><a href='#cl_showfps'>cl_showfps</a></div>
+  <div><a href='#s_show'>s_show</a></div>
+  <div><a href='#snd_show'>snd_show</a></div>
+  <div><a href='#net_graph'>net_graph</a></div>
+  <div><a href='#net_showdrop'>net_showdrop</a></div>
+  <div><a href='#net_showpackets'>net_showpackets</a></div>
+  <div><a href='#voice_showchannels'>voice_showchannels</a></div>
+  <div><a href='#voice_showincoming'>voice_showincoming</a></div>
+  <div><a href='#r_drawentities'>r_drawentities</a></div>
+  <div><a href='#r_showinfo'>r_showinfo</a></div>
+  <div><a href='#r_showparticles'>r_showparticles</a></div>
+  <div><a href='#r_speeds'>r_speeds</a></div>
+  <div><a href='#r_novis'>r_novis</a></div>
+  <div><a href='#r_lockcull'>r_lockcull</a></div>
+  <div><a href='#r_lockpvs'>r_lockpvs</a></div>
+  <div><a href='#r_drawviewmodel'>r_drawviewmodel</a></div>
+  <div><a href='#weapon_debug_spread_gap'>weapon_debug_spread_gap</a></div>
+  <div><a href='#weapon_debug_spread_show'>weapon_debug_spread_show</a></div>
+  <div><a href='#cl_smokegren_debug'>cl_smokegren_debug</a></div>
+  <div><a href='#host_timescale'>host_timescale</a></div>
+  <div><a href='#gl_wireframe'>gl_wireframe</a></div>
+  <div><a href='#dev_console'>dev_console</a></div>
+</Grid>

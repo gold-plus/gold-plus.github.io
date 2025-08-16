@@ -75,16 +75,26 @@ export const SliderButton: FC<SliderButtonProps> = ({
 
     return {
       key: slide.key,
-      render: () => (
-        <ImageCompare
-          images={slide.images}
-          boundsPadding={slide.boundsPadding}
-          className={slide.className}
-          portrait={slide.portrait}
-          onPositionChange={onPositionChange}
-          position={position}
-        />
-      ),
+      render: () => {
+        // stop event propagation touchmove on touch device for image comparison,
+        // it prevents swipe event up to PhotoSlider because image comparison have own slider
+        const stopSwipePropagation = (e: React.TouchEvent) => { e.stopPropagation(); };
+        return (
+          <div
+            onTouchStart={stopSwipePropagation}
+            onTouchMove={stopSwipePropagation}
+          >
+            <ImageCompare
+              images={slide.images}
+              boundsPadding={slide.boundsPadding}
+              className={slide.className}
+              portrait={slide.portrait}
+              onPositionChange={onPositionChange}
+              position={position}
+            />
+          </div>
+        );
+      }
     };
   });
 
@@ -122,40 +132,40 @@ export const SliderButton: FC<SliderButtonProps> = ({
           const currentSlide = slidesWithKeys[currentIndex];
           if (!currentSlide) return null;
 
-          // content of comparison image/video
           if (currentSlide.type === 'compare') {
+            // content of comparison image/video
             const [before, after] = currentSlide.images;
-            const renderContent = (item: ImageItem) => (
-              item && (
-                <>
-                  {item.desc && <span className={styles['banner-bottom--desc']}>{item.desc}</span>}
-                  {item.label && <span className={styles['banner-bottom--label']}>{item.label}</span>}
-                  {item.preview && <span className={styles['banner-bottom--preview']}>{item.preview}</span>}
-                </>
-              )
-            );
-            return (
-              <div className={styles['banner-bottom']}>
-                <div className={styles['banner-bottom-wrapper']} onClick={(e) => copy(activeCompareIndex === 0 ? before.label : after.label)}>
-                  <div className={styles['banner-bottom-layer']} style={{ opacity: activeCompareIndex === 0 ? 1 : 0 }}>
-                    {renderContent(before)}
-                  </div>
-                  <div className={styles['banner-bottom-layer']} style={{ opacity: activeCompareIndex === 1 ? 1 : 0 }}>
-                    {renderContent(after)}
-                  </div>
-                </div>
-                {isCopied && <span className={styles['copy-feedback']}><Translate id="theme.common.copyFeedback">Text copied to clipboard</Translate>!</span>}
+            const renderContent = (item: ImageItem, opacity) => (
+              <div className={styles['banner-bottom-layer']} style={{ opacity: opacity }}>
+                {item.desc && <span className={styles['banner-bottom--desc']}>{item.desc}</span>}
+                {item.label && <span className={styles['banner-bottom--label']}>{item.label}</span>}
+                {item.preview && <span className={styles['banner-bottom--preview']}>{item.preview}</span>}
               </div>
             );
-          }
 
-          // content of a regular image/video
-          return (
-            <div className={styles['banner-bottom']}>
-              {currentSlide.desc && <span className={styles['banner-bottom--desc']}>{currentSlide.desc}</span>}
-              {currentSlide.label && <span className={styles['banner-bottom--label']}>{currentSlide.label}</span>}
-            </div>
-          );
+            return (
+              <BottomBar
+                isCopied={isCopied}
+                onClick={() => copy(activeCompareIndex === 1 ? before.label : after.label)}
+                className={activeCompareIndex === null ? styles['select-none'] : ''}
+              >
+                {renderContent(before, activeCompareIndex === 1 ? 1 : 0)}
+                {renderContent(after, activeCompareIndex === 0 ? 1 : 0)}
+              </BottomBar>
+            );
+
+          } else {
+            // content of a regular image/video
+            return (
+              <BottomBar
+                isCopied={isCopied}
+                onClick={() => copy(currentSlide.label)}
+              >
+                {currentSlide.desc && <span className={styles['banner-bottom--desc']}>{currentSlide.desc}</span>}
+                {currentSlide.label && <span className={styles['banner-bottom--label']}>{currentSlide.label}</span>}
+              </BottomBar>
+            );
+          }
         }}
       />
     </>
@@ -177,5 +187,25 @@ const FullScreenIcon = (props: HTMLAttributes<any>) => {
         <path d="M448.5 160.5h159v159h-63v-96h-96v-63zM544.5 544.5v-96h63v159h-159v-63h96zM160.5 319.5v-159h159v63h-96v96h-63zM223.5 448.5v96h96v63h-159v-159h63z" />
       )}
     </svg>
+  );
+};
+
+const BottomBar: FC<{
+  onClick: (e: React.MouseEvent) => void;
+  isCopied: boolean;
+  className?: string;
+  children: React.ReactNode;
+}> = ({ onClick, isCopied, className, children }) => {
+  return (
+    <div className={`${styles['banner-bottom']} ${className || ''}`}>
+      <div className={styles['banner-bottom-wrapper']} onClick={onClick}>
+        {children}
+      </div>
+      {isCopied && (
+        <span className={styles['copy-feedback']}>
+          <Translate id="theme.common.copyFeedback">Text copied to clipboard</Translate>!
+        </span>
+      )}
+    </div>
   );
 };
