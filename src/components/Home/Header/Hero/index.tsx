@@ -1,43 +1,23 @@
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 import DownloadButton from '@site/src/components/Home/DownloadButton';
-import Preview from '@site/src/components/Home/Header/Preview';
+import HomePreview from '@site/src/components/Home/Header/Preview';
+
+import { useRandomInterval } from '@site/src/hooks/useRandomInterval';
 
 import styles from './styles.module.css';
 
-function Gold({ children }) {
-  const [shineTrigger, setShineTrigger] = useState(false);
-
-  useEffect(() => {
-    let intervalId;
-    let timeoutId;
-
-    const startShine = () => {
-      setShineTrigger(true);
-      setTimeout(() => setShineTrigger(false), 2000);
-    };
-
-    const getRandomDelay = () => 5000 + Math.random() * 10000;
-
-    const tick = () => {
-      startShine();
-      if (intervalId) clearInterval(intervalId);
-      intervalId = setInterval(tick, getRandomDelay());
-    };
-
-    startShine();
-
-    timeoutId = setTimeout(tick, getRandomDelay());
-
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, []);
+function GoldEffect({ children, tmMin, tmMax }) {
+  const [shine, setShine] = useState(false)
+  useRandomInterval(
+    useCallback(() => {
+      setShine(true);
+      setTimeout(() => setShine(false), 2000);
+    }, []), tmMin, tmMax, true);
 
   return (
-    <div className={`${styles['hero-header']} ${shineTrigger ? styles['shine'] : ''}`}>
+    <div className={`${styles['hero-header']} ${shine ? styles['shine'] : ''}`}>
       {children}
     </div>
   );
@@ -72,26 +52,26 @@ export default function Header() {
         <div className={styles['hero-content']}>
           <div className={styles['hero-left']}>
             <div className={styles['hero-container-title']}>
-                <Gold>
-                    <div className={`${styles['hero-title']}`}>
-                      <Translate id="theme.home.title">GoldClient</Translate>
-                    </div>
-                    <div className={styles['hero-subtitle']}>
-                      <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
-                    </div>
-                </Gold>
-                <div className={styles['hero-description']}>
-                    <ul>
-                      {features.map((text, idx) => (
-                        <li key={idx}>{text}</li>
-                      ))}
-                    </ul>
-                </div>
-                <DownloadButton />
+              <GoldEffect tmMin={5000} tmMax={10000}>
+                  <div className={`${styles['hero-title']}`}>
+                    <Translate id="theme.home.title">GoldClient</Translate>
+                  </div>
+                  <div className={styles['hero-subtitle']}>
+                    <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
+                  </div>
+              </GoldEffect>
+              <div className={styles['hero-description']}>
+                  <ul>
+                    {features.map((text, idx) => (
+                      <li key={idx}>{text}</li>
+                    ))}
+                  </ul>
+              </div>
+              <DownloadButton />
             </div>
           </div>
           <div className={styles['hero-right']}>
-            <Preview />
+            <HomePreview />
           </div>
         </div>
       </div>
