@@ -1,17 +1,29 @@
 const fs = require('fs');
 const path = require('path');
 
+const defaultPreviewConfig = {
+  zoom: 'cover',
+  position: 'center center',
+};
+
 export default function CreateList(context, options) {
+  const configPath = path.join(context.siteDir, 'src', 'config', 'preview.json');
   return {
     name: 'docusaurus-plugin-home-preview-list',
     async loadContent() {
-      const previewDir = path.join(context.siteDir, 'static/img/preview');
-      const exts = ['.webp', '.png', '.jpg', '.jpeg'];
-      const files = fs.readdirSync(previewDir)
-        .filter(f => exts.includes(path.extname(f).toLowerCase()))
-        .map(f => ({ path: `/img/preview/${f}` }));
+      const raw = fs.readFileSync(configPath, 'utf-8');
+      const { slides } = JSON.parse(raw);
+      const files = slides.map(slide => {
+        return {
+          path: slide.path,
+          preview: slide.preview || defaultPreviewConfig,
+        };
+      });
 
       return files;
+    },
+    getPathsToWatch() {
+      return [configPath];
     },
     async contentLoaded({ content, actions }) {
       const { createData } = actions;

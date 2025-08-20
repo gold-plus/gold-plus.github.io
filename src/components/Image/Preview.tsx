@@ -1,3 +1,4 @@
+// src\components\Image\Preview.tsx
 import React, { useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +11,19 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 import styles from './styles.module.css';
 import type { PreviewProps } from './types';
+
+function ZoomPreviewThumbnail({ imageData }) {
+  const style = {
+    backgroundImage: `url(${imageData.path})`,
+    backgroundSize: imageData.preview.zoom,
+    backgroundPosition: imageData.preview.position,
+    width: '100%',
+    height: '100%',
+    cursor: 'pointer',
+    backgroundRepeat: 'no-repeat',
+  };
+  return <div className={styles['preview']} style={style} />;
+}
 
 export const Preview: React.FC<PreviewProps> = ({
   images,
@@ -54,7 +68,7 @@ export const Preview: React.FC<PreviewProps> = ({
             <SwiperSlide key={i}>
               <PhotoView src={item.path}>
                 <div className={styles['preview-overlay']}>
-                  <img src={item.path} alt={`Preview ${i}`} className={styles['preview']} />
+                  <ZoomPreviewThumbnail imageData={item} />
                 </div>
               </PhotoView>
             </SwiperSlide>

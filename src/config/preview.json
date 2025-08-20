@@ -1,0 +1,16 @@
+{
+  "slides": [
+    { "path": "/img/preview/0.webp" },
+    {
+      "path": "/img/preview/1.webp",
+      "preview": {
+        "zoom": "148%",
+        "position": "48% 50%"
+      }
+    },
+    { "path": "/img/preview/2.webp" },
+    { "path": "/img/preview/3.webp" },
+    { "path": "/img/preview/4.webp" },
+    { "path": "/img/preview/5.webp" }
+  ]
+}

@@ -1,8 +1,18 @@
+
+interface PreviewConfig {
+  zoom: string;
+  position: string;
+}
+
+export interface ImageWithPreview extends Omit<ImageItem, 'preview'> {
+  preview: PreviewConfig;
+}
+
 export interface ImageItem {
   path: string;
   label?: string;
   desc?: string;
-  preview?: React.ReactNode;
+  preview?: any;
 }
 
 export type CompositeSlideItem = {
