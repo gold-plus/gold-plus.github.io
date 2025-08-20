@@ -411,7 +411,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>255</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает прозрачность прицела (0-255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</td>
+      <td className='desc'>Устанавливает прозрачность прицела (0 - 255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</td>
     </tr>
     <tr className='added' id='cl_crosshaircolor'>
       <td className='name'>cl_crosshaircolor</td>
@@ -523,7 +523,21 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает HUD-радар</td>
+      <td className='desc'>
+        <div className='text'>Включает улучшенный HUD-радар</div>
+        <SliderButton
+          buttonName='Просмотр'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/standard.webp', desc: 'Тип радара - Классический', label: 'hud_radar 0'},
+                {type: 'image', path:'/assets/radar/advanced.webp', desc: 'Тип радара - Расширенный', label: 'hud_radar 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_alpha'>
       <td className='name'>hud_radar_alpha</td>
@@ -533,10 +547,13 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Регулирует прозрачность радара (0 - 255)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           slides={[
-            {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Непрозрачный', label: 'hud_radar_alpha 255'},
-            {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Полупрозрачный', label: 'hud_radar_alpha 100'}
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Радар - Непрозрачный', label: 'hud_radar_alpha 255'},
+                {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Радар - Полупрозрачный', label: 'hud_radar_alpha 100'}
+            ]}
           ]}
           />
       </td>
@@ -549,10 +566,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Если `0`, карта на радаре используется полностью. Иначе игрок всегда будет в центре радара, даже у краев карты</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_always_centered'
           slides={[
             {type: 'compare',
               images: [
@@ -571,10 +587,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Цвет заднего фона радара (RGBA)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_bgcolor'
           slides={[
             {type: 'compare',
               images: [
@@ -593,10 +608,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Цвет переднего фона радара (RGBA)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_fgcolor'
           slides={[
             {type: 'compare',
               images: [
@@ -615,10 +629,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Устанавливает минимальный масштаб иконок на радаре (допустимые значения от 0.05 до 1.0)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_icon_scale_min'
           slides={[
             {type: 'compare',
               images: [
@@ -637,10 +650,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Устанавливает цвет обводки границ карты на радаре (RGBA)<br/>Работает только если задана толщинца обводки <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_outlinecolor'
           slides={[
             {type: 'compare',
               images: [
@@ -659,10 +671,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Устанавливает толщину обводки границ карты на радаре</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_outlinethickness'
           slides={[
             {type: 'compare',
               images: [
@@ -681,10 +692,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Устанавливает цвет оттенка карты (RGB)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_shadecolor'
           slides={[
             {type: 'compare',
               images: [
@@ -703,10 +713,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Устанавливает сплошной цвет карты (RGB)</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_map_solidcolor'
           slides={[
             {type: 'compare',
               images: [
@@ -725,10 +734,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Задает масштаб карты на радаре</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_mapscale'
           slides={[
             {type: 'compare',
               images: [
@@ -747,10 +755,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Включает динамическое масштабирование карты, чтобы вместить всех видимых игроков на радаре</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_mapscale_dynamic'
           slides={[
             {type: 'compare',
               images: [
@@ -776,10 +783,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Включает отображение целей (например, мест для закладки бомбы) на радаре</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_objectives'
           slides={[
             {type: 'compare',
               images: [
@@ -805,10 +811,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Включает вращение карты вместе с игроком</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_rotate'
           slides={[
             {type: 'compare',
               images: [
@@ -841,10 +846,9 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>Цвет формы модуля вокруг радара (RGB)<br/><br/>Не рекомендуется использовать красные оттенки цвета, модуль радара пульсирует только красным цветом во время установленный бомбы</div>
         <SliderButton
-          buttonName='Пример'
+          buttonName='Просмотр'
           boundsPadding={29}
           className='radar-halo'
-          title='hud_radar_shapecolor'
           slides={[
             {type: 'compare',
               images: [
@@ -860,28 +864,84 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать здоровье игроков на обзорной карте (overview)</td>
+      <td className='desc'>
+        <div className='text'>Показывать здоровье игроков на карте</div>
+        <SliderButton
+          buttonName='Просмотр'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Здоровье игроков на карте - Выключены', label: 'hud_radar_showhealth 0'},
+                {type: 'image', path:'/assets/radar/show_health.webp', desc: 'Здоровье игроков на карте - Включены', label: 'hud_radar_showhealth 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_shownames'>
       <td className='name'>hud_radar_shownames</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать имена игроков на обзорной карте (overview)</td>
+      <td className='desc'>
+        <div className='text'>Показывать имена игроков на карте</div>
+        <SliderButton
+          buttonName='Просмотр'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Имена игроков на карте - Выключены', label: 'hud_radar_shownames 0'},
+                {type: 'image', path:'/assets/radar/show_names.webp', desc: 'Имена игроков на карте - Включены', label: 'hud_radar_shownames 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_showtracks'>
       <td className='name'>hud_radar_showtracks</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать следы игроков на обзорной карте (overview)</td>
+      <td className='desc'>
+        <div className='text'>Показывать следы игроков на карте</div>
+        <SliderButton
+          buttonName='Просмотр'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Следы игроков на карте - Выключены', label: 'hud_radar_showtracks 0'},
+                {type: 'image', path:'/assets/radar/show_tracks.webp', desc: 'Следы игроков на карте - Включены', label: 'hud_radar_showtracks 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_square'>
       <td className='name'>hud_radar_square</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Если `1`, радар будет квадратной формы</td>
+      <td className='desc'>
+        <div className='text'>Включает радар квадратной формы</div>
+        <SliderButton
+          buttonName='Просмотр'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/radar_round.webp', desc: 'Стиль радара - Круглый', label: 'hud_radar_square 0'},
+                {type: 'image', path:'/assets/radar/radar_square.webp', desc: 'Стиль радара - Квадратный', label: 'hud_radar_square 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_square_with_scoreboard'>
       <td className='name'>hud_radar_square_with_scoreboard</td>

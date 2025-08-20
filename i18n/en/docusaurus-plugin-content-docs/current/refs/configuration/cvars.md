@@ -411,7 +411,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='def'>255</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Sets the crosshair transparency (0-255). The lower the value, the more transparent the crosshair. Requires `cl_crosshairusealpha 1`</td>
+      <td className='desc'>Sets the crosshair transparency (0 - 255). The lower the value, the more transparent the crosshair. Requires `cl_crosshairusealpha 1`</td>
     </tr>
     <tr className='added' id='cl_crosshaircolor'>
       <td className='name'>cl_crosshaircolor</td>
@@ -523,7 +523,21 @@ List of all console variables (ConVar) - description, default values.
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Enables the HUD radar</td>
+      <td className='desc'>
+        <div className='text'>Enables an advanced HUD radar</div>
+        <SliderButton
+          buttonName='Preview'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/standard.webp', desc: 'Radar Mode - Standard', label: 'hud_radar 0'},
+                {type: 'image', path:'/assets/radar/advanced.webp', desc: 'Radar Mode - Advanced', label: 'hud_radar 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_alpha'>
       <td className='name'>hud_radar_alpha</td>
@@ -535,8 +549,11 @@ List of all console variables (ConVar) - description, default values.
         <SliderButton
           buttonName='Preview'
           slides={[
-            {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Opaque', label: 'hud_radar_alpha 255'},
-            {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Translucent', label: 'hud_radar_alpha 100'}
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Radar - Opaque', label: 'hud_radar_alpha 255'},
+                {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Radar - Translucent', label: 'hud_radar_alpha 100'}
+            ]}
           ]}
           />
       </td>
@@ -847,28 +864,84 @@ List of all console variables (ConVar) - description, default values.
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Show player health on the overview map</td>
+      <td className='desc'>
+        <div className='text'>Show player health on the overview map</div>
+        <SliderButton
+          buttonName='Preview'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Players Health on Map - Disabled', label: 'hud_radar_showhealth 0'},
+                {type: 'image', path:'/assets/radar/show_health.webp', desc: 'Players Health on Map - Enabled', label: 'hud_radar_showhealth 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_shownames'>
       <td className='name'>hud_radar_shownames</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Show player names on the overview map</td>
+      <td className='desc'>
+        <div className='text'>Show player names on the overview map</div>
+        <SliderButton
+          buttonName='Preview'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Player names on the map - Disabled', label: 'hud_radar_shownames 0'},
+                {type: 'image', path:'/assets/radar/show_names.webp', desc: 'Player names on map - Enabled', label: 'hud_radar_shownames 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_showtracks'>
       <td className='name'>hud_radar_showtracks</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Show player tracks on the overview map</td>
+      <td className='desc'>
+        <div className='text'>Show player tracks on the overview map</div>
+        <SliderButton
+          buttonName='Preview'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Player tracks on the map - Disabled', label: 'hud_radar_showtracks 0'},
+                {type: 'image', path:'/assets/radar/show_tracks.webp', desc: 'Player tracks on the map - Enabled', label: 'hud_radar_showtracks 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_square'>
       <td className='name'>hud_radar_square</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>If `1`, the radar will be square-shaped</td>
+      <td className='desc'>
+        <div className='text'>Enables square radar shape</div>
+        <SliderButton
+          buttonName='Preview'
+          boundsPadding={29}
+          className='radar-halo'
+          slides={[
+            {type: 'compare',
+              images: [
+                {type: 'image', path: '/assets/radar/radar_round.webp', desc: 'Radar appearance - Round', label: 'hud_radar_square 0'},
+                {type: 'image', path:'/assets/radar/radar_square.webp', desc: 'Radar appearance - Square', label: 'hud_radar_square 1'}
+            ]}
+          ]}
+        />
+      </td>
     </tr>
     <tr className='added' id='hud_radar_square_with_scoreboard'>
       <td className='name'>hud_radar_square_with_scoreboard</td>
