@@ -177,7 +177,7 @@ const config: Config = {
   ],
   clientModules: [
     require.resolve('./src/clientModules/locale-redirect.js')
-  ]
+  ],
 };
 
 export default config;

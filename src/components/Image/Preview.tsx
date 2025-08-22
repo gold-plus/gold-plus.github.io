@@ -25,7 +25,7 @@ function Thumbnail({
     backgroundPosition: imageData.preview.position,
     width: '100%',
     height: '100%',
-    backgroundRepeat: 'no-repeat',
+    backgroundRepeat: 'no-repeat'
   };
   return <div className={className} style={baseStyle} />;
 }

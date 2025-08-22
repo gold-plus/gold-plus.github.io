@@ -3,6 +3,10 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.docsSidebar.category.Инструкции": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar docsSidebar"
+  },
   "sidebar.docsSidebar.category.Справка": {
     "message": "Reference",
     "description": "The label for category Reference in sidebar docsSidebar"

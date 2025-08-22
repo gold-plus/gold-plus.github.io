@@ -384,3 +384,74 @@ html.plugin-docs.docs-wrapper .container {
 	from { background-color: var(--docs-anchor-highlighted-color); }
 	to { background-color: transparent; }
 }
+
+[data-theme='dark'] .token.action {
+  color: #82aaff;
+}
+
+[data-theme='light'] .token.action {
+  color: #0366d6;
+}
+
+.table-layout {
+  width: 100%;
+  display: table;
+  margin-bottom: var(--ifm-leading);
+}
+
+.table-layout td,
+.table-layout th,
+.table-layout tr {
+  border: none !important;
+}
+
+.xhair-guide-thumbnail-wrapper {
+  text-align: center;
+  background-color: #999;
+  border-radius: 6px;
+}
+
+.xhair-guide-preview-cell {
+  width: 40%;
+  padding-left: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* CODEBLOCKS + PREVIEW */
+.code-with-preview {
+  background-color: var(--ifm-code-background);
+  border-radius: var(--ifm-code-border-radius);
+  margin-bottom: var(--ifm-leading);
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.code-with-preview__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 var(--ifm-code-padding-horizontal);
+}
+
+.code-with-preview__tabs {
+  flex-grow: 1;
+}
+
+.code-with-preview__preview {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.4rem;
+}
+
+.code-with-preview .tabs-container {
+  background-color: transparent !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.code-with-preview .margin-top--md {
+  margin-top: 0 !important;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
