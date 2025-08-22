@@ -4,6 +4,6 @@ import Images from '@generated/docusaurus-plugin-home-preview-list/default/image
 
 export default function HomeHeaderHeroSlider() {
   return (
-    <Preview images={Images} />
+    <Preview images={Images} autoplay={true} />
   );
 }

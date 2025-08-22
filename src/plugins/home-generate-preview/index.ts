@@ -8,17 +8,34 @@ const defaultPreviewConfig = {
 
 export default function CreateList(context, options) {
   const configPath = path.join(context.siteDir, 'src', 'config', 'preview.json');
+  const { i18n } = context;
+  const currentLocale = i18n.currentLocale || 'default';
+
   return {
     name: 'docusaurus-plugin-home-preview-list',
     async loadContent() {
       const raw = fs.readFileSync(configPath, 'utf-8');
       const { slides } = JSON.parse(raw);
       const files = slides.map(slide => {
-        return {
-          path: slide.path,
-          preview: slide.preview || defaultPreviewConfig,
-        };
-      });
+        if (slide.thumbnails && Array.isArray(slide.thumbnails)) {
+          return { thumbnails: slide.thumbnails, layout: slide.layout || null };
+        }
+
+        if (slide.path) {
+          let resolvedPath;
+          if (typeof slide.path === 'string') {
+            resolvedPath = slide.path;
+          } else if (typeof slide.path === 'object' && slide.path !== null) {
+            resolvedPath = slide.path[currentLocale] || slide.path.default;
+          }
+          return {
+            path: resolvedPath,
+            preview: slide.preview || defaultPreviewConfig,
+          };
+        }
+
+        return null;
+      }).filter(Boolean);
 
       return files;
     },

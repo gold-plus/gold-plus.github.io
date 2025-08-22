@@ -30,6 +30,7 @@ export const ImageCompare: React.FC<ImageCompareProps> = ({
         portrait={portrait}
         clip="both"
         position={position}
+        keyboardIncrement={'0%'}
         onPositionChange={onPositionChange}
         itemOne={<ReactCompareSliderImage src={before.path} alt={before.desc} />}
         itemTwo={<ReactCompareSliderImage src={after.path} alt={after.desc} />}

@@ -2,7 +2,9 @@ import { useState, useEffect, useCallback, useMemo, HTMLAttributes, FC } from 'r
 import { PhotoSlider } from 'react-photo-view';
 import { ImageCompare } from './Compare';
 import { useCopyToClipboard } from '@site/src/hooks/useCopyToClipboard';
+import { useFullscreen } from '@site/src/hooks/useFullscreen';
 import type { SliderButtonProps, ImageItem } from './types';
+import { FullScreenIcon } from './FullScreenIcon';
 
 import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
@@ -15,6 +17,7 @@ export const SliderButton: FC<SliderButtonProps> = ({
   maskOpacity = 0.9
 }) => {
   const { isCopied, copy } = useCopyToClipboard();
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [visible, setVisible] = useState(false);
   const [index, setIndex] = useState(0);
   const [position, setPosition] = useState(initial_pos_slider_comparison);
@@ -27,8 +30,8 @@ export const SliderButton: FC<SliderButtonProps> = ({
   const onIndexChange = useCallback((newIndex: number) => {
     setActiveCompareIndex(null);
     setIndex(newIndex);
-    setPosition(initial_pos_slider_comparison);
-  }, [setActiveCompareIndex, setPosition]);
+    //setPosition(initial_pos_slider_comparison);
+  }, [setActiveCompareIndex]);
 
   const onOpen = useCallback(() => {
     setIndex(0);
@@ -98,17 +101,6 @@ export const SliderButton: FC<SliderButtonProps> = ({
     };
   });
 
-  function toggleFullScreen() {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      const element = document.querySelector('.PhotoView-Portal');
-      if (element) {
-        element.requestFullscreen();
-      }
-    }
-  }
-
   return (
     <>
       <button className={styles['modal-btn-open']} onClick={onOpen}>
@@ -124,7 +116,7 @@ export const SliderButton: FC<SliderButtonProps> = ({
         toolbarRender={({ rotate, onRotate, onScale, scale, index }) => {
           return (
             <>
-              {document.fullscreenEnabled && <FullScreenIcon onClick={toggleFullScreen} />}
+              {document.fullscreenEnabled && <FullScreenIcon />}
             </>
           );
         }}
@@ -171,24 +163,6 @@ export const SliderButton: FC<SliderButtonProps> = ({
     </>
   );
 }
-
-const FullScreenIcon = (props: HTMLAttributes<any>) => {
-  const [fullscreen, setFullscreen] = useState<boolean>(false);
-  useEffect(() => {
-    document.onfullscreenchange = () => {
-      setFullscreen(Boolean(document.fullscreenElement));
-    };
-  }, []);
-  return (
-    <svg className="PhotoView-Slider__toolbarIcon" fill="white" width="44" height="44" viewBox="0 0 768 768" {...props}>
-      {fullscreen ? (
-        <path d="M511.5 256.5h96v63h-159v-159h63v96zM448.5 607.5v-159h159v63h-96v96h-63zM256.5 256.5v-96h63v159h-159v-63h96zM160.5 511.5v-63h159v159h-63v-96h-96z" />
-      ) : (
-        <path d="M448.5 160.5h159v159h-63v-96h-96v-63zM544.5 544.5v-96h63v159h-159v-63h96zM160.5 319.5v-159h159v63h-96v96h-63zM223.5 448.5v96h96v63h-159v-159h63z" />
-      )}
-    </svg>
-  );
-};
 
 const BottomBar: FC<{
   onClick: (e: React.MouseEvent) => void;

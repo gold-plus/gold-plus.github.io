@@ -1,13 +1,4 @@
 
-interface PreviewConfig {
-  zoom: string;
-  position: string;
-}
-
-export interface ImageWithPreview extends Omit<ImageItem, 'preview'> {
-  preview: PreviewConfig;
-}
-
 export interface ImageItem {
   path: string;
   label?: string;
@@ -45,8 +36,38 @@ export interface SliderButtonProps {
   maskOpacity?: number;
 }
 
+interface PreviewConfig {
+  zoom: string;
+  position: string;
+}
+
+export interface GridPosition {
+  column: string;
+  row: string;
+}
+
+export interface GridLayout {
+  columns: string;
+  rows: string;
+  gap?: string;
+}
+
+export interface ThumbnailItem {
+  path: string;
+  zoom: string;
+  position: string;
+  grid?: GridPosition;
+}
+
+export interface ImagePreviewItem {
+  path?: string;
+  preview?: PreviewConfig;
+  thumbnails?: ThumbnailItem[];
+  layout?: GridLayout;
+}
+
 export interface PreviewProps {
-  images: ImageItem[];
+  images: ImagePreviewItem[];
   maskOpacity?: number; // modal overlay opacity
   autoplay?: boolean;
 }

@@ -1,16 +1,42 @@
 {
   "slides": [
-    { "path": "/img/preview/0.webp" },
     {
-      "path": "/img/preview/1.webp",
+      "layout": {
+        "columns": "repeat(6, 1fr)",
+        "rows": "repeat(2, 1fr)",
+        "gap": "0"
+      },
+      "thumbnails": [
+        { "path": "/img/preview/xhair/0.webp", "zoom": "800%", "position": "50% 50%", "grid": { "column": "1 / 3", "row": "1 / 2" } },
+        { "path": "/img/preview/xhair/1.webp", "zoom": "800%", "position": "50% 50%", "grid": { "column": "3 / 5", "row": "1 / 2" } },
+        { "path": "/img/preview/xhair/2.webp", "zoom": "800%", "position": "50% 50%", "grid": { "column": "5 / 7", "row": "1 / 2" } },
+        { "path": "/img/preview/xhair/3.webp", "zoom": "800%", "position": "50% 50%", "grid": { "column": "1 / 4", "row": "2 / 3" } },
+        { "path": "/img/preview/xhair/4.webp", "zoom": "800%", "position": "50% 50%", "grid": { "column": "4 / 7", "row": "2 / 3" } }
+      ]
+    },
+    {
+      "path": "/img/preview/killfeed.webp",
       "preview": {
-        "zoom": "148%",
-        "position": "48% 50%"
+        "zoom": "470%",
+        "position": "100% 0%"
       }
     },
-    { "path": "/img/preview/2.webp" },
-    { "path": "/img/preview/3.webp" },
-    { "path": "/img/preview/4.webp" },
-    { "path": "/img/preview/5.webp" }
+    {
+      "path": "/img/preview/radar.webp",
+      "preview": {
+        "zoom": "800%",
+        "position": "1% 1%"
+      }
+    },
+    {
+      "path": {
+        "default": "/img/preview/gameui_hud.webp",
+        "en": "/img/preview/gameui_hud.en.webp"
+      },
+      "preview": {
+        "zoom": "290%",
+        "position": "50% 50%"
+      }
+    }
   ]
 }
