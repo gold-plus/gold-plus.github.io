@@ -7,6 +7,7 @@ sidebar_position: 1
 import { SliderButton } from '@site/src/components/Image'
 import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 
+<br/>
 :::warning Page under construction
 This page is under active filling and correction.<br/>
 There may be errors, inaccuracies and omissions, and lack of translation.<br/>
