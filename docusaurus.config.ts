@@ -8,7 +8,7 @@ const defaultLocale = 'ru';
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
 const repoName = 'gold-plus';
-const webSite = 'https://gold-plus.github.io';
+const webSite = 'https://goldclient.ru';
 
 function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
   const values = ConfigLocalized[key];
