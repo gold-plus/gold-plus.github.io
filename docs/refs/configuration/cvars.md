@@ -1218,7 +1218,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Управляет отображением игрового чата.<br/>`0`Оотключить чат<br/>`1` Отображать чат, поле ввода сверху<br/>`2` Отображать чат, поле ввода под текстом чата</td>
+      <td className='desc'>Управляет отображением игрового чата.<br/>`0` Оотключить чат<br/>`1` Отображать чат, поле ввода сверху<br/>`2` Отображать чат, поле ввода под текстом чата</td>
     </tr>
     <tr className='added' id='hud_saytext_fade'>
       <td className='name'>hud_saytext_fade</td>
