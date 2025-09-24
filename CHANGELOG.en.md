@@ -190,6 +190,32 @@
 - Vaqtincha ([@Vaqtincha](https://github.com/Vaqtincha))
 
 
+## 2.4.0.0 (2023-12-17)
+
+#### :rocket: New Feature
+
+- Added ConVar `cl_fixmodelinterpolationartifacts`, a feature backported from HL25 update. It fixes interpolation artifacts (visual stuttering) for animated models on moving platforms (e.g., a scientist on a train)
+- Added the `-nosingle` launch option to allow running multiple game instances, with connections restricted to servers where `sv_chats` is enabled
+- Added cross-compatibility for CS 1.6 and Condition Zero games in the ServerBrowser
+
+#### :bug: Bug Fix
+
+- Fixed the directional damage indicator on the HUD (red overlay showing the direction of incoming attacks) (@hajimura)
+- Fixed a crash caused by a buffer overrun in the `AmmoX` user message due to an invalid ammo ID
+
+<!-- truncate -->
+
+#### Authors 1
+<!-- authors -->
+
+- s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Testers 1
+<!-- testers -->
+
+- hajimura ([@hajimura](https://github.com/hajimura))
+
+
 ## 2.3.8.6 (2023-12-11)
 
 #### :rocket: New Feature
