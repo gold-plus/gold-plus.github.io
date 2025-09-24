@@ -42,7 +42,7 @@ function parseAuthors(content: string): Author[] {
   const authorsSet = new Map<string, Author>();
   for (const marker of sectionMarkers) {
     const sectionContent = content.match(new RegExp(
-      `<!--\\s*${marker}\\s*-->(?:[\\s\\n]*)([\\s\\S]*?)(?=\\n#{2,}|$)`, 'i'
+      `<!--\\s*${marker}\\s*-->(?:[\\s\\n]*)([\\s\\S]*?)(?=\\n\\s*#{2,}|\\n\\s*<!--|$)`, 'i'
     ))?.[1];
     if (!sectionContent) continue;
 
