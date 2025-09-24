@@ -26,7 +26,7 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
 }
 
 const config: Config = {
-  title: 'GoldClient',
+  title: getLocalizedConfigValue('title'),
   favicon: 'img/favicon.ico',
   customFields: {
     currentVersion: '2.5.6.0',
