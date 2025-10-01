@@ -2811,8 +2811,8 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
     <tr className='added' id='r_showinfo'>
       <td className='name'>r_showinfo</td>
       <td className='def'>0</td>
-      <td className='min'>-</td>
-      <td className='max'>-</td>
+      <td className='min'>0</td>
+      <td className='max'>2</td>
       <td className='desc'>Показывать информацию о рендеринге/движении</td>
     </tr>
     <tr className='added' id='r_showparticles'>
@@ -3011,7 +3011,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает голосовой чат в текущем моде</td>
     </tr>
-    <tr id='voice_outputdevice'>
+    <tr className='added' id='voice_outputdevice'>
       <td className='name'>voice_outputdevice</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
@@ -3039,7 +3039,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Время затухания других звуков при активации `voice_overdrive`</td>
     </tr>
-    <tr id='voice_preprocess'>
+    <tr className='added' id='voice_preprocess'>
       <td className='name'>voice_preprocess</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
@@ -3053,7 +3053,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Профилирование голосовой системы</td>
     </tr>
-    <tr id='voice_quality'>
+    <tr className='added' id='voice_quality'>
       <td className='name'>voice_quality</td>
       <td className='def'>6</td>
       <td className='min'>2</td>
@@ -3088,21 +3088,21 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Показывать входящие голосовые данные</td>
     </tr>
-    <tr id='mic_autogain'>
+    <tr className='added' id='mic_autogain'>
       <td className='name'>mic_autogain</td>
       <td className='def'>16000</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>Уровень автоматической регулировки усиления для микрофона</td>
     </tr>
-    <tr id='mic_inputfile'>
+    <tr className='added' id='mic_inputfile'>
       <td className='name'>mic_inputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>Считывать данные из указанного файла вместо микрофона</td>
     </tr>
-    <tr id='mic_outputfile'>
+    <tr className='added' id='mic_outputfile'>
       <td className='name'>mic_outputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
@@ -3240,14 +3240,14 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>2.0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Время затухания MP3-треков</td>
+      <td className='desc'>Устанавливает время плавного затухания MP3 в секундах во время использования команды `cd fadeout`</td>
     </tr>
     <tr id='MP3Volume'>
       <td className='name'>MP3Volume</td>
       <td className='def'>0.8</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Громкость MP3-треков</td>
+      <td className='desc'>Устанавливает уровень громкости MP3</td>
     </tr>
     <tr id='snd_mixahead'>
       <td className='name'>snd_mixahead</td>
@@ -3256,7 +3256,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Размер буфера для упреждающего смешивания звука<br/>Увеличение может помочь с прерываниями звука</td>
     </tr>
-    <tr id='snd_mute_losefocus'>
+    <tr className='added' id='snd_mute_losefocus'>
       <td className='name'>snd_mute_losefocus</td>
       <td className='def'>1</td>
       <td className='min'>-</td>

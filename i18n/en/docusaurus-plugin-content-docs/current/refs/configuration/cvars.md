@@ -2811,8 +2811,8 @@ List of all console variables (ConVar) - description, default values.
     <tr className='added' id='r_showinfo'>
       <td className='name'>r_showinfo</td>
       <td className='def'>0</td>
-      <td className='min'>-</td>
-      <td className='max'>-</td>
+      <td className='min'>0</td>
+      <td className='max'>2</td>
       <td className='desc'>Show rendering/movement info</td>
     </tr>
     <tr className='added' id='r_showparticles'>
@@ -3011,7 +3011,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>Enables voice chat in the current mod</td>
     </tr>
-    <tr id='voice_outputdevice'>
+    <tr className='added' id='voice_outputdevice'>
       <td className='name'>voice_outputdevice</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
@@ -3039,7 +3039,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>Fade time for other sounds when `voice_overdrive` is active</td>
     </tr>
-    <tr id='voice_preprocess'>
+    <tr className='added' id='voice_preprocess'>
       <td className='name'>voice_preprocess</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
@@ -3053,7 +3053,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>Voice system profiling</td>
     </tr>
-    <tr id='voice_quality'>
+    <tr className='added' id='voice_quality'>
       <td className='name'>voice_quality</td>
       <td className='def'>6</td>
       <td className='min'>2</td>
@@ -3088,21 +3088,21 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>Show incoming voice data</td>
     </tr>
-    <tr id='mic_autogain'>
+    <tr className='added' id='mic_autogain'>
       <td className='name'>mic_autogain</td>
       <td className='def'>16000</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>Automatic gain control level for microphone input</td>
     </tr>
-    <tr id='mic_inputfile'>
+    <tr className='added' id='mic_inputfile'>
       <td className='name'>mic_inputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>Read data from the specified file instead of the microphone</td>
     </tr>
-    <tr id='mic_outputfile'>
+    <tr className='added' id='mic_outputfile'>
       <td className='name'>mic_outputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
@@ -3240,14 +3240,14 @@ List of all console variables (ConVar) - description, default values.
       <td className='def'>2.0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Fade time for MP3 tracks</td>
+      <td className='desc'>Sets the MP3 fadeout time in seconds for complete fadeout using `cd fadeout` command</td>
     </tr>
     <tr id='MP3Volume'>
       <td className='name'>MP3Volume</td>
       <td className='def'>0.8</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Volume of MP3 tracks</td>
+      <td className='desc'>Sets the MP3 volume level</td>
     </tr>
     <tr id='snd_mixahead'>
       <td className='name'>snd_mixahead</td>
@@ -3256,7 +3256,7 @@ List of all console variables (ConVar) - description, default values.
       <td className='max'>-</td>
       <td className='desc'>Buffer size for pre-mixing sound.<br/>Increasing it may help with sound stuttering</td>
     </tr>
-    <tr id='snd_mute_losefocus'>
+    <tr className='added' id='snd_mute_losefocus'>
       <td className='name'>snd_mute_losefocus</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
