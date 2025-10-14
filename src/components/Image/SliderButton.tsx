@@ -103,9 +103,9 @@ export const SliderButton: FC<SliderButtonProps> = ({
 
   return (
     <>
-      <button className={styles['modal-btn-open']} onClick={onOpen}>
+      <div className={styles['modal-btn-open']} onClick={onOpen}>
         {buttonName}
-      </button>
+      </div>
       <PhotoSlider
         images={images}
         visible={visible}

@@ -25,6 +25,7 @@
     "react-compare-slider": "^4.0.0-0",
     "react-dom": "^19.0.0",
     "react-photo-view": "^1.2.7",
+    "react-tooltip": "^5.30.0",
     "swiper": "^11.2.10"
   },
   "devDependencies": {

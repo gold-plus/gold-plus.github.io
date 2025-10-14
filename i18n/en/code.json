@@ -376,5 +376,21 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.docs.versionBadge.added": {
+    "message": "Added in",
+    "description": "The added label for version badge"
+  },
+  "theme.docs.versionBadge.removed": {
+    "message": "Removed in",
+    "description": "The removed label for version badge"
+  },
+  "theme.docs.versionBadge.changed": {
+    "message": "Changed in",
+    "description": "The changed label for version badge"
+  },
+  "theme.docs.versionBadge.deprecated": {
+    "message": "Deprecated in",
+    "description": "The deprecated label for version badge"
   }
 }

@@ -183,28 +183,26 @@
 }
 
 .modal-btn-open {
-  background-color: rgba(243, 156, 18, 0.15);
+  background-color: #ffebcd;
+  box-shadow: 0 0 3px #bd9e72aa;
   color: var(--ifm-font-color-base);
-  border: none;
-  font-size: 12px;
-  font-weight: 0;
+  font-size: 11px;
+  padding: 0 6px 0 6px;
+  align-items: center;
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
-  display: table-cell;
-  float: right;
-  margin: 0 0 3px 3px;
 }
 
 .modal-btn-open:hover {
-  background-color: rgba(253, 169, 33, 0.466);
+  background-color: #faf2dd;
 }
 
 [data-theme='dark'] .modal-btn-open {
-  background-color: rgba(243, 156, 18, 0.5);
+  background-color: #b08714;
 }
 [data-theme='dark'] .modal-btn-open:hover {
-  background-color: rgba(243, 156, 18, 0.8);
+  background-color: #c49e2f;
 }
 
 .modal-overlay {

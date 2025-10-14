@@ -376,5 +376,21 @@
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"
+  },
+  "theme.docs.versionBadge.added": {
+    "message": "Добавлен в",
+    "description": "The added label for version badge"
+  },
+  "theme.docs.versionBadge.removed": {
+    "message": "Удален в",
+    "description": "The removed label for version badge"
+  },
+  "theme.docs.versionBadge.changed": {
+    "message": "Изменен в",
+    "description": "The changed label for version badge"
+  },
+  "theme.docs.versionBadge.deprecated": {
+    "message": "Устарел в",
+    "description": "The deprecated label for version badge"
   }
 }

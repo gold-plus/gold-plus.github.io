@@ -307,7 +307,7 @@ html.plugin-docs.docs-wrapper .container {
 }
 
 .container .row .col--3 {
-  --ifm-col-width: calc(3 / 17 * 100%);
+  --ifm-col-width: calc(3 / 12 * 100%);
 }
 
 @media (max-width: 1440px) {
@@ -326,44 +326,6 @@ html.plugin-docs.docs-wrapper .container {
   html.plugin-docs {
     --doc-sidebar-width: 100px;
   }
-}
-
-.table-legend {
-  display: flex;
-  gap: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 10px 0;
-  user-select: none;
-}
-
-.table-legend > div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ifm-font-color-base);
-}
-
-.legend-icon {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-}
-
-.legend-icon.added {
-  background-color: #4caf50;
-  box-shadow: 0 0 6px #4caf50aa;
-}
-
-.legend-icon.changed {
-  background-color: #ffeb3b;
-  box-shadow: 0 0 6px #ffeb3baa;
-}
-
-.legend-icon.removed {
-  background-color: #f44336;
-  box-shadow: 0 0 6px #f44336aa;
 }
 
 .anchor-target {
@@ -454,4 +416,41 @@ html.plugin-docs.docs-wrapper .container {
 .code-with-preview .margin-top--md {
   margin-top: 0 !important;
   border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+:root {
+  .ref-link::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234178cb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>");
+  }
+}
+
+[data-theme='dark'] {
+  .ref-link::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232187af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>");
+  }
+}
+
+.ref-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 0.2em;
+  vertical-align: text-top;
+}
+
+.ref-link:hover {
+  opacity: 1;
+  filter: brightness(1.3);
+}
+
+.desc-meta {
+  display: inline-flex;
+  align-items: center;
+  float: right;
+  gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }

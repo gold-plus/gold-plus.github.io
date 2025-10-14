@@ -5,24 +5,19 @@ sidebar_position: 1
 ---
 
 import { SliderButton } from '@site/src/components/Image'
+import { VersionBadge } from '@site/src/components/Misc/VersionBadge'
 import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 
 <br/>
 :::warning Страница в разработке
-Эта страница находится в стадии активного наполнения и корректирования.<br/>
-Возможны ошибки, неточности и пропуски, и отсутствия перевода.<br/>
+Эта страница находится в стадии активного наполнения и корректирования<br/>
+Возможны ошибки, неточности и пропуски, и отсутствия перевода<br/>
 Следите за обновлениями, чтобы получать актуальную информацию.
 :::
 
 # Консольные переменные
 
-Список всех консольных переменных (ConVar) - описание, значения по умолчанию.
-
-<div className='table-legend'>
-  <div><span className='legend-icon added'></span> Добавлено</div>
-  <div><span className='legend-icon changed'></span> Изменено</div>
-  <div><span className='legend-icon removed'></span> Удалено</div>
-</div>
+Список всех консольных переменных (ConVar) — описание, значения по умолчанию.
 
 ## Интерфейс
 <Table>
@@ -49,12 +44,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Автоматически переключаться на подобранное оружие (если оно мощнее)<br/>`0` Никогда не переключать<br/>`1` Всегда переключать<br/>`2` Всегда переключать, но не во время стрельбы</td>
     </tr>
-    <tr className='modified' id='cl_logocolor'>
+    <tr id='cl_logocolor'>
       <td className='name'>cl_logocolor</td>
       <td className='def color'><div style={{background: `rgba(255,120,24,0.85)`, color: `#111`}}>255 120 24</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет спрея (логотипа)</td>
+      <td className='desc'><div className='text'>Устанавливает цвет спрея (логотипа)</div><div className='desc-meta'><VersionBadge type='changed' since='2.5.6.0'/></div></td>
     </tr>
     <tr id='cl_logofile'>
       <td className='name'>cl_logofile</td>
@@ -63,12 +58,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Устанавливает файл спрея (логотипа)</td>
     </tr>
-    <tr className='added' id='sbind'>
+    <tr id='sbind'>
       <td className='name'>sbind</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает возможность использовать 'теневую' привязку клавиш при нахождении на игровом сервере.<br/>Любые привязки клавиш, установленные сервером, не сохраняются в конфиг игрока</td>
+      <td className='desc'><div className='text'>Включает возможность использовать 'теневую' привязку клавиш при нахождении на игровом сервере<br/>Любые привязки клавиш, установленные сервером, не сохраняются в конфиг игрока</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -77,62 +72,54 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='cl_servers_history_lastplayed'>
+    <tr id='cl_servers_history_lastplayed'>
       <td className='name'>cl_servers_history_lastplayed</td>
       <td className='def'>7776000</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Удаляет из истории браузера серверов те серверы, на которых вы играли более чем указанное количество секунд назад.<br/>По умолчанию установлено 3 месяца (`7776000` секунд).<br/>Установите значение `0` для отключения автоудаления</td>
+      <td className='desc'><div className='text'>Удаляет из истории браузера серверов те серверы, на которых вы играли более чем указанное количество секунд назад<br/>По умолчанию установлено 3 месяца (`7776000` секунд)<br/>Установите значение `0` для отключения автоудаления</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='ui_enable_menu_randomsrv'>
+    <tr id='ui_enable_menu_randomsrv'>
       <td className='name'>ui_enable_menu_randomsrv</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает пункт 'Случайный сервер' в главном меню игры</td>
+      <td className='desc'><div className='text'>Включает пункт 'Случайный сервер' в главном меню игры</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <!-- Beta -->
-    <!-- tr className='added'>
-      <td className='name' id='ui_matchmaking_tab'>ui_matchmaking_tab</td>
-      <td className='def'>1</td>
-      <td className='min'>-</td>
-      <td className='max'>-</td>
-      <td className='desc'>Show or hide the 'Online Game' tab in the New Game dialog</td>
-    </tr -->
-    <tr className='added' id='ui_password_entry'>
+    <tr id='ui_password_entry'>
       <td className='name'>ui_password_entry</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отображение окна для ввода пароля в настройках игры для получения привилегий на серверах</td>
+      <td className='desc'><div className='text'>Включает отображение окна для ввода пароля в настройках игры для получения привилегий на серверах</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='ui_taskbar_iconflash'>
+    <tr id='ui_taskbar_iconflash'>
       <td className='name'>ui_taskbar_iconflash</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает оповещение в виде мигающего значка игры на панели задач Windows, привлекая внимание к событиям, таким как подключение к серверу, начало нового раунда и т.п</td>
+      <td className='desc'><div className='text'>Включает оповещение в виде мигающего значка игры на панели задач Windows, привлекая внимание к событиям, таким как подключение к серверу, начало нового раунда и т.п.</div><div className='desc-meta'><VersionBadge type='added' since='2.3.3.0'/></div></td>
     </tr>
-    <tr className='added' id='ui_window_bringfront_on_event'>
+    <tr id='ui_window_bringfront_on_event'>
       <td className='name'>ui_window_bringfront_on_event</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Автоматически разворачивает окно игры и выводит его на передний план при таких событиях, как подключение к серверу, начало нового раунда и т.п</td>
+      <td className='desc'><div className='text'>Автоматически разворачивает окно игры и выводит его на передний план при таких событиях, как подключение к серверу, начало нового раунда и т.п.</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
-    <tr className='added' id='ui_window_sound_on_event'>
+    <tr id='ui_window_sound_on_event'>
       <td className='name'>ui_window_sound_on_event</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает звуковое оповещение для привлечения внимания к событиям, таким как подключение к серверу, начало нового раунда и т.п</td>
+      <td className='desc'><div className='text'>Включает звуковое оповещение для привлечения внимания к событиям, таким как подключение к серверу, начало нового раунда и т.п.</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
-    <tr className='added' id='vgui_menus'>
+    <tr id='vgui_menus'>
       <td className='name'>vgui_menus</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает меню в новом стиле VGUI с изображениями и описаниями</td>
+      <td className='desc'><div className='text'>Включает меню в новом стиле VGUI с изображениями и описаниями</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -141,12 +128,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='dev_console'>
+    <tr id='dev_console'>
       <td className='name'>dev_console</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позволяет получить доступ к игровой консоли без отображения главного меню (GameUI).<br/>`0` Консоль открывается на фоне главного меню.<br/>`1` Консоль может открываться непосредственно в игре (включая диалоговое окно загрузки при подключении к серверу)</td>
+      <td className='desc'><div className='text'>Позволяет получить доступ к игровой консоли без отображения главного меню (GameUI)<br/>`0` Консоль открывается на фоне главного меню<br/>`1` Консоль может открываться непосредственно в игре (включая диалоговое окно загрузки при подключении к серверу)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
     <tr id='console'>
       <td className='name'>console</td>
@@ -197,12 +184,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает/выключает отображение всех элементов HUD (интерфейса)</td>
     </tr>
-    <tr className='added' id='hud_draw_only_deathnotices'>
+    <tr id='hud_draw_only_deathnotices'>
       <td className='name'>hud_draw_only_deathnotices</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>При значении `1` из всех элементов HUD отображаются только уведомления о смерти (полезно для записи видео)</td>
+      <td className='desc'><div className='text'>При значении `1` из всех элементов HUD отображаются только уведомления о смерти (полезно для записи видео)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
     <tr id='hud_drawhistory_time'>
       <td className='name'>hud_drawhistory_time</td>
@@ -216,7 +203,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает быстрое переключение оружия без необходимости дополнительного клика. `1` - вкл, `0` - выкл</td>
+      <td className='desc'>Включает быстрое переключение оружия без необходимости дополнительного клика<br/>`1` включен<br/>`0` выключен</td>
     </tr>
     <tr id='hud_takesshots'>
       <td className='name'>hud_takesshots</td>
@@ -230,49 +217,49 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображение имени игрока при наведении на него.<br/>`0` в левом нижнем углу.<br/>`1` по центру экрана</td>
+      <td className='desc'>Отображение имени игрока при наведении на него<br/>`0` в левом нижнем углу<br/>`1` по центру экрана</td>
     </tr>
-    <tr className='added' id='hud_color'>
+    <tr id='hud_color'>
       <td className='name'>hud_color</td>
       <td className='def color'><div style={{background: `rgba(255,160,0,0.85)`, color: `#111`}}>255 160 0</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Задает основной цвет для элементов HUD (здоровье, броня, таймер и т.д.)</td>
+      <td className='desc'><div className='text'>Задает основной цвет для элементов HUD (здоровье, броня, таймер и т.д.)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.1.0'/></div></td>
     </tr>
-    <tr className='added' id='fov_lerp_in'>
+    <tr id='fov_lerp_in'>
       <td className='name'>fov_lerp_in</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>5</td>
-      <td className='desc'>Скорость плавного приближения (изменения FOV) при использовании прицела (например, у снайперских винтовок)</td>
+      <td className='desc'><div className='text'>Скорость плавного приближения (изменения FOV) при использовании прицела (например, у снайперских винтовок)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='fov_lerp_out'>
+    <tr id='fov_lerp_out'>
       <td className='name'>fov_lerp_out</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>5</td>
-      <td className='desc'>Скорость плавного отдаления (изменения FOV) при выходе из режима прицеливания</td>
+      <td className='desc'><div className='text'>Скорость плавного отдаления (изменения FOV) при выходе из режима прицеливания</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='fov_lerp_sniper_instant'>
+    <tr id='fov_lerp_sniper_instant'>
       <td className='name'>fov_lerp_sniper_instant</td>
       <td className='def'>1</td>
       <td className='min'>0</td>
       <td className='max'>1</td>
-      <td className='desc'>Мгновенное восстановление поля зрения (FOV) после выстрела из снайперской винтовки.<br/>Установите значение `0` для плавного восстановления FOV (контролируется `fov_lerp_in`)</td>
+      <td className='desc'><div className='text'>Мгновенное восстановление поля зрения (FOV) после выстрела из снайперской винтовки<br/>Установите значение `0` для плавного восстановления FOV (контролируется `fov_lerp_in`)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_demo_showkeys'>
+    <tr id='cl_demo_showkeys'>
       <td className='name'>cl_demo_showkeys</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать нажатия клавиш перемещения (WASD, Прыжок, Приседание) на экране во время просмотра демо-записи от первого лица</td>
+      <td className='desc'><div className='text'>Показывать нажатия клавиш перемещения (WASD, Прыжок, Приседание) на экране во время просмотра демо-записи от первого лица</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_locationalpha'>
+    <tr id='cl_locationalpha'>
       <td className='name'>cl_locationalpha</td>
       <td className='def'>150</td>
       <td className='min'>0</td>
       <td className='max'>255</td>
-      <td className='desc'>Устанавливает прозрачность текста с названием локации на карте</td>
+      <td className='desc'><div className='text'>Устанавливает прозрачность текста с названием локации на карте</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
     <tr id='cl_weaponlistfix'>
       <td className='name'>cl_weaponlistfix</td>
@@ -323,187 +310,187 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает/выключает отображение прицела</td>
     </tr>
-    <tr className='added' id='cl_crosshair_drawoutline'>
+    <tr id='cl_crosshair_drawoutline'>
       <td className='name'>cl_crosshair_drawoutline</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Добавляет черную обводку вокруг прицела для лучшей видимости</td>
+      <td className='desc'><div className='text'>Добавляет черную обводку вокруг прицела для лучшей видимости</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_dynamic_maxdist_splitratio'>
+    <tr id='cl_crosshair_dynamic_maxdist_splitratio'>
       <td className='name'>cl_crosshair_dynamic_maxdist_splitratio</td>
       <td className='def'>0.35</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'>При `cl_crosshairstyle 2` определяет соотношение длин внутренней и внешней частей прицела при разделении.<br/>`внутренняя` = cl_crosshairsize * (1 - cl_crosshair_dynamic_maxdist_splitratio)<br/>`внешняя` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` определяет соотношение длин внутренней и внешней частей прицела при разделении<br/>`внутренняя` = cl_crosshairsize * (1 — cl_crosshair_dynamic_maxdist_splitratio)<br/>`внешняя` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_dynamic_splitalpha_innermod'>
+    <tr id='cl_crosshair_dynamic_splitalpha_innermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_innermod</td>
       <td className='def'>1</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНУТРЕННИХ делений прицела после их разделения</td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНУТРЕННИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_dynamic_splitalpha_outermod'>
+    <tr id='cl_crosshair_dynamic_splitalpha_outermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_outermod</td>
       <td className='def'>0.5</td>
       <td className='min'>0.3</td>
       <td className='max'>1.0</td>
-      <td className='desc'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНЕШНИХ делений прицела после их разделения</td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНЕШНИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_dynamic_splitdist'>
+    <tr id='cl_crosshair_dynamic_splitdist'>
       <td className='name'>cl_crosshair_dynamic_splitdist</td>
       <td className='def'>7</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>При `cl_crosshairstyle 2` задает расстояние, на которое разделяются деления прицела</td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` задает расстояние, на которое разделяются деления прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_friendly_warning'>
+    <tr id='cl_crosshair_friendly_warning'>
       <td className='name'>cl_crosshair_friendly_warning</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'>Показывать предупреждение (иконка 'X') при наведении на союзника.<br/>`0` выключено<br/>`1` Только для стандартных стилей прицела<br/>`2` Включено всегда</td>
+      <td className='desc'><div className='text'>Показывать предупреждение (иконка 'X') при наведении на союзника<br/>`0` выключено<br/>`1` Только для стандартных стилей прицела<br/>`2` Включено всегда</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_outlinethickness'>
+    <tr id='cl_crosshair_outlinethickness'>
       <td className='name'>cl_crosshair_outlinethickness</td>
       <td className='def'>1</td>
       <td className='min'>0.1</td>
       <td className='max'>3.0</td>
-      <td className='desc'>Задает толщину обводки прицела (от 0.1 до 3.0)</td>
+      <td className='desc'><div className='text'>Задает толщину обводки прицела (от 0.1 до 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_recoverytime_on_fps'>
+    <tr id='cl_crosshair_recoverytime_on_fps'>
       <td className='name'>cl_crosshair_recoverytime_on_fps</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Зависимость времени восстановления прицела (после выстрела) от FPS. `1` - зависит, `0` - не зависит</td>
+      <td className='desc'><div className='text'>Зависимость времени восстановления прицела (после выстрела) от FPS<br/>`1` зависит<br/>`0` не зависит</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_sniper_show_normal_inaccuracy'>
+    <tr id='cl_crosshair_sniper_show_normal_inaccuracy'>
       <td className='name'>cl_crosshair_sniper_show_normal_inaccuracy</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Учитывать неточность при стрельбе без прицела ('no-scope') для размытия перекрестия в снайперском прицеле</td>
+      <td className='desc'><div className='text'>Учитывать неточность при стрельбе без прицела ('no-scope') для размытия перекрестия в снайперском прицеле</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_sniper_style'>
+    <tr id='cl_crosshair_sniper_style'>
       <td className='name'>cl_crosshair_sniper_style</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>1</td>
-      <td className='desc'>`0` Классический статичный снайперский прицел<br/>`1` Точный динамический снайперский прицел</td>
+      <td className='desc'><div className='text'>`0` Классический статичный снайперский прицел<br/>`1` Точный динамический снайперский прицел</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_sniper_width'>
+    <tr id='cl_crosshair_sniper_width'>
       <td className='name'>cl_crosshair_sniper_width</td>
       <td className='def'>1</td>
       <td className='min'>1</td>
       <td className='max'>20</td>
-      <td className='desc'>Задает толщину линий снайперского прицела<br/>`1` толщина в один пиксель</td>
+      <td className='desc'><div className='text'>Задает толщину линий снайперского прицела<br/>`1` толщина в один пиксель</div><div className='desc-meta'><VersionBadge type='added' since='2.2.1.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshair_t'>
+    <tr id='cl_crosshair_t'>
       <td className='name'>cl_crosshair_t</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает Т-образный прицел (убирает верхнее деление)</td>
+      <td className='desc'><div className='text'>Включает Т-образный прицел (убирает верхнее деление)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairalpha'>
+    <tr id='cl_crosshairalpha'>
       <td className='name'>cl_crosshairalpha</td>
       <td className='def'>255</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает прозрачность прицела (0 - 255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</td>
+      <td className='desc'><div className='text'>Устанавливает прозрачность прицела (0 — 255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshaircolor'>
+    <tr id='cl_crosshaircolor'>
       <td className='name'>cl_crosshaircolor</td>
       <td className='def color'><div style={{background: `rgba(50,250,50,0.85)`, color: `#111`}}>50 250 50</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет прицела в формате RGB</td>
+      <td className='desc'><div className='text'>Устанавливает цвет прицела в формате RGB</div><div className='desc-meta'><VersionBadge type='added' since='2.3.1.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairdot'>
+    <tr id='cl_crosshairdot'>
       <td className='name'>cl_crosshairdot</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Добавляет точку в центр прицела. Если установить `cl_crosshairsize 0`, останется только точка</td>
+      <td className='desc'><div className='text'>Добавляет точку в центр прицела. Если установить `cl_crosshairsize 0`, останется только точка</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairgap'>
+    <tr id='cl_crosshairgap'>
       <td className='name'>cl_crosshairgap</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает размер зазора между делениями прицела</td>
+      <td className='desc'><div className='text'>Устанавливает размер зазора между делениями прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairgap_useweaponvalue'>
+    <tr id='cl_crosshairgap_useweaponvalue'>
       <td className='name'>cl_crosshairgap_useweaponvalue</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Если `1`, зазор прицела будет динамически меняться в зависимости от выбранного оружия</td>
+      <td className='desc'><div className='text'>Если `1`, зазор прицела будет динамически меняться в зависимости от выбранного оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairscale'>
+    <tr id='cl_crosshairscale'>
       <td className='name'>cl_crosshairscale</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Регулирует масштабирование размера прицела в зависимости от разрешения экрана. `0` = Авто (Пропорционально), либо значения разрешения, например `480`, `640`, `1024`</td>
+      <td className='desc'><div className='text'>Регулирует масштабирование размера прицела в зависимости от разрешения экрана. `0` = Авто (Пропорционально), либо значения разрешения, например `480`, `640`, `1024`</div><div className='desc-meta'><VersionBadge type='added' since='2.3.2.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairsize'>
+    <tr id='cl_crosshairsize'>
       <td className='name'>cl_crosshairsize</td>
       <td className='def'>5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает длину делений прицела</td>
+      <td className='desc'><div className='text'>Устанавливает длину делений прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairstyle'>
+    <tr id='cl_crosshairstyle'>
       <td className='name'>cl_crosshairstyle</td>
       <td className='def'>6</td>
       <td className='min'>0</td>
       <td className='max'>6</td>
-      <td className='desc'>`0` СТАНДАРТНЫЙ<br/>`1` СТАНДАРТНЫЙ СТАТИЧНЫЙ<br/>`2` ТОЧНЫЙ РАЗДЕЛЕННЫЙ (точная отдача/разброс с фиксированной внутренней частью)<br/>`3` ТОЧНЫЙ ДИНАМИЧЕСКИЙ (точная отдача/разброс)<br/>`4` КЛАССИЧЕСКИЙ СТАТИЧНЫЙ<br/>`5` СТАРЫЙ СТИЛЬ CS (неточная отдача/обратная связь)<br/>`6` ОРИГИНАЛЬНЫЙ CS 1.6</td>
+      <td className='desc'><div className='text'>`0` СТАНДАРТНЫЙ<br/>`1` СТАНДАРТНЫЙ СТАТИЧНЫЙ<br/>`2` ТОЧНЫЙ РАЗДЕЛЕННЫЙ (точная отдача/разброс с фиксированной внутренней частью)<br/>`3` ТОЧНЫЙ ДИНАМИЧЕСКИЙ (точная отдача/разброс)<br/>`4` КЛАССИЧЕСКИЙ СТАТИЧНЫЙ<br/>`5` СТАРЫЙ СТИЛЬ CS (неточная отдача/обратная связь)<br/>`6` ОРИГИНАЛЬНЫЙ CS 1.6</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairthickness'>
+    <tr id='cl_crosshairthickness'>
       <td className='name'>cl_crosshairthickness</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Регулирует толщину линий прицела</td>
+      <td className='desc'><div className='text'>Регулирует толщину линий прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_crosshairusealpha'>
+    <tr id='cl_crosshairusealpha'>
       <td className='name'>cl_crosshairusealpha</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает/выключает возможность настройки прозрачности прицела с помощью `cl_crosshairalpha`</td>
+      <td className='desc'><div className='text'>Включает/выключает возможность настройки прозрачности прицела с помощью `cl_crosshairalpha`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_fixedcrosshairgap'>
+    <tr id='cl_fixedcrosshairgap'>
       <td className='name'>cl_fixedcrosshairgap</td>
       <td className='def'>3</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает размер зазора для статичного прицела</td>
+      <td className='desc'><div className='text'>Устанавливает размер зазора для статичного прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='weapon_debug_spread_gap'>
+    <tr id='weapon_debug_spread_gap'>
       <td className='name'>weapon_debug_spread_gap</td>
       <td className='def'>0.67</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Коэффициент для `weapon_debug_spread_show 3`</td>
+      <td className='desc'><div className='text'>Коэффициент для `weapon_debug_spread_show 3`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='weapon_debug_spread_show'>
+    <tr id='weapon_debug_spread_show'>
       <td className='name'>weapon_debug_spread_show</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отладочное отображение разброса оружия.<br/>`1` показывает квадрат разброса.<br/>`3` показывает разброс с помощью динамического прицела</td>
+      <td className='desc'><div className='text'>Включает отладочное отображение разброса оружия<br/>`1` показывает квадрат разброса<br/>`3` показывает разброс с помощью динамического прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='cl_dynamiccrosshair'>
       <td className='name'>cl_dynamiccrosshair</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает динамический прицел (расширяется при движении и стрельбе).<br/>`0` Выключен (статичный).<br/>`1` Стандартное поведение (зависит от реальной точности).<br/>`2` Реагирует только на отдачу от выстрелов</td>
+      <td className='desc'>Включает динамический прицел (расширяется при движении и стрельбе)<br/>`0` Выключен (статичный)<br/>`1` Стандартное поведение (зависит от реальной точности)<br/>`2` Реагирует только на отдачу от выстрелов</td>
     </tr>
     <tr id='cl_observercrosshair'>
       <td className='name'>cl_observercrosshair</td>
@@ -519,472 +506,529 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='hud_radar'>
+    <tr id='hud_radar'>
       <td className='name'>hud_radar</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Включает улучшенный HUD-радар</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/standard.webp', desc: 'Тип радара - Классический', label: 'hud_radar 0'},
-                {type: 'image', path:'/assets/radar/advanced.webp', desc: 'Тип радара - Расширенный', label: 'hud_radar 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/standard.webp', desc: 'Тип радара — Классический', label: 'hud_radar 0'},
+                  {type: 'image', path:'/assets/radar/advanced.webp', desc: 'Тип радара -— Расширенный', label: 'hud_radar 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_alpha'>
+    <tr id='hud_radar_alpha'>
       <td className='name'>hud_radar_alpha</td>
       <td className='def'>255</td>
       <td className='min'>0</td>
       <td className='max'>255</td>
       <td className='desc'>
-        <div className='text'>Регулирует прозрачность радара (0 - 255)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Радар - Непрозрачный', label: 'hud_radar_alpha 255'},
-                {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Радар - Полупрозрачный', label: 'hud_radar_alpha 100'}
+        <div className='text'>Регулирует прозрачность радара (0 — 255)</div>
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/alpha_255.webp', desc: 'Радар — Непрозрачный', label: 'hud_radar_alpha 255'},
+                  {type: 'image', path:'/assets/radar/alpha_100.webp', desc: 'Радар — Полупрозрачный', label: 'hud_radar_alpha 100'}
+              ]}
             ]}
-          ]}
-          />
+            />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_always_centered'>
+    <tr id='hud_radar_always_centered'>
       <td className='name'>hud_radar_always_centered</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Если `0`, карта на радаре используется полностью. Иначе игрок всегда будет в центре радара, даже у краев карты</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {path: '/assets/radar/non_centered.webp', desc: 'Игрок движется внутри круга радара', label: 'hud_radar_always_centered 0'},
-                {path: '/assets/radar/centered.webp', desc: 'Игрок всегда зафиксирован в центре круга радара', label: 'hud_radar_always_centered 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {path: '/assets/radar/non_centered.webp', desc: 'Игрок движется внутри круга радара', label: 'hud_radar_always_centered 0'},
+                  {path: '/assets/radar/centered.webp', desc: 'Игрок всегда зафиксирован в центре круга радара', label: 'hud_radar_always_centered 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.4.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_bgcolor'>
+    <tr id='hud_radar_bgcolor'>
       <td className='name'>hud_radar_bgcolor</td>
       <td className='def color'><div style={{background: `rgba(0,0,0,1.0)`, color: `#eee`}}>0 0 0 255</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Цвет заднего фона радара (RGBA)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/bgcolor_white.webp', desc: 'Задний фон радара - Белый', label: 'hud_radar_bgcolor 255 255 255 255'},
-                {type: 'image', path:'/assets/radar/bgcolor_green.webp', desc: 'Задний фон радара - Зеленый', label: 'hud_radar_bgcolor 0 255 0 255'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/bgcolor_white.webp', desc: 'Задний фон радара — Белый', label: 'hud_radar_bgcolor 255 255 255 255'},
+                  {type: 'image', path:'/assets/radar/bgcolor_green.webp', desc: 'Задний фон радара — Зеленый', label: 'hud_radar_bgcolor 0 255 0 255'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_fgcolor'>
+    <tr id='hud_radar_fgcolor'>
       <td className='name'>hud_radar_fgcolor</td>
       <td className='def color'><div style={{background: `rgba(0,0,0,0.8)`, color: `#eee`}}>0 0 0 220</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Цвет переднего фона радара (RGBA)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/fgcolor_white.webp', desc: 'Передний фон радара - Белый', label: 'hud_radar_fgcolor 255 255 255 255'},
-                {type: 'image', path:'/assets/radar/fgcolor_green.webp', desc: 'Передний фон радара - Зеленый', label: 'hud_radar_fgcolor 0 255 0 255'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/fgcolor_white.webp', desc: 'Передний фон радара — Белый', label: 'hud_radar_fgcolor 255 255 255 255'},
+                  {type: 'image', path:'/assets/radar/fgcolor_green.webp', desc: 'Передний фон радара — Зеленый', label: 'hud_radar_fgcolor 0 255 0 255'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_icon_scale_min'>
+    <tr id='hud_radar_icon_scale_min'>
       <td className='name'>hud_radar_icon_scale_min</td>
       <td className='def'>0.3</td>
       <td className='min'>0.05</td>
       <td className='max'>1</td>
       <td className='desc'>
         <div className='text'>Устанавливает минимальный масштаб иконок на радаре (допустимые значения от 0.05 до 1.0)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Масштаб иконок - Средний', label: 'hud_radar_icon_scale_min 0.3'},
-                {type: 'image', path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Масштаб иконок - Маленький', label: 'hud_radar_icon_scale_min 1.0'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/icon_scale_min_0_3.webp', desc: 'Масштаб иконок — Средний', label: 'hud_radar_icon_scale_min 0.3'},
+                  {type: 'image', path:'/assets/radar/icon_scale_min_1_0.webp', desc: 'Масштаб иконок — Маленький', label: 'hud_radar_icon_scale_min 1.0'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.4.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_map_outlinecolor'>
+    <tr id='hud_radar_map_outlinecolor'>
       <td className='name'>hud_radar_map_outlinecolor</td>
       <td className='def color'><div style={{background: `rgba(10,10,10,1)`, color: `#eee`}}>10 10 10 255</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Устанавливает цвет обводки границ карты на радаре (RGBA)<br/>Работает только если задана толщинца обводки <a href='#hud_radar_map_outlinethickness'>hud_radar_map_outlinethickness</a></div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/map_outlinecolor_default.webp', desc: 'Обводка - Не установлена', label: 'hud_radar_map_outlinecolor 0'},
-                {type: 'image', path:'/assets/radar/map_outlinecolor_white.webp', desc: 'Обводка - Белая', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/map_outlinecolor_default.webp', desc: 'Обводка — Не установлена', label: 'hud_radar_map_outlinecolor 0'},
+                  {type: 'image', path:'/assets/radar/map_outlinecolor_white.webp', desc: 'Обводка — Белая', label: 'hud_radar_map_outlinecolor 255 255 255 255'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_map_outlinethickness'>
+    <tr id='hud_radar_map_outlinethickness'>
       <td className='name'>hud_radar_map_outlinethickness</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Устанавливает толщину обводки границ карты на радаре</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Толщина обводки - Тонкая', label: 'hud_radar_map_outlinethickness 2'},
-                {type: 'image', path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Толщина обводки - Средняя', label: 'hud_radar_map_outlinethickness 4'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/map_outlinecolor_white.webp', desc: 'Толщина обводки — Тонкая', label: 'hud_radar_map_outlinethickness 2'},
+                  {type: 'image', path:'/assets/radar/map_outlinethickness_4.webp', desc: 'Толщина обводки — Средняя', label: 'hud_radar_map_outlinethickness 4'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_map_shadecolor'>
+    <tr id='hud_radar_map_shadecolor'>
       <td className='name'>hud_radar_map_shadecolor</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Устанавливает цвет оттенка карты (RGB)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/map_shadecolor_default.webp', desc: 'Оттенок карты - Не установлен', label: 'hud_radar_map_shadecolor 0'},
-                {type: 'image', path:'/assets/radar/map_shadecolor_green.webp', desc: 'Оттенок карты - Зеленый', label: 'hud_radar_map_shadecolor 0 255 0'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/map_shadecolor_default.webp', desc: 'Оттенок карты — Не установлен', label: 'hud_radar_map_shadecolor 0'},
+                  {type: 'image', path:'/assets/radar/map_shadecolor_green.webp', desc: 'Оттенок карты — Зеленый', label: 'hud_radar_map_shadecolor 0 255 0'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_map_solidcolor'>
+    <tr id='hud_radar_map_solidcolor'>
       <td className='name'>hud_radar_map_solidcolor</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Устанавливает сплошной цвет карты (RGB)</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/map_shadecolor_default.webp', desc: 'Сплошной цвет карты - Не установлен', label: 'hud_radar_map_solidcolor 0'},
-                {type: 'image', path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Сплошной цвет карты - Серый', label: 'hud_radar_map_solidcolor 110 110 110'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/map_shadecolor_default.webp', desc: 'Сплошной цвет карты — Не установлен', label:   'hud_radar_map_solidcolor 0'},
+                  {type: 'image', path:'/assets/radar/map_solidcolor_gray.webp', desc: 'Сплошной цвет карты — Серый', label: 'hud_radar_map_solidcolor 110 110   110'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.4.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_mapscale'>
+    <tr id='hud_radar_mapscale'>
       <td className='name'>hud_radar_mapscale</td>
       <td className='def'>0.9</td>
       <td className='min'>0.2</td>
       <td className='max'>3.5</td>
       <td className='desc'>
         <div className='text'>Задает масштаб карты на радаре</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/mapscale_0_9.webp', desc: 'Масштаб карты - Увеличенный', label: 'hud_radar_mapscale 0.9'},
-                {type: 'image', path:'/assets/radar/mapscale_0_5.webp', desc: 'Масштаб карты - Уменьшенный', label: 'hud_radar_mapscale 0.5'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/mapscale_0_9.webp', desc: 'Масштаб карты — Увеличенный', label: 'hud_radar_mapscale 0.9'},
+                  {type: 'image', path:'/assets/radar/mapscale_0_5.webp', desc: 'Масштаб карты — Уменьшенный', label: 'hud_radar_mapscale 0.5'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_mapscale_dynamic'>
+    <tr id='hud_radar_mapscale_dynamic'>
       <td className='name'>hud_radar_mapscale_dynamic</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Включает динамическое масштабирование карты, чтобы вместить всех видимых игроков на радаре</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Масштаб карты - Постоянный', label: 'hud_radar_mapscale_dynamic 0'},
-                {type: 'image', path:'/assets/radar/mapscale_dynamic.webp', desc: 'Масштаб карты - Автоматический', label: 'hud_radar_mapscale_dynamic 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/mapscale_non_dynamic.webp', desc: 'Масштаб карты — Постоянный', label: 'hud_radar_mapscale_dynamic 0'},
+                  {type: 'image', path:'/assets/radar/mapscale_dynamic.webp', desc: 'Масштаб карты — Автоматический', label: 'hud_radar_mapscale_dynamic 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.5.6.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_mapscale_dynamic_min'>
+    <tr id='hud_radar_mapscale_dynamic_min'>
       <td className='name'>hud_radar_mapscale_dynamic_min</td>
       <td className='def'>0.5</td>
       <td className='min'>0.01</td>
       <td className='max'>3.5</td>
-      <td className='desc'>Устанавливает минимальный порог масштабирования, чтобы карта не становилась слишком мелкой при динамическом масштабировании. (Масштаб 0.5 в большинстве случаев покрывает всю карту)<br/><br/>См. <a href='#hud_radar_mapscale_dynamic'>hud_radar_mapscale_dynamic</a></td>
+      <td className='desc'><div className='text'>Устанавливает минимальный порог масштабирования, чтобы карта не становилась слишком мелкой при динамическом масштабировании. (Масштаб 0.5 в большинстве случаев покрывает всю карту)<br/><br/>См. <a href='#hud_radar_mapscale_dynamic'>hud_radar_mapscale_dynamic</a></div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_objectives'>
+    <tr id='hud_radar_objectives'>
       <td className='name'>hud_radar_objectives</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Включает отображение целей (например, мест для закладки бомбы) на радаре</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/objectives_off.webp', desc: 'Отображение цели на карте - Не установлено', label: 'hud_radar_objectives 0'},
-                {type: 'image', path:'/assets/radar/objectives_on.webp', desc: 'Отображение цели на карте - Установлено', label: 'hud_radar_objectives 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/objectives_off.webp', desc: 'Отображение цели на карте — Не установлено', label: 'hud_radar_objectives 0'},
+                  {type: 'image', path:'/assets/radar/objectives_on.webp', desc: 'Отображение цели на карте — Установлено', label: 'hud_radar_objectives 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_panel_pos'>
+    <tr id='hud_radar_panel_pos'>
       <td className='name'>hud_radar_panel_pos</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Задает положение радара на экране<br/>`0` слева<br/>`1` справа</td>
+      <td className='desc'><div className='text'>Задает положение радара на экране<br/>`0` слева<br/>`1` справа</div><div className='desc-meta'><VersionBadge type='added' since='2.3.5.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_rotate'>
+    <tr id='hud_radar_rotate'>
       <td className='name'>hud_radar_rotate</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Включает вращение карты вместе с игроком</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/radar_rotate_off.webp', desc: 'Вращение карты - Не установлено', label: 'hud_radar_rotate 0'},
-                {type: 'image', path:'/assets/radar/radar_rotate_on.webp', desc: 'Вращение карты - Установлено', label: 'hud_radar_rotate 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/radar_rotate_off.webp', desc: 'Вращение карты — Не установлено', label: 'hud_radar_rotate 0'},
+                  {type: 'image', path:'/assets/radar/radar_rotate_on.webp', desc: 'Вращение карты — Установлено', label: 'hud_radar_rotate 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.4.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_scale'>
+    <tr id='hud_radar_scale'>
       <td className='name'>hud_radar_scale</td>
       <td className='def'>1</td>
       <td className='min'>0.5</td>
       <td className='max'>3</td>
-      <td className='desc'>Устанавливает общий масштаб радара (допустимые значения от 0.5 до 3.0)</td>
+      <td className='desc'><div className='text'>Устанавливает общий масштаб радара (допустимые значения от 0.5 до 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_scale_with_scoreboard'>
+    <tr id='hud_radar_scale_with_scoreboard'>
       <td className='name'>hud_radar_scale_with_scoreboard</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Устанавливает масштаб радара, когда открыта таблица счёта. Если `0`, масштабирование отключено</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб радара, когда открыта таблица счёта. Если `0`, масштабирование отключено</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_shapecolor'>
+    <tr id='hud_radar_shapecolor'>
       <td className='name'>hud_radar_shapecolor</td>
       <td className='def color'><div style={{background: `rgba(158,158,158,0.85)`, color:`var(--ifm-font-color-base)`}}>158 158 158</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Цвет формы модуля вокруг радара (RGB)<br/><br/>Не рекомендуется использовать красные оттенки цвета, модуль радара пульсирует только красным цветом во время установленный бомбы</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/module_shapecolor_default.webp', desc: 'Цвет модуля радара - Светло-серый', label: 'hud_radar_shapecolor 158 158 158'},
-                {type: 'image', path:'/assets/radar/module_shapecolor_green.webp', desc: 'Цвет модуля радара - Зеленый', label: 'hud_radar_shapecolor 0 200 0'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/module_shapecolor_default.webp', desc: 'Цвет модуля радара — Светло-серый', label: 'hud_radar_shapecolor   158 158 158'},
+                  {type: 'image', path:'/assets/radar/module_shapecolor_green.webp', desc: 'Цвет модуля радара — Зеленый', label: 'hud_radar_shapecolor 0 200 0'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.4.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_showhealth'>
+    <tr id='hud_radar_showhealth'>
       <td className='name'>hud_radar_showhealth</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Показывать здоровье игроков на карте</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Здоровье игроков на карте - Выключены', label: 'hud_radar_showhealth 0'},
-                {type: 'image', path:'/assets/radar/show_health.webp', desc: 'Здоровье игроков на карте - Включены', label: 'hud_radar_showhealth 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Здоровье игроков на карте — Выключены', label: 'hud_radar_showhealth 0'},
+                  {type: 'image', path:'/assets/radar/show_health.webp', desc: 'Здоровье игроков на карте — Включены', label: 'hud_radar_showhealth 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_shownames'>
+    <tr id='hud_radar_shownames'>
       <td className='name'>hud_radar_shownames</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Показывать имена игроков на карте</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Имена игроков на карте - Выключены', label: 'hud_radar_shownames 0'},
-                {type: 'image', path:'/assets/radar/show_names.webp', desc: 'Имена игроков на карте - Включены', label: 'hud_radar_shownames 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Имена игроков на карте — Выключены', label: 'hud_radar_shownames 0'},
+                  {type: 'image', path:'/assets/radar/show_names.webp', desc: 'Имена игроков на карте — Включены', label: 'hud_radar_shownames 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_showtracks'>
+    <tr id='hud_radar_showtracks'>
       <td className='name'>hud_radar_showtracks</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Показывать следы игроков на карте</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Следы игроков на карте - Выключены', label: 'hud_radar_showtracks 0'},
-                {type: 'image', path:'/assets/radar/show_tracks.webp', desc: 'Следы игроков на карте - Включены', label: 'hud_radar_showtracks 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/show_default.webp', desc: 'Следы игроков на карте — Выключены', label: 'hud_radar_showtracks 0'},
+                  {type: 'image', path:'/assets/radar/show_tracks.webp', desc: 'Следы игроков на карте — Включены', label: 'hud_radar_showtracks 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_square'>
+    <tr id='hud_radar_square'>
       <td className='name'>hud_radar_square</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>
         <div className='text'>Включает радар квадратной формы</div>
-        <SliderButton
-          buttonName='Просмотр'
-          boundsPadding={29}
-          className='radar-halo'
-          slides={[
-            {type: 'compare',
-              images: [
-                {type: 'image', path: '/assets/radar/radar_round.webp', desc: 'Стиль радара - Круглый', label: 'hud_radar_square 0'},
-                {type: 'image', path:'/assets/radar/radar_square.webp', desc: 'Стиль радара - Квадратный', label: 'hud_radar_square 1'}
+        <div className='desc-meta'>
+          <SliderButton
+            buttonName='Просмотр'
+            boundsPadding={29}
+            className='radar-halo'
+            slides={[
+              {type: 'compare',
+                images: [
+                  {type: 'image', path: '/assets/radar/radar_round.webp', desc: 'Стиль радара — Круглый', label: 'hud_radar_square 0'},
+                  {type: 'image', path:'/assets/radar/radar_square.webp', desc: 'Стиль радара — Квадратный', label: 'hud_radar_square 1'}
+              ]}
             ]}
-          ]}
-        />
+          />
+          <VersionBadge type='added' since='2.3.0.0'/>
+        </div>
       </td>
     </tr>
-    <tr className='added' id='hud_radar_square_with_scoreboard'>
+    <tr id='hud_radar_square_with_scoreboard'>
       <td className='name'>hud_radar_square_with_scoreboard</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Если `1`, радар будет становиться квадратным, когда открыта таблица счёта</td>
+      <td className='desc'><div className='text'>Если `1`, радар будет становиться квадратным, когда открыта таблица счёта</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_table_rotate'>
+    <tr id='hud_radar_table_rotate'>
       <td className='name'>hud_radar_table_rotate</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Вращать квадратный радар, когда открыта таблица счёта</td>
+      <td className='desc'><div className='text'>Вращать квадратный радар, когда открыта таблица счёта</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_takeshot'>
+    <tr id='hud_radar_takeshot'>
       <td className='name'>hud_radar_takeshot</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Автоматически создавать изображение карты и скрипт для радара, если они отсутствуют</td>
+      <td className='desc'><div className='text'>Автоматически создавать изображение карты и скрипт для радара, если они отсутствуют</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_takeshot_quality'>
+    <tr id='hud_radar_takeshot_quality'>
       <td className='name'>hud_radar_takeshot_quality</td>
       <td className='def'>65</td>
       <td className='min'>10</td>
       <td className='max'>100</td>
-      <td className='desc'>Устанавливает качество (в процентах) создаваемого изображения карты для радара</td>
+      <td className='desc'><div className='text'>Устанавливает качество (в процентах) создаваемого изображения карты для радара</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_x'>
+    <tr id='hud_radar_x'>
       <td className='name'>hud_radar_x</td>
       <td className='def'>16</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позиция радара по оси X</td>
+      <td className='desc'><div className='text'>Позиция радара по оси X</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_radar_y'>
+    <tr id='hud_radar_y'>
       <td className='name'>hud_radar_y</td>
       <td className='def'>16</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позиция радара по оси Y</td>
+      <td className='desc'><div className='text'>Позиция радара по оси Y</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
     <tr>
       <td colSpan='5' className='name'><a href='#cl_radartype'>cl_radartype</a></td>
@@ -996,82 +1040,82 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='hud_deathnotice_draw'>
+    <tr id='hud_deathnotice_draw'>
       <td className='name'>hud_deathnotice_draw</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать уведомления об убийствах (киллфид)</td>
+      <td className='desc'><div className='text'>Отображать уведомления об убийствах (киллфид)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_fade'>
+    <tr id='hud_deathnotice_fade'>
       <td className='name'>hud_deathnotice_fade</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает плавное появление и исчезновение уведомлений об убийствах</td>
+      <td className='desc'><div className='text'>Включает плавное появление и исчезновение уведомлений об убийствах</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_gap'>
+    <tr id='hud_deathnotice_gap'>
       <td className='name'>hud_deathnotice_gap</td>
       <td className='def'>4</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает промежуток между строками в списке убийств</td>
+      <td className='desc'><div className='text'>Устанавливает промежуток между строками в списке убийств</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_iconcolor'>
+    <tr id='hud_deathnotice_iconcolor'>
       <td className='name'>hud_deathnotice_iconcolor</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Переопределяет цвета RGBA для иконок в списке убийств</td>
+      <td className='desc'><div className='text'>Переопределяет цвета RGBA для иконок в списке убийств</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_iconscale'>
+    <tr id='hud_deathnotice_iconscale'>
       <td className='name'>hud_deathnotice_iconscale</td>
       <td className='def'>0.85</td>
       <td className='min'>0.5</td>
       <td className='max'>5</td>
-      <td className='desc'>Устанавливает масштаб иконок убийств (допустимые значения от 0.5 до 5.0)</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб иконок убийств (допустимые значения от 0.5 до 5.0)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_iconshd'>
+    <tr id='hud_deathnotice_iconshd'>
       <td className='name'>hud_deathnotice_iconshd</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает качество иконок убийств<br/>`0` низкое (классика)<br/>`1` высокое</td>
+      <td className='desc'><div className='text'>Устанавливает качество иконок убийств<br/>`0` низкое (классика)<br/>`1` высокое</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_killrarity'>
+    <tr id='hud_deathnotice_killrarity'>
       <td className='name'>hud_deathnotice_killrarity</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать иконки редкости убийств<br/>`0` Только иконка выстрела в голову<br/>`1` Отображать все иконки</td>
+      <td className='desc'><div className='text'>Отображать иконки редкости убийств<br/>`0` Только иконка выстрела в голову<br/>`1` Отображать все иконки</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_max'>
+    <tr id='hud_deathnotice_max'>
       <td className='name'>hud_deathnotice_max</td>
       <td className='def'>6</td>
       <td className='min'>1</td>
       <td className='max'>-</td>
-      <td className='desc'>Максимальное количество отображаемых уведомлений об убийствах</td>
+      <td className='desc'><div className='text'>Максимальное количество отображаемых уведомлений об убийствах</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_outlinethickness'>
+    <tr id='hud_deathnotice_outlinethickness'>
       <td className='name'>hud_deathnotice_outlinethickness</td>
       <td className='def'>3</td>
       <td className='min'>-20</td>
       <td className='max'>20</td>
-      <td className='desc'>Устанавливает толщину обводки для уведомлений об убийствах</td>
+      <td className='desc'><div className='text'>Устанавливает толщину обводки для уведомлений об убийствах</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_panel_pos'>
+    <tr id='hud_deathnotice_panel_pos'>
       <td className='name'>hud_deathnotice_panel_pos</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Задает положение списка убийств<br/>`0` слева<br/>`1` справа</td>
+      <td className='desc'><div className='text'>Задает положение списка убийств<br/>`0` слева<br/>`1` справа</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_deathnotice_style'>
+    <tr id='hud_deathnotice_style'>
       <td className='name'>hud_deathnotice_style</td>
       <td className='def'>3</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает стиль уведомлений об убийствах<br/>`0` СТАНДАРТНЫЙ<br/>`1` СТИЛЬ CSO<br/>`2` СТИЛЬ CSGO (ОБВОДКА ТОЛЬКО У ЛОКАЛЬНОГО ИГРОКА)<br/>`3` СТИЛЬ CSGO (ОБВОДКА И ФОН)</td>
+      <td className='desc'><div className='text'>Устанавливает стиль уведомлений об убийствах<br/>`0` СТАНДАРТНЫЙ<br/>`1` СТИЛЬ CSO<br/>`2` СТИЛЬ CSGO (ОБВОДКА ТОЛЬКО У ЛОКАЛЬНОГО ИГРОКА)<br/>`3` СТИЛЬ CSGO (ОБВОДКА И ФОН)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
     <tr id='hud_deathnotice_time'>
       <td className='name'>hud_deathnotice_time</td>
@@ -1115,26 +1159,26 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Отображать деньги игроков в таблице счёта</td>
     </tr>
-    <tr className='added' id='scoreboard_players_linespacing'>
+    <tr id='scoreboard_players_linespacing'>
       <td className='name'>scoreboard_players_linespacing</td>
       <td className='def'>22</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Межстрочный интервал для игроков в таблице счёта</td>
+      <td className='desc'><div className='text'>Межстрочный интервал для игроков в таблице счёта</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='scoreboard_players_linespacing_fixed'>
+    <tr id='scoreboard_players_linespacing_fixed'>
       <td className='name'>scoreboard_players_linespacing_fixed</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Использовать фиксированный межстрочный интервал</td>
+      <td className='desc'><div className='text'>Использовать фиксированный межстрочный интервал</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='scoreboard_showspeaker'>
+    <tr id='scoreboard_showspeaker'>
       <td className='name'>scoreboard_showspeaker</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать иконку говорящего игрока в таблице счёта</td>
+      <td className='desc'><div className='text'>Отображать иконку говорящего игрока в таблице счёта</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -1199,47 +1243,47 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='hud_message'>
+    <tr id='hud_message'>
       <td className='name'>hud_message</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать HUD-сообщения<br/>`0` Выключено<br/>`1` Все сообщения<br/>`2` Только HUD-сообщения<br/>`3` Только DHUD-сообщения</td>
+      <td className='desc'><div className='text'>Показывать HUD-сообщения<br/>`0` Выключено<br/>`1` Все сообщения<br/>`2` Только HUD-сообщения<br/>`3` Только DHUD-сообщения</div><div className='desc-meta'><VersionBadge type='added' since='2.3.0.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_headname'>
+    <tr id='hud_headname'>
       <td className='name'>hud_headname</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать имя над головой союзника или отслеживаемого игрока (команда 'trackplayer')</td>
+      <td className='desc'><div className='text'>Показывать имя над головой союзника или отслеживаемого игрока (команда 'trackplayer') <a className='ref-link' href='/docs/refs/configuration/commands#trackplayer'/></div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='hud_saytext'>
       <td className='name'>hud_saytext</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Управляет отображением игрового чата.<br/>`0` Оотключить чат<br/>`1` Отображать чат, поле ввода сверху<br/>`2` Отображать чат, поле ввода под текстом чата</td>
+      <td className='desc'>Управляет отображением игрового чата<br/>`0` Оотключить чат<br/>`1` Отображать чат, поле ввода сверху<br/>`2` Отображать чат, поле ввода под текстом чата</td>
     </tr>
-    <tr className='added' id='hud_saytext_fade'>
+    <tr id='hud_saytext_fade'>
       <td className='name'>hud_saytext_fade</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает плавное появление и исчезновение сообщений в чате</td>
+      <td className='desc'><div className='text'>Включает плавное появление и исчезновение сообщений в чате</div><div className='desc-meta'><VersionBadge type='added' since='2.3.5.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_saytext_gap'>
+    <tr id='hud_saytext_gap'>
       <td className='name'>hud_saytext_gap</td>
       <td className='def'>1</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает промежуток между строками в чате</td>
+      <td className='desc'><div className='text'>Устанавливает промежуток между строками в чате</div><div className='desc-meta'><VersionBadge type='added' since='2.3.5.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_saytext_max'>
+    <tr id='hud_saytext_max'>
       <td className='name'>hud_saytext_max</td>
       <td className='def'>5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Максимальное количество одновременно отображаемых сообщений в чате</td>
+      <td className='desc'><div className='text'>Максимальное количество одновременно отображаемых сообщений в чате</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
     <tr id='hud_saytext_time'>
       <td className='name'>hud_saytext_time</td>
@@ -1255,33 +1299,33 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <Table>
   <thead><tr><th>Название</th><th>Стандартное значение</th><th>Мин.</th><th>Макс.</th><th>Описание</th></tr></thead>
   <tbody>
-    <tr className='added' id='hud_speedometer'>
+    <tr id='hud_speedometer'>
       <td className='name'>hud_speedometer</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включить спидометр</td>
+      <td className='desc'><div className='text'>Включить спидометр</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_speedometer_stayjump'>
+    <tr id='hud_speedometer_stayjump'>
       <td className='name'>hud_speedometer_stayjump</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Не обновлять скорость, пока игрок находится в воздухе (показывать скорость в момент прыжка)</td>
+      <td className='desc'><div className='text'>Не обновлять скорость, пока игрок находится в воздухе (показывать скорость в момент прыжка)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_speedometer_x'>
+    <tr id='hud_speedometer_x'>
       <td className='name'>hud_speedometer_x</td>
       <td className='def'>-1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позиция спидометра по оси X (-1 для центрирования)</td>
+      <td className='desc'><div className='text'>Позиция спидометра по оси X (-1 для центрирования)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='hud_speedometer_y'>
+    <tr id='hud_speedometer_y'>
       <td className='name'>hud_speedometer_y</td>
       <td className='def'>-1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позиция спидометра по оси Y</td>
+      <td className='desc'><div className='text'>Позиция спидометра по оси Y</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -1701,7 +1745,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает управление камерой (`1` - от третьего лица, `0` - от первого)</td>
+      <td className='desc'>Включает управление камерой<br/>`0` от первого<br/>`1` от третьего лица</td>
     </tr>
     <tr id='cam_idealdist'>
       <td className='name'>cam_idealdist</td>
@@ -1787,12 +1831,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Смещение камеры вверх</td>
     </tr>
-    <tr className='added' id='cl_camera_follow_bone_index'>
+    <tr id='cl_camera_follow_bone_index'>
       <td className='name'>cl_camera_follow_bone_index</td>
       <td className='def'>-2</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Индекс кости модели для следования камеры.<br/>`-2` выключено<br/>`-1` корневая кость<br/>`0+` индекс кости</td>
+      <td className='desc'><div className='text'>Индекс кости модели для следования камеры<br/>`-2` выключено<br/>`-1` корневая кость<br/>`0+` индекс кости</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -1808,103 +1852,103 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Устанавливает размер области рендеринга. Устарело, используйте `viewmodel_fov`</td>
     </tr>
-    <tr className='added' id='viewmodel_fov'>
+    <tr id='viewmodel_fov'>
       <td className='name'>viewmodel_fov</td>
       <td className='def'>90</td>
       <td className='min'>1</td>
       <td className='max'>179</td>
-      <td className='desc'>Поле зрения (FOV) для модели оружия в руках</td>
+      <td className='desc'><div className='text'>Поле зрения (FOV) для модели оружия в руках</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_lag_scale'>
+    <tr id='viewmodel_lag_scale'>
       <td className='name'>viewmodel_lag_scale</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>100</td>
-      <td className='desc'>Устанавливает масштаб раскачивания модели оружия</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб раскачивания модели оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_lag_scale_crouch'>
+    <tr id='viewmodel_lag_scale_crouch'>
       <td className='name'>viewmodel_lag_scale_crouch</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>10</td>
-      <td className='desc'>Устанавливает масштаб раскачивания модели оружия в приседе</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб раскачивания модели оружия в приседе</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_lag_scale_jump'>
+    <tr id='viewmodel_lag_scale_jump'>
       <td className='name'>viewmodel_lag_scale_jump</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>5</td>
-      <td className='desc'>Устанавливает масштаб раскачивания модели оружия в прыжке</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб раскачивания модели оружия в прыжке</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_lag_scale_land'>
+    <tr id='viewmodel_lag_scale_land'>
       <td className='name'>viewmodel_lag_scale_land</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>10</td>
-      <td className='desc'>Устанавливает масштаб раскачивания модели оружия при приземлении</td>
+      <td className='desc'><div className='text'>Устанавливает масштаб раскачивания модели оружия при приземлении</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_lag_speed'>
+    <tr id='viewmodel_lag_speed'>
       <td className='name'>viewmodel_lag_speed</td>
       <td className='def'>8</td>
       <td className='min'>0</td>
       <td className='max'>100</td>
-      <td className='desc'>Устанавливает скорость раскачивания модели оружия</td>
+      <td className='desc'><div className='text'>Устанавливает скорость раскачивания модели оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_offset_x'>
+    <tr id='viewmodel_offset_x'>
       <td className='name'>viewmodel_offset_x</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Смещение модели оружия по оси X (вправо/влево)</td>
+      <td className='desc'><div className='text'>Смещение модели оружия по оси X (вправо/влево)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_offset_y'>
+    <tr id='viewmodel_offset_y'>
       <td className='name'>viewmodel_offset_y</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Смещение модели оружия по оси Y (вперед/назад)</td>
+      <td className='desc'><div className='text'>Смещение модели оружия по оси Y (вперед/назад)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_offset_z'>
+    <tr id='viewmodel_offset_z'>
       <td className='name'>viewmodel_offset_z</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Смещение модели оружия по оси Z (вверх/вниз)</td>
+      <td className='desc'><div className='text'>Смещение модели оружия по оси Z (вверх/вниз)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_retract'>
+    <tr id='viewmodel_retract'>
       <td className='name'>viewmodel_retract</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает 'убирание' модели оружия при приближении к препятствиям</td>
+      <td className='desc'><div className='text'>Включает 'убирание' модели оружия при приближении к препятствиям</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_rollangle'>
+    <tr id='viewmodel_rollangle'>
       <td className='name'>viewmodel_rollangle</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>20</td>
-      <td className='desc'>Масштаб угла наклона модели оружия при стрейфе</td>
+      <td className='desc'><div className='text'>Масштаб угла наклона модели оружия при стрейфе</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_shift'>
+    <tr id='viewmodel_shift'>
       <td className='name'>viewmodel_shift</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Управляет смещением модели оружия при взгляде вверх/вниз.<br/>`0` выкл.<br/>`1` вкл. (по умолчанию)<br/>`2` автонастройка</td>
+      <td className='desc'><div className='text'>Управляет смещением модели оружия при взгляде вверх/вниз<br/>`0` выкл<br/>`1` вкл. (по умолчанию)<br/>`2` автонастройка</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_shift_left_amt'>
+    <tr id='viewmodel_shift_left_amt'>
       <td className='name'>viewmodel_shift_left_amt</td>
       <td className='def'>1.5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Величина смещения модели оружия влево при увеличении точности стрельбы</td>
+      <td className='desc'><div className='text'>Величина смещения модели оружия влево при увеличении точности стрельбы</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='viewmodel_shift_right_amt'>
+    <tr id='viewmodel_shift_right_amt'>
       <td className='name'>viewmodel_shift_right_amt</td>
       <td className='def'>0.75</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Величина смещения модели оружия вправо при уменьшении точности стрельбы</td>
+      <td className='desc'><div className='text'>Величина смещения модели оружия вправо при уменьшении точности стрельбы</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
     <tr id='scr_ofsx'>
       <td className='name'>scr_ofsx</td>
@@ -1927,26 +1971,26 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Устаревшая версия `viewmodel_offset_z`</td>
     </tr>
-    <tr className='added' id='camera_movement_bone'>
+    <tr id='camera_movement_bone'>
       <td className='name'>camera_movement_bone</td>
       <td className='def'>-1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает определенную кость модели оружия в качестве камеры вида</td>
+      <td className='desc'><div className='text'>Устанавливает определенную кость модели оружия в качестве камеры вида</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='camera_movement_interp'>
+    <tr id='camera_movement_interp'>
       <td className='name'>camera_movement_interp</td>
       <td className='def'>0.1</td>
       <td className='min'>0.1</td>
       <td className='max'>-</td>
-      <td className='desc'>Сглаживает движение камеры при смене оружия. `0` = выключено</td>
+      <td className='desc'><div className='text'>Сглаживает движение камеры при смене оружия. `0` = выключено</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='camera_movement_scale'>
+    <tr id='camera_movement_scale'>
       <td className='name'>camera_movement_scale</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Масштаб движения камеры. `0` = выключено</td>
+      <td className='desc'><div className='text'>Масштаб движения камеры. `0` = выключено</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
     <tr id='cl_bob'>
       <td className='name'>cl_bob</td>
@@ -1955,33 +1999,33 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Общий множитель для анимации раскачивания оружия при ходьбе</td>
     </tr>
-    <tr className='added' id='cl_bob_lower_amt'>
+    <tr id='cl_bob_lower_amt'>
       <td className='name'>cl_bob_lower_amt</td>
       <td className='def'>6</td>
       <td className='min'>0</td>
       <td className='max'>30</td>
-      <td className='desc'>Насколько сильно модель оружия опускается при беге</td>
+      <td className='desc'><div className='text'>Насколько сильно модель оружия опускается при беге</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_bob_sniper'>
+    <tr id='cl_bob_sniper'>
       <td className='name'>cl_bob_sniper</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает раскачивание для снайперских винтовок</td>
+      <td className='desc'><div className='text'>Включает раскачивание для снайперских винтовок</div><div className='desc-meta'><VersionBadge type='added' since='2.2.1.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_bobamt_lat'>
+    <tr id='cl_bobamt_lat'>
       <td className='name'>cl_bobamt_lat</td>
       <td className='def'>0.4</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'>Амплитуда раскачивания модели оружия из стороны в сторону при беге</td>
+      <td className='desc'><div className='text'>Амплитуда раскачивания модели оружия из стороны в сторону при беге</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_bobamt_vert'>
+    <tr id='cl_bobamt_vert'>
       <td className='name'>cl_bobamt_vert</td>
       <td className='def'>0.15</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'>Амплитуда раскачивания модели оружия вверх-вниз при беге</td>
+      <td className='desc'><div className='text'>Амплитуда раскачивания модели оружия вверх-вниз при беге</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
     <tr id='cl_bobcycle'>
       <td className='name'>cl_bobcycle</td>
@@ -1990,12 +2034,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>2</td>
       <td className='desc'>Частота раскачивания модели оружия при беге</td>
     </tr>
-    <tr className='added' id='cl_bobstyle'>
+    <tr id='cl_bobstyle'>
       <td className='name'>cl_bobstyle</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Устанавливает стиль раскачивания оружия<br/>`0` Классический CS 1.6<br/>`1` Наследие Quakeworld<br/>`2` Улучшенный (как в CSGO)</td>
+      <td className='desc'><div className='text'>Устанавливает стиль раскачивания оружия<br/>`0` Классический CS 1.6<br/>`1` Наследие Quakeworld<br/>`2` Улучшенный (как в CSGO)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
     <tr id='cl_bobup'>
       <td className='name'>cl_bobup</td>
@@ -2011,12 +2055,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Сглаживание вида по вертикали</td>
     </tr>
-    <tr className='added' id='cl_minviewmodel'>
+    <tr id='cl_minviewmodel'>
       <td className='name'>cl_minviewmodel</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Использовать стандартную модель оружия (v_model) для всех видов оружия</td>
+      <td className='desc'><div className='text'>Использовать стандартную модель оружия (v_model) для всех видов оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='cl_righthand'>
       <td className='name'>cl_righthand</td>
@@ -2025,12 +2069,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>1</td>
       <td className='desc'>Использовать праворукую модель оружия (`1`) или леворукую (`0`)</td>
     </tr>
-    <tr className='added' id='cl_shieldweapon_handpreference'>
+    <tr id='cl_shieldweapon_handpreference'>
       <td className='name'>cl_shieldweapon_handpreference</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Использовать сторону руки, определенную `cl_righthand`, для модели оружия со щитом</td>
+      <td className='desc'><div className='text'>Использовать сторону руки, определенную `cl_righthand`, для модели оружия со щитом</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr>
       <td colSpan='5' className='name'><a href='#r_drawviewmodel'>r_drawviewmodel</a></td>
@@ -2047,42 +2091,42 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Включает погодные эффекты (дождь, снег).<br/>`0` Выключено<br/>`1` Низкая интенсивность<br/>`2` Средняя интенсивность<br/>`3` Высокая интенсивность</td>
+      <td className='desc'>Включает погодные эффекты (дождь, снег)<br/>`0` Выключено<br/>`1` Низкая интенсивность<br/>`2` Средняя интенсивность<br/>`3` Высокая интенсивность</td>
     </tr>
-    <tr className='added' id='cl_smokegren_color'>
+    <tr id='cl_smokegren_color'>
       <td className='name'>cl_smokegren_color</td>
       <td className='def color'><div style={{background: `rgba(175,175,175,0.85)`, color:`var(--ifm-font-color-base)`}}>175 175 175</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Цвет дыма от дымовой гранаты</td>
+      <td className='desc'><div className='text'>Цвет дыма от дымовой гранаты</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_smokegren_debug'>
+    <tr id='cl_smokegren_debug'>
       <td className='name'>cl_smokegren_debug</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отладочную визуализацию дымовой гранаты.<br/>`0` выкл.<br/>`1` Визуализация радиуса облаков дыма<br/>`2` Визуализация частиц дыма<br/>`3` Визуализация ближайшей позиции линии, блокируемой дымом</td>
+      <td className='desc'><div className='text'>Включает отладочную визуализацию дымовой гранаты<br/>`0` выкл<br/>`1` Визуализация радиуса облаков дыма<br/>`2` Визуализация частиц дыма<br/>`3` Визуализация ближайшей позиции линии, блокируемой дымом</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_smokegren_full_density'>
+    <tr id='cl_smokegren_full_density'>
       <td className='name'>cl_smokegren_full_density</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает полную плотность дыма от дымовых гранат</td>
+      <td className='desc'><div className='text'>Включает полную плотность дыма от дымовых гранат</div><div className='desc-meta'><VersionBadge type='added' since='2.3.4.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_corpsefall'>
+    <tr id='cl_corpsefall'>
       <td className='name'>cl_corpsefall</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает плавное падение трупов под землю по истечении времени `cl_corpsestay`, иначе трупы плавно исчезают</td>
+      <td className='desc'><div className='text'>Включает плавное падение трупов под землю по истечении времени `cl_corpsestay`, иначе трупы плавно исчезают</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
     <tr id='cl_corpsestay'>
       <td className='name'>cl_corpsestay</td>
       <td className='def'>600</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Время в секундах, по истечении которого трупы исчезают. `0` - мгновенное исчезновение</td>
+      <td className='desc'>Время в секундах, по истечении которого трупы исчезают<br/>`0` мгновенное исчезновение</td>
     </tr>
     <tr id='violence_ablood'>
       <td className='name'>violence_ablood</td>
@@ -2112,89 +2156,89 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Показывать ошмётки игроков</td>
     </tr>
-    <tr className='added' id='violence_vfxblood'>
+    <tr id='violence_vfxblood'>
       <td className='name'>violence_vfxblood</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает расширенные визуальные эффекты крови</td>
+      <td className='desc'><div className='text'>Включает расширенные визуальные эффекты крови</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_bigdrops'>
+    <tr id='violence_vfxblood_bigdrops'>
       <td className='name'>violence_vfxblood_bigdrops</td>
       <td className='def'>3</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество больших капель крови (только от взрывов или выстрелов в голову)</td>
+      <td className='desc'><div className='text'>Количество больших капель крови (только от взрывов или выстрелов в голову)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_burst_ratio'>
+    <tr id='violence_vfxblood_burst_ratio'>
       <td className='name'>violence_vfxblood_burst_ratio</td>
       <td className='def'>4</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Множитель количества крови при взрыве тела (умножает эффекты брызг, капель и т.д.)</td>
+      <td className='desc'><div className='text'>Множитель количества крови при взрыве тела (умножает эффекты брызг, капель и т.д.)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_color'>
+    <tr id='violence_vfxblood_color'>
       <td className='name'>violence_vfxblood_color</td>
       <td className='def color'><div style={{background: `rgba(145,15,15,0.85)`, color:`#eee`}}>145 15 15</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет для расширенных эффектов крови</td>
+      <td className='desc'><div className='text'>Устанавливает цвет для расширенных эффектов крови</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_decal_lightness'>
+    <tr id='violence_vfxblood_decal_lightness'>
       <td className='name'>violence_vfxblood_decal_lightness</td>
       <td className='def'>0.35</td>
       <td className='min'>0.1</td>
       <td className='max'>100</td>
-      <td className='desc'>Коэффициент яркости для следов крови. (Низкие значения делают кровь темнее)</td>
+      <td className='desc'><div className='text'>Коэффициент яркости для следов крови. (Низкие значения делают кровь темнее)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_drops'>
+    <tr id='violence_vfxblood_drops'>
       <td className='name'>violence_vfxblood_drops</td>
       <td className='def'>1.5</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество капель крови</td>
+      <td className='desc'><div className='text'>Количество капель крови</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_gibs'>
+    <tr id='violence_vfxblood_gibs'>
       <td className='name'>violence_vfxblood_gibs</td>
       <td className='def'>7</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество разлетающихся ошмётков (только от взрывов или выстрелов в голову)</td>
+      <td className='desc'><div className='text'>Количество разлетающихся ошмётков (только от взрывов или выстрелов в голову)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_grenade'>
+    <tr id='violence_vfxblood_grenade'>
       <td className='name'>violence_vfxblood_grenade</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает взрыв тела при убийстве гранатой или бомбой</td>
+      <td className='desc'><div className='text'>Включает взрыв тела при убийстве гранатой или бомбой</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_headshot'>
+    <tr id='violence_vfxblood_headshot'>
       <td className='name'>violence_vfxblood_headshot</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает взрыв тела при убийстве выстрелом в голову</td>
+      <td className='desc'><div className='text'>Включает взрыв тела при убийстве выстрелом в голову</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_mist'>
+    <tr id='violence_vfxblood_mist'>
       <td className='name'>violence_vfxblood_mist</td>
       <td className='def'>0.75</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество эффектов кровавого тумана</td>
+      <td className='desc'><div className='text'>Количество эффектов кровавого тумана</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_small'>
+    <tr id='violence_vfxblood_small'>
       <td className='name'>violence_vfxblood_small</td>
       <td className='def'>3</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество мелких частиц крови (могут оставлять следы на поверхностях)</td>
+      <td className='desc'><div className='text'>Количество мелких частиц крови (могут оставлять следы на поверхностях)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='violence_vfxblood_splat'>
+    <tr id='violence_vfxblood_splat'>
       <td className='name'>violence_vfxblood_splat</td>
       <td className='def'>1.5</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество брызг крови</td>
+      <td className='desc'><div className='text'>Количество брызг крови</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
     <tr id='traceralpha'>
       <td className='name'>traceralpha</td>
@@ -2245,47 +2289,47 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Скорость трассирующих пуль</td>
     </tr>
-    <tr className='added' id='cl_gunsmoke'>
+    <tr id='cl_gunsmoke'>
       <td className='name'>cl_gunsmoke</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отображение дыма из ствола оружия при выстреле</td>
+      <td className='desc'><div className='text'>Включает отображение дыма из ствола оружия при выстреле</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_guntracer'>
+    <tr id='cl_guntracer'>
       <td className='name'>cl_guntracer</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает отображение трассирующих пуль, вылетающих из ствола оружия</td>
+      <td className='desc'><div className='text'>Включает отображение трассирующих пуль, вылетающих из ствола оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_guntracer_color'>
+    <tr id='cl_guntracer_color'>
       <td className='name'>cl_guntracer_color</td>
       <td className='def color'><div style={{background: `rgba(255,255,255,0.85)`, color:`#111`}}>255 255 255</div></td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает цвет трассирующих пуль</td>
+      <td className='desc'><div className='text'>Устанавливает цвет трассирующих пуль</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_guntracer_offset'>
+    <tr id='cl_guntracer_offset'>
       <td className='name'>cl_guntracer_offset</td>
       <td className='def'>48</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Расстояние от ствола, на котором начинают отображаться трассирующие пули</td>
+      <td className='desc'><div className='text'>Расстояние от ствола, на котором начинают отображаться трассирующие пули</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_guntracer_speed'>
+    <tr id='cl_guntracer_speed'>
       <td className='name'>cl_guntracer_speed</td>
       <td className='def'>3650</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Скорость трассирующих пуль в юнитах</td>
+      <td className='desc'><div className='text'>Скорость трассирующих пуль в юнитах</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_guntracer_speed_maxmul'>
+    <tr id='cl_guntracer_speed_maxmul'>
       <td className='name'>cl_guntracer_speed_maxmul</td>
       <td className='def'>1.25</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Максимальный множитель скорости трассирующих пуль в зависимости от расстояния</td>
+      <td className='desc'><div className='text'>Максимальный множитель скорости трассирующих пуль в зависимости от расстояния</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='cl_fog_color'>
       <td className='name'>cl_fog_color</td>
@@ -2301,12 +2345,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Устанавливает плотность тумана</td>
     </tr>
-    <tr className='added' id='cl_fog_skybox'>
+    <tr id='cl_fog_skybox'>
       <td className='name'>cl_fog_skybox</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает распространение тумана на скайбокс (небо)</td>
+      <td className='desc'><div className='text'>Включает распространение тумана на скайбокс (небо)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.2.0'/></div></td>
     </tr>
     <tr id='egon_amplitude'>
       <td className='name'>egon_amplitude</td>
@@ -2353,12 +2397,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>При `1` позволяет превысить стандартное ограничение FPS движка</td>
     </tr>
-    <tr className='modified' id='cl_showfps'>
+    <tr id='cl_showfps'>
       <td className='name'>cl_showfps</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать текущий FPS в углу экрана</td>
+      <td className='desc'><div className='text'>Показывать текущий FPS в углу экрана</div><div className='desc-meta'><VersionBadge type="changed" since='2.5.6.0'/></div></td>
     </tr>
     <tr id='default_fov'>
       <td className='name'>default_fov</td>
@@ -2367,33 +2411,33 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Поле зрения (Field of View) по умолчанию</td>
     </tr>
-    <tr className='added' id='widescreen'>
+    <tr id='widescreen'>
       <td className='name'>widescreen</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает широкоэкранный режим (поддержка `16:9`, `16:10`)</td>
+      <td className='desc'><div className='text'>Включает широкоэкранный режим (поддержка `16:9`, `16:10`)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='stretchaspect'>
+    <tr id='stretchaspect'>
       <td className='name'>stretchaspect</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Растягивает изображение для соответствия пропорциям экрана (убирает черные полосы)</td>
+      <td className='desc'><div className='text'>Растягивает изображение для соответствия пропорциям экрана (убирает черные полосы)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='engine_no_focus_sleep'>
+    <tr id='engine_no_focus_sleep'>
       <td className='name'>engine_no_focus_sleep</td>
       <td className='def'>20</td>
       <td className='min'>0</td>
       <td className='max'>-</td>
-      <td className='desc'>Время 'сна' (в мс), когда окно игры неактивно.<br/>Установите `0`, чтобы движок не 'засыпал', частота кадров не будет просаживаться</td>
+      <td className='desc'><div className='text'>Время 'сна' (в мс), когда окно игры неактивно<br/>Установите `0`, чтобы движок не 'засыпал', частота кадров не будет просаживаться</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='engine_no_render_minimized'>
+    <tr id='engine_no_render_minimized'>
       <td className='name'>engine_no_render_minimized</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Не обновлять визуализацию экрана, когда игра свернута (снижает нагрузку на CPU и GPU)</td>
+      <td className='desc'><div className='text'>Не обновлять визуализацию экрана, когда игра свернута (снижает нагрузку на CPU и GPU)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
     <tr id='brightness'>
       <td className='name'>brightness</td>
@@ -2444,26 +2488,26 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Затемнять ли экран при смерти (в Half-Life)</td>
     </tr>
-    <tr className='added' id='gl_use_shaders'>
+    <tr id='gl_use_shaders'>
       <td className='name'>gl_use_shaders</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает использование эффекта 'overbright' (повышенной яркости) с помощью шейдеров</td>
+      <td className='desc'><div className='text'>Включает использование эффекта 'overbright' (повышенной яркости) с помощью шейдеров</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='gl_reduce_shader_changes'>
+    <tr id='gl_reduce_shader_changes'>
       <td className='name'>gl_reduce_shader_changes</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Уменьшает количество переключений шейдеров для повышения производительности</td>
+      <td className='desc'><div className='text'>Уменьшает количество переключений шейдеров для повышения производительности</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='modified' id='gl_vsync'>
+    <tr id='gl_vsync'>
       <td className='name'>gl_vsync</td>
       <td className='def'>1</td>
       <td className='min'>-1</td>
       <td className='max'>1</td>
-      <td className='desc'>Синхронизирует частоту кадров с частотой обновления монитора.<br/>&nbsp;&nbsp;`0` Выключено<br/>&nbsp;&nbsp;`1` Стандартная V-Sync<br/>`-1` Адаптивная V-Sync</td>
+      <td className='desc'><div className='text'>Синхронизирует частоту кадров с частотой обновления монитора<br/>&nbsp;&nbsp;`0` Выключено<br/>&nbsp;&nbsp;`1` Стандартная V-Sync<br/>`-1` Адаптивная V-Sync</div><div className='desc-meta'><VersionBadge type='changed' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='gl_affinemodels'>
       <td className='name'>gl_affinemodels</td>
@@ -2542,33 +2586,33 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает 'световые дыры'</td>
     </tr>
-    <tr className='added' id='gl_lowlatency'>
+    <tr id='gl_lowlatency'>
       <td className='name'>gl_lowlatency</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает режим низкой задержки ввода</td>
+      <td className='desc'><div className='text'>Включает режим низкой задержки ввода</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='gl_lowlatency_debugoutput'>
+    <tr id='gl_lowlatency_debugoutput'>
       <td className='name'>gl_lowlatency_debugoutput</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Управляет отладочным выводом для режима низкой задержки</td>
+      <td className='desc'><div className='text'>Управляет отладочным выводом для режима низкой задержки</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='gl_lowlatency_maxslop_ms'>
+    <tr id='gl_lowlatency_maxslop_ms'>
       <td className='name'>gl_lowlatency_maxslop_ms</td>
       <td className='def'>5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает верхний порог допустимой задержки в миллисекундах для режима низкой задержки</td>
+      <td className='desc'><div className='text'>Устанавливает верхний порог допустимой задержки в миллисекундах для режима низкой задержки</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='gl_lowlatency_minslop_ms'>
+    <tr id='gl_lowlatency_minslop_ms'>
       <td className='name'>gl_lowlatency_minslop_ms</td>
       <td className='def'>2</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает нижний порог допустимой задержки в миллисекундах для режима низкой задержки</td>
+      <td className='desc'><div className='text'>Устанавливает нижний порог допустимой задержки в миллисекундах для режима низкой задержки</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='gl_max_size'>
       <td className='name'>gl_max_size</td>
@@ -2584,19 +2628,19 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Использовать однородное освещение без карт освещения (lightmaps)</td>
     </tr>
-    <tr className='added' id='gl_msaa'>
+    <tr id='gl_msaa'>
       <td className='name'>gl_msaa</td>
       <td className='def'>2</td>
       <td className='min'>0</td>
       <td className='max'>4</td>
-      <td className='desc'>Включает уровень мультисемплингового сглаживания `MSAA`<br/>`0` Выключено<br/>`1` 2x MSAA<br/>`2` 4x MSAA<br/>`3` 8x MSAA (рекомендуемый максимум)<br/>`4` 16x MSAA (в основном для тестов)<br/><br/>Более высокие значения усиливают сглаживание, но также могут размывать края и весь экран.<br/>`8x` MSAA является практическим пределом - дальнейшее повышение (`16x`) почти не дает визуальных преимуществ, но значительно снижает производительность</td>
+      <td className='desc'><div className='text'>Включает уровень мультисемплингового сглаживания `MSAA`<br/>`0` Выключено<br/>`1` 2x MSAA<br/>`2` 4x MSAA<br/>`3` 8x MSAA (рекомендуемый максимум)<br/>`4` 16x MSAA (в основном для тестов)<br/><br/>Более высокие значения усиливают сглаживание, но также могут размывать края и весь экран<br/>`8x` MSAA является практическим пределом — дальнейшее повышение (`16x`) почти не дает визуальных преимуществ, но значительно снижает производительность</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='modified' id='gl_overbright'>
+    <tr id='gl_overbright'>
       <td className='name'>gl_overbright</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает режим повышенной яркости, делая светлые участки еще ярче</td>
+      <td className='desc'><div className='text'>Включает режим повышенной яркости, делая светлые участки еще ярче</div><div className='desc-meta'><VersionBadge type='changed' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='gl_palette_tex'>
       <td className='name'>gl_palette_tex</td>
@@ -2633,12 +2677,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает смешивание (прозрачность) для спрайтов</td>
     </tr>
-    <tr className='modified' id='gl_texturemode'>
+    <tr id='gl_texturemode'>
       <td className='name'>gl_texturemode</td>
       <td className='def'>GL_LINEAR_MIPMAP_LINEAR</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Определяет режим фильтрации текстур.<br/>GL_NEAREST<br/>GL_LINEAR<br/>GL_NEAREST_MIPMAP_NEAREST<br/>GL_LINEAR_MIPMAP_NEAREST<br/>GL_NEAREST_MIPMAP_LINEAR<br/>GL_LINEAR_MIPMAP_LINEAR</td>
+      <td className='desc'>Определяет режим фильтрации текстур<br/>GL_NEAREST<br/>GL_LINEAR<br/>GL_NEAREST_MIPMAP_NEAREST<br/>GL_LINEAR_MIPMAP_NEAREST<br/>GL_NEAREST_MIPMAP_LINEAR<br/>GL_LINEAR_MIPMAP_LINEAR</td>
     </tr>
     <tr id='gl_wateramp'>
       <td className='name'>gl_wateramp</td>
@@ -2745,26 +2789,26 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Режим отладки для просмотра карт освещения (lightmaps)</td>
     </tr>
-    <tr className='added' id='r_lockcull'>
+    <tr id='r_lockcull'>
       <td className='name'>r_lockcull</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Заморозить отсечение невидимых объектов в текущей точке (для отладки)</td>
+      <td className='desc'><div className='text'>Заморозить отсечение невидимых объектов в текущей точке (для отладки)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.3.0'/></div></td>
     </tr>
-    <tr className='added' id='r_lockpvs'>
+    <tr id='r_lockpvs'>
       <td className='name'>r_lockpvs</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Заморозить PVS (Potentially Visible Set), чтобы можно было летать по карте и смотреть, что отрисовывается (для отладки)</td>
+      <td className='desc'><div className='text'>Заморозить PVS (Potentially Visible Set), чтобы можно было летать по карте и смотреть, что отрисовывается (для отладки)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.3.0'/></div></td>
     </tr>
-    <tr className='added' id='r_maxbeams'>
+    <tr id='r_maxbeams'>
       <td className='name'>r_maxbeams</td>
       <td className='def'>128</td>
       <td className='min'>0</td>
       <td className='max'>4096</td>
-      <td className='desc'>Максимальное количество видимых лучей (beams)</td>
+      <td className='desc'><div className='text'>Максимальное количество видимых лучей (beams)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
     <tr id='r_mirroralpha'>
       <td className='name'>r_mirroralpha</td>
@@ -2794,12 +2838,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Отключает обработку VIS-данных, отрисовывая всю карту</td>
     </tr>
-    <tr className='added' id='r_prefertexturefiltering'>
+    <tr id='r_prefertexturefiltering'>
       <td className='name'>r_prefertexturefiltering</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает фильтрацию текстур</td>
+      <td className='desc'><div className='text'>Включает фильтрацию текстур</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
     <tr id='r_shadows'>
       <td className='name'>r_shadows</td>
@@ -2808,19 +2852,19 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает динамические тени от объектов (устаревшая функция). Используйте `cl_shadows` для теней игроков</td>
     </tr>
-    <tr className='added' id='r_showinfo'>
+    <tr id='r_showinfo'>
       <td className='name'>r_showinfo</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'>Показывать информацию о рендеринге/движении</td>
+      <td className='desc'><div className='text'>Показывать информацию о рендеринге/движении</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
     </tr>
-    <tr className='added' id='r_showparticles'>
+    <tr id='r_showparticles'>
       <td className='name'>r_showparticles</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать статистику использования частиц и лучей</td>
+      <td className='desc'><div className='text'>Показывать статистику использования частиц и лучей</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.0'/></div></td>
     </tr>
     <tr id='r_speeds'>
       <td className='name'>r_speeds</td>
@@ -2871,12 +2915,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Управляет моделью T, которая будет использоваться при `cl_minmodels 1`<br/>`1` Phoenix Connexion (Leet)<br/>`5` Guerilla<br/>`6` Arctic<br/>`8` Midwest Militia (Terror)</td>
     </tr>
-    <tr className='modified' id='cl_minmodels'>
+    <tr id='cl_minmodels'>
       <td className='name'>cl_minmodels</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Использовать одну модель игрока для каждой команды, чтобы упростить распознавание<br/>`1` Включено<br/>`0` Использовать все модели</td>
+      <td className='desc'><div className='text'>Использовать одну модель игрока для каждой команды, чтобы упростить распознавание<br/>`1` Включено<br/>`0` Использовать все модели</div><div className='desc-meta'><VersionBadge type='changed' since='2.2.1.0'/></div></td>
     </tr>
     <tr id='cl_shadows'>
       <td className='name'>cl_shadows</td>
@@ -2897,7 +2941,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает качество спрайтов дыма.<br/>`0` высокое качество<br/>`1` среднее качество<br/>`2` низкое качество<br/>Более низкое качество повышает производительность</td>
+      <td className='desc'>Устанавливает качество спрайтов дыма<br/>`0` высокое качество<br/>`1` среднее качество<br/>`2` низкое качество<br/>Более низкое качество повышает производительность</td>
     </tr>
   </tbody>
 </Table>
@@ -3011,12 +3055,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Включает голосовой чат в текущем моде</td>
     </tr>
-    <tr className='added' id='voice_outputdevice'>
+    <tr id='voice_outputdevice'>
       <td className='name'>voice_outputdevice</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Выбор звукового API<br/>`0` Miles<br/>`1` XAudio2</td>
+      <td className='desc'><div className='text'>Выбор звукового API<br/>`0` Miles<br/>`1` XAudio2</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='voice_outputfile'>
       <td className='name'>voice_outputfile</td>
@@ -3039,12 +3083,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Время затухания других звуков при активации `voice_overdrive`</td>
     </tr>
-    <tr className='added' id='voice_preprocess'>
+    <tr id='voice_preprocess'>
       <td className='name'>voice_preprocess</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает предобработку (очистку) входящих данных с микрофона</td>
+      <td className='desc'><div className='text'>Включает предобработку (очистку) входящих данных с микрофона</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='voice_profile'>
       <td className='name'>voice_profile</td>
@@ -3053,12 +3097,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Профилирование голосовой системы</td>
     </tr>
-    <tr className='added' id='voice_quality'>
+    <tr id='voice_quality'>
       <td className='name'>voice_quality</td>
       <td className='def'>6</td>
       <td className='min'>2</td>
       <td className='max'>6</td>
-      <td className='desc'>Устанавливает качество аудиокодека.<br/>`2` Speex<br/>`3` Raw<br/>`4` Silk<br/>`5` Opus<br/>`6` Opus PLC</td>
+      <td className='desc'><div className='text'>Устанавливает качество аудиокодека<br/>`2` Speex<br/>`3` Raw<br/>`4` Silk<br/>`5` Opus<br/>`6` Opus PLC</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='voice_recordtofile'>
       <td className='name'>voice_recordtofile</td>
@@ -3088,26 +3132,26 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Показывать входящие голосовые данные</td>
     </tr>
-    <tr className='added' id='mic_autogain'>
+    <tr id='mic_autogain'>
       <td className='name'>mic_autogain</td>
       <td className='def'>16000</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Уровень автоматической регулировки усиления для микрофона</td>
+      <td className='desc'><div className='text'>Уровень автоматической регулировки усиления для микрофона</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='mic_inputfile'>
+    <tr id='mic_inputfile'>
       <td className='name'>mic_inputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Считывать данные из указанного файла вместо микрофона</td>
+      <td className='desc'><div className='text'>Считывать данные из указанного файла вместо микрофона</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='mic_outputfile'>
+    <tr id='mic_outputfile'>
       <td className='name'>mic_outputfile</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Записывать данные с микрофона в указанный файл</td>
+      <td className='desc'><div className='text'>Записывать данные с микрофона в указанный файл</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='room_delay'>
       <td className='name'>room_delay</td>
@@ -3233,7 +3277,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>14</td>
       <td className='min'>0</td>
       <td className='max'>29</td>
-      <td className='desc'>Тип реверберации под водой.<br/>См. тип реверберации <a href='#room_type'>room_type</a></td>
+      <td className='desc'>Тип реверберации под водой<br/>См. тип реверберации <a href='#room_type'>room_type</a></td>
     </tr>
     <tr id='MP3FadeTime'>
       <td className='name'>MP3FadeTime</td>
@@ -3256,12 +3300,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Размер буфера для упреждающего смешивания звука<br/>Увеличение может помочь с прерываниями звука</td>
     </tr>
-    <tr className='added' id='snd_mute_losefocus'>
+    <tr id='snd_mute_losefocus'>
       <td className='name'>snd_mute_losefocus</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отключать звук, когда окно игры неактивно (в фоновом режиме)</td>
+      <td className='desc'><div className='text'>Отключать звук, когда окно игры неактивно (в фоновом режиме)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
     <tr id='snd_noextraupdate'>
       <td className='name'>snd_noextraupdate</td>
@@ -3443,7 +3487,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Пароль для удаленного управления сервером (rcon)</td>
+      <td className='desc'>Пароль для удаленного управления сервером `rcon` <a className='ref-link' href='/docs/refs/configuration/commands#rcon'/></td>
     </tr>
     <tr id='rcon_port'>
       <td className='name'>rcon_port</td>
@@ -3578,12 +3622,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Отключает сглаживание ошибок предсказания</td>
     </tr>
-    <tr className='modified' id='cl_smoothtime'>
+    <tr id='cl_smoothtime'>
       <td className='name'>cl_smoothtime</td>
       <td className='def'>0.1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Время в секундах, в течение которого сглаживается вид клиента после ошибки предсказания</td>
+      <td className='desc'><div className='text'>Время в секундах, в течение которого сглаживается вид клиента после ошибки предсказания</div><div className='desc-meta'><VersionBadge type='changed' since='2.3.4.0'/></div></td>
     </tr>
     <tr id='cl_solid_players'>
       <td className='name'>cl_solid_players</td>
@@ -3606,12 +3650,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Количество секунд ожидания ответа от серверов при поиске в локальной сети</td>
     </tr>
-    <tr className='added' id='cl_pmove_version'>
+    <tr id='cl_pmove_version'>
       <td className='name'>cl_pmove_version</td>
       <td className='def'>1.0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Устанавливает версию кода движения игрока для синхронизации предсказаний между клиентом и сервером</td>
+      <td className='desc'><div className='text'>Устанавливает версию кода движения игрока для синхронизации предсказаний между клиентом и сервером</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='cl_fixmodelinterpolationartifacts'>
       <td className='name'>cl_fixmodelinterpolationartifacts</td>
@@ -3620,96 +3664,96 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Исправляет артефакты интерполяции, когда анимированные модели не-игроков перемещаются другими объектами</td>
     </tr>
-    <tr className='modified' id='net_graph'>
+    <tr id='net_graph'>
       <td className='name'>net_graph</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображает график использования сети (`1`, `2` или `3`)</td>
+      <td className='desc'><div className='text'>Отображает график использования сети (`1`, `2` или `3`)</div><div className='desc-meta'><VersionBadge type='changed' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphalpha'>
+    <tr id='net_graphalpha'>
       <td className='name'>net_graphalpha</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Прозрачность графика `net_graph`</td>
+      <td className='desc'><div className='text'>Прозрачность графика `net_graph`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphheight'>
+    <tr id='net_graphheight'>
       <td className='name'>net_graphheight</td>
       <td className='def'>64</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Высота панели `net_graph`</td>
+      <td className='desc'><div className='text'>Высота панели `net_graph`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphheightfixed'>
+    <tr id='net_graphheightfixed'>
       <td className='name'>net_graphheightfixed</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Фиксированная высота `net_graph`</td>
+      <td className='desc'><div className='text'>Фиксированная высота `net_graph`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphmsecs'>
+    <tr id='net_graphmsecs'>
       <td className='name'>net_graphmsecs</td>
       <td className='def'>400</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>График задержки представляет это количество миллисекунд</td>
+      <td className='desc'><div className='text'>График задержки представляет это количество миллисекунд</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='modified' id='net_graphpos'>
+    <tr id='net_graphpos'>
       <td className='name'>net_graphpos</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позиция `net_graph` на экране (`1` - справа, `2` - по центру, `0` - слева)</td>
+      <td className='desc'><div className='text'>Позиция `net_graph` на экране<br/>`0` слева<br/>`1` справа<br/>`2` по центру</div><div className='desc-meta'><VersionBadge type='changed' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphproportionalfont'>
+    <tr id='net_graphproportionalfont'>
       <td className='name'>net_graphproportionalfont</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Определяет, является ли шрифт `net_graph` пропорциональным или нет</td>
+      <td className='desc'><div className='text'>Определяет, является ли шрифт `net_graph` пропорциональным или нет</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphshowinterp'>
+    <tr id='net_graphshowinterp'>
       <td className='name'>net_graphshowinterp</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать график интерполяции</td>
+      <td className='desc'><div className='text'>Отображать график интерполяции</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphshowlatency'>
+    <tr id='net_graphshowlatency'>
       <td className='name'>net_graphshowlatency</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать график пинга/потери пакетов</td>
+      <td className='desc'><div className='text'>Отображать график пинга/потери пакетов</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphsolid'>
+    <tr id='net_graphsolid'>
       <td className='name'>net_graphsolid</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Делает фон `net_graph` непрозрачным</td>
+      <td className='desc'><div className='text'>Делает фон `net_graph` непрозрачным</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='net_graphtext'>
+    <tr id='net_graphtext'>
       <td className='name'>net_graphtext</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отображать текстовые поля</td>
+      <td className='desc'><div className='text'>Отображать текстовые поля</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='modified' id='net_graphwidth'>
+    <tr id='net_graphwidth'>
       <td className='name'>net_graphwidth</td>
       <td className='def'>250</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Ширина панели `net_graph`</td>
+      <td className='desc'><div className='text'>Ширина панели `net_graph`</div><div className='desc-meta'><VersionBadge type='changed' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='modified' id='net_scale'>
+    <tr id='net_scale'>
       <td className='name'>net_scale</td>
       <td className='def'>3</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Масштаб графика `net_graph`</td>
+      <td className='desc'><div className='text'>Масштаб графика `net_graph`</div><div className='desc-meta'><VersionBadge type='changed' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='ex_interp'>
       <td className='name'>ex_interp</td>
@@ -3735,75 +3779,75 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Максимальный размер фрагмента (в байтах) для скачивания логотипов игроков с сервера во время игры, а так же загрузка недостающих ресурсов во время подключения к серверу</td>
     </tr>
-    <tr className='added' id='cl_download_delay_ms'>
+    <tr id='cl_download_delay_ms'>
       <td className='name'>cl_download_delay_ms</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>10000</td>
-      <td className='desc'>Задержка в миллисекундах между загрузками файлов по HTTP</td>
+      <td className='desc'><div className='text'>Задержка в миллисекундах между загрузками файлов по HTTP</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_download_demo_resources'>
+    <tr id='cl_download_demo_resources'>
       <td className='name'>cl_download_demo_resources</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает загрузку недостающих ресурсов во время воспроизведения демо-записей</td>
+      <td className='desc'><div className='text'>Включает загрузку недостающих ресурсов во время воспроизведения демо-записей</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_download_enable_gzip'>
+    <tr id='cl_download_enable_gzip'>
       <td className='name'>cl_download_enable_gzip</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включить поддержку Gzip-сжатия для быстрой загрузки (fastdl)</td>
+      <td className='desc'><div className='text'>Включить поддержку Gzip-сжатия для быстрой загрузки (fastdl)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_download_ingame'>
+    <tr id='cl_download_ingame'>
       <td className='name'>cl_download_ingame</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
       <td className='desc'>Включает загрузку пользовательских спреев (логотипов) игроков во время игры</td>
     </tr>
-    <tr className='added' id='cl_download_multi'>
+    <tr id='cl_download_multi'>
       <td className='name'>cl_download_multi</td>
       <td className='def'>5</td>
       <td className='min'>1</td>
       <td className='max'>20</td>
-      <td className='desc'>Максимальное количество одновременных загрузок</td>
+      <td className='desc'><div className='text'>Максимальное количество одновременных загрузок</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_download_retries'>
+    <tr id='cl_download_retries'>
       <td className='name'>cl_download_retries</td>
       <td className='def'>3</td>
       <td className='min'>0</td>
       <td className='max'>10</td>
-      <td className='desc'>Максимальное количество попыток повторной загрузки</td>
+      <td className='desc'><div className='text'>Максимальное количество попыток повторной загрузки</div><div className='desc-meta'><VersionBadge type='added' since='2.3.8.6'/></div></td>
     </tr>
-    <tr className='added' id='cl_filterstuffcmd'>
+    <tr id='cl_filterstuffcmd'>
       <td className='name'>cl_filterstuffcmd</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Уровень фильтрации команд, которые сервер может выполнять на вашем клиенте.<br/>`0` выкл. (нет ограничений)<br/>`1` мягкий уровень (некоторые команды разрешены)<br/>`2` строгий уровень (выполнение запрещено)</td>
+      <td className='desc'><div className='text'>Уровень фильтрации команд, которые сервер может выполнять на вашем клиенте<br/>`0` выкл. (нет ограничений)<br/>`1` мягкий уровень (некоторые команды разрешены)<br/>`2` строгий уровень (выполнение запрещено)</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_filterstuffcmd_notify'>
+    <tr id='cl_filterstuffcmd_notify'>
       <td className='name'>cl_filterstuffcmd_notify</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Включает уведомления о заблокированных командах, которые сервер пытался выполнить на вашем клиенте</td>
+      <td className='desc'><div className='text'>Включает уведомления о заблокированных командах, которые сервер пытался выполнить на вашем клиенте</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_allow_demorecord'>
+    <tr id='cl_allow_demorecord'>
       <td className='name'>cl_allow_demorecord</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Позволяет серверу автоматически начинать запись демо-записи</td>
+      <td className='desc'><div className='text'>Позволяет серверу автоматически начинать запись демо-записи</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
-    <tr className='added' id='cl_allow_redirect'>
+    <tr id='cl_allow_redirect'>
       <td className='name'>cl_allow_redirect</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Разрешить перенаправление на другой сервер по запросу текущего сервера</td>
+      <td className='desc'><div className='text'>Разрешить перенаправление на другой сервер по запросу текущего сервера</div><div className='desc-meta'><VersionBadge type='added' since='2.3.6.0'/></div></td>
     </tr>
     <tr id='cl_allowdownload'>
       <td className='name'>cl_allowdownload</td>
@@ -4111,7 +4155,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Максимальный рейт, который может установить клиент. `0` - без ограничений</td>
+      <td className='desc'>Максимальный рейт, который может установить клиент<br/>`0` без ограничений</td>
     </tr>
     <tr id='sv_maxspeed'>
       <td className='name'>sv_maxspeed</td>
@@ -4211,12 +4255,12 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Время в секундах для отслеживания неудачных rcon-аутентификаций</td>
     </tr>
-    <tr className='added' id='sv_rcon_whitelist_address'>
+    <tr id='sv_rcon_whitelist_address'>
       <td className='name'>sv_rcon_whitelist_address</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Если установлено, этот IP-адрес никогда не будет забанен за неудачные rcon-попытки, например, `127.0.0.1`</td>
+      <td className='desc'><div className='text'>Если установлено, этот IP-адрес никогда не будет забанен за неудачные rcon-попытки, например, `127.0.0.1`</div><div className='desc-meta'><VersionBadge type='added' since='2.3.7.0'/></div></td>
     </tr>
     <tr id='sv_rollangle'>
       <td className='name'>sv_rollangle</td>
@@ -4342,7 +4386,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0.0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Корректирует время компенсации. Положительные значения добавляют задержку, отрицательные - уменьшают. Полезно для тонкой настройки точности в зависимости от условий сервера</td>
+      <td className='desc'>Корректирует время компенсации. Положительные значения добавляют задержку, отрицательные — уменьшают. Полезно для тонкой настройки точности в зависимости от условий сервера</td>
     </tr>
     <tr id='sv_unlagsamples'>
       <td className='name'>sv_unlagsamples</td>
@@ -4358,19 +4402,19 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='max'>-</td>
       <td className='desc'>Максимальный размер файла для загрузки (в МБ)</td>
     </tr>
-    <tr className='added' id='sv_use_entity_file'>
+    <tr id='sv_use_entity_file'>
       <td className='name'>sv_use_entity_file</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Использовать внешний файл для данных об объектах (entities)</td>
+      <td className='desc'><div className='text'>Использовать внешний файл для данных об объектах (entities)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
-    <tr className='added' id='sv_userinfo_transmitted_fields'>
+    <tr id='sv_userinfo_transmitted_fields'>
       <td className='name'>sv_userinfo_transmitted_fields</td>
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Какие поля userinfo передаются клиентам</td>
+      <td className='desc'><div className='text'>Какие поля userinfo передаются клиентам</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
     </tr>
     <tr id='sv_version'>
       <td className='name'>sv_version</td>
@@ -4384,7 +4428,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>-1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Количество слотов, отображаемое в браузере серверов. `-1` - использовать реальное количество</td>
+      <td className='desc'>Количество слотов, отображаемое в браузере серверов<br/>`-1` использовать реальное количество</td>
     </tr>
     <tr id='sv_voicecodec'>
       <td className='name'>sv_voicecodec</td>
@@ -4510,7 +4554,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>motd.txt</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Имя файла для `Приветственного сообщения` (MOTD - Message of the Day), отображаемого при входе на сервер</td>
+      <td className='desc'>Имя файла для `Приветственного сообщения` (MOTD — Message of the Day), отображаемого при входе на сервер</td>
     </tr>
     <tr id='hpk_maxsize'>
       <td className='name'>hpk_maxsize</td>
@@ -4594,7 +4638,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Сворачивать игру при потере фокуса в полноэкранном режиме<br/>Рекомендуется отключить это устаревшее поведение, для улучшения совместимости с менеджерами окон.<br/>Имейте ввиду, если вы это отключите, игра не будет сворачиваться одной кнопкой `Win`, правильное использование `Win + D` или `Alt + ESC`</td>
+      <td className='desc'>Сворачивать игру при потере фокуса в полноэкранном режиме<br/>Рекомендуется отключить это устаревшее поведение, для улучшения совместимости с менеджерами окон<br/>Имейте ввиду, если вы это отключите, игра не будет сворачиваться одной кнопкой `Win`, правильное использование `Win + D` или `Alt + ESC`</td>
     </tr>
     <tr id='sdl_pollevent_no_timeout'>
       <td className='name'>sdl_pollevent_no_timeout</td>
@@ -4607,7 +4651,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 </Table>
 
 ## Параметры визуализации для настройки производительности
-<h5>Консольные переменные, связанные с визуализацией, которые могут как положительно, так и отрицательно влиять на производительность игры.<br/>Настрой их, чтобы улучшить производительность или контролировать количество визуальных эффектов, например частиц, лазерных лучей и т.д.</h5>
+<h5>Консольные переменные, связанные с визуализацией, которые могут как положительно, так и отрицательно влиять на производительность игры<br/>Настрой их, чтобы улучшить производительность или контролировать количество визуальных эффектов, например частиц, лазерных лучей и т.д.</h5>
 <Grid minItemWidth="250px">
   <div><a href='#fps_max'>fps_max</a></div>
   <div><a href='#gl_zmax'>gl_zmax</a></div>
@@ -4633,7 +4677,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>3</td>
-      <td className='desc'>Включает уровень сообщений разработчика.<br/>Режим разработчика можно использовать для отображения информации на экране и вывода расширенной информации в консоль</td>
+      <td className='desc'>Включает уровень сообщений разработчика<br/>Режим разработчика можно использовать для отображения информации на экране и вывода расширенной информации в консоль</td>
     </tr>
     <tr id='dev_overview'>
       <td className='name'>dev_overview</td>
@@ -4654,28 +4698,28 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Отложенная предзагрузка ресурсов.<br/>Если `0` - все модели, звуки и прочее грузятся сразу при подключении к серверу.<br/>Старт будет дольше, но во время игры подлагов будет меньше.<br/><br/>Если `1` - ресурсы загружаются только при первом использовании в игре.<br/>Подключение быстрее, но возможны небольшие фризы при появлении новых объектов.<br/>Используйте, если хотите быстрее заходить или у вас мало оперативной памяти</td>
+      <td className='desc'>Отложенная предзагрузка ресурсов<br/><br/>Если `0` — все модели, звуки и прочее грузятся сразу при подключении к серверу<br/>Старт будет дольше, но во время игры подлагов будет меньше<br/><br/>Если `1` — ресурсы загружаются только при первом использовании в игре<br/>Подключение быстрее, но возможны небольшие фризы при появлении новых объектов<br/>Используйте, если хотите быстрее заходить или у вас мало оперативной памяти</td>
     </tr>
     <tr id='fs_perf_warnings'>
       <td className='name'>fs_perf_warnings</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Предупреждения о тормозах файловой системы.<br/>Если включить, игра будет выводить в консоль предупреждения, если при загрузке файлов что-то идёт медленно или не так, как должно. Полезно для отладки или поиска проблем с файлами</td>
+      <td className='desc'>Предупреждения о тормозах файловой системы<br/>Если включить, игра будет выводить в консоль предупреждения, если при загрузке файлов что-то идёт медленно или не так, как должно. Полезно для отладки или поиска проблем с файлами</td>
     </tr>
     <tr id='fs_precache_timings'>
       <td className='name'>fs_precache_timings</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать время загрузки ресурсов<br/>Включает вывод в консоль, сколько секунд ушло на загрузку каждой модели или звука.<br/>Полезно для теста и поиска 'тяжёлых' ресурсов, которые долго грузятся</td>
+      <td className='desc'>Показывать время загрузки ресурсов<br/>Включает вывод в консоль, сколько секунд ушло на загрузку каждой модели или звука<br/>Полезно для теста и поиска 'тяжёлых' ресурсов, которые долго грузятся</td>
     </tr>
     <tr id='fs_startup_timings'>
       <td className='name'>fs_startup_timings</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать время запуска клиента.<br/>При подключении к серверу выводит в консоль поэтапное время загрузки клиента (предзагрузка ресурсов, подключение и т.д.), Полезно, чтобы понять, на каком этапе есть задержка</td>
+      <td className='desc'>Показывать время запуска клиента<br/>При подключении к серверу выводит в консоль поэтапное время загрузки клиента (предзагрузка ресурсов, подключение и т.д.)<br/>Полезно, чтобы понять, на каком этапе есть задержка</td>
     </tr>
     <tr id='cl_pmanstats'>
       <td className='name'>cl_pmanstats</td>

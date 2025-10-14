@@ -1,19 +1,5 @@
-:root {
-  --responsive-table-added-bg-color-even: rgb(230, 248, 230, 0.4);
-  --responsive-table-added-bg-color-odd: rgb(230, 248, 230, 0.65);
-  --responsive-table-modified-bg-color-even: rgb(235, 235, 186, 0.2);
-  --responsive-table-modified-bg-color-odd: rgb(235, 235, 186, 0.1);
-}
-
-[data-theme='dark'] {
-  --responsive-table-added-bg-color-even: rgba(0, 220, 185, 0.10);
-  --responsive-table-added-bg-color-odd: rgba(0, 220, 185, 0.11);
-  --responsive-table-modified-bg-color-even: rgba(120, 120, 60, 0.3);
-  --responsive-table-modified-bg-color-odd: rgba(120, 120, 60, 0.4);
-}
 
 .table-wrapper {
-  overflow-x: auto;
   width: 100%;
 }
 
@@ -57,10 +43,6 @@
   display: table-cell;
 }
 
-.responsive-table :global(.desc > button) {
-  display: table-row;
-}
-
 @media (max-width: 996px) {
   .responsive-table td,
   .responsive-table th {
@@ -78,6 +60,11 @@
   .responsive-table tr {
     display: block;
     width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .responsive-table :global(td.desc) {
+    overflow: visible !important;
   }
 
   .responsive-table thead tr {
@@ -90,7 +77,7 @@
     border: 1px solid var(--ifm-color-emphasis-300);
     margin-bottom: 1rem;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible !important;
   }
 
   .responsive-table td {
@@ -116,22 +103,8 @@
     color: var(--ifm-heading-color);
   }
 
-  .responsive-table :global(td.desc) {
-    display: block;
-    padding: 10px 12px !important;
-    text-align: left !important;
-    width: 100% !important;
-  }
-
-  .responsive-table :global(td.desc::before) {
-    display: none;
-    position: static;
-    display: block;
-    width: 100%;
-    padding-bottom: 6px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid var(--ifm-color-emphasis-300);
-    color: var(--ifm-heading-color);
+  .responsive-table :global(.desc) {
+    display: flow-root;
   }
 
   .responsive-table td:last-child {
@@ -139,26 +112,10 @@
   }
 }
 
-table.responsive-table :global(.modified a) {
+table.responsive-table :global(.changed a) {
   color: #f9a825;
   font-weight: bold;
   text-decoration: none;
-}
-
-tbody :global(tr.added:nth-of-type(even)) {
-  background-color: var(--responsive-table-added-bg-color-even);
-}
-
-tbody :global(tr.added:nth-of-type(odd)) {
-  background-color: var(--responsive-table-added-bg-color-odd);
-}
-
-tbody :global(tr.modified:nth-of-type(even)) {
-  background-color: var(--responsive-table-modified-bg-color-even);
-}
-
-tbody :global(tr.modified:nth-of-type(odd)) {
-  background-color: var(--responsive-table-modified-bg-color-odd);
 }
 
 table.responsive-table :global(.default) {
