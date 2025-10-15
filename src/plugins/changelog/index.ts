@@ -116,6 +116,7 @@ export default async function ChangelogPlugin(context, options) {
               description: blogPost.metadata.description,
               permalink: blogPost.metadata.permalink,
               frontMatter: blogPost.metadata.frontMatter,
+              prerelease: blogPost.metadata.frontMatter.prerelease || false,
             })
           ),
 

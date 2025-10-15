@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useId } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
+import { Tooltip } from 'react-tooltip';
 import {useDateTimeFormat} from '@docusaurus/theme-common/internal';
 
 import styles from './styles.module.css';
@@ -16,11 +17,34 @@ function ChangelogItem({ version }) {
     timeZone: 'UTC',
   });
   const formattedDate = dateTimeFormat.format(atDate);
+  const isPrerelease = metadata.prerelease || false;
+
+  const tooltipId = `tooltip:${useId()}`;
+  const tooltipText = isPrerelease ? translate({
+    id: `theme.home.changelog.prerelease.hint`,
+    message: '',
+  }) : null;
+
   return (
     <div key={metadata.permalink} className={clsx('card', styles['card'])}>
       <div className={clsx('card__header', styles['header'])}>
-        <div>
+        <div className={styles['card--container']}>
           <Link to={metadata.permalink} className={styles['title']}>{metadata.title}</Link>
+          {isPrerelease && (
+            <>
+              <div data-tooltip-id={tooltipId} data-tooltip-content={tooltipText}>
+                <div className={styles['badge']}>
+                    <Translate id="theme.home.changelog.prerelease">Pre-release</Translate>
+                </div>
+              </div>
+              <Tooltip
+                id={tooltipId}
+                place='left'
+                opacity={1.0}
+                className={`${styles['badge--hint']}`}
+              />
+            </>
+          )}
         </div>
         <div>
           <time dateTime={atDate.toISOString()} itemProp="dateModified" className={styles['time']}>

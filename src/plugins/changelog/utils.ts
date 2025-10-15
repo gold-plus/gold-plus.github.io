@@ -72,11 +72,11 @@ export function createAuthorsMap(
 }
 
 function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
-  const title = sectionContent
+  const titleLine = sectionContent
     .match(/\n## .*/)?.[0]
     .trim()
     .replace('## ', '');
-  if (!title) {
+  if (!titleLine) {
     return null;
   }
   let content = sectionContent
@@ -91,16 +91,19 @@ function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
     });
   }
 
+  const isPrerelease = /beta|pre-release|rc/i.test(titleLine.toLowerCase());
+
   let hour = 20;
-  const date = title.match(/ \((?<date>.*)\)/)?.groups!.date;
+  const date = titleLine.match(/ \((?<date>.*)\)/)?.groups!.date;
   while (publishTimes.has(`${date}T${hour}:00`)) {
     hour -= 1;
   }
   publishTimes.add(`${date}T${hour}:00`);
 
+  const cleanTitle = titleLine.replace(/ *(\([\d-]+\)|\[.*?\])/g, '');
   return {
     authors,
-    title: title.replace(/ \(.*\)/, ''),
+    title: cleanTitle,
     content: `---
 mdx:
  format: md
@@ -111,9 +114,10 @@ authors:
 ${authors.map((author) => `  - '${author.alias}'`).join('\n')}`
         : ''
     }
+prerelease: ${isPrerelease}
 ---
 
-# ${title.replace(/ \(.*\)/, '')}
+# ${cleanTitle}
 
 
 ${content.replace(/####/g, '##')}`,

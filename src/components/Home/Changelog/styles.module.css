@@ -10,7 +10,6 @@
 }
 
 .header {
-  /*background: red;*/
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -45,18 +44,50 @@
   background-repeat: repeat-x;
 }
 
+.card--container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.0rem;
+  flex-grow: 1;
+}
+
+.badge {
+  background-color: #efa243;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  cursor: help;
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+}
+
+.badge--hint {
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px !important;
+  background-color: #efa243 !important;
+  padding: 0.1rem 0.5rem !important;
+  letter-spacing: 1px;
+}
+
 .time {
   font-size: 0.75rem;
   font-style: italic;
+  vertical-align: text-top;
   color: var(--ifm-color-gray-contrast);
-
-  display: flex;
-  align-items: flex-start;
+  white-space: nowrap;
 }
 
 .title {
   font-size: 1.3rem;
   font-weight: 700;
-  margin: 0.2rem 0 0.6rem;
   color: var(--ifm-link-color);
 }

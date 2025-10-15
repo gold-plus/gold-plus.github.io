@@ -12,6 +12,7 @@ import type {Props} from '@theme/BlogPostItem';
 import BlogPostItemContainer from '@theme/BlogPostItem/Container';
 import BlogPostItemContent from '@theme/BlogPostItem/Content';
 
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 
@@ -23,8 +24,9 @@ type ChangelogItemProps = Props & {
 
 export default function ChangelogItem({children, showReadMoreButton = true}: ChangelogItemProps): ReactNode {
   const {metadata} = useBlogPost();
+  const isPrerelease = metadata.frontMatter.prerelease || false;
   return (
-    <BlogPostItemContainer className={styles.changelogItemContainer}>
+    <BlogPostItemContainer className={clsx(styles.changelogItemContainer, isPrerelease && styles.prereleaseCard)}>
       <ChangelogItemHeader />
       <BlogPostItemContent>{children}</BlogPostItemContent>
       {showReadMoreButton && (

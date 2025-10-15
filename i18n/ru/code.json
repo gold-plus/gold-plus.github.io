@@ -29,6 +29,12 @@
   "theme.changelog.item.readMore": {
     "message": "Читать дальше"
   },
+  "theme.home.changelog.prerelease": {
+    "message": "Бета"
+  },
+  "theme.home.changelog.prerelease.hint": {
+    "message": "Идет бета-тестирование"
+  },
   "theme.changelog.item.backLink": {
     "message": "← Назад к списку"
   },

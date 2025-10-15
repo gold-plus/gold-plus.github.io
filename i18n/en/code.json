@@ -29,6 +29,12 @@
   "theme.changelog.item.readMore": {
     "message": "Read more"
   },
+  "theme.home.changelog.prerelease": {
+    "message": "Beta"
+  },
+  "theme.home.changelog.prerelease.hint": {
+    "message": "Currently in beta testing"
+  },
   "theme.changelog.item.backLink": {
     "message": "← Back to index page"
   },

@@ -5,6 +5,35 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.changelogItemTitleList {
+.title--list {
   font-size: 2rem;
+}
+
+.title--no-margin {
+  margin: 0;
+}
+
+.title--container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  cursor: help;
+  background-color: #efa243;
+  color: white;
+  padding: 0 10px;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.badge--hint {
+  background-color: #efa243 !important;
+  color: white;
+  padding: 0 10px !important;
+  border-radius: 3px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
 }
