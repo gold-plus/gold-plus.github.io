@@ -1,4 +1,63 @@
 
+## 2.5.7.0 (2025-10-19) [Beta]
+
+#### :rocket: New Feature
+
+- Added automatic client update system (can be toggled in settings)
+- Added `Matchmaking` tab to `New Game` menu for quick game search with filters (game, mod, map) (can be toggled)
+- Added Discord RPC integration to display in-game status
+- Added a button in settings to enable/disable Steam integration
+- Added ConVars for scoreboard customization
+    - `scoreboard_showsteam`
+    - `scoreboard_showdefaultavatars`
+    - `scoreboard_steamicon_offset_x`
+    - `scoreboard_steamicon_offset_y`
+    - `scoreboard_steamicon_scale`
+
+<!-- truncate -->
+
+- Fully reworked avatar manager: improved stability, added CDN support for fast loading
+- Significantly optimized lookup and execution of console commands and aliases
+- Optimized Options dialog opening, removed delays and implemented avatar list caching
+- Improved `dev_console` ConVar: can now be opened over loading dialogs
+- Improved server browser map filter: added support for exact map name search in quotes
+- Improved DHUD: messages now respect channels (vanilla bug)
+- Added support for custom sizes for the original radar via `hud.txt`
+- Added a validate to HUD radar config to prevent using a different map image for a map with the same name (@Nord1cWarr1or)
+
+#### :bug: Bug Fix
+
+- Fixed round timer disappearing after reconnecting if a bomb was planted in the previous round
+- Fixed model collision prediction (@Nord1cWarr1or)
+- Fixed an bug in chat during intermission (@hajimura)
+- Fixed an bug in scoreboard where bottom of player names could be cut off, especially on crowded servers or at low resolutions (@hajimura)
+- Fixed player names appearing twice on HUD radar
+- Fixed incorrect right-alignment of text in VGUI menus (e.g., buy menu) (vanilla bug) (@YoshiokaHaruki)
+- Fixed duration formatting in demo player UI (@Nord1cWarr1or)
+- Fixed execution order for command aliases using `wait` command (@Nord1cWarr1or)
+- Fixed demos starting at the wrong time (vanilla bug)
+- Fixed loading of external resources (maps, models) in demos when broken by some server-side anticheats
+- Fixed auto-join button not working for full servers (@karaul0v)
+- Fixed `lservercfgfile.cfg` execution when creating a listen server (@esotericdesign)
+- Fixed sprite green color in `StatusIcon` user message (@esotericdesign)
+- Fixed buffer overflow when reading empty lines in `sentences.txt` (vanilla bug) (@scriptedsnark)
+
+#### Authors 1
+<!-- authors -->
+
+- s1lent ([@s1lent](https://github.com/s1lentq))
+
+#### Testers 6
+<!-- testers -->
+
+- hajimura ([@hajimura](https://github.com/hajimura))
+- Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
+- scriptedsnark ([@scriptedsnark](https://github.com/scriptedsnark))
+- esotericdesign ([@esotericdesign](https://github.com/esotericdesign))
+- YoshiokaHaruki ([@YoshiokaHaruki](https://github.com/YoshiokaHaruki))
+- karaul0v ([@karaul0v](https://github.com/UnrealKaraulov))
+
+
 ## 2.5.6.0 (2025-05-07)
 
 #### :rocket: New Feature

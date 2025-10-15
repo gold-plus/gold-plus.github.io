@@ -47,3 +47,31 @@ hajimura:
   image_url: https://github.com/hajimura.png
   socials:
     github: hajimura
+
+scriptedsnark:
+  title: Contributor of tests and ideas
+  url: https://github.com/scriptedsnark
+  image_url: https://github.com/scriptedsnark.png
+  socials:
+    github: scriptedsnark
+
+esotericdesign:
+  title: Contributor of tests and ideas
+  url: https://github.com/esotericdesign
+  image_url: https://github.com/esotericdesign.png
+  socials:
+    github: esotericdesign
+
+karaul0v:
+  title: Contributor of tests and ideas
+  url: https://github.com/UnrealKaraulov
+  image_url: https://github.com/UnrealKaraulov.png
+  socials:
+    github: UnrealKaraulov
+
+YoshiokaHaruki:
+  title: Contributor of tests and ideas
+  url: https://github.com/YoshiokaHaruki
+  image_url: https://github.com/YoshiokaHaruki.png
+  socials:
+    github: YoshiokaHaruki
