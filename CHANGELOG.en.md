@@ -41,6 +41,7 @@
 - Fixed `lservercfgfile.cfg` execution when creating a listen server (@esotericdesign)
 - Fixed sprite green color in `StatusIcon` user message (@esotericdesign)
 - Fixed buffer overflow when reading empty lines in `sentences.txt` (vanilla bug) (@scriptedsnark)
+- Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (vanilla bug) (@hajimura) [link](https://youtu.be/8Z09xvpNQ3E?t=97)
 
 #### Authors 1
 <!-- authors -->
