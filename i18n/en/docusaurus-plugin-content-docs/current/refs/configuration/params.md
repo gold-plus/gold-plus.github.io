@@ -4,7 +4,7 @@ title: Launch params
 sidebar_position: 3
 ---
 
-import { VersionBadge } from '@site/src/components/Misc/VersionBadge'
+import { VersionBadge } from '@site/src/components/Misc/Badges'
 import { Table } from '@site/src/components/ResponsiveLayout';
 
 <br/>

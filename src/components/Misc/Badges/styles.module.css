@@ -1,0 +1,134 @@
+:root {
+  .badge--added {
+    background-color: #68d391;
+    box-shadow: 0 0 4px #68d391c0;
+  }
+  .badge--changed {
+    background-color: #f6e05e;
+    box-shadow: 0 0 4px #f6e05ec0;
+  }
+  .badge--removed {
+    background-color: #f56565;
+    box-shadow: 0 0 4px #f56565c0;
+  }
+  .badge--deprecated {
+    background-color: #a0aec0;
+    box-shadow: 0 0 4px #a0aec0c0;
+  }
+}
+
+[data-theme='dark'] {
+  .badge--added {
+    background-color: #38a169;
+    box-shadow: 0 0 5px #38a169c0;
+  }
+  .badge--changed {
+    background-color: #d69e2e;
+    box-shadow: 0 0 5px #d69e2ec0;
+  }
+  .badge--removed {
+    background-color: #c53030;
+    box-shadow: 0 0 5px #c53030c0;
+  }
+  .badge--deprecated {
+    background-color: #718096;
+    box-shadow: 0 0 5px #718096c0;
+  }
+}
+
+.badge {
+  display: block;
+  padding: 8px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+  border-radius: 50%;
+  cursor: help;
+  user-select: none;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.badge:hover {
+  cursor: help;
+}
+
+.link {
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+  transition: all 0.2s ease;
+  position: relative;
+  padding-bottom: 0.4em;
+  vertical-align: middle;
+  top: 0.1em;
+  margin-inline-start: 0.3em;
+}
+
+.link:not(.no-link):hover {
+  border-bottom-color: var(--ifm-link-hover-color);
+  color: var(--ifm-link-hover-color);
+}
+
+.link img {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.badge--no-link {
+  cursor: default;
+}
+
+.badge--tooltip {
+  z-index: 20;
+  font-size: 14px !important;
+  padding: 2px 8px 2px 8px !important;
+  background-color: var(--ifm-font-color-base) !important;
+  color: var(--ifm-background-color) !important;
+}
+
+[data-theme='dark'] .badge--avatar--default img {
+  filter: invert(1);
+}
+
+.badge--avatar--wrap {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+[data-theme='dark'] .badge--avatar--wrap {
+  background-color: white;
+}
+
+.badge--avatar {
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+}
+
+.badge--bug {
+  height: 1.5em;
+  align-items: center;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: help;
+  margin-inline-start: 0.3em;
+  padding-bottom: 0.4em;
+  top: 0.1em;
+  position: relative;
+}
+
+.bug--icon {
+  width: 1.5em;
+  height: 1.5em;
+}

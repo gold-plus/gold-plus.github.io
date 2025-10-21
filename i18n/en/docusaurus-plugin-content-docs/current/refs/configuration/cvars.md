@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 
 import { SliderButton } from '@site/src/components/Image'
-import { VersionBadge } from '@site/src/components/Misc/VersionBadge'
+import { VersionBadge } from '@site/src/components/Misc/Badges'
 import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 
 <br/>

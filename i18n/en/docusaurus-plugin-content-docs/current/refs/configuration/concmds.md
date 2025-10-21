@@ -4,7 +4,7 @@ title: Console commands
 sidebar_position: 2
 ---
 
-import { VersionBadge } from '@site/src/components/Misc/VersionBadge'
+import { VersionBadge } from '@site/src/components/Misc/Badges'
 import { Table } from '@site/src/components/ResponsiveLayout';
 
 <br/>

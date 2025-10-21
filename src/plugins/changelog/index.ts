@@ -8,6 +8,8 @@
 import path from 'path';
 import fs from 'fs-extra';
 import pluginContentBlog, { validateOptions } from '@docusaurus/plugin-content-blog';
+import { getPluginI18nPath, readDataFile } from '@docusaurus/utils';
+
 export { validateOptions };
 
 import {
@@ -54,9 +56,9 @@ function readChangelogFile(filename: string) {
   return fs.readFile(path.join(MonorepoRoot, filename), 'utf-8');
 }
 
-async function loadChangelogEntries(changelogFiles: string[]) {
+async function loadChangelogEntries(changelogFiles: string[], authorsData: Record<string, any>) {
   const filesContent = await Promise.all(changelogFiles.map(readChangelogFile));
-  return toChangelogEntries(filesContent);
+  return toChangelogEntries(filesContent, authorsData);
 }
 
 export default async function ChangelogPlugin(context, options) {
@@ -73,12 +75,26 @@ export default async function ChangelogPlugin(context, options) {
 
   const blogPlugin = await pluginContentBlog(context, blogOptions);
   const changelogFiles = await getChangelogFiles(context.i18n.currentLocale, context.i18n.defaultLocale);
+  const contentPaths = {
+      contentPath: path.resolve(context.siteDir, 'changelog'),
+      contentPathLocalized: getPluginI18nPath({
+          localizationDir: context.localizationDir,
+          pluginName: 'docusaurus-plugin-content-blog-changelog',
+          pluginId: options.id,
+      }),
+  };
+
+  const authorsData = await readDataFile({
+    filePath: blogOptions.authorsMapPath,
+    contentPaths: contentPaths
+  }) || {};
+
   return {
     ...blogPlugin,
     name: 'docusaurus-plugin-content-blog-changelog',
 
     async loadContent() {
-      const changelogEntries = await loadChangelogEntries(changelogFiles);
+      const changelogEntries = await loadChangelogEntries(changelogFiles, authorsData);
 
       // we have to create intermediate files here
       // unfortunately Docusaurus doesn't have yet any concept of virtual file

@@ -8,6 +8,8 @@
 import fs from 'fs-extra';
 import path from 'path';
 
+import { processMdxComponents } from './mdx-components';
+
 /**
  * Multiple versions may be published on the same day, causing the order to be
  * the reverse. Therefore, our publish time has a "fake hour" to order them.
@@ -71,7 +73,7 @@ export function createAuthorsMap(
   return authorsMap;
 }
 
-function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
+function toChangelogEntry(sectionContent: string, authorsData: Record<string, any>): ChangelogEntry | null {
   const titleLine = sectionContent
     .match(/\n## .*/)?.[0]
     .trim()
@@ -84,14 +86,9 @@ function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
     .trim();
 
   const authors = parseAuthors(content);
-  if (authors.length > 0) {
-    content = content.replace(/\(@([a-zA-Z0-9_-]+)\)/g, (match, id) => {
-      const author = authors.find((author) => author.name == id );
-      return author?.url ? `[@${author.name}](${author.url})` : `@${id}`;
-    });
-  }
-
   const isPrerelease = /beta|pre-release|rc/i.test(titleLine.toLowerCase());
+
+  const { processedContent, imports } = processMdxComponents(content, authorsData);
 
   let hour = 20;
   const date = titleLine.match(/ \((?<date>.*)\)/)?.groups!.date;
@@ -101,12 +98,10 @@ function toChangelogEntry(sectionContent: string): ChangelogEntry | null {
   publishTimes.add(`${date}T${hour}:00`);
 
   const cleanTitle = titleLine.replace(/ *(\([\d-]+\)|\[.*?\])/g, '');
-  return {
-    authors,
-    title: cleanTitle,
-    content: `---
+  const finalContent = `---
 mdx:
- format: md
+ format: mdx
+prerelease: ${isPrerelease}
 date: ${`${date}T${hour}:00`}${
       authors.length > 0
         ? `
@@ -114,20 +109,25 @@ authors:
 ${authors.map((author) => `  - '${author.alias}'`).join('\n')}`
         : ''
     }
-prerelease: ${isPrerelease}
 ---
+
+${imports.join('\n')}
 
 # ${cleanTitle}
 
+${processedContent.replace(/####/g, '##')}`
 
-${content.replace(/####/g, '##')}`,
+  return {
+    authors,
+    title: cleanTitle,
+    content: finalContent,
   };
 }
 
-export function toChangelogEntries(filesContent: string[]): ChangelogEntry[] {
+export function toChangelogEntries(filesContent: string[], authorsData: Record<string, any>): ChangelogEntry[] {
   return filesContent
     .flatMap((content) => content.split(/(?=\n## )/))
-    .map(toChangelogEntry)
+    .map((sectionContent) => toChangelogEntry(sectionContent, authorsData))
     .filter((s): s is ChangelogEntry => s !== null);
 }
 

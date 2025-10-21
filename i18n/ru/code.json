@@ -26,6 +26,12 @@
   "theme.home.feature.updates": {
     "message": "Регулярные обновления с улучшениями и исправлениями."
   },
+  "theme.home.link.youtube": {
+    "message": "Смотреть на YouTube"
+  },
+  "theme.home.link.youtube.time": {
+    "message": "Смотреть на YouTube (на {time}с)"
+  },
   "theme.changelog.item.readMore": {
     "message": "Читать дальше"
   },
@@ -34,6 +40,9 @@
   },
   "theme.home.changelog.prerelease.hint": {
     "message": "Идет бета-тестирование"
+  },
+  "theme.changelog.bug.origin.hint": {
+    "message": "Баг из оригинального билда игры"
   },
   "theme.changelog.item.backLink": {
     "message": "← Назад к списку"

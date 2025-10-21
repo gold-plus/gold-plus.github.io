@@ -1,4 +1,4 @@
-// src/components/Misc/VersionBadge/index.tsx
+// src/components/Misc/Badges/Version.tsx
 import React, { useId }   from 'react';
 import { translate } from '@docusaurus/Translate';
 import { Tooltip } from 'react-tooltip';

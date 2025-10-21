@@ -26,6 +26,12 @@
   "theme.home.feature.updates": {
     "message": "Regular updates with improvements and fixes."
   },
+  "theme.home.link.youtube": {
+    "message": "Watch on YouTube"
+  },
+  "theme.home.link.youtube.time": {
+    "message": "Watch on YouTube (at {time}s)"
+  },
   "theme.changelog.item.readMore": {
     "message": "Read more"
   },
@@ -34,6 +40,9 @@
   },
   "theme.home.changelog.prerelease.hint": {
     "message": "Currently in beta testing"
+  },
+  "theme.changelog.bug.origin.hint": {
+    "message": "Bug from original build of the game"
   },
   "theme.changelog.item.backLink": {
     "message": "← Back to index page"

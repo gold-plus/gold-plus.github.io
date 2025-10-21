@@ -21,7 +21,7 @@
 - Optimized Options dialog opening, removed delays and implemented avatar list caching
 - Improved `dev_console` ConVar: can now be opened over loading dialogs
 - Improved server browser map filter: added support for exact map name search in quotes
-- Improved DHUD: messages now respect channels (vanilla bug)
+- Improved DHUD: messages now respect channels [stockbug]
 - Added support for custom sizes for the original radar via `hud.txt`
 - Added a validate to HUD radar config to prevent using a different map image for a map with the same name (@Nord1cWarr1or)
 
@@ -32,16 +32,16 @@
 - Fixed an bug in chat during intermission (@hajimura)
 - Fixed an bug in scoreboard where bottom of player names could be cut off, especially on crowded servers or at low resolutions (@hajimura)
 - Fixed player names appearing twice on HUD radar
-- Fixed incorrect right-alignment of text in VGUI menus (e.g., buy menu) (vanilla bug) (@YoshiokaHaruki)
+- Fixed incorrect right-alignment of text in VGUI menus (e.g., buy menu) (@YoshiokaHaruki) [stockbug]
 - Fixed duration formatting in demo player UI (@Nord1cWarr1or)
 - Fixed execution order for command aliases using `wait` command (@Nord1cWarr1or)
-- Fixed demos starting at the wrong time (vanilla bug)
+- Fixed demos starting at the wrong time [stockbug]
 - Fixed loading of external resources (maps, models) in demos when broken by some server-side anticheats
 - Fixed auto-join button not working for full servers (@karaul0v)
 - Fixed `lservercfgfile.cfg` execution when creating a listen server (@esotericdesign)
 - Fixed sprite green color in `StatusIcon` user message (@esotericdesign)
-- Fixed buffer overflow when reading empty lines in `sentences.txt` (vanilla bug) (@scriptedsnark)
-- Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (vanilla bug) (@hajimura) [link](https://youtu.be/8Z09xvpNQ3E?t=97)
+- Fixed buffer overflow when reading empty lines in `sentences.txt` (@scriptedsnark) [stockbug]
+- Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874][stockbug]
 
 #### Authors 1
 <!-- authors -->
@@ -123,24 +123,24 @@
 
 #### :bug: Bug Fix
 
-- Fixed Famas weapon bug with missed shots in Burst mode (vanilla bug) (@Nord1cWarr1or)
-- Fixed money HUD position when secondary ammo is present (vanilla bug)
-- Fixed the game appearing too dark after modifying video options (vanilla bug)
-- Fixed uneven padding for Health and Armor HUD elements (vanilla bug)
-- Fixed incorrect calc of glyph widths in right-aligned text in the HUD menu (vanilla bug)
-- Fixed a crash in `CVoiceStatus::UpdateSpeakerStatus` (vanilla bug)
-- Speak label of talking player does not disappear when the scoreboard is open (vanilla bug)
+- Fixed Famas weapon bug with missed shots in Burst mode (@Nord1cWarr1or) [stockbug]
+- Fixed money HUD position when secondary ammo is present [stockbug]
+- Fixed the game appearing too dark after modifying video options [stockbug]
+- Fixed uneven padding for Health and Armor HUD elements [stockbug]
+- Fixed incorrect calc of glyph widths in right-aligned text in the HUD menu [stockbug]
+- Fixed a crash in `CVoiceStatus::UpdateSpeakerStatus` [stockbug]
+- Speak label of talking player does not disappear when the scoreboard is open [stockbug]
 - Fixed incorrect sorting of ConVar/ConCommand in console dropdown menu
 - Fixed weapon offset `viewmodel_offset_x` applying for knife/grenade/shield weapons
 - Fixed prediction of player movements with SOLID_NOT in spectator mode (@wopox1337)
 - Fixed some bugs in videomode 800x600 (@wopox1337)
-- Fixed jitter viewmodel moving from 1st person in eye spectator mode (vanilla bug)
+- Fixed jitter viewmodel moving from 1st person in eye spectator mode [stockbug]
 - Fixed map outline for HUD radar (@Nord1cWarr1or)
 - Fixed a crash for custom mods of Half-Life
-- Fixed `NumPad ENTER` button not handling button press in VGUI2 dialogs (vanilla bug) (@Vaqtincha)
-- Fixed a bug with brush entity where the impact sound from weapon shots was not emitted (vanilla bug) (@Vaqtincha)
-- Fixed prediction bug ducking of a player spectating by a 1st-person observer (vanilla bug)
-- Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo (vanilla bug)
+- Fixed `NumPad ENTER` button not handling button press in VGUI2 dialogs (@Vaqtincha) [stockbug]
+- Fixed a bug with brush entity where the impact sound from weapon shots was not emitted (@Vaqtincha) [stockbug]
+- Fixed prediction bug ducking of a player spectating by a 1st-person observer [stockbug]
+- Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo [stockbug]
 
 #### Authors 1
 <!-- authors -->
@@ -230,11 +230,11 @@
 - Fixed a bug with flickering screen in spectator mode due jump to position when server sent fullupdate or sv_restart 1
 - Fixed a bug with weapon predict with `cl_minviewmodel 1`
 - Fixed a bug with animation of inspect for `cl_minviewmodel`
-- Fixed a bug with duplicating load HLTV `core.dll` library (vanilla bug)
-- Fixed a bug that occurred during the resource precaching stage in listenserver (vanilla bug)
-- Fixed a bug with predict weapon double firing on extremal FPS (vanilla bug)
-- Fixed a bug with weapon HUD selection when have multiple primary/secondary weapons (vanilla bug)
-- Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map (vanilla bug)
+- Fixed a bug with duplicating load HLTV `core.dll` library [stockbug]
+- Fixed a bug that occurred during the resource precaching stage in listenserver [stockbug]
+- Fixed a bug with predict weapon double firing on extremal FPS [stockbug]
+- Fixed a bug with weapon HUD selection when have multiple primary/secondary weapons [stockbug]
+- Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map [stockbug]
 - Minor bugfixes
 
 #### Authors 1
@@ -254,13 +254,15 @@
 
 #### :rocket: New Feature
 
-- Added ConVar `cl_fixmodelinterpolationartifacts`, a feature backported from HL25 update. It fixes interpolation artifacts (visual stuttering) for animated models on moving platforms (e.g., a scientist on a train)
+- Added ConVar `cl_fixmodelinterpolationartifacts`, a feature backported from HL25 update \
+  It fixes interpolation artifacts (visual stuttering) for animated models on moving platforms (e.g., a scientist on a train)
 - Added the `-nosingle` launch option to allow running multiple game instances, with connections restricted to servers where `sv_chats` is enabled
 - Added cross-compatibility for CS 1.6 and Condition Zero games in the ServerBrowser
 
 #### :bug: Bug Fix
 
-- Fixed the directional damage indicator on the HUD (red overlay showing the direction of incoming attacks) (@hajimura)
+- Fixed the directional damage indicator on the HUD \
+  Red overlay showing the direction of incoming attacks (@hajimura)
 - Fixed a crash caused by a buffer overrun in the `AmmoX` user message due to an invalid ammo ID
 
 <!-- truncate -->
@@ -589,15 +591,15 @@
 
 #### :bug: Bug Fix
 
-- Fixed client Deploy animation caused weapon prediction (vanilla bug)
-- Fixed a crash about `AllocBlock: full` (vanilla bug)
-- Fixed a crash due bad user-messages `StatusIcon` and `DeathMsg` (vanilla bug)
-- Fixed a crash of maps where MAX_MAP_LEAFS was greater than limit of 1024, which able led to undefined behavior in client (vanilla bug)
-- Fixed `MOTD` when path to includes non latin characters (vanilla bug)
-- Fixed incorrect position players/entities in spectator mode map roaming (vanilla bug)
-- Fixed memory leak `SPR_GetList` (vanilla bug)
-- Fixed memory leak `DetailTextures` with `r_detailtextures 0` (vanilla bug)
-- Fixed memory leak VOX sentence system (vanilla bug)
+- Fixed client Deploy animation caused weapon prediction [stockbug]
+- Fixed a crash about `AllocBlock: full` [stockbug]
+- Fixed a crash due bad user-messages `StatusIcon` and `DeathMsg` [stockbug]
+- Fixed a crash of maps where MAX_MAP_LEAFS was greater than limit of 1024, which able led to undefined behavior in client [stockbug]
+- Fixed `MOTD` when path to includes non latin characters [stockbug]
+- Fixed incorrect position players/entities in spectator mode map roaming [stockbug]
+- Fixed memory leak `SPR_GetList` [stockbug]
+- Fixed memory leak `DetailTextures` with `r_detailtextures 0` [stockbug]
+- Fixed memory leak VOX sentence system [stockbug]
 
 #### Authors 1
 <!-- authors -->
@@ -775,7 +777,7 @@
 
 #### :bug: Bug Fixes
 
-- Fixed a client crash that could occur when changing video options (vanilla bug)
+- Fixed a client crash that could occur when changing video options [stockbug]
 
 <!-- truncate -->
 
@@ -825,7 +827,7 @@
 
 - Improved `net_graph` layout, fixing column alignment
 - Invalid or non-printable characters are now cleaned up from server and map names
-- Fixed a crash related to switching display modes in video options (vanilla bug)
+- Fixed a crash related to switching display modes in video options [stockbug]
 - Fixed an issue in `History` tab where 'Last Played' time was sometimes incorrect
 
 <!-- truncate -->
