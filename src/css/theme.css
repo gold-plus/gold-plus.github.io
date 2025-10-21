@@ -266,7 +266,7 @@
 
 html.plugin-blog .container .row .col--3,
 html.plugin-blog-changelog .container .row .col--3 {
-  --ifm-col-width: calc(3 / 17 * 100%);
+  --ifm-col-width: calc(2.5 / 17 * 100%);
 }
 
 html.plugin-blog .container .row .col--7,
@@ -276,7 +276,7 @@ html.plugin-blog-changelog .container .row .col--7 {
 
 html.plugin-blog .container .row .col--2,
 html.plugin-blog-changelog .container .row .col--2 {
-  --ifm-col-width: calc(2 / 17 * 100%);
+  --ifm-col-width: calc(2.5 / 17 * 100%);
 }
 
 /* DOCS */

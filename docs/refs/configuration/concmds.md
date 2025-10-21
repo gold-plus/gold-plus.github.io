@@ -68,7 +68,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='sbindlist'>
       <td className='name'>sbindlist</td>
-      <td className='desc'><div className='text'>Показывает список 'теневых' привязок клавиш, установленных сервером</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Показывает список 'теневых' привязок клавиш, установленных сервером</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='multvar'>
       <td className='name'>multvar `<cvar>` `<minvalue>` `<maxvalue>` `<factor>`</td>

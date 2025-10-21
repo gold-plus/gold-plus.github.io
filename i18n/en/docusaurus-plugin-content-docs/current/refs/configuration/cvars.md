@@ -63,7 +63,7 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables 'shadow' keybindings when on a game server<br/>Any keybindings set by the server are not saved to the player's config</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
+      <td className='desc'><div className='text'>Enables 'shadow' keybindings when on a game server<br/>Any keybindings set by the server are not saved to the player's config</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -84,14 +84,14 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables the 'Random Server' item in the main game menu</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables the 'Random Server' item in the main game menu</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='ui_password_entry'>
       <td className='name'>ui_password_entry</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables the display of the password entry window in the game settings for gaining privileges on servers</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables the display of the password entry window in the game settings for gaining privileges on servers</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='ui_taskbar_iconflash'>
       <td className='name'>ui_taskbar_iconflash</td>
@@ -119,7 +119,7 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables the new VGUI style menu with images and descriptions</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables the new VGUI style menu with images and descriptions</div><div className='desc-meta'><VersionBadge type='added' since='1.6.8.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -133,7 +133,7 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Allows access to the in-game console without displaying the main menu (GameUI)<br/>`0` The console opens against the main menu background<br/>`1` The console can open directly in-game (including over the loading dialog when connecting to a server)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
+      <td className='desc'><div className='text'>Allows access to the in-game console without displaying the main menu (GameUI)<br/>`0` The console opens against the main menu background<br/>`1` The console can open directly in-game (including over the loading dialog when connecting to a server)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='console'>
       <td className='name'>console</td>
@@ -315,70 +315,70 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Adds a black outline around the crosshair for better visibility</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Adds a black outline around the crosshair for better visibility</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_maxdist_splitratio'>
       <td className='name'>cl_crosshair_dynamic_maxdist_splitratio</td>
       <td className='def'>0.35</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, defines the length ratio of the inner and outer parts of the crosshair when it splits<br/>`inner` = cl_crosshairsize * (1 — cl_crosshair_dynamic_maxdist_splitratio)<br/>`outer` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, defines the length ratio of the inner and outer parts of the crosshair when it splits<br/>`inner` = cl_crosshairsize * (1 — cl_crosshair_dynamic_maxdist_splitratio)<br/>`outer` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitalpha_innermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_innermod</td>
       <td className='def'>1</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the transparency modifier for the INNER crosshair pips after they split</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the transparency modifier for the INNER crosshair pips after they split</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitalpha_outermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_outermod</td>
       <td className='def'>0.5</td>
       <td className='min'>0.3</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the transparency modifier for the OUTER crosshair pips after they split</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the transparency modifier for the OUTER crosshair pips after they split</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitdist'>
       <td className='name'>cl_crosshair_dynamic_splitdist</td>
       <td className='def'>7</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the distance the crosshair pips will split</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>With `cl_crosshairstyle 2`, sets the distance the crosshair pips will split</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_friendly_warning'>
       <td className='name'>cl_crosshair_friendly_warning</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'><div className='text'>Shows a warning icon ('X') when aiming at a teammate<br/>`0` off<br/>`1` Only for default crosshair styles<br/>`2` Always on</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Shows a warning icon ('X') when aiming at a teammate<br/>`0` off<br/>`1` Only for default crosshair styles<br/>`2` Always on</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_outlinethickness'>
       <td className='name'>cl_crosshair_outlinethickness</td>
       <td className='def'>1</td>
       <td className='min'>0.1</td>
       <td className='max'>3.0</td>
-      <td className='desc'><div className='text'>Sets the thickness of the crosshair outline (from 0.1 to 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Sets the thickness of the crosshair outline (from 0.1 to 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_recoverytime_on_fps'>
       <td className='name'>cl_crosshair_recoverytime_on_fps</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Makes crosshair recovery time (after firing) dependent on FPS<br/>`1` dependent<br/>`0` independent</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Makes crosshair recovery time (after firing) dependent on FPS<br/>`1` dependent<br/>`0` independent</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_show_normal_inaccuracy'>
       <td className='name'>cl_crosshair_sniper_show_normal_inaccuracy</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Includes 'no-scope' inaccuracy when calculating the blur of the sniper scope crosshair</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Includes 'no-scope' inaccuracy when calculating the blur of the sniper scope crosshair</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_style'>
       <td className='name'>cl_crosshair_sniper_style</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>1</td>
-      <td className='desc'><div className='text'>`0` Classic static sniper scope<br/>`1` Accurate dynamic sniper scope</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>`0` Classic static sniper scope<br/>`1` Accurate dynamic sniper scope</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_width'>
       <td className='name'>cl_crosshair_sniper_width</td>
@@ -392,14 +392,14 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables a T-shaped crosshair (removes the top line)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables a T-shaped crosshair (removes the top line)</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairalpha'>
       <td className='name'>cl_crosshairalpha</td>
       <td className='def'>255</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Sets the crosshair transparency (0 — 255). The lower the value, the more transparent the crosshair. Requires `cl_crosshairusealpha 1`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Sets the crosshair transparency (0 — 255). The lower the value, the more transparent the crosshair. Requires `cl_crosshairusealpha 1`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshaircolor'>
       <td className='name'>cl_crosshaircolor</td>
@@ -413,21 +413,21 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Adds a dot to the center of the crosshair. If you set `cl_crosshairsize 0`, only the dot will remain</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Adds a dot to the center of the crosshair. If you set `cl_crosshairsize 0`, only the dot will remain</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairgap'>
       <td className='name'>cl_crosshairgap</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Sets the size of the gap between the crosshair pips</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Sets the size of the gap between the crosshair pips</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairgap_useweaponvalue'>
       <td className='name'>cl_crosshairgap_useweaponvalue</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>If `1`, the crosshair gap will change dynamically based on the selected weapon</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>If `1`, the crosshair gap will change dynamically based on the selected weapon</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairscale'>
       <td className='name'>cl_crosshairscale</td>
@@ -441,49 +441,49 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Sets the length of the crosshair pips</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Sets the length of the crosshair pips</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairstyle'>
       <td className='name'>cl_crosshairstyle</td>
       <td className='def'>6</td>
       <td className='min'>0</td>
       <td className='max'>6</td>
-      <td className='desc'><div className='text'>`0` DEFAULT<br/>`1` DEFAULT STATIC<br/>`2` ACCURATE SPLIT (accurate recoil/spread with a fixed inner part)<br/>`3` ACCURATE DYNAMIC (accurate recoil/spread)<br/>`4` CLASSIC STATIC<br/>`5` OLD CS STYLE (inaccurate recoil/feedback)<br/>`6` ORIGINAL CS 1.6</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>`0` DEFAULT<br/>`1` DEFAULT STATIC<br/>`2` ACCURATE SPLIT (accurate recoil/spread with a fixed inner part)<br/>`3` ACCURATE DYNAMIC (accurate recoil/spread)<br/>`4` CLASSIC STATIC<br/>`5` OLD CS STYLE (inaccurate recoil/feedback)<br/>`6` ORIGINAL CS 1.6</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairthickness'>
       <td className='name'>cl_crosshairthickness</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Adjusts the thickness of the crosshair lines</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Adjusts the thickness of the crosshair lines</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairusealpha'>
       <td className='name'>cl_crosshairusealpha</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables/disables the ability to set crosshair transparency with `cl_crosshairalpha`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables/disables the ability to set crosshair transparency with `cl_crosshairalpha`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_fixedcrosshairgap'>
       <td className='name'>cl_fixedcrosshairgap</td>
       <td className='def'>3</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Sets the gap size for a static crosshair</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Sets the gap size for a static crosshair</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='weapon_debug_spread_gap'>
       <td className='name'>weapon_debug_spread_gap</td>
       <td className='def'>0.67</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Coefficient for `weapon_debug_spread_show 3`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Coefficient for `weapon_debug_spread_show 3`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='weapon_debug_spread_show'>
       <td className='name'>weapon_debug_spread_show</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Enables debug display of weapon spread<br/>`1` shows a spread square<br/>`3` shows spread using a dynamic crosshair</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Enables debug display of weapon spread<br/>`1` shows a spread square<br/>`3` shows spread using a dynamic crosshair</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_dynamiccrosshair'>
       <td className='name'>cl_dynamiccrosshair</td>
@@ -3840,7 +3840,7 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Allows the server to automatically start recording a demo</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Allows servers to start demo recording on the client</div><div className='desc-meta'><VersionBadge type='added' since='1.5.0.0'/></div></td>
     </tr>
     <tr id='cl_allow_redirect'>
       <td className='name'>cl_allow_redirect</td>

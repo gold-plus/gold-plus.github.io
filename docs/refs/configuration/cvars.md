@@ -63,7 +63,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает возможность использовать 'теневую' привязку клавиш при нахождении на игровом сервере<br/>Любые привязки клавиш, установленные сервером, не сохраняются в конфиг игрока</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
+      <td className='desc'><div className='text'>Включает возможность использовать 'теневую' привязку клавиш при нахождении на игровом сервере<br/>Любые привязки клавиш, установленные сервером, не сохраняются в конфиг игрока</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -84,14 +84,14 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает пункт 'Случайный сервер' в главном меню игры</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает пункт 'Случайный сервер' в главном меню игры</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='ui_password_entry'>
       <td className='name'>ui_password_entry</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает отображение окна для ввода пароля в настройках игры для получения привилегий на серверах</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает отображение окна для ввода пароля в настройках игры для получения привилегий на серверах</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='ui_taskbar_iconflash'>
       <td className='name'>ui_taskbar_iconflash</td>
@@ -119,7 +119,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает меню в новом стиле VGUI с изображениями и описаниями</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает меню в новом стиле VGUI с изображениями и описаниями</div><div className='desc-meta'><VersionBadge type='added' since='1.6.8.0'/></div></td>
     </tr>
   </tbody>
 </Table>
@@ -133,7 +133,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Позволяет получить доступ к игровой консоли без отображения главного меню (GameUI)<br/>`0` Консоль открывается на фоне главного меню<br/>`1` Консоль может открываться непосредственно в игре (включая диалоговое окно загрузки при подключении к серверу)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.6.0'/></div></td>
+      <td className='desc'><div className='text'>Позволяет получить доступ к игровой консоли без отображения главного меню (GameUI)<br/>`0` Консоль открывается на фоне главного меню<br/>`1` Консоль может открываться непосредственно в игре (включая диалоговое окно загрузки при подключении к серверу)</div><div className='desc-meta'><VersionBadge type='added' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='console'>
       <td className='name'>console</td>
@@ -315,70 +315,70 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Добавляет черную обводку вокруг прицела для лучшей видимости</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Добавляет черную обводку вокруг прицела для лучшей видимости</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_maxdist_splitratio'>
       <td className='name'>cl_crosshair_dynamic_maxdist_splitratio</td>
       <td className='def'>0.35</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` определяет соотношение длин внутренней и внешней частей прицела при разделении<br/>`внутренняя` = cl_crosshairsize * (1 — cl_crosshair_dynamic_maxdist_splitratio)<br/>`внешняя` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` определяет соотношение длин внутренней и внешней частей прицела при разделении<br/>`внутренняя` = cl_crosshairsize * (1 — cl_crosshair_dynamic_maxdist_splitratio)<br/>`внешняя` = cl_crosshairsize * cl_crosshair_dynamic_maxdist_splitratio</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitalpha_innermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_innermod</td>
       <td className='def'>1</td>
       <td className='min'>0.0</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНУТРЕННИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНУТРЕННИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitalpha_outermod'>
       <td className='name'>cl_crosshair_dynamic_splitalpha_outermod</td>
       <td className='def'>0.5</td>
       <td className='min'>0.3</td>
       <td className='max'>1.0</td>
-      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНЕШНИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` устанавливает модификатор прозрачности для ВНЕШНИХ делений прицела после их разделения</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_dynamic_splitdist'>
       <td className='name'>cl_crosshair_dynamic_splitdist</td>
       <td className='def'>7</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` задает расстояние, на которое разделяются деления прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>При `cl_crosshairstyle 2` задает расстояние, на которое разделяются деления прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_friendly_warning'>
       <td className='name'>cl_crosshair_friendly_warning</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>2</td>
-      <td className='desc'><div className='text'>Показывать предупреждение (иконка 'X') при наведении на союзника<br/>`0` выключено<br/>`1` Только для стандартных стилей прицела<br/>`2` Включено всегда</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Показывать предупреждение (иконка 'X') при наведении на союзника<br/>`0` выключено<br/>`1` Только для стандартных стилей прицела<br/>`2` Включено всегда</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_outlinethickness'>
       <td className='name'>cl_crosshair_outlinethickness</td>
       <td className='def'>1</td>
       <td className='min'>0.1</td>
       <td className='max'>3.0</td>
-      <td className='desc'><div className='text'>Задает толщину обводки прицела (от 0.1 до 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Задает толщину обводки прицела (от 0.1 до 3.0)</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_recoverytime_on_fps'>
       <td className='name'>cl_crosshair_recoverytime_on_fps</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Зависимость времени восстановления прицела (после выстрела) от FPS<br/>`1` зависит<br/>`0` не зависит</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Зависимость времени восстановления прицела (после выстрела) от FPS<br/>`1` зависит<br/>`0` не зависит</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_show_normal_inaccuracy'>
       <td className='name'>cl_crosshair_sniper_show_normal_inaccuracy</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Учитывать неточность при стрельбе без прицела ('no-scope') для размытия перекрестия в снайперском прицеле</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Учитывать неточность при стрельбе без прицела ('no-scope') для размытия перекрестия в снайперском прицеле</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_style'>
       <td className='name'>cl_crosshair_sniper_style</td>
       <td className='def'>0</td>
       <td className='min'>0</td>
       <td className='max'>1</td>
-      <td className='desc'><div className='text'>`0` Классический статичный снайперский прицел<br/>`1` Точный динамический снайперский прицел</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>`0` Классический статичный снайперский прицел<br/>`1` Точный динамический снайперский прицел</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshair_sniper_width'>
       <td className='name'>cl_crosshair_sniper_width</td>
@@ -392,14 +392,14 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает Т-образный прицел (убирает верхнее деление)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает Т-образный прицел (убирает верхнее деление)</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairalpha'>
       <td className='name'>cl_crosshairalpha</td>
       <td className='def'>255</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Устанавливает прозрачность прицела (0 — 255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Устанавливает прозрачность прицела (0 — 255). Чем ниже значение, тем прозрачнее прицел. Требует `cl_crosshairusealpha 1`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshaircolor'>
       <td className='name'>cl_crosshaircolor</td>
@@ -413,21 +413,21 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Добавляет точку в центр прицела. Если установить `cl_crosshairsize 0`, останется только точка</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Добавляет точку в центр прицела. Если установить `cl_crosshairsize 0`, останется только точка</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairgap'>
       <td className='name'>cl_crosshairgap</td>
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Устанавливает размер зазора между делениями прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Устанавливает размер зазора между делениями прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairgap_useweaponvalue'>
       <td className='name'>cl_crosshairgap_useweaponvalue</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Если `1`, зазор прицела будет динамически меняться в зависимости от выбранного оружия</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Если `1`, зазор прицела будет динамически меняться в зависимости от выбранного оружия</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairscale'>
       <td className='name'>cl_crosshairscale</td>
@@ -441,49 +441,49 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>5</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Устанавливает длину делений прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Устанавливает длину делений прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairstyle'>
       <td className='name'>cl_crosshairstyle</td>
       <td className='def'>6</td>
       <td className='min'>0</td>
       <td className='max'>6</td>
-      <td className='desc'><div className='text'>`0` СТАНДАРТНЫЙ<br/>`1` СТАНДАРТНЫЙ СТАТИЧНЫЙ<br/>`2` ТОЧНЫЙ РАЗДЕЛЕННЫЙ (точная отдача/разброс с фиксированной внутренней частью)<br/>`3` ТОЧНЫЙ ДИНАМИЧЕСКИЙ (точная отдача/разброс)<br/>`4` КЛАССИЧЕСКИЙ СТАТИЧНЫЙ<br/>`5` СТАРЫЙ СТИЛЬ CS (неточная отдача/обратная связь)<br/>`6` ОРИГИНАЛЬНЫЙ CS 1.6</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>`0` СТАНДАРТНЫЙ<br/>`1` СТАНДАРТНЫЙ СТАТИЧНЫЙ<br/>`2` ТОЧНЫЙ РАЗДЕЛЕННЫЙ (точная отдача/разброс с фиксированной внутренней частью)<br/>`3` ТОЧНЫЙ ДИНАМИЧЕСКИЙ (точная отдача/разброс)<br/>`4` КЛАССИЧЕСКИЙ СТАТИЧНЫЙ<br/>`5` СТАРЫЙ СТИЛЬ CS (неточная отдача/обратная связь)<br/>`6` ОРИГИНАЛЬНЫЙ CS 1.6</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairthickness'>
       <td className='name'>cl_crosshairthickness</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Регулирует толщину линий прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Регулирует толщину линий прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_crosshairusealpha'>
       <td className='name'>cl_crosshairusealpha</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает/выключает возможность настройки прозрачности прицела с помощью `cl_crosshairalpha`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает/выключает возможность настройки прозрачности прицела с помощью `cl_crosshairalpha`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_fixedcrosshairgap'>
       <td className='name'>cl_fixedcrosshairgap</td>
       <td className='def'>3</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Устанавливает размер зазора для статичного прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Устанавливает размер зазора для статичного прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='weapon_debug_spread_gap'>
       <td className='name'>weapon_debug_spread_gap</td>
       <td className='def'>0.67</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Коэффициент для `weapon_debug_spread_show 3`</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Коэффициент для `weapon_debug_spread_show 3`</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='weapon_debug_spread_show'>
       <td className='name'>weapon_debug_spread_show</td>
       <td className='def'>0</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Включает отладочное отображение разброса оружия<br/>`1` показывает квадрат разброса<br/>`3` показывает разброс с помощью динамического прицела</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Включает отладочное отображение разброса оружия<br/>`1` показывает квадрат разброса<br/>`3` показывает разброс с помощью динамического прицела</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='cl_dynamiccrosshair'>
       <td className='name'>cl_dynamiccrosshair</td>
@@ -3840,7 +3840,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Позволяет серверу автоматически начинать запись демо-записи</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Позволяет серверу запускать запись демо-записи на клиенте</div><div className='desc-meta'><VersionBadge type='added' since='1.5.0.0'/></div></td>
     </tr>
     <tr id='cl_allow_redirect'>
       <td className='name'>cl_allow_redirect</td>

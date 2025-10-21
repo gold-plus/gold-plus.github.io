@@ -68,7 +68,7 @@ They only describe the command's structure
     </tr>
     <tr id='sbindlist'>
       <td className='name'>sbindlist</td>
-      <td className='desc'><div className='text'>Displays a list of 'shadow' key bindings set by the server</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'><div className='text'>Displays a list of 'shadow' key bindings set by the server</div><div className='desc-meta'><VersionBadge type='added' since='1.2.0.0'/></div></td>
     </tr>
     <tr id='multvar'>
       <td className='name'>multvar `<cvar>` `<minvalue>` `<maxvalue>` `<factor>`</td>
