@@ -536,7 +536,10 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='min'>0</td>
       <td className='max'>255</td>
       <td className='desc'>
-        <div className='text'>Регулирует прозрачность радара (0 — 255)</div>
+        <div className='text'>
+          Регулирует прозрачность радара (0 — 255)<br/>
+          *Не действует, если установлен [`cl_radartype 1`](#cl_radartype) (непрозрачный радар)*
+        </div>
         <div className='desc-meta'>
           <SliderButton
             buttonName='Просмотр'

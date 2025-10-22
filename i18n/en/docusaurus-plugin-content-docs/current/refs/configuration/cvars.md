@@ -536,7 +536,10 @@ List of all console variables (ConVar) — description, default values
       <td className='min'>0</td>
       <td className='max'>255</td>
       <td className='desc'>
-        <div className='text'>Adjusts radar transparency (0 — 255)</div>
+        <div className='text'>
+          Adjusts radar transparency (0 — 255)<br/>
+          *Has no effect if [`cl_radartype 1`](#cl_radartype) is set (solid radar)*
+        </div>
         <div className='desc-meta'>
           <SliderButton
             buttonName='Preview'
