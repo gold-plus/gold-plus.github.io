@@ -16,6 +16,7 @@
 
 <!-- truncate -->
 
+- Removed dependency on the system registry, all settings are now file-based for full portability
 - Fully reworked avatar manager: improved stability, added CDN support for fast loading
 - Significantly optimized lookup and execution of console commands and aliases
 - Optimized Options dialog opening, removed delays and implemented avatar list caching
