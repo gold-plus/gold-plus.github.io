@@ -25,6 +25,11 @@
 - Improved DHUD: messages now respect channels [stockbug]
 - Added support for custom sizes for the original radar via `hud.txt`
 - Added a validate to HUD radar config to prevent using a different map image for a map with the same name (@Nord1cWarr1or)
+- Improved `hud_headname` ConVar: added mode 2 to display the names of all players with their team color during demo playback
+- Re-introduced and completely overhauled the progressive `lazy` loading mode for demo files:
+    - Demos now start playing immediately without waiting for the full file to load
+    - The file parsing process is now decoupled from `fps_max`, resulting in significantly faster buffering
+    - The progress slider now displays the full demo duration from the start, while a new indicator shows the buffered portion available for seeking
 
 #### :bug: Bug Fix
 
@@ -43,6 +48,8 @@
 - Fixed sprite green color in `StatusIcon` user message (@esotericdesign)
 - Fixed buffer overflow when reading empty lines in `sentences.txt` (@scriptedsnark) [stockbug]
 - Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874][stockbug]
+- Fixed a long-standing bug in Scoreboard where player counts for CT and Terrorist teams would be swapped (@Nord1cWarr1or) [stockbug]
+- Fixed `con_mono` (monospaced console font) when running via Valve Proton (@Nord1cWarr1or)
 
 #### Authors 1
 <!-- authors -->
@@ -813,7 +820,6 @@
 #### :rocket: New Features
 
 - Added `country flags` and filters for `game mode` and `location` to internet Server Browser tab
-- Added `hud_headname` to show teammate friends' nicknames above their character in-game
 - Added ConVar `hud_headname` to show nicknames above teammates in-game that are on the player's Steam friends list
 - Implemented `Steam integration`
 - Added shadow keybindings system, allowing servers to temporarily set keybinds without affecting local configuration \
@@ -830,6 +836,6 @@
 - Invalid or non-printable characters are now cleaned up from server and map names
 - Fixed a crash related to switching display modes in video options [stockbug]
 - Fixed an issue in `History` tab where 'Last Played' time was sometimes incorrect
+- Fixed long server names being cut off on the scoreboard [issue=ValveSoftware/halflife/2168][stockbug]
 
 <!-- truncate -->
-
