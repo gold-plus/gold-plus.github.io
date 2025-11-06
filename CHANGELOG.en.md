@@ -50,6 +50,7 @@
 - Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874][stockbug]
 - Fixed a long-standing bug in Scoreboard where player counts for CT and Terrorist teams would be swapped (@Nord1cWarr1or) [stockbug]
 - Fixed `con_mono` (monospaced console font) when running via Valve Proton (@Nord1cWarr1or)
+- Fixed being disconnected from servers when alt-tabbing back into the game after a long period while `engine_no_render_minimized` is enabled (@Nord1cWarr1or)
 
 #### Authors 1
 <!-- authors -->

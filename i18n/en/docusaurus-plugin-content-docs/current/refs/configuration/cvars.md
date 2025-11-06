@@ -1258,7 +1258,18 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Show the name above a teammate's head or a tracked player's head (with 'trackplayer' command)</div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'>
+        <div className='text'>
+          Show the name above a teammate's head or a tracked player's head (with `trackplayer` command) <a className='ref-link' href='/en/docs/refs/configuration/commands#trackplayer'/><br/>
+          `0` Disabled<br/>
+          `1` Enabled<br/>
+          `2` Shows all player names during demo playback
+        </div>
+        <div className='desc-meta'>
+          <VersionBadge type='added' since='2.0.0.0'/>
+          <VersionBadge type='changed' since='2.5.7.0'/>
+        </div>
+      </td>
     </tr>
     <tr id='hud_saytext'>
       <td className='name'>hud_saytext</td>
@@ -3490,7 +3501,7 @@ List of all console variables (ConVar) — description, default values
       <td className='def'>-</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Password for remote server administration (rcon)</td>
+      <td className='desc'>Password for remote server administration `rcon` <a className='ref-link' href='/en/docs/refs/configuration/commands#rcon'/></td>
     </tr>
     <tr id='rcon_port'>
       <td className='name'>rcon_port</td>

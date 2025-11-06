@@ -1258,7 +1258,18 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'><div className='text'>Показывать имя над головой союзника или отслеживаемого игрока (команда 'trackplayer') <a className='ref-link' href='/docs/refs/configuration/commands#trackplayer'/></div><div className='desc-meta'><VersionBadge type='added' since='2.0.0.0'/></div></td>
+      <td className='desc'>
+        <div className='text'>
+          Показывать имя над головой союзника или отслеживаемого игрока (команда `trackplayer`) <a className='ref-link' href='/docs/refs/configuration/commands#trackplayer'/><br/>
+          `0` Выключено<br/>
+          `1` Включено<br/>
+          `2` Показывать имена всех игроков во время просмотра демо-записей
+        </div>
+        <div className='desc-meta'>
+          <VersionBadge type='added' since='2.0.0.0'/>
+          <VersionBadge type='changed' since='2.5.7.0'/>
+        </div>
+      </td>
     </tr>
     <tr id='hud_saytext'>
       <td className='name'>hud_saytext</td>
