@@ -4,7 +4,7 @@
 #### :rocket: New Feature
 
 - Added automatic client update system (can be toggled in settings)
-- Added `Matchmaking` tab to `New Game` menu for quick game search with filters (game, mod, map) (can be toggled)
+- Added **Matchmaking** tab to **New Game** menu for quick game search with filters (game, mod, map) (can be toggled)
 - Added Discord RPC integration to display in-game status
 - Added a button in settings to enable/disable Steam integration
 - Added ConVars for scoreboard customization
@@ -26,10 +26,14 @@
 - Added support for custom sizes for the original radar via `hud.txt`
 - Added a validate to HUD radar config to prevent using a different map image for a map with the same name (@Nord1cWarr1or)
 - Improved `hud_headname` ConVar: added mode 2 to display the names of all players with their team color during demo playback
-- Re-introduced and completely overhauled the progressive `lazy` loading mode for demo files:
+- Re-introduced and completely overhauled the progressive **lazy** loading mode for demo files:
     - Demos now start playing immediately without waiting for the full file to load
     - The file parsing process is now decoupled from `fps_max`, resulting in significantly faster buffering
     - The progress slider now displays the full demo duration from the start, while a new indicator shows the buffered portion available for seeking
+- Added ConVar `dem_force_preload` to configurable demo loading mode
+    - `0` — Enables progressive **lazy loading** for instant playback startup
+    - `1` — Enables **full pre-loading** of the demo into memory, providing full seek capabilities immediately after loading \
+            This mode also significantly speeds up the total load time (especially for long demo files)
 
 #### :bug: Bug Fix
 
@@ -45,7 +49,7 @@
 - Fixed loading of external resources (maps, models) in demos when broken by some server-side anticheats
 - Fixed auto-join button not working for full servers (@karaul0v)
 - Fixed `lservercfgfile.cfg` execution when creating a listen server (@esotericdesign)
-- Fixed sprite green color in `StatusIcon` user message (@esotericdesign)
+- Fixed sprite green color in **StatusIcon** user message (@esotericdesign)
 - Fixed buffer overflow when reading empty lines in `sentences.txt` (@scriptedsnark) [stockbug]
 - Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874][stockbug]
 - Fixed a long-standing bug in Scoreboard where player counts for CT and Terrorist teams would be swapped (@Nord1cWarr1or) [stockbug]
@@ -73,8 +77,8 @@
 #### :rocket: New Feature
 
 - Added ConVar for HUD radar, toggles between a radar that scales dynamically to encompass all the detected elements on the map
-    - `hud_radar_mapscale_dynamic` = 0/1 (Default: 0)
-    - `hud_radar_mapscale_dynamic_min` = 0.01/3.5 (Default: 0.35)
+    - `hud_radar_mapscale_dynamic` — 0/1 (Default: 0)
+    - `hud_radar_mapscale_dynamic_min` — 0.01/3.5 (Default: 0.35)
 - Added ConVar `sdl_minimize_on_focus_loss`, enables minimizing the game if the game window in fullscreen mode loses focus (Default: 1 - It is recommended to disable this deprecated behavior, to improve compatibility with window managers)
 - Added support for additive/blur effects for fonts
 - Added ConVar `r_prefertexturefiltering` for easy texture filtering toggling
@@ -102,7 +106,7 @@
     - `fov_lerp_in` (Default: 0)
     - `fov_lerp_out` (Default: 0)
     - `fov_lerp_sniper_instant`
-- Added support models with a new `half-float` UV texture coords (@xash3d)
+- Added support models with a new **half-float** UV texture coords (@xash3d)
 - Added the ability to close VGUI2 buy menu with open button (@Vaqtincha)
 - Added ConVar `camera_movement_bone` for testing (not for public use)
 - Added ConVar `r_showinfo` to get technical render/movement info (not for public use)
@@ -110,15 +114,15 @@
 - Optimized `net_graph` render in 1/2 modes
 - Optimized render of VGUI2 panels and fonts batcher
 - Increased block memory for particleman from 30KB to 128KB
-- Increased sound channels limit `MAX_DYNAMIC_CHANNELS` from 8 to 32
+- Increased sound channels limit **MAX_DYNAMIC_CHANNELS** from `8` to `32`
 - Money in HUD can now display negative values
 - Improved performance due to the replacement of the obsoleted x87 instruction set for FPU operations with modern and efficient SSE instructions
 - In `dev_overview` mode, all entities are now visible regardless of player's position
 - Improved alignment for text right-alignment in HUD menu for widescreen displays
 - Improve in-game menu (commandmenu)
 - Entered hidden text in TextEntry (e.g password) is now available for peek
-- Updated `SDL2` from `2.0.1` up to `2.30.3`
-- Updated `ReHLDS API` up to `3.14`
+- Updated **SDL2** from `2.0.1` up to `2.30.3`
+- Updated **ReHLDS API** up to `3.14`
 - Changed clear color to gray instead of red when `gl_clear` is active
 - Increased limits for entities baseline in HLTV/DemoPlayer
 - Improved load sprite txt files, allow to set preferred resolution
@@ -137,7 +141,7 @@
 - Fixed the game appearing too dark after modifying video options [stockbug]
 - Fixed uneven padding for Health and Armor HUD elements [stockbug]
 - Fixed incorrect calc of glyph widths in right-aligned text in the HUD menu [stockbug]
-- Fixed a crash in `CVoiceStatus::UpdateSpeakerStatus` [stockbug]
+- Fixed a crash in **CVoiceStatus::UpdateSpeakerStatus** [stockbug]
 - Speak label of talking player does not disappear when the scoreboard is open [stockbug]
 - Fixed incorrect sorting of ConVar/ConCommand in console dropdown menu
 - Fixed weapon offset `viewmodel_offset_x` applying for knife/grenade/shield weapons
@@ -146,7 +150,7 @@
 - Fixed jitter viewmodel moving from 1st person in eye spectator mode [stockbug]
 - Fixed map outline for HUD radar (@Nord1cWarr1or)
 - Fixed a crash for custom mods of Half-Life
-- Fixed `NumPad ENTER` button not handling button press in VGUI2 dialogs (@Vaqtincha) [stockbug]
+- Fixed **NumPad ENTER** button not handling button press in VGUI2 dialogs (@Vaqtincha) [stockbug]
 - Fixed a bug with brush entity where the impact sound from weapon shots was not emitted (@Vaqtincha) [stockbug]
 - Fixed prediction bug ducking of a player spectating by a 1st-person observer [stockbug]
 - Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo [stockbug]
@@ -169,22 +173,22 @@
 #### :rocket: New Feature
 
 - Added hot-reload schemes/fonts when a video mode changed or window resized (a restart is no longer needed)
-- Added new non-exclusive fullscreen mode `Fullscreen windowed`
-- Added support video aspect ratio `16:10`
+- Added new non-exclusive fullscreen mode **Fullscreen windowed**
+- Added support video aspect ratio **16:10**
 - Added more settings to Video/Audio
 - Added support for multiple displays, parameter `-displayindex` N for startup app on specific display and new ConVar
     - `sdl_displayindex`
 - Added speaker icon in ScoreBoard, when a player is talking
 - Added feature `Drag&Drop` demo file into window
-- Added additional info to demo file about what is was recorded on `GoldClient+` (aka GSClient+)
+- Added additional info to demo file about what is was recorded on **GoldClient+** (*aka GSClient+*)
 - Added auto-download missing pre-cached resources when viewing a demo file using by new ConVar
-    - `cl_download_demo_resources` = 0/1 (Default: 1)
+    - `cl_download_demo_resources` — 0/1 (Default: 1)
 - Demo can be slowed/fasted up to `x16` times
 - Increased texture limit from `640x480` up to `1024x1024`
-- Allow spawn a map with missing resources of map in developer mode using resources such llike `error.mdl` or `error.spr` as fallback
+- Allow spawn a map with missing resources of map in developer mode using resources such llike (error.mdl/error.spr) as fallback
 - Added auto-generation map image for HUD radar and new ConVars
-    - `hud_radar_takeshot` = 0/1 (Default: 1)
-    - `hud_radar_takeshot_quality` = 0/100 (Default: 65)
+    - `hud_radar_takeshot` — 0/1 (Default: 1)
+    - `hud_radar_takeshot_quality` — 0/100 (Default: 65)
 
 <!-- truncate -->
 
@@ -196,14 +200,14 @@
 - Added forcing entities to visible in listenserver for take screenshot with all entities in overview map mode
 - Added new zoom calculation by mins/maxs of map based on real boundaries (not box) for overview map
 - Added info about left time for current map in Dialog Game Info only in the second receiving update
-- Added prefix `[BOT]` for bots in Dialog Game Player Info
+- Added prefix **[BOT]** for bots in Dialog Game Player Info
 - Added new ConVar to remove history servers with last played N days ago
-    - `cl_servers_history_lastplayed` = N in seconds (Default: 3 month)
+    - `cl_servers_history_lastplayed` — N in seconds (Default: 3 month)
 - HUD death notice added new icon kill rarity IN AIR
-- Added support for `IN_RUN` key using +speed
+- Added support for **IN_RUN** key using +speed
 - Added new ConVar to use prefer hand side determined by `cl_righthand` for shield weapon holding view model
-    - `cl_shieldweapon_handpreference` = 0/1  (Default: 0)
-- Added detection of bombsite types (`A`,`B`,`C`) using data such as targetname, nearby decals or textures that associated the bombsite location
+    - `cl_shieldweapon_handpreference` — 0/1  (Default: 0)
+- Added detection of bombsite types (**A,B,C**) using data such as targetname, nearby decals or textures that associated the bombsite location
 - Added new bombsite icon for unknown bombsite type
 - Added support for versioning player movement
 - Added ConVar `dev_console` to enable in-game console
@@ -228,14 +232,14 @@
 
 - Fixed interrupting sounds emitting from radio chat and HUD suit
 - Fixed a crash when launching steam when the client is already running
-- Fixed render bug for `TE_BEAMCYLINDER` (@Vaqtincha)
+- Fixed render bug for **TE_BEAMCYLINDER** (@Vaqtincha)
 - Fixed sometimes missing display of last played time in History Tab ServerBrowser
 - Fixed a bug with `gl_clear` in spectator mode when Pic-In-Pic/Map free modes activated
 - Fixed a bug with cancel button for VGUI TeamMenu
   If the server didn't send keybits for 0 key menu, then it should not be shown
 - Fixed a bug with shutdown steam on listenserver
 - Fixed a bug with `cl_gunsmoke` when viewmodel_fov > 90
-- Fixed a bug with `STEAM_ID_LAN` with reunion authorization on listenserver (@Vaqtincha)
+- Fixed a bug with **STEAM_ID_LAN** with reunion authorization on listenserver (@Vaqtincha)
 - Fixed a bug with flickering screen in spectator mode due jump to position when server sent fullupdate or sv_restart 1
 - Fixed a bug with weapon predict with `cl_minviewmodel 1`
 - Fixed a bug with animation of inspect for `cl_minviewmodel`
@@ -272,7 +276,7 @@
 
 - Fixed the directional damage indicator on the HUD \
   Red overlay showing the direction of incoming attacks (@hajimura)
-- Fixed a crash caused by a buffer overrun in the `AmmoX` user message due to an invalid ammo ID
+- Fixed a crash caused by a buffer overrun in the **AmmoX** user message due to an invalid ammo ID
 
 <!-- truncate -->
 
@@ -300,7 +304,7 @@
 
 #### :rocket: New Feature
 
-- Maximum heap memory size raised to `512MB` from `128MB` (Default: `256MB`)
+- Maximum heap memory size raised to **512MB** from **128MB** (Default: **256MB**)
 
 <!-- truncate -->
 
@@ -330,7 +334,7 @@
 <!-- truncate -->
 
 - Added ConVar `r_maxbeamentities` for max simultaneous beams to render
-- Beams render limit raised to `4096` from `64` (Set limit by ConVar `r_maxbeamentities` Default: 128)
+- Beams render limit raised to `4096` from `64` (Set limit by ConVar `r_maxbeamentities` Default: **128**)
 
 
 ## 2.3.7.0 (2023-11-15)
@@ -357,9 +361,9 @@
 <!-- truncate -->
 
 - Reworked ConVar `cl_filterstuffcmd`
-    - `0` = Disable (No restrictions)
-    - `1` = Soft level (few commands can be executed)
-    - `2` = Strict level (execution not allowed)
+    - `0` — Disable (No restrictions)
+    - `1` — Soft level (few commands can be executed)
+    - `2` — Strict level (execution not allowed)
 - Light maps limit raised to `512` from `64`
 - Decals render limit raised to `8192` from `4096`
 
@@ -396,9 +400,9 @@
 - Added new ConVar for HUD in-game chat
     - `hud_saytext_time`
     - `hud_saytext_gap`
-- Added support for `ReHLDS API` for listenserver
-- Added support `CustomFontFiles{}` in `TrackerScheme.res` for a custom font with any language
-- Added support to use own font only for chat `Fonts { HudChat }`
+- Added support for **ReHLDS API** for listenserver
+- Added support **CustomFontFiles\{\}** in **TrackerScheme.res** for a custom font with any language
+- Added support to use own font only for chat **Fonts \{ HudChat \}**
 - Added few languages to choose (not a translation)
     - `Serbian`
     - `Uzbek`
@@ -419,9 +423,9 @@
 
 #### :rocket: New Feature
 
-- Added support for multilayers overview map for extended `HUD Radar`
-- Added halo effect around extended `HUD Radar` when a bomb is planted
-- Added new ConVar for `HUD Radar`
+- Added support for multilayers overview map for extended **HUD Radar**
+- Added halo effect around extended **HUD Radar** when a bomb is planted
+- Added new ConVar for **HUD Radar**
     - `hud_radar_always_centered`
     - `hud_radar_icon_scale_min`
     - `hud_radar_square_with_scoreboard`
@@ -435,7 +439,7 @@
 
 #### :bug: Bug Fix
 
-- Fixed a hang in client function `UTIL_GetNextBestWeapon` (@wopox1337)
+- Fixed a hang in client function **UTIL_GetNextBestWeapon** (@wopox1337)
 - Position simulation is disabled when observing players (`cl_smoothtime` no longer works in eye mode)
 
 #### Authors 1
@@ -538,7 +542,7 @@
 
 <!-- truncate -->
 
-- Fully reworked `HUD DeathNotice` and added few ConVar
+- Fully reworked **HUD DeathNotice** and added few ConVar
     - `hud_deathnotice_style`
     - `hud_deathnotice_time`
     - `hud_deathnotice_gap`
@@ -550,27 +554,27 @@
     - `hud_deathnotice_panel_pos`
     - `hud_deathnotice_legacyicons`
 - Added ConVar `hud_message`
-    - `0` = Disable
-    - `1` = Display all messages (Default)
-    - `2` = Only `HUD` messages
-    - `3` = Only `DHUD` messages
+    - `0` — Disable
+    - `1` — Display all messages (Default)
+    - `2` — Only **HUD** messages
+    - `3` — Only **DHUD** messages
 - Added additional settings scope for sniper rifles
 - Display in the Friends tab, Steam/TurboNet friends playing on servers
 - Implemented cross-game compatibility between CS and CZ games
 
 #### :bug: Bug Fix
 
-- Fixed a bug in UserMessage, in some cases it threw out with `svc_bad` error
+- Fixed a bug in **UserMessage**, in some cases it threw out with `svc_bad` error
 - In `dev_overview` mode, player viewmodel was visible
-- Fixed visibility of the local server in `LAN` tab (@Polarhigh)
+- Fixed visibility of the local server in **LAN** tab (@Polarhigh)
 - Miscellaneous fixes in engine
 - Fixed incorrect effect of sounds when reverb enabled via `room_type`
-- Fixed a critical bug where game is hanged when playing infrequent `VOX` sentences emitting from NPC players
+- Fixed a critical bug where game is hanged when playing infrequent **VOX** sentences emitting from NPC players
 
 #### 🧩 Miscellaneous
 
 - Removed restriction ConVar `r_dynamic`
-  You can feel free to disable dynamic light in multi-player for performance reasons on `AMD/nVidia` GPU's
+  You can feel free to disable dynamic light in multi-player for performance reasons on **AMD/nVidia** GPU's
 
 #### Authors 1
 <!-- authors -->
@@ -588,7 +592,7 @@
 
 #### :rocket: New Feature
 
-- Reworked precache-system, fixed issue about `Texture Overflow MAX_GLTEXTURES`
+- Reworked precache-system, fixed issue about **Texture Overflow MAX_GLTEXTURES**
 - Added new ConVar for AWP
     - `cl_crosshair_sniper_width`
     - `cl_bob_sniper`
@@ -601,13 +605,13 @@
 #### :bug: Bug Fix
 
 - Fixed client Deploy animation caused weapon prediction [stockbug]
-- Fixed a crash about `AllocBlock: full` [stockbug]
-- Fixed a crash due bad user-messages `StatusIcon` and `DeathMsg` [stockbug]
-- Fixed a crash of maps where MAX_MAP_LEAFS was greater than limit of 1024, which able led to undefined behavior in client [stockbug]
-- Fixed `MOTD` when path to includes non latin characters [stockbug]
+- Fixed a crash about **AllocBlock: full** [stockbug]
+- Fixed a crash due bad user-messages **StatusIcon** and **DeathMsg** [stockbug]
+- Fixed a crash of maps where **MAX_MAP_LEAFS** was greater than limit of 1024, which able led to undefined behavior in client [stockbug]
+- Fixed **MOTD** when path to includes non latin characters [stockbug]
 - Fixed incorrect position players/entities in spectator mode map roaming [stockbug]
-- Fixed memory leak `SPR_GetList` [stockbug]
-- Fixed memory leak `DetailTextures` with `r_detailtextures 0` [stockbug]
+- Fixed memory leak **SPR_GetList** [stockbug]
+- Fixed memory leak **DetailTextures** with `r_detailtextures 0` [stockbug]
 - Fixed memory leak VOX sentence system [stockbug]
 
 #### Authors 1
@@ -630,8 +634,8 @@
 #### :bug: Bug Fix
 
 - Fixed a bug in monitor frequency when FBO scaling is enabled
-- Fixed a crash in ServerBrowser when `SteamMatchmakingServers()` function returned null at shutdown
-- Fixed an issue with `BuySubMenu.res` file not loading as per player's team
+- Fixed a crash in ServerBrowser when **SteamMatchmakingServers()** function returned null at shutdown
+- Fixed an issue with **BuySubMenu.res** file not loading as per player's team
 
 <!-- truncate -->
 
@@ -640,7 +644,7 @@
 
 #### :rocket: New Feature
 
-- Added AMXX Module with `GoldClient API`
+- Added AMXX Module with **GoldClient API**
 - Added new command `BindToggle` for easy switching state of convar
 - Added support PNG format for avatar
 - Very low screen resolutions are no longer supported to prevent visual bugs
@@ -661,9 +665,9 @@
 
 #### :rocket: New Features
 
-- Added a new `System` tab in options menu
-- Added a `language` selection option
-- `Voice` options tab moved into `Audio` options for better organization
+- Added a new **System** tab in options menu
+- Added a **language** selection option
+- **Voice** options tab moved into **Audio** options for better organization
 - Improved avatar selection process in player profile
 
 #### 🧩 Miscellaneous
@@ -687,7 +691,7 @@
 
 #### 🧩 Miscellaneous
 
-- A maintenance release focused on minor code refactoring and various bug fixes under the hood
+- A maintenance release focused on minor code refactoring and various bug fixes **under the hood**
 
 <!-- truncate -->
 
@@ -699,11 +703,11 @@
 - `cl_smokegren_color` can now be applied to server-side gas puff smoke effects
 - Added command `client_motd_close` to let players close MOTD via a keybind or when executed from server (@fl0werD)
 - MOTD now automatically closes when its URL navigates to `browser://close` (@fl0werD)
-- `gl_fog` command now acts as a shadow ConVar, allowing servers to control it without overriding player config permanently
+- `gl_fog` command now acts as a **shadow** ConVar, allowing servers to control it without overriding player config permanently
 
 #### :bug: Bug Fix
 
-- Fixed `Server Name` sometimes displaying incorrectly in MOTD title
+- Fixed **Server Name** sometimes displaying incorrectly in MOTD title
 
 <!-- truncate -->
 
@@ -722,8 +726,8 @@
 
 #### :rocket: New Features
 
-- Changing `brightness` or `gamma` in settings no longer requires a game restart
-- `hud_centerid` command is now a shadow ConVar, giving servers temporary control
+- Changing **brightness** or **gamma** in settings no longer requires a game restart
+- `hud_centerid` command is now a **shadow** ConVar, giving servers temporary control
 - Crosshair convars `cl_crosshairthickness` and `cl_crosshair_outlinethickness` now accept integer values only to avoid confusion
 - Increased buffer limit for MOTD from `1536` to `32768` bytes
 
@@ -734,29 +738,29 @@
 
 #### :rocket: New Features
 
-- Added Steam Cloud support to automatically synchronize `config.cfg` across devices \
+- Added **Steam Cloud** support to automatically synchronize `config.cfg` across devices \
   Since version `2.2.1.0`, the `-cloud` launch param is required to enable
-- New command `spec_movespeedkey` allows spectators to fly faster by holding `Shift`
-- Fonts can now have an `outline effect` \
-  Сonfigured in `TrackerScheme.res`
-- Added adaptive `V-Sync` support for smoother frame rates on compatible hardware \
+- New command `spec_movespeedkey` allows spectators to fly faster by holding **Shift**
+- Fonts can now have an **outline effect** \
+  Сonfigured in **TrackerScheme.res**
+- Added adaptive **V-Sync** support for smoother frame rates on compatible hardware \
   Standard V-Sync remains available
-- Servers can now execute temporary keybinds on clients via a new `shadow keybinding` system
+- Servers can now execute temporary keybinds on clients via a new **shadow** keybinding system
 
 <!-- truncate -->
 
 - `net_graph` panel improved and added a proportional font for better readability
-- Engine limit for `TempEntities` increased from `500` to `1024`
+- Engine limit for **TempEntities** increased from `500` to `1024`
 - Key bindings are now automatically restored from `config_default.cfg` if `config.cfg` is missing or corrupted
-- Improved rendering of `Unicode` glyphs
-- In-game `screenshot` keybind can now be used in main menu
-- Server Info dialog now shows more detail, including rules, and more
+- Improved rendering of **Unicode** glyphs
+- In-game **screenshot** keybind can now be used in main menu
+- **Server Info** dialog now shows more detail, including rules, and more
 - Improved visual quality of sky textures with hardware filtering
 
 #### :bug: Bug Fix
 
-- Fixed `blur effects` for fonts
-- Corrected player's `Field of View` (FOV) when `hud_headname` is active
+- Fixed **blur effects** for fonts
+- Corrected player's **Field of View** (FOV) when `hud_headname` is active
 - `force_centerview` command now correctly works only with joystick look and is disabled when mouse look is active
 
 
@@ -777,7 +781,7 @@
 
 #### :bug: Bug Fix
 
-- Fixed a bug that occurred when adding a new server to Favorites list
+- Fixed a bug that occurred when adding a new server to **Favorites** list
 
 <!-- truncate -->
 
@@ -799,7 +803,7 @@
 - Added auto-completion for demo filenames in the game console for `viewdemo` and `playdemo` commands
 - Added СonVar `cl_allow_demorecord` that allows servers to start demo recording on a client
 - Servers can now temporarily assign keybinds to a client for the current session, if key is not already in use
-- `TAB` key (scoreboard) can now be used while watching demos
+- **TAB** key (scoreboard) can now be used while watching demos
 - Default `cl_dlmax` value increased to `1024` for faster content downloads from game server
 
 <!-- truncate -->
@@ -809,7 +813,7 @@
 
 #### :rocket: New Features
 
-- Implemented stricter content validation for `FastDL` files \
+- Implemented stricter content validation for **FastDL** files \
   Now verifies that file data matches its extension, preventing corrupted or invalid content
 - Added ConVar `cl_smokegren_color` for direct control over smoke grenade color
 
@@ -820,15 +824,15 @@
 
 #### :rocket: New Features
 
-- Added `country flags` and filters for `game mode` and `location` to internet Server Browser tab
+- Added **country flags** and filters for **game mode** and **location** to internet Server Browser tab
 - Added ConVar `hud_headname` to show nicknames above teammates in-game that are on the player's Steam friends list
-- Implemented `Steam integration`
-- Added shadow keybindings system, allowing servers to temporarily set keybinds without affecting local configuration \
-  ConVar `sbind` to enable/disable this feature, and `sbindlist` command to display current shadow binds from the server
+- Implemented **Steam integration**
+- Added **shadow** keybindings system, allowing servers to temporarily set keybinds without affecting local configuration \
+  ConVar `sbind` to enable/disable this feature, and `sbindlist` command to display current **shadow** binds from the server
 - Completely reworked server command filtering system for much better security and reliability
-- `Favorites` tab in Server Browser is now more stable and correctly shows unresponsive servers
-- `FPS cap` during server connection removed
-- Demos and screenshots are now stored in `cstrike_downloads` folder
+- **Favorites** tab in Server Browser is now more stable and correctly shows unresponsive servers
+- **FPS cap** during server connection removed
+- Demos and screenshots are now stored in **cstrike_downloads** folder
 - Added new ConVar `cl_bob_sniper` for sniper rifle weapon bobbing
 
 #### :bug: Bug Fixes
@@ -836,7 +840,7 @@
 - Improved `net_graph` layout, fixing column alignment
 - Invalid or non-printable characters are now cleaned up from server and map names
 - Fixed a crash related to switching display modes in video options [stockbug]
-- Fixed an issue in `History` tab where 'Last Played' time was sometimes incorrect
+- Fixed an issue in **History** tab where **Last Played** time was sometimes incorrect
 - Fixed long server names being cut off on the scoreboard [issue=ValveSoftware/halflife/2168][stockbug]
 
 <!-- truncate -->

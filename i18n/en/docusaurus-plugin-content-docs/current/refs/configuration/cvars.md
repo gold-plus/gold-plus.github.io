@@ -538,7 +538,7 @@ List of all console variables (ConVar) — description, default values
       <td className='desc'>
         <div className='text'>
           Adjusts radar transparency (0 — 255)<br/>
-          *Has no effect if [`cl_radartype 1`](#cl_radartype) is set (solid radar)*
+          *Has no effect if <a href='#cl_radartype'>cl_radartype</a> is set (solid radar)*
         </div>
         <div className='desc-meta'>
           <SliderButton

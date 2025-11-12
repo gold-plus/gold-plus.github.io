@@ -538,7 +538,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='desc'>
         <div className='text'>
           Регулирует прозрачность радара (0 — 255)<br/>
-          *Не действует, если установлен [`cl_radartype 1`](#cl_radartype) (непрозрачный радар)*
+          *Не действует, если установлен <a href='#cl_radartype'>cl_radartype</a>*
         </div>
         <div className='desc-meta'>
           <SliderButton
