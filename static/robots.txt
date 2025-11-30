@@ -3,3 +3,5 @@ Allow: /
 
 Sitemap: https://goldclient.ru/sitemap.xml
 Sitemap: https://goldclient.ru/en/sitemap.xml
+
+# Algolia-Crawler-Verif: 1A9E7149752673E0
