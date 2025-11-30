@@ -4740,7 +4740,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
       <td className='def'>1</td>
       <td className='min'>-</td>
       <td className='max'>-</td>
-      <td className='desc'>Показывать статистика менеджера частиц</td>
+      <td className='desc'>Показывать статистику менеджера частиц</td>
     </tr>
   </tbody>
 </Table>
