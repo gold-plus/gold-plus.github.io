@@ -139,9 +139,9 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     algolia: {
-      indexName: "goldcrawl",
-      appId: "0YYKAD61TW",
-      apiKey: "598276f4b53d15258955bf7c304d6bff",
+      indexName: "goldcrawler",
+      appId: "5NXISP8N8N",
+      apiKey: "af70337b9597a49cb2572fbd8d954dac",
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
