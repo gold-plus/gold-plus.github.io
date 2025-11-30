@@ -34,6 +34,10 @@
     - `0` — **Ленивая загрузка** для мгновенного старта воспроизведения (По умолчанию)
     - `1` — **Полная предзагрузка** в память, что обеспечивает возможность перемотки в любую точку сразу после загрузки \
             Этот режим значительно ускоряет общую скорость загрузки (особенно для длинных демо-файлов)
+- Добавлена поддержка пользовательского сообщения **ViewModelFX** (@next21)
+- Добавлена поддержка **Sprite API** через пользовательское сообщение **HudSprite** (@next21)
+- Добавлена поддержка **Fullbright** для текстур в studio-моделях. Работает только на обычных моделях, на моделях игроков не применяется (@256bit)
+- Добавлено применение `gl_picmip` на лету без перезапуска карты
 
 #### :bug: Исправление
 
@@ -61,7 +65,7 @@
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры 6
+#### Тестеры 8
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -70,6 +74,8 @@
 - esotericdesign ([@esotericdesign](https://github.com/esotericdesign))
 - YoshiokaHaruki ([@YoshiokaHaruki](https://github.com/YoshiokaHaruki))
 - karaul0v ([@karaul0v](https://github.com/UnrealKaraulov))
+- next21 ([@next21](https://github.com/CS-NextClient))
+- 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
 
 
 ## 2.5.6.0 (2025-05-07)
@@ -357,6 +363,7 @@
     - `violence_vfxblood_drops`
     - `violence_vfxblood_headshot`
     - `violence_vfxblood_grenade`
+- Добавлена поддержка пользовательского сообщения **DeathMsgWpn** (@next21)
 
 <!-- truncate -->
 
@@ -371,6 +378,11 @@
 
 - Локальный голос игрока теперь записывается в демо
 - Исправлено заедание кнопок после проигрывания демо
+
+#### Тестеры 1
+<!-- testers -->
+
+- next21 ([@next21](https://github.com/CS-NextClient))
 
 
 ## 2.3.6.0 (2023-10-27)

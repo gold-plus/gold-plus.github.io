@@ -34,6 +34,10 @@
     - `0` — Enables progressive **lazy loading** for instant playback startup
     - `1` — Enables **full pre-loading** of the demo into memory, providing full seek capabilities immediately after loading \
             This mode also significantly speeds up the total load time (especially for long demo files)
+- Added support for the **ViewModelFX** custom user message (@next21)
+- Added support for the **Sprite API** via the **HudSprite** custom user message (@next21)
+- Added **Fullbright** support for textures in studio models. Works only on regular models, not on player models (@256bit)
+- Added on-the-fly `gl_picmip` updates without restarting the map
 
 #### :bug: Bug Fix
 
@@ -61,7 +65,7 @@
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 6
+#### Testers 8
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -70,6 +74,8 @@
 - esotericdesign ([@esotericdesign](https://github.com/esotericdesign))
 - YoshiokaHaruki ([@YoshiokaHaruki](https://github.com/YoshiokaHaruki))
 - karaul0v ([@karaul0v](https://github.com/UnrealKaraulov))
+- next21 ([@next21](https://github.com/CS-NextClient))
+- 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
 
 
 ## 2.5.6.0 (2025-05-07)
@@ -357,6 +363,7 @@
     - `violence_vfxblood_drops`
     - `violence_vfxblood_headshot`
     - `violence_vfxblood_grenade`
+- Added support for the **DeathMsgWpn** custom user message (@next21)
 
 <!-- truncate -->
 
@@ -371,6 +378,11 @@
 
 - Voice of a local player now records in demo recordings
 - Fixed stucking buttons after demo playback
+
+#### Testers 1
+<!-- testers -->
+
+- next21 ([@next21](https://github.com/CS-NextClient))
 
 
 ## 2.3.6.0 (2023-10-27)
