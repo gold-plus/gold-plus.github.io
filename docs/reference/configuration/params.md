@@ -19,7 +19,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
 Параметры запуска — это специальные команды, которые позволяют изменять настройки игры еще до ее запуска \
 Они могут быть полезны для решения проблем, настройки производительности или включения специфических функций
 
-## Основные параметры
+## Основные параметры {#main-parameters}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -29,7 +30,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='dev'>
       <td className='name'>-dev</td>
-      <td className='desc'>Включает режим разработчика, который выводит в консоль отладочную информацию<br/>Этот параметр включает `developer 1` <a className='ref-link' href='/docs/refs/configuration/cvars#developer'/></td>
+      <td className='desc'>Включает режим разработчика, который выводит в консоль отладочную информацию<br/>Этот параметр включает `developer 1` <a className='ref-link' href='/docs/reference/configuration/cvars/#developer'/></td>
     </tr>
     <tr id='game'>
       <td className='name'>-game</td>
@@ -58,7 +59,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Графика и видео
+## Графика и видео {#graphics--video}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -182,7 +184,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Сеть и Сервер
+## Сеть и Сервер {#network--server}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -249,7 +252,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Ввод и Звук
+## Ввод и Звук {#input--sound}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -299,12 +303,13 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='nocdaudio'>
       <td className='name'>-nocdaudio</td>
-      <td className='desc'>Отключает воспроизведение музыки с CD <a className='ref-link' href='/docs/refs/configuration/commands#cd'/></td>
+      <td className='desc'>Отключает воспроизведение музыки с CD <a className='ref-link' href='/docs/reference/configuration/commands/#cd'/></td>
     </tr>
   </tbody>
 </Table>
 
-## Система и Производительность
+## Система и Производительность {#system--performance}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -339,7 +344,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Прочее
+## Прочее {#miscellaneous}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -358,7 +364,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Отладка и Разработка
+## Отладка и Разработка {#debugging--development}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -411,7 +418,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Интеграция и сервисы
+## Интеграция и сервисы {#integration--services}
+
 <Table>
   <thead><tr><th>Параметр</th><th>Описание</th></tr></thead>
   <tbody>
@@ -434,7 +442,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Авто-обновление (Updater)
+## Авто-обновление (Updater) {#updater}
+
 :::warning
 Эти параметры предназначены для **временного** использования в **личных целях** (например, для тестирования или отката на другую версию из-за проблем, или любой более веской причины) \
 Не рекомендуется использовать их на постоянной основе, так как они имеют **наивысший приоритет** и полностью **блокируют** управление обновлениями в настройках игры \

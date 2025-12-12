@@ -46,7 +46,8 @@ The brackets `<>`, `[]`, and the `|` symbol should **not** be typed into the con
 They only describe the command's structure
 :::
 
-## Settings & Configuration
+## Settings & Configuration {#settings--configuration}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -121,7 +122,8 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Player & Gameplay
+## Player & Gameplay {#player--gameplay}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -167,7 +169,7 @@ They only describe the command's structure
     </tr>
     <tr id='trackplayer'>
       <td className='name'>trackplayer</td>
-      <td className='desc'><div className='text'>Starts tracking the player you are aiming at<br/>Tracked players are highlighted on the radar and their name is displayed above their head (if `hud_headname` is enabled and you are on the same team) <a className='ref-link' href='/en/docs/refs/configuration/cvars#hud_headname'/></div><div className='desc-meta'><VersionBadge type='changed' since='2.5.0.0'/></div></td>
+      <td className='desc'><div className='text'>Starts tracking the player you are aiming at<br/>Tracked players are highlighted on the radar and their name is displayed above their head (if `hud_headname` is enabled and you are on the same team) <a className='ref-link' href='/en/docs/reference/configuration/cvars/#hud_headname'/></div><div className='desc-meta'><VersionBadge type='changed' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='clearplayers'>
       <td className='name'>clearplayers</td>
@@ -216,7 +218,7 @@ They only describe the command's structure
     </tr>
     <tr id='voicerecord_toggle'>
       <td className='name'>voicerecord_toggle `<on/off>`</td>
-      <td className='desc'>Toggles microphone recording state (starts/stops)<br/>Useful for creating a 'toggled' voice chat instead of 'hold-to-talk' <a className='ref-link' href='/en/docs/refs/configuration/commands#voicerecord'/></td>
+      <td className='desc'>Toggles microphone recording state (starts/stops)<br/>Useful for creating a 'toggled' voice chat instead of 'hold-to-talk' <a className='ref-link' href='/en/docs/reference/configuration/commands/#voicerecord'/></td>
     </tr>
     <tr id='voice_showbanned'>
       <td className='name'>voice_showbanned</td>
@@ -257,7 +259,8 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Network & Connection
+## Network & Connection {#network--connection}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -304,7 +307,8 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Demos & Video
+## Demos & Video {#demos--video}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -346,7 +350,7 @@ They only describe the command's structure
     </tr>
     <tr id='demos'>
       <td className='name'>demos</td>
-      <td className='desc'>Replays the sequence of demo files from `startdemos` <a className='ref-link' href='/en/docs/refs/configuration/commands#startdemos'/></td>
+      <td className='desc'>Replays the sequence of demo files from `startdemos` <a className='ref-link' href='/en/docs/reference/configuration/commands/#startdemos'/></td>
     </tr>
     <tr id='stopdemo'>
       <td className='name'>stopdemo</td>
@@ -383,7 +387,8 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Server & Administration
+## Server & Administration {#server--administration}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -437,11 +442,11 @@ They only describe the command's structure
     </tr>
     <tr id='writeid'>
       <td className='name'>writeid</td>
-      <td className='desc'>Saves the SteamID ban list to `banned.cfg` <a className='ref-link' href='/en/docs/refs/configuration/cvars#bannedcfgfile'/></td>
+      <td className='desc'>Saves the SteamID ban list to `banned.cfg` <a className='ref-link' href='/en/docs/reference/configuration/cvars/#bannedcfgfile'/></td>
     </tr>
     <tr id='writeip'>
       <td className='name'>writeip</td>
-      <td className='desc'>Saves the IP ban list to `listip.cfg` <a className='ref-link' href='/en/docs/refs/configuration/cvars#listipcfgfile'/></td>
+      <td className='desc'>Saves the IP ban list to `listip.cfg` <a className='ref-link' href='/en/docs/reference/configuration/cvars/#listipcfgfile'/></td>
     </tr>
     <tr id='maxplayers'>
       <td className='name'>maxplayers `<number>`</td>
@@ -469,7 +474,7 @@ They only describe the command's structure
     </tr>
     <tr id='rcon'>
       <td className='name'>rcon `<command>`</td>
-      <td className='desc'>Sends a command to a remote server via RCON<br/>Requires `rcon_password` to be set beforehand <a className='ref-link' href='/en/docs/refs/configuration/cvars#rcon_password'/></td>
+      <td className='desc'>Sends a command to a remote server via RCON<br/>Requires `rcon_password` to be set beforehand <a className='ref-link' href='/en/docs/reference/configuration/cvars/#rcon_password'/></td>
     </tr>
     <tr id='log'>
       <td className='name'>log `<on|off>`</td>
@@ -529,7 +534,7 @@ They only describe the command's structure
     </tr>
     <tr id='pause'>
       <td className='name'>pause</td>
-      <td className='desc'>Pauses or unpauses the game on the server<br/>Players can also use this command if `pausable` is set to `1` <a className='ref-link' href='/en/docs/refs/configuration/cvars#pausable'/></td>
+      <td className='desc'>Pauses or unpauses the game on the server<br/>Players can also use this command if `pausable` is set to `1` <a className='ref-link' href='/en/docs/reference/configuration/cvars/#pausable'/></td>
     </tr>
     <tr id='setpause'>
       <td className='name'>setpause</td>
@@ -554,7 +559,8 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Spectating & Media
+## Spectating & Media {#spectating--media}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -651,7 +657,7 @@ They only describe the command's structure
   </tbody>
 </Table>
 
-## Action Commands (for Binds)
+## Action Commands (for Binds) {#action-commands-for-binds}
 
 :::info
 Commands in this table have two forms, distinguished by a prefix: \
@@ -764,7 +770,8 @@ They are designed to be bound to keys using the `bind` command \
   </tbody>
 </Table>
 
-## Console
+## Console {#console}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -803,7 +810,8 @@ They are designed to be bound to keys using the `bind` command \
   </tbody>
 </Table>
 
-## System
+## System {#system}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -842,7 +850,8 @@ They are designed to be bound to keys using the `bind` command \
   </tbody>
 </Table>
 
-## Debugging & Development
+## Debugging & Development {#debugging--development}
+
 <Table>
   <thead><tr><th>Command</th><th>Description</th></tr></thead>
   <tbody>
@@ -1050,7 +1059,7 @@ They are designed to be bound to keys using the `bind` command \
   </tbody>
 </Table>
 
-## Service Commands
+## Service Commands {#service-commands}
 
 :::info
 These commands are intended for internal use by the engine and Game UI \

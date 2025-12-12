@@ -44,6 +44,7 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -112,7 +113,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/changelog', label: 'Changelog', position: 'left'},
+        {to: '/changelog/', label: 'Changelog', position: 'left'},
         {
           type: "localeDropdown",
           position: "right",
@@ -141,7 +142,8 @@ const config: Config = {
     algolia: {
       indexName: "goldcrawler",
       appId: "5NXISP8N8N",
-      apiKey: "af70337b9597a49cb2572fbd8d954dac",
+      apiKey: "fd4c7c3baa5b0c7c951ffc6980e4b9d6",
+      contextualSearch: true,
     },
   } satisfies Preset.ThemeConfig,
   plugins: [

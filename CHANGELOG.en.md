@@ -1,7 +1,7 @@
 
 ## 2.5.7.0 (2025-10-19) [Beta]
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added automatic client update system (can be toggled in settings)
 - Added **Matchmaking** tab to **New Game** menu for quick game search with filters (game, mod, map) (can be toggled)
@@ -39,7 +39,7 @@
 - Added **Fullbright** support for textures in studio models. Works only on regular models, not on player models (@256bit)
 - Added on-the-fly `gl_picmip` updates without restarting the map
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed round timer disappearing after reconnecting if a bomb was planted in the previous round
 - Fixed model collision prediction (@Nord1cWarr1or)
@@ -60,12 +60,12 @@
 - Fixed `con_mono` (monospaced console font) when running via Valve Proton (@Nord1cWarr1or)
 - Fixed being disconnected from servers when alt-tabbing back into the game after a long period while `engine_no_render_minimized` is enabled (@Nord1cWarr1or)
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 8
+#### Testers 8 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -80,7 +80,7 @@
 
 ## 2.5.6.0 (2025-05-07)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added ConVar for HUD radar, toggles between a radar that scales dynamically to encompass all the detected elements on the map
     - `hud_radar_mapscale_dynamic` — 0/1 (Default: 0)
@@ -140,7 +140,7 @@
 - Improved viewmodel sway with `cl_bobstyle` 2 style
 - Improved behavior of `viewmodel_retract`
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed Famas weapon bug with missed shots in Burst mode (@Nord1cWarr1or) [stockbug]
 - Fixed money HUD position when secondary ammo is present [stockbug]
@@ -161,12 +161,12 @@
 - Fixed prediction bug ducking of a player spectating by a 1st-person observer [stockbug]
 - Fixed GameUI timeline slider while watching demo, demo timeline didn't match actual starting position of demo [stockbug]
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 3
+#### Testers 3 {#testers}
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
@@ -176,7 +176,7 @@
 
 ## 2.5.0.0 (2024-10-21)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added hot-reload schemes/fonts when a video mode changed or window resized (a restart is no longer needed)
 - Added new non-exclusive fullscreen mode **Fullscreen windowed**
@@ -234,7 +234,7 @@
 - Added ability for ConVar gamma/brightness changes on fly without reconnect on map
 - Added autodetect palette color range based on the shades of a given color for particles and sprites (e.g, given green color, but in random range colors occurs non-green)
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed interrupting sounds emitting from radio chat and HUD suit
 - Fixed a crash when launching steam when the client is already running
@@ -256,12 +256,12 @@
 - Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map [stockbug]
 - Minor bugfixes
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 3
+#### Testers 3 {#testers}
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -271,14 +271,14 @@
 
 ## 2.4.0.0 (2023-12-17)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added ConVar `cl_fixmodelinterpolationartifacts`, a feature backported from HL25 update \
   It fixes interpolation artifacts (visual stuttering) for animated models on moving platforms (e.g., a scientist on a train)
 - Added the `-nosingle` launch option to allow running multiple game instances, with connections restricted to servers where `sv_chats` is enabled
 - Added cross-compatibility for CS 1.6 and Condition Zero games in the ServerBrowser
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed the directional damage indicator on the HUD \
   Red overlay showing the direction of incoming attacks (@hajimura)
@@ -286,12 +286,12 @@
 
 <!-- truncate -->
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -299,7 +299,7 @@
 
 ## 2.3.8.6 (2023-12-11)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added ConVar `cl_download_retries` set max number of attempts to download files from FastDL
 
@@ -308,7 +308,7 @@
 
 ## 2.3.8.5 (2023-12-06)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Maximum heap memory size raised to **512MB** from **128MB** (Default: **256MB**)
 
@@ -317,7 +317,7 @@
 
 ## 2.3.8.0 (2023-12-01)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added ConVars
     - `viewmodel_fov`
@@ -345,7 +345,7 @@
 
 ## 2.3.7.0 (2023-11-15)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added ConVar `viewmodel_retract` to enables weapon view model retraction near obstacles
 - Added ConVar `engine_no_focus_sleep` to set sleep time when the game is not focused
@@ -374,12 +374,12 @@
 - Light maps limit raised to `512` from `64`
 - Decals render limit raised to `8192` from `4096`
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Voice of a local player now records in demo recordings
 - Fixed stucking buttons after demo playback
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - next21 ([@next21](https://github.com/CS-NextClient))
@@ -387,7 +387,7 @@
 
 ## 2.3.6.0 (2023-10-27)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added map filter in NewGame
 - Added favorites server from Steam account
@@ -407,7 +407,7 @@
 
 ## 2.3.5.0 (2023-10-15)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added new ConVar for HUD in-game chat
     - `hud_saytext_time`
@@ -425,7 +425,7 @@
 
 <!-- truncate -->
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed `gunsmoke` in sniper rifles
 - Fixed incorrect position of bullet decals on sniper rifles during the holding shoot
@@ -433,7 +433,7 @@
 
 ## 2.3.4.0 (2023-10-01)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added support for multilayers overview map for extended **HUD Radar**
 - Added halo effect around extended **HUD Radar** when a bomb is planted
@@ -449,17 +449,17 @@
 
 <!-- truncate -->
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a hang in client function **UTIL_GetNextBestWeapon** (@wopox1337)
 - Position simulation is disabled when observing players (`cl_smoothtime` no longer works in eye mode)
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 2
+#### Testers 2 {#testers}
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -468,7 +468,7 @@
 
 ## 2.3.3.0 (2023-09-06)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added new ConVar `ui_taskbar_iconflash` for flash icon on system taskbar to grab the user's attention on events such as connected to game server, or spawn, etc
 - Added support submodel hands/arms on depends current team
@@ -479,17 +479,17 @@
 
 <!-- truncate -->
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a bug with a locked mouse in the game after changing level
 - Fixed a bug with a jumping cursor when the game is not in focus
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -497,22 +497,22 @@
 
 ## 2.3.2.0 (2023-08-27)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added new command `r_cleardecals`
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a bug with ConVar `r_fullbright` in multiplayer
 
 <!-- truncate -->
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - resobatata ([@resobatata](https://github.com/resobatata))
@@ -524,7 +524,7 @@
 
 - Added new ConVar `hud_color` for adjust primary color for HUD elements (health, armor, timer, etc.)
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a voice issue when changing the player's viewent (e.g when using a 3rd-person camera)
 
@@ -533,7 +533,7 @@
 
 ## 2.3.0.0 (2023-07-04)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Implemented extended HUD Radar
     - `hud_radar`
@@ -574,7 +574,7 @@
 - Display in the Friends tab, Steam/TurboNet friends playing on servers
 - Implemented cross-game compatibility between CS and CZ games
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a bug in **UserMessage**, in some cases it threw out with `svc_bad` error
 - In `dev_overview` mode, player viewmodel was visible
@@ -583,17 +583,17 @@
 - Fixed incorrect effect of sounds when reverb enabled via `room_type`
 - Fixed a critical bug where game is hanged when playing infrequent **VOX** sentences emitting from NPC players
 
-#### 🧩 Miscellaneous
+#### 🧩 Miscellaneous {#misc}
 
 - Removed restriction ConVar `r_dynamic`
   You can feel free to disable dynamic light in multi-player for performance reasons on **AMD/nVidia** GPU's
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 2
+#### Testers 2 {#testers}
 <!-- testers -->
 
 - Nord1cWarr1or ([@Nord1cWarr1or](https://github.com/Nord1cWarr1or))
@@ -602,7 +602,7 @@
 
 ## 2.2.1.0 (2022-12-11)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Reworked precache-system, fixed issue about **Texture Overflow MAX_GLTEXTURES**
 - Added new ConVar for AWP
@@ -614,7 +614,7 @@
 
 <!-- truncate -->
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed client Deploy animation caused weapon prediction [stockbug]
 - Fixed a crash about **AllocBlock: full** [stockbug]
@@ -626,12 +626,12 @@
 - Fixed memory leak **DetailTextures** with `r_detailtextures 0` [stockbug]
 - Fixed memory leak VOX sentence system [stockbug]
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - wopox1337 ([@wopox1337](https://github.com/wopox1337))
@@ -639,11 +639,11 @@
 
 ## 2.1.0.0 (2022-11-07)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - ConVars `cl_bob`, `max_shells`, `max_smokepuffs` marked as an archive, which allows them to be saved in config
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a bug in monitor frequency when FBO scaling is enabled
 - Fixed a crash in ServerBrowser when **SteamMatchmakingServers()** function returned null at shutdown
@@ -654,7 +654,7 @@
 
 ## 2.0.0.0 (2022-10-22)
 
-#### :rocket: New Feature
+#### :rocket: New Feature {#new}
 
 - Added AMXX Module with **GoldClient API**
 - Added new command `BindToggle` for easy switching state of convar
@@ -662,7 +662,7 @@
 - Very low screen resolutions are no longer supported to prevent visual bugs
   Minimum allowed resolution is now `640x480`
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed an issue with sorting auto-completion in console dialog
 - Fixed a bug with muted menu In-Game
@@ -675,14 +675,14 @@
 
 ## 1.9.3.0 (2022-09-24)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added a new **System** tab in options menu
 - Added a **language** selection option
 - **Voice** options tab moved into **Audio** options for better organization
 - Improved avatar selection process in player profile
 
-#### 🧩 Miscellaneous
+#### 🧩 Miscellaneous {#misc}
 
 - Numerous engine-level bug fixes to improve overall stability
 
@@ -691,7 +691,7 @@
 
 ## 1.8.1.0 (2022-09-15)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added launch option `-tallfont` for players who prefer legacy Cyrillic font rendering behavior \
   Since version `1.9.3.0` renamed to `-legacyfont`
@@ -701,7 +701,7 @@
 
 ## 1.7.5.0 (2022-08-06)
 
-#### 🧩 Miscellaneous
+#### 🧩 Miscellaneous {#misc}
 
 - A maintenance release focused on minor code refactoring and various bug fixes **under the hood**
 
@@ -710,25 +710,25 @@
 
 ## 1.7.2.0 (2022-08-03)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - `cl_smokegren_color` can now be applied to server-side gas puff smoke effects
 - Added command `client_motd_close` to let players close MOTD via a keybind or when executed from server (@fl0werD)
 - MOTD now automatically closes when its URL navigates to `browser://close` (@fl0werD)
 - `gl_fog` command now acts as a **shadow** ConVar, allowing servers to control it without overriding player config permanently
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed **Server Name** sometimes displaying incorrectly in MOTD title
 
 <!-- truncate -->
 
-#### Authors 1
+#### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 1
+#### Testers 1 {#testers}
 <!-- testers -->
 
 - fl0werD ([@fl0werD](https://github.com/fl0werD))
@@ -736,7 +736,7 @@
 
 ## 1.7.1.0 (2022-07-26)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Changing **brightness** or **gamma** in settings no longer requires a game restart
 - `hud_centerid` command is now a **shadow** ConVar, giving servers temporary control
@@ -748,7 +748,7 @@
 
 ## 1.6.8.0 (2022-07-19)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added **Steam Cloud** support to automatically synchronize `config.cfg` across devices \
   Since version `2.2.1.0`, the `-cloud` launch param is required to enable
@@ -769,7 +769,7 @@
 - **Server Info** dialog now shows more detail, including rules, and more
 - Improved visual quality of sky textures with hardware filtering
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed **blur effects** for fonts
 - Corrected player's **Field of View** (FOV) when `hud_headname` is active
@@ -778,7 +778,7 @@
 
 ## 1.6.4.0 (2022-06-28)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added a toggle option in ServerBrowser to hide duplicate servers
 
@@ -787,11 +787,11 @@
 
 ## 1.6.0.0 (2022-06-26)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added command `cl_download_delay_ms` to help with file download issues from certain web-hostings
 
-#### :bug: Bug Fix
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a bug that occurred when adding a new server to **Favorites** list
 
@@ -800,7 +800,7 @@
 
 ## 1.5.4.0 (2022-06-15)
 
-#### :bug: Bug Fixes
+#### :bug: Bug Fix {#fixes}
 
 - Fixed a client crash that could occur when changing video options [stockbug]
 
@@ -809,7 +809,7 @@
 
 ## 1.5.0.0 (2022-06-08)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added a color picker for `cl_smokegren_color` in Advanced Options menu
 - Added auto-completion for demo filenames in the game console for `viewdemo` and `playdemo` commands
@@ -823,7 +823,7 @@
 
 ## 1.3.0.0 (2022-05-22)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Implemented stricter content validation for **FastDL** files \
   Now verifies that file data matches its extension, preventing corrupted or invalid content
@@ -834,7 +834,7 @@
 
 ## 1.2.0.0 (2022-05-04)
 
-#### :rocket: New Features
+#### :rocket: New Feature {#new}
 
 - Added **country flags** and filters for **game mode** and **location** to internet Server Browser tab
 - Added ConVar `hud_headname` to show nicknames above teammates in-game that are on the player's Steam friends list
@@ -847,7 +847,7 @@
 - Demos and screenshots are now stored in **cstrike_downloads** folder
 - Added new ConVar `cl_bob_sniper` for sniper rifle weapon bobbing
 
-#### :bug: Bug Fixes
+#### :bug: Bug Fix {#fixes}
 
 - Improved `net_graph` layout, fixing column alignment
 - Invalid or non-printable characters are now cleaned up from server and map names

@@ -30,12 +30,12 @@ how each console variable works.
 
 ---
 
-## Popular Crosshairs
+## Popular Crosshairs {#popular-crosshairs}
 
 Don't want to mess with console variables?\
 Just copy a ready-made config into your file or the console!
 
-### Red Dot
+### Red Dot {#red-dot}
 
 Ideal for those who value minimalism, maximum visibility, and focus.\
 A **red dot crosshair** doesn't obstruct the enemy model and helps you focus on the target.
@@ -64,7 +64,8 @@ A **red dot crosshair** doesn't obstruct the enemy model and helps you focus on 
 You can change the dot's thickness (`cl_crosshairthickness`) and its color (`cl_crosshaircolor`) to find the perfect option for you.
 :::
 
-### Static
+### Static {#static}
+
 A classic choice for competitive play.\
 A small static crosshair provides a good field of view, doesn't expand when moving, and doesn't distract from the gameplay.
 
@@ -108,7 +109,8 @@ A small static crosshair provides a good field of view, doesn't expand when movi
   ]}
 />
 
-### Dynamic
+### Dynamic {#dynamic}
+
 This isn't just the old dynamic crosshair from 1.6.\
 This crosshair accurately shows your weapon's current spread.\
 It expands when shooting and moving, giving you visual feedback on when your shot will be most accurate.\
@@ -154,9 +156,8 @@ It's a dynamic crosshair that helps you learn to control recoil and spray.
   ]}
 />
 
-## Cvar Breakdown
-
-### Crosshair Style - `cl_crosshairstyle`
+## Cvar Breakdown {#cvar-breakdown}
+**Crosshair Style - `cl_crosshairstyle`**
 
 This is the most important console variable\
 It defines the behavior of the crosshair
@@ -169,11 +170,13 @@ It defines the behavior of the crosshair
 `5` - Legacy Style. Similar to 1.6, but with inaccurate recoil feedback\
 `6` - Original. The behavior familiar to all CS 1.6 veterans
 
-### Size and Gap
+### Size and Gap {#size-and-gap}
+
 `cl_crosshairsize` - The length of each of the four crosshair lines. For a small crosshair, use values from 1 to 4.\
 `cl_crosshairgap` - The distance from the center to the lines. Negative values can be used to make the lines converge.
 
-### Center Dot
+### Center Dot {#center-dot}
+
 `cl_crosshairdot` - Adds a dot to the center.\
 `1` - Enable\
 `0` - Disable
@@ -181,14 +184,17 @@ It defines the behavior of the crosshair
 If you set `cl_crosshairsize 0` and `cl_crosshairdot 1`, you'll get a dot-only crosshair
 :::
 
-### Color and Transparency
-##### Two different approaches to visibility
+### Color and Transparency {#color-and-transparency}
+
+**Two different approaches to visibility**
+
 The color of your crosshair plays a significant role.\
 But even more important is how it interacts with the game world.\
 There are two fundamentally different rendering modes that drastically change how the crosshair is perceived.
 
-#### "Glow" Mode (Additive Blending)
-##### `cl_crosshairusealpha 0`
+#### "Glow" Mode (Additive Blending) {#glow-mode-additive-blending}
+
+**`cl_crosshairusealpha 0`**
 
 This is the `classic` mode, familiar to many CS 1.6 veterans.\
 When you set `cl_crosshairusealpha 0`, your crosshair stops being just a colored object.\
@@ -206,8 +212,9 @@ Since the crosshair's visibility constantly changes and can "blend" into the env
 This style is preferred by players who find any permanent crosshair distracting and rely more on muscle memory.\
 It's the choice for minimalists who only want a subtle hint of the screen's center.
 
-#### "Translucent" Mode (Alpha Blending)
-##### `cl_crosshairusealpha 1`
+#### "Translucent" Mode (Alpha Blending) {#translucent-mode-alpha-blending}
+
+**`cl_crosshairusealpha 1`**
 
 This is a more flexible and arguably better compromise.\
 By enabling `cl_crosshairusealpha 1`, you make the crosshair a normal object whose transparency level can be set with the `cl_crosshairalpha` cvar.
@@ -234,12 +241,14 @@ Use a bright crosshair color (like green) together with a black outline.\
 The bright color will contrast with dark textures, and the black outline will contrast with light ones (like the sky on `de_dust2`).
 :::
 
-### Thickness and Outline
+### Thickness and Outline {#thickness-and-outline}
+
 `cl_crosshairthickness` - The thickness of the crosshair lines.\
 `cl_crosshair_drawoutline` - Enables a black outline around the crosshair, making it visible on any background.\
 `cl_crosshair_outlinethickness` - The thickness of this outline.
 
-### T-Shaped Crosshair
+### T-Shaped Crosshair {#t-shaped-crosshair}
+
 `cl_crosshair_t` - Removes the top line, making the crosshair look like a 'T'.\
 For some players, this helps to better see the enemy's head.
 
@@ -251,5 +260,5 @@ Download GoldClient and have fun!
 :::
 :::info Need more technical details?
 If you want to see a full list of all console variables and their default values,\
-check out the official [documentation](/docs/refs/configuration/cvars#hud--crosshair) for crosshair settings and much more.
+check out the official [documentation](/docs/reference/configuration/cvars#hud--xhair) for crosshair settings and much more.
 :::

@@ -46,7 +46,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
 Они лишь описывают структуру команды
 :::
 
-## Настройка и Конфигурация
+## Настройка и Конфигурация {#settings--configuration}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -121,7 +122,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Игрок и Геймплей
+## Игрок и Геймплей {#player--gameplay}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -167,7 +169,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='trackplayer'>
       <td className='name'>trackplayer</td>
-      <td className='desc'><div className='text'>Начинает отслеживание по наведению на игрока<br/>Отслеживаемые игроки подсвечиваются на радаре и над их головой отображается имя (если включен `hud_headname` и они находятся в одной команде) <a className='ref-link' href='/docs/refs/configuration/cvars#hud_headname'/></div><div className='desc-meta'><VersionBadge type='changed' since='2.5.0.0'/></div></td>
+      <td className='desc'><div className='text'>Начинает отслеживание по наведению на игрока<br/>Отслеживаемые игроки подсвечиваются на радаре и над их головой отображается имя (если включен `hud_headname` и они находятся в одной команде) <a className='ref-link' href='/docs/reference/configuration/cvars/#hud_headname'/></div><div className='desc-meta'><VersionBadge type='changed' since='2.5.0.0'/></div></td>
     </tr>
     <tr id='clearplayers'>
       <td className='name'>clearplayers</td>
@@ -216,7 +218,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='voicerecord_toggle'>
       <td className='name'>voicerecord_toggle `<on/off>`</td>
-      <td className='desc'>Переключает состояние записи с микрофона (начинает/останавливает)<br/>Удобно для создания 'переключаемого' голосового чата вместо 'удерживаемого' <a className='ref-link' href='/docs/refs/configuration/commands#voicerecord'/></td>
+      <td className='desc'>Переключает состояние записи с микрофона (начинает/останавливает)<br/>Удобно для создания 'переключаемого' голосового чата вместо 'удерживаемого' <a className='ref-link' href='/docs/reference/configuration/commands/#voicerecord'/></td>
     </tr>
     <tr id='voice_showbanned'>
       <td className='name'>voice_showbanned</td>
@@ -257,7 +259,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Сеть и Подключение
+## Сеть и Подключение {#network--connection}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -304,7 +307,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Демо-записи и Видео
+## Демо-записи и Видео {#demos--video}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -346,7 +350,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='demos'>
       <td className='name'>demos</td>
-      <td className='desc'>Повторно проигрывает последовательность из демо-файлов `startdemos` <a className='ref-link' href='/docs/refs/configuration/commands#startdemos'/></td>
+      <td className='desc'>Повторно проигрывает последовательность из демо-файлов `startdemos` <a className='ref-link' href='/docs/reference/configuration/commands/#startdemos'/></td>
     </tr>
     <tr id='stopdemo'>
       <td className='name'>stopdemo</td>
@@ -383,7 +387,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Сервер и Администрирование
+## Сервер и Администрирование {#server--administration}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -437,11 +442,11 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='writeid'>
       <td className='name'>writeid</td>
-      <td className='desc'>Сохраняет список SteamID банов в файл `banned.cfg` <a className='ref-link' href='/docs/refs/configuration/cvars#bannedcfgfile'/></td>
+      <td className='desc'>Сохраняет список SteamID банов в файл `banned.cfg` <a className='ref-link' href='/docs/reference/configuration/cvars/#bannedcfgfile'/></td>
     </tr>
     <tr id='writeip'>
       <td className='name'>writeip</td>
-      <td className='desc'>Сохраняет список IP банов в файл `listip.cfg` <a className='ref-link' href='/docs/refs/configuration/cvars#listipcfgfile'/></td>
+      <td className='desc'>Сохраняет список IP банов в файл `listip.cfg` <a className='ref-link' href='/docs/reference/configuration/cvars/#listipcfgfile'/></td>
     </tr>
     <tr id='maxplayers'>
       <td className='name'>maxplayers `<number>`</td>
@@ -469,7 +474,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='rcon'>
       <td className='name'>rcon `<command>`</td>
-      <td className='desc'>Отправляет команду на удаленный сервер через RCON<br/>Требует предварительной установки `rcon_password` <a className='ref-link' href='/docs/refs/configuration/cvars#rcon_password'/></td>
+      <td className='desc'>Отправляет команду на удаленный сервер через RCON<br/>Требует предварительной установки `rcon_password` <a className='ref-link' href='/docs/reference/configuration/cvars/#rcon_password'/></td>
     </tr>
     <tr id='log'>
       <td className='name'>log `<on|off>`</td>
@@ -529,7 +534,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
     </tr>
     <tr id='pause'>
       <td className='name'>pause</td>
-      <td className='desc'>Ставит игру на сервере на паузу или снимает с нее<br/>Игроки находящиеся на игровом сервере тоже могут вызывать эту команду, если `pausable` установлен в `1` <a className='ref-link' href='/docs/refs/configuration/cvars#pausable'/></td>
+      <td className='desc'>Ставит игру на сервере на паузу или снимает с нее<br/>Игроки находящиеся на игровом сервере тоже могут вызывать эту команду, если `pausable` установлен в `1` <a className='ref-link' href='/docs/reference/configuration/cvars/#pausable'/></td>
     </tr>
     <tr id='setpause'>
       <td className='name'>setpause</td>
@@ -554,7 +559,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Наблюдение и Медиа
+## Наблюдение и Медиа {#spectating--media}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -651,7 +657,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Команды действий (для биндов)
+## Команды действий (для биндов) {#action-commands-for-binds}
 
 :::info
 Команды в этой таблице существуют в двух вариантах: с префиксом \
@@ -764,7 +770,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Консоль
+## Консоль {#console}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -803,7 +810,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Система
+## Система {#system}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -842,7 +850,8 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Отладка и Разработка
+## Отладка и Разработка {#debugging--development}
+
 <Table>
   <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
   <tbody>
@@ -1050,7 +1059,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
   </tbody>
 </Table>
 
-## Служебные команды
+## Служебные команды {#service-commands}
 
 :::info
 Эти команды предназначены для внутреннего использования движком и игровым UI \

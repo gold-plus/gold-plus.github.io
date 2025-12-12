@@ -19,7 +19,8 @@ Follow the updates to receive up-to-date information.
 Launch parameters are special commands that allow you to change game settings before it runs \
 They can be useful for troubleshooting, performance tuning, or enabling specific features
 
-## Main Parameters
+## Main Parameters {#main-parameters}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -29,7 +30,7 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
     </tr>
     <tr id='dev'>
       <td className='name'>-dev</td>
-      <td className='desc'>Enables developer mode, which outputs debug information to the console<br/>This parameter enables `developer 1` <a className='ref-link' href='/docs/refs/configuration/cvars#developer'/></td>
+      <td className='desc'>Enables developer mode, which outputs debug information to the console<br/>This parameter enables `developer 1` <a className='ref-link' href='/docs/reference/configuration/cvars/#developer'/></td>
     </tr>
     <tr id='game'>
       <td className='name'>-game</td>
@@ -58,7 +59,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Graphics & Video
+## Graphics & Video {#graphics--video}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -182,7 +184,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Network & Server
+## Network & Server {#network--server}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -249,7 +252,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Input & Sound
+## Input & Sound {#input--sound}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -299,12 +303,13 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
     </tr>
     <tr id='nocdaudio'>
       <td className='name'>-nocdaudio</td>
-      <td className='desc'>Disables CD audio playback <a className='ref-link' href='/docs/refs/configuration/commands#cd'/></td>
+      <td className='desc'>Disables CD audio playback <a className='ref-link' href='/docs/reference/configuration/commands/#cd'/></td>
     </tr>
   </tbody>
 </Table>
 
-## System & Performance
+## System & Performance {#system--performance}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -339,7 +344,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Miscellaneous
+## Miscellaneous {#miscellaneous}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -358,7 +364,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Debugging & Development
+## Debugging & Development {#debugging--development}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -411,7 +418,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Integration & Services
+## Integration & Services {#integration--services}
+
 <Table>
   <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
   <tbody>
@@ -434,7 +442,8 @@ They can be useful for troubleshooting, performance tuning, or enabling specific
   </tbody>
 </Table>
 
-## Auto-Updater
+## Updater {#updater}
+
 :::warning
 These parameters are intended for **temporary** use for **personal purposes** (e.g., for testing, rolling back to another version due to issues, or any other valid reason) \
 It is not recommended to use them permanently, as they have the **highest priority** and completely **block** the ability to manage updates in the game settings \
