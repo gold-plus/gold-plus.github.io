@@ -20,7 +20,7 @@
 - Fully reworked avatar manager: improved stability, added CDN support for fast loading
 - Significantly optimized lookup and execution of console commands and aliases
 - Optimized Options dialog opening, removed delays and implemented avatar list caching
-- Improved `dev_console` ConVar: can now be opened over loading dialogs
+- Improved `dev_console` ConVar: console can now be opened over loading dialogs
 - Improved server browser map filter: added support for exact map name search in quotes
 - Improved DHUD: messages now respect channels [stockbug]
 - Added support for custom sizes for the original radar via `hud.txt`
