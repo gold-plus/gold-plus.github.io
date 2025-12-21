@@ -31,6 +31,8 @@
   --ifm-color-blue-lighter: #8abcf9;
   --ifm-color-blue-lightest: #bedaff;
 
+  --ifm-color-green-light: #00a400;
+
   --ifm-color-gray: #f5f7fa;
   --ifm-color-gray-dark: #e1e5eb;
   --ifm-color-gray-darker: #c7ccd6;
@@ -73,6 +75,8 @@
   --ifm-color-blue-light: #7cc4fc;
   --ifm-color-blue-lighter: #9ed3ff;
   --ifm-color-blue-lightest: #c7e3ff;
+
+  --ifm-color-green-light: #0adb0a;
 
   --ifm-color-gray: #1a1f29;
   --ifm-color-gray-dark: #9399a3;

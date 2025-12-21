@@ -35,6 +35,9 @@
   "theme.changelog.item.readMore": {
     "message": "Читать дальше"
   },
+  "theme.changelog.unseenChange": {
+    "message": "Новое с вашего последнего визита"
+  },
   "theme.home.changelog.prerelease": {
     "message": "Бета"
   },

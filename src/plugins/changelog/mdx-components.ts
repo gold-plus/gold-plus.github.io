@@ -49,6 +49,12 @@ export const MDX_COMPONENTS_REGISTRY: MdxComponentRegistration[] = [{
       }
       return `<UserBadge name="${authorInfo.name || username}" url="${authorInfo.url}" imageUrl="${authorInfo.image_url}" title="${authorInfo.title}" />`;
     },
+  },
+  {
+    componentName: 'UnseenMarker',
+    importPath: '@site/src/components/Misc/Badges',
+    regex: /(-\s*)(.*?)(\s*\[id:(\w+)\])/g,
+    getReplacement: (match) => `${match[1]}<UnseenMarker sha="${match[4]}" />${match[2]}`
   }
 ];
 

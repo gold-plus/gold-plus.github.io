@@ -35,6 +35,9 @@
   "theme.changelog.item.readMore": {
     "message": "Read more"
   },
+  "theme.changelog.unseenChange": {
+    "message": "New change since your last visit"
+  },
   "theme.home.changelog.prerelease": {
     "message": "Beta"
   },

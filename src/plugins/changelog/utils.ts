@@ -125,6 +125,7 @@ ${processedContent.replace(/####/g, '##')}`
 }
 
 export function toChangelogEntries(filesContent: string[], authorsData: Record<string, any>): ChangelogEntry[] {
+  publishTimes.clear();
   return filesContent
     .flatMap((content) => content.split(/(?=\n## )/))
     .map((sectionContent) => toChangelogEntry(sectionContent, authorsData))
