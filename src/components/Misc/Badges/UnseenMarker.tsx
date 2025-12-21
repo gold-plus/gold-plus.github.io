@@ -11,7 +11,7 @@ interface UnseenMarkerProps {
 export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ sha }) => {
   const { isNew, markAsSeen } = useSeenHashes();
   const shouldMark = isNew(sha);
-	const anchorRef = useRef<HTMLSpanElement>(null);
+  const anchorRef = useRef<HTMLSpanElement>(null);
   const tooltipId = `tooltip:${useId()}`;
   useEffect(() => {
     markAsSeen(sha);
@@ -20,7 +20,6 @@ export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ sha }) => {
       const listItem = anchorRef.current.closest('li');
       if (listItem) {
         listItem.classList.add(styles['unseen']);
-        console.log(`listItem`, listItem);
       }
     }
   }, [sha, shouldMark, markAsSeen]);
