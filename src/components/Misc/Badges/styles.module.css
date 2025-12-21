@@ -146,9 +146,9 @@
 
 .unseen--anchor {
   display: inline-block;
-  width: 1.18em;
-  height: 1.18em;
-  margin-left: -1.45em;
+  width: 1.25em;
+  height: 1.25em;
+  margin-left: -1.25em;
   vertical-align: middle;
   cursor: help;
   opacity: 0;
