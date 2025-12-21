@@ -38,6 +38,8 @@
 - Added support for the **Sprite API** via the **HudSprite** custom user message (@next21)
 - Added **Fullbright** support for textures in studio models. Works only on regular models, not on player models (@256bit)
 - Added on-the-fly `gl_picmip` updates without restarting the map
+- Added a gear settings menu to the **Server Browser** with an option to auto-open the window on startup [id:eaa0bb2]
+- Added new `cl_righthand -2` mode - legacy knife left / weapons right (classic behavior without requiring `cl_lw 0`) [id:eaa0bb2]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -59,6 +61,11 @@
 - Fixed a long-standing bug in Scoreboard where player counts for CT and Terrorist teams would be swapped (@Nord1cWarr1or) [stockbug]
 - Fixed `con_mono` (monospaced console font) when running via Valve Proton (@Nord1cWarr1or)
 - Fixed being disconnected from servers when alt-tabbing back into the game after a long period while `engine_no_render_minimized` is enabled (@Nord1cWarr1or)
+- Fixed `r_dynamic 0` behavior map lighting now updates correctly while keeping dynamic lights disabled for performance (@Nord1cWarr1or) [id:eaa0bb2]
+- Fixed shadow sprite issue caused by missing ShadowIdx during demo playback (@Nord1cWarr1or) [id:eaa0bb2]
+- Fixed bug where legacy death notice icons always appeared white instead of proper colors (@galaxy) [id:eaa0bb2]
+- Fixed **New Game** settings execution order to prevent conflicts with 3rd party modules (@esotericdesign) [id:eaa0bb2]
+- Fixed Steam integration issues caused by recent Steam updates [id:eaa0bb2]
 
 #### Authors 1 {#authors}
 <!-- authors -->
