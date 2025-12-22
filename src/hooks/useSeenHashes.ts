@@ -1,62 +1,74 @@
-import { useRef, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
-const STORAGE_KEY = 'seenCommitHashes';
+const STORAGE_KEY = 'seen_changelog';
 const HIGHLIGHT_DURATION_MS = 1440 * 60 * 1000; // 1 day time to live highlight
 const MAX_HASHES_TO_STORE = 30;
 const FORCE_HIGHLIGHT_FOR_NEW_USERS = true;
 
 interface SeenInfo {
-  sha: string;
   timestamp: number;
 }
-type SeenHashes = SeenInfo[];
 
-const getSeenHashes = (): SeenHashes => {
+interface StoredData {
+  version: string;
+  hashes: Record<string, SeenInfo>;
+}
+
+const getStoredData = (version: string): StoredData | null => {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    const parsed = stored ? JSON.parse(stored) : [];
-    return Array.isArray(parsed) ? parsed : [];
+    if (!stored) return null;
+
+    const parsed: StoredData = JSON.parse(stored);
+    if (parsed.version !== version) {
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
+    return parsed;
   } catch (e) {
-    console.error(`[getSeenHashes] CRITICAL: Failed to parse localStorage`, e);
-    return [];
+    localStorage.removeItem(STORAGE_KEY);
+    return null;
   }
 };
 
-export function useSeenHashes() {
-  const seenHashesRef = useRef<SeenHashes>(getSeenHashes());
-  const isFirstVisitRef = useRef<boolean>(seenHashesRef.current.length === 0);
+export function useSeenHashes(version : string) {
+  const [storedData, setStoredData] = useState<'loading' | StoredData | null>('loading');
+  useEffect(() => {
+    setStoredData(getStoredData(version));
+  }, [version]);
+
+  const isFirstVisit = storedData === null;
+  const seenHashes = (storedData && storedData !== 'loading') ? storedData.hashes : {};
   const isNew = useCallback((sha: string): boolean => {
-    if (!sha) return false;
-    if (FORCE_HIGHLIGHT_FOR_NEW_USERS && isFirstVisitRef.current) return true;
-    if (!FORCE_HIGHLIGHT_FOR_NEW_USERS && isFirstVisitRef.current) return false;
-    const hashesInRef = seenHashesRef.current;
-    const seenInfo = hashesInRef.find(item => item.sha === sha);
+    if (storedData === 'loading') return false;
+    if (FORCE_HIGHLIGHT_FOR_NEW_USERS && isFirstVisit) return true;
+    if (!FORCE_HIGHLIGHT_FOR_NEW_USERS && isFirstVisit) return false;
+    const seenInfo = seenHashes[sha];
     if (!seenInfo) return true;
     if (seenInfo.timestamp === -1) return false;
     const timeSinceSeen = Date.now() - seenInfo.timestamp;
-    const shouldHighlight = timeSinceSeen < HIGHLIGHT_DURATION_MS;
-    return shouldHighlight;
-  }, []);
+    return timeSinceSeen < HIGHLIGHT_DURATION_MS;
+
+  }, [storedData, isFirstVisit, seenHashes]);
 
   const markAsSeen = useCallback((sha: string) => {
-    const currentHashes = getSeenHashes();
-    const isAlreadySeen = currentHashes.some(item => item.sha === sha);
-    if (isAlreadySeen) {
-      return;
-    }
-    let timestamp;
-    if (FORCE_HIGHLIGHT_FOR_NEW_USERS && isFirstVisitRef.current) {
-      timestamp = Date.now();
-    } else {
-      timestamp = isFirstVisitRef.current ? -1 : Date.now();
-    }
-    let newHashes = [...currentHashes, { sha, timestamp }];
-    if (newHashes.length > MAX_HASHES_TO_STORE) {
-      newHashes = newHashes.slice(newHashes.length - MAX_HASHES_TO_STORE);
-    }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newHashes));
-    seenHashesRef.current = newHashes;
-  }, []);
+    setTimeout(() => {
+      let currentData = getStoredData(version) || { version, hashes: {} };
+      if (currentData.hashes[sha]) return;
+      const wasFirstVisit = !localStorage.getItem(STORAGE_KEY);
+      const timestamp = wasFirstVisit ?
+        (FORCE_HIGHLIGHT_FOR_NEW_USERS ? Date.now() : -1)
+        : Date.now();
+
+      currentData.hashes[sha] = { timestamp };
+      const hashKeys = Object.keys(currentData.hashes);
+      if (hashKeys.length > MAX_HASHES_TO_STORE) {
+        const oldestKey = Object.entries(currentData.hashes).sort((a, b) => a[1].timestamp - b[1].timestamp)[0][0];
+        delete currentData.hashes[oldestKey];
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentData));
+    }, 0);
+  }, [version]);
 
   return { isNew, markAsSeen };
 }

@@ -5,11 +5,12 @@ import { Tooltip } from 'react-tooltip';
 import styles from './styles.module.css';
 
 interface UnseenMarkerProps {
+  version: string;
   sha: string;
 }
 
-export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ sha }) => {
-  const { isNew, markAsSeen } = useSeenHashes();
+export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ version, sha, }) => {
+  const { isNew, markAsSeen } = useSeenHashes(version);
   const shouldMark = isNew(sha);
   const anchorRef = useRef<HTMLSpanElement>(null);
   const tooltipId = `tooltip:${useId()}`;
@@ -26,24 +27,24 @@ export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ sha }) => {
 
   if (!shouldMark) return null;
 
-	return (
-		<>
-		<span
-			ref={anchorRef}
-			className={styles['unseen--anchor']}
-			data-tooltip-id={tooltipId}
-		/>
+  return (
+    <>
+    <span
+      ref={anchorRef}
+	  className={styles['unseen--anchor']}
+	  data-tooltip-id={tooltipId}
+    />
 
-		<Tooltip
-			id={tooltipId}
-			className={styles['unseen--tooltip']}
-			place="top"
-			>
-			{translate({
-			  id: 'theme.changelog.unseenChange',
-			  message: 'New change since your last visit',
-			})}
-		</Tooltip>
-		</>
-	);
+    <Tooltip
+      id={tooltipId}
+      className={styles['unseen--tooltip']}
+      place="top"
+    >
+      {translate({
+        id: 'theme.changelog.unseenChange',
+        message: 'New change since your last visit',
+      })}
+    </Tooltip>
+    </>
+  );
 }

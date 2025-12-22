@@ -3,7 +3,7 @@ interface MdxComponentRegistration {
   componentName: string;
   importPath: string;
   regex: RegExp;
-  getReplacement: (match: RegExpMatchArray, authorsData: Record<string, any>) => string;
+  getReplacement: (match: RegExpMatchArray, authorsData: Record<string, any>, version: string) => string;
 }
 
 export const MDX_COMPONENTS_REGISTRY: MdxComponentRegistration[] = [{
@@ -54,11 +54,11 @@ export const MDX_COMPONENTS_REGISTRY: MdxComponentRegistration[] = [{
     componentName: 'UnseenMarker',
     importPath: '@site/src/components/Misc/Badges',
     regex: /(-\s*)(.*?)(\s*\[id:(\w+)\])/g,
-    getReplacement: (match) => `${match[1]}<UnseenMarker sha="${match[4]}" />${match[2]}`
+    getReplacement: (match, authorsData, version) => `${match[1]}<UnseenMarker version="${version}" sha="${match[4]}" />${match[2]}`
   }
 ];
 
-export function processMdxComponents(content: string, authorsData: Record<string, any>): {
+export function processMdxComponents(version: string, content: string, authorsData: Record<string, any>): {
   processedContent: string;
   imports: string[];
 } {
@@ -70,7 +70,7 @@ export function processMdxComponents(content: string, authorsData: Record<string
       processedContent = processedContent.replace(
         registration.regex,
         // @ts-ignore
-        (...args) => registration.getReplacement(args, authorsData)
+        (...args) => registration.getReplacement(args, authorsData, version)
       );
 
       if (!componentsToImport.has(registration.importPath)) {

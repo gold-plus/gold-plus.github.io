@@ -87,8 +87,9 @@ function toChangelogEntry(sectionContent: string, authorsData: Record<string, an
 
   const authors = parseAuthors(content);
   const isPrerelease = /beta|pre-release|rc/i.test(titleLine.toLowerCase());
+  const cleanTitle = titleLine.replace(/ *(\([\d-]+\)|\[.*?\])/g, '');
 
-  const { processedContent, imports } = processMdxComponents(content, authorsData);
+  const { processedContent, imports } = processMdxComponents(cleanTitle, content, authorsData);
 
   let hour = 20;
   const date = titleLine.match(/ \((?<date>.*)\)/)?.groups!.date;
@@ -97,7 +98,6 @@ function toChangelogEntry(sectionContent: string, authorsData: Record<string, an
   }
   publishTimes.add(`${date}T${hour}:00`);
 
-  const cleanTitle = titleLine.replace(/ *(\([\d-]+\)|\[.*?\])/g, '');
   const finalContent = `---
 mdx:
  format: mdx
