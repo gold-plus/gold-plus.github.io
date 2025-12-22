@@ -17,7 +17,7 @@ export function usePlatform(): { platform: Platform; isMobile: boolean } {
 
   useEffect(() => {
     const nav = window.navigator as NavigatorWithUAData;
-    if (nav.userAgentData) {
+    if (nav.userAgentData && nav.userAgentData.platform) {
       const platformName = nav.userAgentData.platform.toLowerCase();
       if (platformName.includes('win')) {
         setPlatform('windows');

@@ -27,7 +27,7 @@ function WindowsIcon(props: SVGProps<SVGSVGElement>) {
 
 export default function DownloadButton() {
   const {
-    siteConfig: {customFields},
+    siteConfig: {customFields}
   } = useDocusaurusContext();
   const { platform } = usePlatform();
   const tooltipId = `download-tooltip:${useId()}`;
