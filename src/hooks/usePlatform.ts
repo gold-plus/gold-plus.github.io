@@ -16,7 +16,7 @@ export function usePlatform(): { platform: Platform; isMobile: boolean } {
   const [platform, setPlatform] = useState<Platform>('unknown');
 
   useEffect(() => {
-    const nav = window.navigator as NavigatorWithUAData;
+    const nav = navigator as NavigatorWithUAData;
     if (nav.userAgentData && nav.userAgentData.platform) {
       const platformName = nav.userAgentData.platform.toLowerCase();
       if (platformName.includes('win')) {
@@ -34,16 +34,16 @@ export function usePlatform(): { platform: Platform; isMobile: boolean } {
     }
 
     const ua = nav.userAgent.toLowerCase();
-    if (/windows|win32/.test(ua)) {
+    if (/windows|win32|win64/.test(ua)) {
       setPlatform('windows');
+    } else if (/android/.test(ua) || (/linux/.test(ua) && navigator.maxTouchPoints > 0 && matchMedia('(pointer: coarse)').matches)) {
+      setPlatform('android');
+    } else if (/iphone|ipad|ipod/.test(ua)) {
+      setPlatform('ios');
     } else if (/macintosh|mac os x/.test(ua)) {
       setPlatform('macos');
     } else if (/linux/.test(ua)) {
       setPlatform('linux');
-    } else if (/android/.test(ua)) {
-      setPlatform('android');
-    } else if (/iphone|ipad|ipod/.test(ua)) {
-      setPlatform('ios');
     }
 
   }, []);
