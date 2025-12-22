@@ -11,6 +11,25 @@
   "theme.home.download.latest": {
     "message": "Версия"
   },
+  "theme.home.download.forWindows": {
+    "message": "Скачать для Windows",
+    "description": "Text for the download button when shown on non-Windows platforms"
+  },
+  "theme.home.download.onlyWindows": {
+    "message": "Доступно на Windows",
+    "description": "Text for the disabled download button on mobile"
+  },
+  "theme.home.download.nonWindowsHint": {
+    "message": "Это приложение для Windows. Может потребоваться эмулятор (например, Wine или Proton)",
+    "description": "Tooltip hint for users on macOS or Linux"
+  },
+  "theme.home.download.androidHint": {
+    "message": "Это приложение для Windows. Может потребоваться эмулятор (например, Winlator)"
+  },
+  "theme.home.download.mobileHint": {
+    "message": "Загрузка доступна только на ПК (Windows)",
+    "description": "Tooltip hint for users on mobile devices"
+  },
   "theme.home.feature.addons": {
     "message": "Повышенная безопасность, различные визуальные дополнения такие как радар, киллфид и настраиваемый прицел, и другое."
   },

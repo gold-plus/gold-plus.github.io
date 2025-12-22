@@ -11,6 +11,25 @@
   "theme.home.download.latest": {
     "message": "Latest"
   },
+  "theme.home.download.forWindows": {
+    "message": "Download for Windows",
+    "description": "Text for the download button when shown on non-Windows platforms"
+  },
+  "theme.home.download.onlyWindows": {
+    "message": "Available on Windows",
+    "description": "Text for the disabled download button on mobile"
+  },
+  "theme.home.download.nonWindowsHint": {
+    "message": "This is a Windows application. An emulator (like Wine or Proton) may be required",
+    "description": "Tooltip hint for users on macOS or Linux"
+  },
+  "theme.home.download.androidHint": {
+    "message": "This is a Windows application and not officially supported on Android. An emulator (like Wine or Winlator) may be required"
+  },
+  "theme.home.download.mobileHint": {
+    "message": "Download is available on desktop (Windows) only",
+    "description": "Tooltip hint for users on mobile devices"
+  },
   "theme.home.feature.addons": {
     "message": "Enhanced security, modern visual add-ons like radar, killfeed and customizable xhairs."
   },

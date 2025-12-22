@@ -1,4 +1,3 @@
-
 .wrap {
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@
   width: 100%;
   display: inline-flex;
   flex-direction: column;
-  color: #fff;
   text-align: center;
   padding: 14px 24px;
   border-bottom-left-radius: 8px;
@@ -21,12 +19,21 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #26D07C;
   transition: 0.35s;
+  border: none;
+  cursor: pointer;
 }
 
-.button:hover {
-  background-color: #52b411;
+.button--primary {
+  background: #26D07C;
+  color: #fff;
+}
+
+.button--primary .icon svg {
+  color: white;
+}
+
+.button--primary:hover {
   transition: 0.35s;
   background: #36ff9a;
   color: #20754b;
@@ -34,9 +41,34 @@
               0 0 10px #36ff9a;
 }
 
-.button:hover .icon svg {
+.button--primary:hover .icon svg {
   color: #20754b;
-  transition: 0.35s;
+}
+
+.button--secondary {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.button--secondary .icon svg {
+  color: #fff;
+}
+
+.button--secondary:hover .icon svg {
+  color: #333;
+}
+
+.button--secondary:hover {
+  background-color: #eee;
+  color: #333;
+  box-shadow: 0 0 2px #aaa,
+              0 0 10px #aaa;
+}
+
+.button--disabled {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-800);
+  cursor: not-allowed;
 }
 
 .text {
@@ -66,6 +98,12 @@
 .icon svg {
   width: 20px;
   height: 20px;
-  color: white;
   transition: 0.35s;
+}
+
+.button--tooltip {
+  text-align: center;
+  width: auto;
+  white-space: normal !important;
+  word-wrap: break-word;
 }

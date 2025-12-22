@@ -1,7 +1,11 @@
-import { SVGProps } from "react";
+import React, { useId, useState, useRef, useLayoutEffect, SVGProps } from "react";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
+import { Tooltip } from 'react-tooltip';
+import clsx from 'clsx';
+
+import { usePlatform } from '@site/src/hooks/usePlatform';
 
 import styles from './styles.module.css'
 
@@ -13,25 +17,136 @@ function Icon(props: SVGProps<SVGSVGElement>) {
   )
 }
 
+function WindowsIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
+      <path fill="currentColor" d="M22.5 22.5H4V4h18.5v18.5zM44 4v18.5H25.5V4H44zM22.5 44H4V25.5h18.5V44zM44 44H25.5V25.5H44V44z" />
+    </svg>
+  );
+}
+
 export default function DownloadButton() {
   const {
     siteConfig: {customFields},
   } = useDocusaurusContext();
-  return (
-    <Link className={styles['button']} to={`${customFields.downloadProduct}`}>
-      <div className={styles['row']}>
-        <span className={styles['icon']}>
-          <Icon />
-        </span>
-        <span className={styles['text']}>
-          <Translate id="theme.home.download">Download</Translate>
-        </span>
-      </div>
-      <div className={styles['wrap']}>
-        <div className={styles['version']}>
-          <Translate id="theme.home.download.latest">Latest</Translate> : {`${customFields.currentVersion}`}
+  const { platform } = usePlatform();
+  const tooltipId = `download-tooltip:${useId()}`;
+  const buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>(null);
+  const [buttonWidth, setButtonWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    if (buttonRef.current) {
+      setButtonWidth(buttonRef.current.offsetWidth);
+    }
+  }, [platform]);
+
+  if (platform === 'windows' || platform === 'unknown') {
+    return (
+      <Link className={clsx(styles['button'], styles['button--primary'])} to={`${customFields.downloadProduct}`}>
+        <div className={styles['row']}>
+          <span className={styles['icon']}>
+            <Icon />
+          </span>
+          <span className={styles['text']}>
+            <Translate id='theme.home.download'>Download</Translate>
+          </span>
         </div>
-      </div>
-    </Link>
+        <div className={styles['wrap']}>
+          <div className={styles['version']}>
+            <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  if (platform === 'macos' || platform === 'linux') {
+    const tooltipText = translate({
+      id: 'theme.home.download.nonWindowsHint',
+      message: 'This is a Windows application. An emulator (like Wine or Proton) may be required',
+    });
+
+    return (
+      <>
+        <Link
+          ref={buttonRef as React.Ref<HTMLAnchorElement>}
+          className={clsx(styles['button'], styles['button--secondary'])}
+          to={`${customFields.downloadProduct}`}
+          data-tooltip-id={tooltipId}
+        >
+          <div className={styles['row']}>
+            <span className={styles['icon']}><WindowsIcon /></span>
+            <span className={styles['text']}>
+              <Translate id='theme.home.download.forWindows'>Download for Windows</Translate>
+            </span>
+          </div>
+          <div className={styles['wrap']}>
+            <div className={styles['version']}>
+              <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+            </div>
+          </div>
+        </Link>
+        <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
+      </>
+    );
+  }
+
+  if (platform === 'android') {
+    const tooltipText = translate({
+      id: 'theme.home.download.androidHint',
+      message: 'This is a Windows application and not officially supported on Android. An emulator (like Wine or Winlator) may be required',
+    });
+    return (
+      <>
+        <Link
+          ref={buttonRef as React.Ref<HTMLAnchorElement>}
+          className={clsx(styles['button'], styles['button--secondary'])}
+          to={`${customFields.downloadProduct}`}
+          data-tooltip-id={tooltipId}
+        >
+          <div className={styles['row']}>
+            <span className={styles['icon']}><WindowsIcon /></span>
+            <span className={styles['text']}>
+              <Translate id='theme.home.download.forWindows'>Download for Windows</Translate>
+            </span>
+          </div>
+          <div className={styles['wrap']}>
+            <div className={styles['version']}>
+              <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+            </div>
+          </div>
+        </Link>
+        <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
+      </>
+    );
+  }
+
+  const tooltipText = translate({
+    id: 'theme.home.download.mobileHint',
+    message: 'Download is available on desktop (Windows) only',
+  });
+
+  return (
+    <div data-tooltip-id={tooltipId}>
+      <span ref={buttonRef as React.Ref<HTMLAnchorElement>}>
+        <button
+          className={clsx(styles['button'], styles['button--disabled'])}
+          disabled
+        >
+          <div className={styles['row']}>
+            <span className={styles['icon']}><WindowsIcon /></span>
+            <span className={styles['text']}>
+              <Translate id='theme.home.download.onlyWindows'>Available on Windows</Translate>
+            </span>
+          </div>
+          <div className={styles['wrap']}>
+              <div className={styles['version']}>
+                <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+              </div>
+          </div>
+        </button>
+      </span>
+      <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
+    </div>
   );
 }
