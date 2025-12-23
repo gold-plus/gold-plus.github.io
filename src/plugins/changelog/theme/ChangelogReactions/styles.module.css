@@ -1,0 +1,160 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 8px;
+  position: relative;
+}
+
+.add-reaction-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-100);
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-700);
+  transition: all 0.2s;
+  opacity: 0.85;
+  padding: 0;
+}
+
+.add-reaction-btn:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  opacity: 0.9;
+}
+
+.add-reaction-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.popover {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 10px 12px 10px 12px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  animation: popover-fade-in 0.15s ease-out;
+}
+
+.popover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--ifm-color-emphasis-300) transparent transparent transparent;
+}
+
+@keyframes popover-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.popover-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 6px;
+  transition: transform 0.1s;
+  border-radius: 4px;
+}
+
+.popover-btn:hover {
+  transform: scale(1.2);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.reaction-pill {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-500);
+  border-radius: 100px;
+  padding: 0 0.25rem !important;
+  height: 26px;
+  cursor: pointer;
+  margin-right: 0;
+  transition: all 0.2s;
+  color: var(--ifm-color-content);
+  font-size: 12px;
+  line-height: 14px;
+  user-select: none;
+}
+
+.reaction-pill.active {
+  background-color: #ddf4ff;
+  border-color: #0969da;
+  color: #388bfd;
+  border: 0.0625rem solid #0969da !important;
+}
+
+.reaction-pill:hover, .reaction-pill.active:hover {
+  background-color: #caecff !important;
+}
+
+html[data-theme='dark'] .reaction-pill {
+  border: 0.0625rem solid var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] .reaction-pill.active {
+  background-color: #388bfd33;
+  border: 0.0625rem solid #1f6feb !important;
+}
+
+html[data-theme='dark'] .reaction-pill:hover,
+html[data-theme='dark'] .reaction-pill.active:hover {
+  background-color: #3a8cfd5c !important;
+}
+
+.count {
+  font-size: 12px;
+  padding: 0 0.25rem;
+  margin-left: 2px;
+}
+
+.summary-text {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+  margin-left: 4px;
+  line-height: 1.5;
+}
+
+@media (max-width: 400px) {
+  .summary-text {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.reaction-pill:disabled:hover,
+.add-reaction-btn:disabled:hover,
+.popover-btn:disabled:hover {
+  background-color: transparent;
+  border-color: var(--ifm-color-emphasis-300);
+  transform: none;
+}

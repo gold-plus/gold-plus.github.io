@@ -87,6 +87,21 @@
   "changelog.description": {
     "message": "Подпишитесь через {rssLink}, чтобы не пропустить новые релизы!"
   },
+  "theme.reactions.summary.youOnly": {
+    "message": "Вы отреагировали"
+  },
+  "theme.reactions.summary.youAndOne": {
+    "message": "Вы и еще 1 человек отреагировали"
+  },
+  "theme.reactions.summary.youAndMany": {
+    "message": "Вы и еще {count} чел. отреагировали"
+  },
+  "theme.reactions.summary.onePerson": {
+    "message": "1 человек отреагировал"
+  },
+  "theme.reactions.summary.manyPeople": {
+    "message": "{count} чел. отреагировали"
+  },
   "theme.ErrorPageContent.title": {
     "message": "На странице произошёл сбой.",
     "description": "The title of the fallback page when the page crashed"

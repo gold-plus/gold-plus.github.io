@@ -87,6 +87,21 @@
   "changelog.description": {
     "message": "Subscribe through {rssLink} to stay up-to-date with new releases!"
   },
+  "theme.reactions.summary.youOnly": {
+    "message": "You reacted"
+  },
+  "theme.reactions.summary.youAndOne": {
+    "message": "You and 1 other reacted"
+  },
+  "theme.reactions.summary.youAndMany": {
+    "message": "You and {count} others reacted"
+  },
+  "theme.reactions.summary.onePerson": {
+    "message": "1 person reacted"
+  },
+  "theme.reactions.summary.manyPeople": {
+    "message": "{count} people reacted"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

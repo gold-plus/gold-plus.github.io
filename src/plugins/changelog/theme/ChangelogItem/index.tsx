@@ -11,6 +11,7 @@ import ChangelogItemHeader from '@theme/ChangelogItem/Header';
 import type {Props} from '@theme/BlogPostItem';
 import BlogPostItemContainer from '@theme/BlogPostItem/Container';
 import BlogPostItemContent from '@theme/BlogPostItem/Content';
+import ChangelogReactions from '../ChangelogReactions';
 
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -35,6 +36,9 @@ export default function ChangelogItem({children, showReadMoreButton = true}: Cha
           <Translate id="theme.changelog.item.readMore">Read more</Translate>
         </Link>
       </div>
+      )}
+      {!showReadMoreButton && (
+        <ChangelogReactions title={metadata.title} />
       )}
     </BlogPostItemContainer>
   );
