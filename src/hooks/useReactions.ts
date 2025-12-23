@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { doc, getDoc, setDoc, increment, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { translate } from '@docusaurus/Translate';
 import { firestore } from '@site/src/integrations/firebase';
+import { useVisitorId } from './useVisitorId';
 
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
@@ -21,25 +22,12 @@ interface UseReactionsProps {
 }
 
 export function useReactions({ docId, collection }: UseReactionsProps) {
+  const { visitorId, isLoading: isVisitorIdLoading } = useVisitorId();
+
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [myVotes, setMyVotes] = useState<Record<string, boolean>>({});
-  const [visitorId, setVisitorId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
-
-  // fingerprint
-  useEffect(() => {
-    const getFp = async () => {
-      try {
-        const fp = await FingerprintJS.load();
-        const result = await fp.get();
-        setVisitorId(result.visitorId);
-      } catch (e) {
-        console.error('Fingerprint error', e);
-      }
-    };
-    getFp();
-  }, []);
 
   // fetch data
   useEffect(() => {
@@ -130,7 +118,7 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
   return {
     counts,
     myVotes,
-    loading: loading || !visitorId,
+    loading: isVisitorIdLoading || !visitorId,
     toggleReaction,
     summaryText: getSummaryText(),
     isProcessing,
