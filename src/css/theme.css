@@ -31,7 +31,7 @@
   --ifm-color-blue-lighter: #8abcf9;
   --ifm-color-blue-lightest: #bedaff;
 
-  --ifm-color-green-light: #00a400;
+  --ifm-color-green-light: #11c900;
 
   --ifm-color-gray: #f5f7fa;
   --ifm-color-gray-dark: #e1e5eb;
@@ -282,6 +282,12 @@ html.plugin-blog-changelog .container .row .col--7 {
 html.plugin-blog .container .row .col--2,
 html.plugin-blog-changelog .container .row .col--2 {
   --ifm-col-width: calc(2.5 / 17 * 100%);
+}
+
+@media (max-width: 996px) {
+  html.plugin-blog-changelog .container .row .col--7 {
+    --ifm-col-width: 100%;
+  }
 }
 
 /* DOCS */

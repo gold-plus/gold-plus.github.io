@@ -133,17 +133,6 @@
   height: 1.5em;
 }
 
-.unseen::marker {
-  color: var(--ifm-color-green-light);
-  animation: unseen-pulse 2s ease-in-out infinite;
-}
-
-@keyframes unseen-pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.7); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
 .unseen--anchor {
   display: inline-block;
   width: 1.25em;
@@ -161,3 +150,59 @@
   background-color: var(--ifm-font-color-base) !important;
   color: var(--ifm-background-color) !important;
 }
+
+:global(html.plugin-blog-changelog .markdown > ul) {
+  padding-left: 0;
+}
+
+:global(html.plugin-blog-changelog .markdown > ul > li) {
+  position: relative;
+  list-style: none;
+  padding-left: var(--ifm-list-left-padding);
+}
+
+:global(html.plugin-blog-changelog .markdown ul > li)::before {
+  content: '';
+  position: absolute;
+  left: 0.85em;
+  top: 0.65em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.935);
+}
+
+:global(html[data-theme='dark'].plugin-blog-changelog .markdown ul) > li:not(.unseen)::before {
+  filter: invert(1);
+}
+
+:global(html.plugin-blog-changelog .markdown) ul > li.unseen::before {
+  background-color: var(--ifm-color-green-light);
+  animation: unseen-pulse 2s ease-in-out infinite;
+}
+
+.unseen::after {
+  content: '';
+  position: absolute;
+  left: 0.85em;
+  top: 0.65em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: var(--ifm-color-green-light);
+  opacity: 0;
+  animation: unseen-echo-pulse 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes unseen-pulse {
+  0%   { transform: scale(1);   }
+  50%  { transform: scale(1.5); }
+  100% { transform: scale(1);   }
+}
+
+@keyframes unseen-echo-pulse {
+  20%  { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(3); opacity: 0;   }
+}
+

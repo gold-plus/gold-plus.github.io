@@ -31,8 +31,8 @@ export const UnseenMarker: React.FC<UnseenMarkerProps> = ({ version, sha, }) => 
     <>
     <span
       ref={anchorRef}
-	  className={styles['unseen--anchor']}
-	  data-tooltip-id={tooltipId}
+	    className={styles['unseen--anchor']}
+	    data-tooltip-id={tooltipId}
     />
 
     <Tooltip
