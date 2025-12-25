@@ -26,6 +26,8 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
 
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [myVotes, setMyVotes] = useState<Record<string, boolean>>({});
+  const [uniqueVoters, setUniqueVoters] = useState<Set<string>>(new Set());
+
   const [loading, setLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -41,10 +43,13 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
           const data = docSnap.data();
           const newCounts: Record<string, number> = {};
           const newMyVotes: Record<string, boolean> = {};
+          const allVoters = new Set<string>();
 
           ReactionTypes.forEach(r => {
             newCounts[r.label] = data[`count_${r.label}`] || 0;
-            const votersList = data[`voters_${r.label}`] || [];
+            const votersList: string[] = data[`voters_${r.label}`] || [];
+            votersList.forEach(voter => allVoters.add(voter));
+
             if (votersList.includes(visitorId)) {
               newMyVotes[r.label] = true;
             }
@@ -52,6 +57,7 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
 
           setCounts(newCounts);
           setMyVotes(newMyVotes);
+          setUniqueVoters(allVoters);
         }
       } catch (e) {
         console.error("Error fetching reactions:", e);
@@ -70,11 +76,26 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
     if (closeMenuCallback) closeMenuCallback();
 
     const isRemoving = myVotes[type];
-    setMyVotes(prev => ({ ...prev, [type]: !isRemoving }));
+
+    const newMyVotes = { ...myVotes, [type]: !isRemoving };
+    setMyVotes(newMyVotes);
     setCounts(prev => ({
       ...prev,
       [type]: Math.max(0, (prev[type] || 0) + (isRemoving ? -1 : 1))
     }));
+
+    setUniqueVoters(prev => {
+      const newSet = new Set(prev);
+      if (isRemoving) {
+        const hasOtherVotes = Object.values(newMyVotes).some(v => v === true);
+        if (!hasOtherVotes) {
+          newSet.delete(visitorId);
+        }
+      } else {
+        newSet.add(visitorId);
+      }
+      return newSet;
+    });
 
     const docRef = doc(firestore, collection, docId);
     const updateData = {
@@ -94,13 +115,13 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
   const getSummaryText = () => {
     if (loading || !visitorId) return '';
 
-    const totalReactions = Object.values(counts).reduce((sum, val) => sum + val, 0);
-    const myReactionCount = Object.values(myVotes).filter(v => v).length;
+    const totalUniquePeople = uniqueVoters.size;
+    const iVoted = Array.from(uniqueVoters).includes(visitorId);
 
-    if (totalReactions <= 0) return '';
+    if (totalUniquePeople <= 0) return '';
 
-    if (myReactionCount > 0) {
-      const othersCount = totalReactions - myReactionCount;
+    if (iVoted) {
+      const othersCount = totalUniquePeople - 1;
       if (othersCount <= 0) {
         return translate({ id: 'theme.reactions.summary.youOnly', message: 'You reacted' });
       } else if (othersCount === 1) {
@@ -108,10 +129,10 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
       } else {
         return translate({ id: 'theme.reactions.summary.youAndMany', message: 'You and {count} others reacted' }, { count: othersCount });
       }
-    } else if (totalReactions === 1) {
+    } else if (totalUniquePeople === 1) {
       return translate({ id: 'theme.reactions.summary.onePerson', message: '1 person reacted' });
     } else {
-      return translate({ id: 'theme.reactions.summary.manyPeople', message: '{count} people reacted' }, { count: totalReactions });
+      return translate({ id: 'theme.reactions.summary.manyPeople', message: '{count} people reacted' }, { count: totalUniquePeople });
     }
   };
 
