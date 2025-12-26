@@ -66,13 +66,14 @@
 - Fixed bug where legacy death notice icons always appeared white instead of proper colors (@galaxy) [id:eaa0bb2]
 - Fixed **New Game** settings execution order to prevent conflicts with 3rd party modules (@esotericdesign) [id:eaa0bb2]
 - Fixed Steam integration issues caused by recent Steam updates [id:eaa0bb2]
+- Fixed `svc_centerprint` messages being truncated incorrectly (@metita) [id:cb321fc]
 
 #### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 8 {#testers}
+#### Testers 9 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -83,6 +84,7 @@
 - karaul0v ([@karaul0v](https://github.com/UnrealKaraulov))
 - next21 ([@next21](https://github.com/CS-NextClient))
 - 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
+- metita ([@metita](https://github.com/metita))
 
 
 ## 2.5.6.0 (2025-05-07)

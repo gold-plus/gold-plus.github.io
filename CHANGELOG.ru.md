@@ -66,13 +66,14 @@
 - Исправлен баг, при котором старые иконки киллфида всегда отображались белыми вместо правильных цветов (@galaxy) [id:eaa0bb2]
 - Исправлен порядок применения настроек в **New Game**, чтобы избежать конфликтов с модулями (@esotericdesign) [id:eaa0bb2]
 - Исправлены проблемы интеграции со Steam, вызванные недавними обновлениями клиента Steam [id:eaa0bb2]
+- Исправлено неполное отображение текста `svc_centerprint` (@metita) [id:cb321fc]
 
 #### Авторы 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры 8 {#testers}
+#### Тестеры 9 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -83,6 +84,7 @@
 - karaul0v ([@karaul0v](https://github.com/UnrealKaraulov))
 - next21 ([@next21](https://github.com/CS-NextClient))
 - 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
+- metita ([@metita](https://github.com/metita))
 
 
 ## 2.5.6.0 (2025-05-07)
