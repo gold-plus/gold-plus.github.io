@@ -23,9 +23,10 @@
     },
     {
       "path": "/img/preview/radar.webp",
+      "thumbPath": "/img/preview/radar_thumb.webp",
       "preview": {
-        "zoom": "800%",
-        "position": "1% 1%"
+        "zoom": "185%",
+        "position": "48% 3%"
       }
     },
     {

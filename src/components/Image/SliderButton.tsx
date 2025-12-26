@@ -1,12 +1,12 @@
-import { useState, useEffect, useCallback, useMemo, HTMLAttributes, FC } from 'react';
+import { useState, useCallback, useMemo, FC } from 'react';
 import { PhotoSlider } from 'react-photo-view';
 import { ImageCompare } from './Compare';
 import { useCopyToClipboard } from '@site/src/hooks/useCopyToClipboard';
-import { useFullscreen } from '@site/src/hooks/useFullscreen';
 import type { SliderButtonProps, ImageItem } from './types';
-import { FullScreenIcon } from './FullScreenIcon';
 
-import Translate from '@docusaurus/Translate';
+import { FullScreenIcon } from './FullScreenIcon';
+import { BottomBar } from './Overlay/BottomBar';
+
 import styles from './styles.module.css';
 
 const initial_pos_slider_comparison = 50;
@@ -17,7 +17,6 @@ export const SliderButton: FC<SliderButtonProps> = ({
   maskOpacity = 0.9
 }) => {
   const { isCopied, copy } = useCopyToClipboard();
-  const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [visible, setVisible] = useState(false);
   const [index, setIndex] = useState(0);
   const [position, setPosition] = useState(initial_pos_slider_comparison);
@@ -163,23 +162,3 @@ export const SliderButton: FC<SliderButtonProps> = ({
     </>
   );
 }
-
-const BottomBar: FC<{
-  onClick: (e: React.MouseEvent) => void;
-  isCopied: boolean;
-  className?: string;
-  children: React.ReactNode;
-}> = ({ onClick, isCopied, className, children }) => {
-  return (
-    <div className={`${styles['banner-bottom']} ${className || ''}`}>
-      <div className={styles['banner-bottom-wrapper']} onClick={onClick}>
-        {children}
-      </div>
-      {isCopied && (
-        <span className={styles['copy-feedback']}>
-          <Translate id="theme.common.copyFeedback">Text copied to clipboard</Translate>!
-        </span>
-      )}
-    </div>
-  );
-};

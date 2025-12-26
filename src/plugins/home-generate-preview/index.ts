@@ -6,6 +6,17 @@ const defaultPreviewConfig = {
   position: 'center center',
 };
 
+function resolveLocalizedPath(pathData, currentLocale) {
+  if (!pathData) return undefined;
+  if (typeof pathData === 'string') {
+    return pathData;
+  }
+  if (typeof pathData === 'object') {
+    return pathData[currentLocale] || pathData.default;
+  }
+  return undefined;
+}
+
 export default function CreateList(context, options) {
   const configPath = path.join(context.siteDir, 'src', 'config', 'preview.json');
   const { i18n } = context;
@@ -18,19 +29,25 @@ export default function CreateList(context, options) {
       const { slides } = JSON.parse(raw);
       const files = slides.map(slide => {
         if (slide.thumbnails && Array.isArray(slide.thumbnails)) {
-          return { thumbnails: slide.thumbnails, layout: slide.layout || null };
+          const processedThumbnails = slide.thumbnails.map(t => ({
+            ...t,
+            path: resolveLocalizedPath(t.path, currentLocale),
+            thumbPath: resolveLocalizedPath(t.thumbPath, currentLocale),
+          }));
+
+          return {
+            thumbnails: processedThumbnails,
+            layout: slide.layout || null
+          };
         }
 
         if (slide.path) {
-          let resolvedPath;
-          if (typeof slide.path === 'string') {
-            resolvedPath = slide.path;
-          } else if (typeof slide.path === 'object' && slide.path !== null) {
-            resolvedPath = slide.path[currentLocale] || slide.path.default;
-          }
           return {
-            path: resolvedPath,
+            path: resolveLocalizedPath(slide.path, currentLocale),
+            thumbPath: resolveLocalizedPath(slide.thumbPath, currentLocale),
             preview: slide.preview || defaultPreviewConfig,
+            label: slide.label,
+            desc: slide.desc
           };
         }
 

@@ -1,9 +1,13 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import { translate } from '@docusaurus/Translate';
 import { FullScreenIcon } from './FullScreenIcon';
+import { useCopyToClipboard } from '@site/src/hooks/useCopyToClipboard';
+import { BottomBar } from './Overlay/BottomBar';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,45 +40,71 @@ export const Preview: React.FC<PreviewProps> = ({
   maskOpacity = 0.9
 }) => {
   const swiperRef = useRef<any>(null);
-  const [visible, setVisible] = useState(false);
-  const [index, setIndex] = useState(0);
+  const isLightboxOpen = useRef(false);
+  const { isCopied, copy } = useCopyToClipboard();
 
   const onMouseEnter = () => { if (autoplay) swiperRef.current?.autoplay?.stop(); };
-  const onMouseLeave = () => { if (autoplay) swiperRef.current?.autoplay?.start(); };
-  const photoIndexToSwiperIndex = useMemo(() => {
-    const map = [];
-    let photoIndex = 0;
-    images.forEach((item, swiperIndex) => {
-      if (item.path) {
-        map[photoIndex++] = swiperIndex;
-      } else if (item.thumbnails) {
-        item.thumbnails.forEach(() => {
-          map[photoIndex++] = swiperIndex;
-        });
+  const onMouseLeave = () => { if (!isLightboxOpen.current && autoplay) swiperRef.current?.autoplay?.start(); };
+
+  const galleryItems = useMemo(() => {
+    return images.flatMap((item, swiperIndex) => {
+      const getLocalized = (text?: string) => {
+        return text ? translate({ id: text, message: text }) : undefined;
+      };
+
+      const mapItem = (item: any) => ({
+        ...item,
+        swiperIndex,
+        label: getLocalized(item.label || item.caption),
+        desc: getLocalized(item.desc),
+        image: item.path,
+      });
+      if (item.thumbnails) {
+        return item.thumbnails.map((thumb: any) => mapItem(thumb));
       }
+      return [mapItem(item)];
     });
-    return map;
   }, [images]);
 
+  const handleLightboxState = (visible: boolean) => {
+    isLightboxOpen.current = visible;
+    if (visible) {
+      swiperRef.current?.autoplay?.stop();
+    } else if (autoplay) {
+      swiperRef.current?.autoplay?.start();
+    }
+  };
   return (
     <PhotoProvider
       maskOpacity={maskOpacity}
       onIndexChange={(newIndex) => {
-        const targetSwiperIndex = photoIndexToSwiperIndex[newIndex];
-        if (swiperRef.current?.realIndex !== targetSwiperIndex) {
+        const targetSwiperIndex = galleryItems[newIndex]?.swiperIndex;
+        if (targetSwiperIndex !== undefined && swiperRef.current?.realIndex !== targetSwiperIndex) {
           swiperRef.current?.slideToLoop?.(targetSwiperIndex);
         }
       }}
-      onVisibleChange={(visible) => {
-        setVisible(visible);
-        if (visible) swiperRef.current?.autoplay?.stop();
-        else if (autoplay) swiperRef.current?.autoplay?.start();
+      onVisibleChange={(state) => {
+        handleLightboxState(state);
       }}
       toolbarRender={({ rotate, onRotate, onScale, scale, index }) => {
+        return <>{document.fullscreenEnabled && <FullScreenIcon />}</>;
+      }}
+      overlayRender={({ index }) => {
+        const item = galleryItems[index];
+        if (!item) return null;
+        if (!item.label && !item.desc) return null;
         return (
-          <>
-            {document.fullscreenEnabled && <FullScreenIcon />}
-          </>
+          <BottomBar
+            isCopied={isCopied}
+            transparent={true}
+            onClick={() => item.label && copy(item.label)}
+            className={!item.label ? styles['select-none'] : ''}
+          >
+            <div className={styles['banner-bottom-layer']}>
+              {item.desc && <span className={styles['banner-bottom--desc']}>{item.desc}</span>}
+              {item.label && <span className={styles['banner-bottom--label']}>{item.label}</span>}
+            </div>
+          </BottomBar>
         );
       }}
     >
@@ -138,7 +168,7 @@ export const Preview: React.FC<PreviewProps> = ({
                   <div className={styles['thumbnail--overlay']}>
                     <Thumbnail
                       imageData={{
-                        path: item.path,
+                        path: item?.thumbPath ?? item.path,
                         preview: item.preview || { zoom: 'cover', position: 'center' }
                       }}
                     />

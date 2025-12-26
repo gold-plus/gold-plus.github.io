@@ -57,10 +57,12 @@ export interface ThumbnailItem {
   zoom: string;
   position: string;
   grid?: GridPosition;
+  thumbPath?: string;
 }
 
 export interface ImagePreviewItem {
   path?: string;
+  thumbPath?: string;
   preview?: PreviewConfig;
   thumbnails?: ThumbnailItem[];
   layout?: GridLayout;
