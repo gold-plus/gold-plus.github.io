@@ -40,6 +40,7 @@
 - Added on-the-fly `gl_picmip` updates without restarting the map
 - Added a gear settings menu to the **Server Browser** with an option to auto-open the window on startup [id:eaa0bb2]
 - Added new `cl_righthand -2` mode - legacy knife left / weapons right (classic behavior without requiring `cl_lw 0`) [id:eaa0bb2]
+- Added ConVar `cl_sync_steam_favorites` to toggle synchronization of favorite servers with Steam (Default: 0) [id:448ef6f]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -67,6 +68,7 @@
 - Fixed **New Game** settings execution order to prevent conflicts with 3rd party modules (@esotericdesign) [id:eaa0bb2]
 - Fixed Steam integration issues caused by recent Steam updates [id:eaa0bb2]
 - Fixed `svc_centerprint` messages being truncated incorrectly (@metita) [id:cb321fc]
+- Fixed nickname validation to allow the `~` (tilde) symbol again (@metita) [id:448ef6f]
 
 #### Authors 1 {#authors}
 <!-- authors -->
