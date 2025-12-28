@@ -7,10 +7,6 @@
   color: white;
 }
 
-.container {
-  padding: 0;
-}
-
 .hero-content {
   display: flex;
   align-items: stretch;
@@ -31,12 +27,6 @@
   align-items: stretch;
   flex-grow: 1;
   min-width: 55%;
-}
-
-@media (min-width: 1500px) {
-  .container {
-    max-width: var(--ifm-container-width);
-  }
 }
 
 @media (max-width: 1024px) {

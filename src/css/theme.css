@@ -14,7 +14,7 @@
 
 :root {
   --ifm-container-width: 1280px;
-  --ifm-container-width-xl: 1460px;
+  --ifm-container-width-xl: 1320px;
   --ifm-color-primary: #111;
   --ifm-color-primary-dark: #000;
   --ifm-color-primary-darker: #000;
@@ -99,12 +99,6 @@
 
   --docs-anchor-highlighted-color: rgba(255, 180, 50, 0.35);
   --docsearch-hit-active-color: var(--ifm-color-gray);
-}
-
-@media (min-width: 1460px) {
-  .container {
-    max-width: var(--ifm-container-width);
-  }
 }
 
 /*.footer {

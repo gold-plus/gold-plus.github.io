@@ -48,7 +48,7 @@ export default function Header() {
   ];
   return (
     <header className={clsx('hero hero--primary', styles['hero-banner'])}>
-      <div className={clsx('container', styles['container'])}>
+      <div className='container'>
         <div className={styles['hero-content']}>
           <div className={styles['hero-left']}>
             <div className={styles['hero-container-title']}>
