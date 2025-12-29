@@ -20,7 +20,13 @@ function Thumbnail({
   imageData,
   className = '',
 }: {
-  imageData: { path: string; preview: { zoom: string; position: string } };
+  imageData: {
+    path: string;
+    preview: {
+      zoom: string;
+      position: string
+    }
+  };
   className?: string
 }) {
   const baseStyle: React.CSSProperties = {

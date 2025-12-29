@@ -11,6 +11,9 @@
   "theme.home.download.latest": {
     "message": "Latest"
   },
+  "theme.home.download.count": {
+    "message": "{count} download|{count} downloads"
+  },
   "theme.home.download.forWindows": {
     "message": "Download for Windows",
     "description": "Text for the download button when shown on non-Windows platforms"

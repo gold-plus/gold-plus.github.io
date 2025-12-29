@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-type Platform = 'windows' | 'macos' | 'linux' | 'android' | 'ios' | 'unknown';
+export type Platform = 'windows' | 'macos' | 'linux' | 'android' | 'ios' | 'unknown';
 
 interface NavigatorUAData {
   readonly brands: readonly { brand: string; version: string }[];

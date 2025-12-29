@@ -1,11 +1,13 @@
-import React, { useId, useState, useRef, useLayoutEffect, SVGProps } from "react";
+import React, { useId, useState, useRef, useLayoutEffect, SVGProps, ComponentType } from "react";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import { Tooltip } from 'react-tooltip';
 import clsx from 'clsx';
 
-import { usePlatform } from '@site/src/hooks/usePlatform';
+import { usePlatform, Platform } from '@site/src/hooks/usePlatform';
+import { useDownloadCount } from '@site/src/hooks/useDownloadCount';
+import { useFormattedPlural } from '@site/src/hooks/useFormattedPlural';
 
 import styles from './styles.module.css'
 
@@ -25,14 +27,72 @@ function WindowsIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+interface PlatformConfig {
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  textId: string;
+  textDefault: string;
+  style: 'primary' | 'secondary' | 'disabled';
+  tooltipText?: string;
+}
+
+const windowsConfig: PlatformConfig = {
+  icon: Icon,
+  textId: 'theme.home.download',
+  textDefault: 'Download',
+  style: 'primary'
+};
+
+const posixConfig: PlatformConfig = {
+  icon: WindowsIcon,
+  textId: 'theme.home.download.forWindows',
+  textDefault: 'Download for Windows',
+  style: 'secondary',
+  tooltipText: translate({
+    id: 'theme.home.download.nonWindowsHint',
+    message: 'This is a Windows application. An emulator (like Wine or Proton) may be required',
+  })
+};
+
+const androidConfig: PlatformConfig = {
+  icon: WindowsIcon,
+  textId: 'theme.home.download.forWindows',
+  textDefault: 'Download for Windows',
+  style: 'secondary',
+  tooltipText: translate({
+    id: 'theme.home.download.androidHint',
+    message: 'This is a Windows application and not officially supported on Android. An emulator (like Wine or Winlator) may be required',
+  })
+};
+
+const iosConfig: PlatformConfig = {
+  icon: WindowsIcon,
+  textId: 'theme.home.download.onlyWindows',
+  textDefault: 'Available on Windows',
+  style: 'disabled',
+  tooltipText: translate({
+    id: 'theme.home.download.mobileHint',
+    message: 'Download is available on desktop (Windows) only',
+  })
+};
+
+const platformConfigs: Record<Platform, PlatformConfig> = {
+  windows: windowsConfig,
+  macos: posixConfig,
+  linux: posixConfig,
+  android: androidConfig,
+  ios: iosConfig,
+  unknown: windowsConfig
+};
+
 export default function DownloadButton() {
-  const {
-    siteConfig: {customFields}
-  } = useDocusaurusContext();
+  const { siteConfig: { customFields }, i18n: { currentLocale } } = useDocusaurusContext();
   const { platform } = usePlatform();
   const tooltipId = `download-tooltip:${useId()}`;
   const buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>(null);
   const [buttonWidth, setButtonWidth] = useState(0);
+
+  const productId = `v${customFields.currentVersion}`;
+  const { count, incrementCount } = useDownloadCount(productId);
 
   useLayoutEffect(() => {
     if (buttonRef.current) {
@@ -40,113 +100,49 @@ export default function DownloadButton() {
     }
   }, [platform]);
 
-  if (platform === 'windows' || platform === 'unknown') {
-    return (
-      <Link className={clsx(styles['button'], styles['button--primary'])} to={`${customFields.downloadProduct}`}>
-        <div className={styles['row']}>
-          <span className={styles['icon']}>
-            <Icon />
-          </span>
-          <span className={styles['text']}>
-            <Translate id='theme.home.download'>Download</Translate>
-          </span>
-        </div>
-        <div className={styles['wrap']}>
-          <div className={styles['version']}>
-            <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
-          </div>
-        </div>
-      </Link>
-    );
-  }
+  const config = platformConfigs[platform];
+  const IconComponent = config.icon;
+  const buttonClass = clsx(styles['button'], styles[`button--${config.style}`]);
 
-  if (platform === 'macos' || platform === 'linux') {
-    const tooltipText = translate({
-      id: 'theme.home.download.nonWindowsHint',
-      message: 'This is a Windows application. An emulator (like Wine or Proton) may be required',
-    });
-
-    return (
-      <>
-        <Link
-          ref={buttonRef as React.Ref<HTMLAnchorElement>}
-          className={clsx(styles['button'], styles['button--secondary'])}
-          to={`${customFields.downloadProduct}`}
-          data-tooltip-id={tooltipId}
-        >
-          <div className={styles['row']}>
-            <span className={styles['icon']}><WindowsIcon /></span>
-            <span className={styles['text']}>
-              <Translate id='theme.home.download.forWindows'>Download for Windows</Translate>
-            </span>
-          </div>
-          <div className={styles['wrap']}>
-            <div className={styles['version']}>
-              <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
-            </div>
-          </div>
-        </Link>
-        <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
-      </>
-    );
-  }
-
-  if (platform === 'android') {
-    const tooltipText = translate({
-      id: 'theme.home.download.androidHint',
-      message: 'This is a Windows application and not officially supported on Android. An emulator (like Wine or Winlator) may be required',
-    });
-    return (
-      <>
-        <Link
-          ref={buttonRef as React.Ref<HTMLAnchorElement>}
-          className={clsx(styles['button'], styles['button--secondary'])}
-          to={`${customFields.downloadProduct}`}
-          data-tooltip-id={tooltipId}
-        >
-          <div className={styles['row']}>
-            <span className={styles['icon']}><WindowsIcon /></span>
-            <span className={styles['text']}>
-              <Translate id='theme.home.download.forWindows'>Download for Windows</Translate>
-            </span>
-          </div>
-          <div className={styles['wrap']}>
-            <div className={styles['version']}>
-              <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
-            </div>
-          </div>
-        </Link>
-        <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
-      </>
-    );
-  }
-
-  const tooltipText = translate({
-    id: 'theme.home.download.mobileHint',
-    message: 'Download is available on desktop (Windows) only',
+  const downloadCountLabel = useFormattedPlural({
+    count: count ?? 0,
+    id: 'theme.home.download.count',
+    message: '{count} download|{count} downloads',
+    locale: currentLocale,
+    numberFormatOptions: { notation: 'compact', maximumFractionDigits: 1 }
   });
 
   return (
-    <div data-tooltip-id={tooltipId}>
-      <span ref={buttonRef as React.Ref<HTMLAnchorElement>}>
-        <button
-          className={clsx(styles['button'], styles['button--disabled'])}
-          disabled
-        >
-          <div className={styles['row']}>
-            <span className={styles['icon']}><WindowsIcon /></span>
-            <span className={styles['text']}>
-              <Translate id='theme.home.download.onlyWindows'>Available on Windows</Translate>
+    <>
+      <Link
+        ref={buttonRef as React.Ref<HTMLAnchorElement>}
+        className={buttonClass}
+        to={`${customFields.downloadProduct}`}
+        onClick={incrementCount}
+        data-tooltip-id={config.tooltipText ? tooltipId : undefined}
+      >
+        <div className={styles['row']}>
+          <span className={styles['icon']}><IconComponent /></span>
+          <span className={styles['text']}>
+            <Translate id={config.textId}>{config.textDefault}</Translate>
+          </span>
+        </div>
+        <div className={clsx(styles['wrap'], (count !== null && count > 0) && styles['has-count'])}>
+          <div className={styles['version']}>
+            <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+          </div>
+          {count !== null && count > 0 && (
+            <span className={styles['count-text']}>
+              {downloadCountLabel}
             </span>
-          </div>
-          <div className={styles['wrap']}>
-              <div className={styles['version']}>
-                <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
-              </div>
-          </div>
-        </button>
-      </span>
-      <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>{tooltipText}</Tooltip>
-    </div>
+          )}
+        </div>
+      </Link>
+      {config.tooltipText && (
+        <Tooltip id={tooltipId} place='top' className={styles['button--tooltip']} style={{ maxWidth: `${buttonWidth * 0.85}px` }}>
+          {config.tooltipText}
+        </Tooltip>
+      )}
+    </>
   );
 }

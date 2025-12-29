@@ -11,6 +11,9 @@
   "theme.home.download.latest": {
     "message": "Версия"
   },
+  "theme.home.download.count": {
+    "message": "{count} скачивание|{count} скачивания|{count} скачиваний"
+  },
   "theme.home.download.forWindows": {
     "message": "Скачать для Windows",
     "description": "Text for the download button when shown on non-Windows platforms"

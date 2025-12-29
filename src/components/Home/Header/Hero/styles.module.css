@@ -133,7 +133,7 @@
 }
 
 .hero-description li {
-  line-height: clamp(calc(1.1em + 0.25vw), 1.25rem, 3rem);
+  line-height: clamp(calc(1.1em + 0.30vw), 1.25rem, 3rem);
 }
 
 .hero-container-title {

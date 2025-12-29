@@ -17,7 +17,7 @@
     {
       "path": "/img/preview/killfeed.webp",
       "preview": {
-        "zoom": "470%",
+        "zoom": "min(450%, 390vw)",
         "position": "100% 0%"
       }
     },
@@ -35,7 +35,7 @@
         "en": "/img/preview/gameui_hud.en.webp"
       },
       "preview": {
-        "zoom": "290%",
+        "zoom": "min(250%, 200vw)",
         "position": "50% 50%"
       }
     }
