@@ -4,6 +4,7 @@
 # Production
 /build
 /changelog
+/backup
 
 # Generated files
 .docusaurus
