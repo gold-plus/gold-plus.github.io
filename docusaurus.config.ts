@@ -26,12 +26,13 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
 }
 
 const config: Config = {
-  title: getLocalizedConfigValue('title'),
+  title: 'GoldClient',
   favicon: 'img/favicon.ico',
   customFields: {
     currentVersion: '2.5.6.0',
     downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe',
-    useLangAsIcon: true
+    useLangAsIcon: true,
+    homeTitle: getLocalizedConfigValue('title'),
   },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -79,8 +80,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/' + repoName + '/' + repoName + '.github.io/tree/master/',
+          editUrl: 'https://github.com/' + repoName + '/' + repoName + '.github.io/tree/master/'
         },
         theme: {
           customCss: './src/css/theme.css',
@@ -97,6 +97,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: false, // enables the hide button
+        autoCollapseCategories: false, // collapses sibling categories
+      }
+    },
     image: currentLocale === 'en' ?
       'img/goldclient-social-card-en.png' :
       'img/goldclient-social-card.png',
