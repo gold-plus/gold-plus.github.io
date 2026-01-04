@@ -4,8 +4,6 @@ import { translate } from '@docusaurus/Translate';
 import { firestore } from '@site/src/integrations/firebase';
 import { useVisitorId } from './useVisitorId';
 
-import FingerprintJS from '@fingerprintjs/fingerprintjs';
-
 export const ReactionTypes = [
   { label: 'thumbs_up', emoji: '👍' },
   { label: 'smile',     emoji: '😄' },
@@ -17,11 +15,11 @@ export const ReactionTypes = [
 ];
 
 interface UseReactionsProps {
-  docId: string;
+  id: string;
   collection: string;
 }
 
-export function useReactions({ docId, collection }: UseReactionsProps) {
+export function useReactions({ id, collection }: UseReactionsProps) {
   const { visitorId, isLoading: isVisitorIdLoading } = useVisitorId();
 
   const [counts, setCounts] = useState<Record<string, number>>({});
@@ -36,7 +34,7 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
     if (!visitorId) return;
 
     const fetchData = async () => {
-      const docRef = doc(firestore, collection, docId);
+      const docRef = doc(firestore, collection, id);
       try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
@@ -67,7 +65,7 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
     };
 
     fetchData();
-  }, [docId, visitorId, collection]);
+  }, [id, visitorId, collection]);
 
   const toggleReaction = async (type: string, closeMenuCallback?: () => void) => {
     if (!visitorId || isProcessing) return;
@@ -97,7 +95,7 @@ export function useReactions({ docId, collection }: UseReactionsProps) {
       return newSet;
     });
 
-    const docRef = doc(firestore, collection, docId);
+    const docRef = doc(firestore, collection, id);
     const updateData = {
       [`count_${type}`]: increment(isRemoving ? -1 : 1),
       [`voters_${type}`]: isRemoving ? arrayRemove(visitorId) : arrayUnion(visitorId)

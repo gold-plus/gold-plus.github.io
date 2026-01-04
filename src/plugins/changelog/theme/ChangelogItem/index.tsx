@@ -11,7 +11,7 @@ import ChangelogItemHeader from '@theme/ChangelogItem/Header';
 import type {Props} from '@theme/BlogPostItem';
 import BlogPostItemContainer from '@theme/BlogPostItem/Container';
 import BlogPostItemContent from '@theme/BlogPostItem/Content';
-import ChangelogReactions from '../ChangelogReactions';
+import Reactions from '@site/src/components/Reactions';
 
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -25,6 +25,7 @@ type ChangelogItemProps = Props & {
 
 export default function ChangelogItem({children, showReadMoreButton = true}: ChangelogItemProps): ReactNode {
   const {metadata} = useBlogPost();
+  const pageId = metadata?.title.replace(/[^a-z0-9]/gi, '-').toLowerCase();
   const isPrerelease = metadata.frontMatter.prerelease || false;
   return (
     <BlogPostItemContainer className={clsx(styles.changelogItemContainer, isPrerelease && styles.prereleaseCard)}>
@@ -38,7 +39,7 @@ export default function ChangelogItem({children, showReadMoreButton = true}: Cha
       </div>
       )}
       {!showReadMoreButton && (
-        <ChangelogReactions title={metadata.title} />
+        <Reactions id={pageId} collection={'changelog-reactions'} />
       )}
     </BlogPostItemContainer>
   );
