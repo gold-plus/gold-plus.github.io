@@ -41,13 +41,14 @@
 - Added a gear settings menu to the **Server Browser** with an option to auto-open the window on startup [id:eaa0bb2]
 - Added new `cl_righthand -2` mode - legacy knife left / weapons right (classic behavior without requiring `cl_lw 0`) [id:eaa0bb2]
 - Added ConVar `cl_sync_steam_favorites` to toggle synchronization of favorite servers with Steam (Default: 0) [id:448ef6f]
+- Added ConVar `spec_draw` to toggle the **Spectator UI** (black bars) — useful for moviemaking (@metita) [id:847de9a]
 
 #### :bug: Bug Fix {#fixes}
 
 - Fixed round timer disappearing after reconnecting if a bomb was planted in the previous round
 - Fixed model collision prediction (@Nord1cWarr1or)
-- Fixed an bug in chat during intermission (@hajimura)
-- Fixed an bug in scoreboard where bottom of player names could be cut off, especially on crowded servers or at low resolutions (@hajimura)
+- Fixed a bug in chat during intermission (@hajimura)
+- Fixed a bug in scoreboard where bottom of player names could be cut off, especially on crowded servers or at low resolutions (@hajimura)
 - Fixed player names appearing twice on HUD radar
 - Fixed incorrect right-alignment of text in VGUI menus (e.g., buy menu) (@YoshiokaHaruki) [stockbug]
 - Fixed duration formatting in demo player UI (@Nord1cWarr1or)
@@ -64,11 +65,12 @@
 - Fixed being disconnected from servers when alt-tabbing back into the game after a long period while `engine_no_render_minimized` is enabled (@Nord1cWarr1or)
 - Fixed `r_dynamic 0` behavior map lighting now updates correctly while keeping dynamic lights disabled for performance (@Nord1cWarr1or) [id:eaa0bb2]
 - Fixed shadow sprite issue caused by missing ShadowIdx during demo playback (@Nord1cWarr1or) [id:eaa0bb2]
-- Fixed bug where legacy death notice icons always appeared white instead of proper colors (@galaxy) [id:eaa0bb2]
+- Fixed a bug where legacy death notice icons always appeared white instead of proper colors (@galaxy) [id:eaa0bb2]
 - Fixed **New Game** settings execution order to prevent conflicts with 3rd party modules (@esotericdesign) [id:eaa0bb2]
 - Fixed Steam integration issues caused by recent Steam updates [id:eaa0bb2]
 - Fixed `svc_centerprint` messages being truncated incorrectly (@metita) [id:cb321fc]
 - Fixed nickname validation to allow the `~` (tilde) symbol again (@metita) [id:448ef6f]
+- Fixed a bug where laser beams were invisible in some cases (@metita) [id:847de9a]
 
 #### Authors 1 {#authors}
 <!-- authors -->
@@ -210,7 +212,7 @@
 <!-- truncate -->
 
 - Added support for combined CSDE mode for HUD radar, which simultaneously includes hostage-rescue and bomb defusing modes
-- Added ability to create a overview map image (with `dev_overview 1`) at any game resolution (not only in 1024x768)
+- Added ability to create an overview map image (with `dev_overview 1`) at any game resolution (not only in 1024x768)
 - Added auto-generation of script file for overview map
 - Added hints and improved interface for overview map
 - Added ignoring render temporary entities and lying weapons for overview map
@@ -264,7 +266,7 @@
 - Fixed a bug that occurred during the resource precaching stage in listenserver [stockbug]
 - Fixed a bug with predict weapon double firing on extremal FPS [stockbug]
 - Fixed a bug with weapon HUD selection when have multiple primary/secondary weapons [stockbug]
-- Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, a unfinished compiled map [stockbug]
+- Fixed a bug with very slow FPS on map which does not contains lightmaps e.g, an unfinished compiled map [stockbug]
 - Minor bugfixes
 
 #### Authors 1 {#authors}
@@ -407,7 +409,7 @@
 - Added ConVar `violence_bloodamount` to increase violence
 - Added ConVar `cl_download_enable_gzip` enables support for downloading compressed files from FastDL
 - Added ConVar `cl_allow_redirect` to allow redirection
-- Added ConVar `hud_draw_only_deathnotices` (Useful to moviemaking)
+- Added ConVar `hud_draw_only_deathnotices` (useful for moviemaking)
 - Added ConVar `cl_minviewmodel` to enable only standard models in viewmodel
 - Added new UI ConVar by connection events to server and spawn
     - `ui_window_bringfront_on_event` - Bring game to front
