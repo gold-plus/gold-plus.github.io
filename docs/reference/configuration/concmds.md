@@ -1,6 +1,7 @@
 ---
 id: commands
 title: Консольные команды
+description: Справочник консольных команд GoldClient с описанием, синтаксисом и примерами использования.
 sidebar_position: 2
 feedback: true
 ---

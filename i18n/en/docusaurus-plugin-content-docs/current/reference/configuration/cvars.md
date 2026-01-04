@@ -1,6 +1,7 @@
 ---
 id: cvars
 title: Console variables
+description: GoldClient console variables reference with descriptions and default values.
 sidebar_position: 1
 feedback: true
 ---

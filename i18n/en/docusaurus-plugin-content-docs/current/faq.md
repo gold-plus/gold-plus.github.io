@@ -1,7 +1,7 @@
 ---
-sidebar_position: 150
 title: FAQ
 description: Answers to common questions about GoldClient security, configuration, and compatibility.
+sidebar_position: 150
 feedback: true
 ---
 

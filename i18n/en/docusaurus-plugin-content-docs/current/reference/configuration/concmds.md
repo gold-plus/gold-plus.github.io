@@ -1,6 +1,7 @@
 ---
 id: commands
 title: Console commands
+description: GoldClient console commands reference with descriptions, syntax, and usage examples.
 sidebar_position: 2
 feedback: true
 ---

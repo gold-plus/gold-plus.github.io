@@ -1,6 +1,7 @@
 ---
 id: launch-params
 title: Параметры запуска
+description: Справочник параметров запуска GoldClient с описанием, примерами и рекомендациями по использованию.
 sidebar_position: 3
 feedback: true
 ---

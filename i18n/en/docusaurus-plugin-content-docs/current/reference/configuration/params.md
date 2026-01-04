@@ -1,6 +1,7 @@
 ---
 id: launch-params
 title: Launch params
+description: GoldClient launch parameters reference with descriptions, examples, and usage tips.
 sidebar_position: 3
 feedback: true
 ---

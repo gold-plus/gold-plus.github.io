@@ -1,6 +1,7 @@
 ---
 id: cvars
 title: Консольные переменные
+description: Справочник консольных переменных GoldClient с описанием и значениями по умолчанию.
 sidebar_position: 1
 feedback: true
 ---
