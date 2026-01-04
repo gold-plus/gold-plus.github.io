@@ -447,5 +447,73 @@
   "theme.docs.versionBadge.deprecated": {
     "message": "Deprecated in",
     "description": "The deprecated label for version badge"
+  },
+  "theme.feedback.title": {
+    "message": "Feedback",
+    "description": "Title of the feedback"
+  },
+  "theme.feedback.wasThisHelpful": {
+    "message": "Was this page helpful?",
+    "description": "Main question in the feedback widget"
+  },
+  "theme.feedback.yes": {
+    "message": "Yes",
+    "description": "The 'Yes' button in the feedback widget"
+  },
+  "theme.feedback.no": {
+    "message": "No",
+    "description": "The 'No' button in the feedback widget"
+  },
+  "theme.feedback.modal.title": {
+    "message": "Help us improve this page",
+    "description": "Title of the feedback modal"
+  },
+  "theme.feedback.modal.reason": {
+    "message": "Please select a reason",
+    "description": "Label for the list of reasons in the feedback modal"
+  },
+  "theme.feedback.modal.reason.understand" : {
+    "message": "Content was confusing or hard to follow",
+    "description": "Reason option: content is confusing"
+  },
+  "theme.feedback.modal.reason.examples" : {
+    "message": "An example is incorrect / doesn't work",
+    "description": "Reason option: example is incorrect"
+  },
+  "theme.feedback.modal.reason.find" : {
+    "message": "Couldn't find what I need",
+    "description": "Reason option: information is missing"
+  },
+  "theme.feedback.modal.reason.outdate" : {
+    "message": "Out of date/obsolete",
+    "description": "Reason option: content is outdated"
+  },
+  "theme.feedback.modal.reason.other" : {
+    "message": "Other",
+    "description": "Reason option: other reason"
+  },
+  "theme.feedback.modal.error.noReason": {
+    "message": "At least one item should be selected.",
+    "description": "Error message when no reason is selected"
+  },
+  "theme.feedback.modal.tellmore": {
+    "message": "Tell us more",
+    "description": "Label for the optional details text area"
+  },
+  "theme.feedback.modal.placeholder": {
+    "message": "Please provide feedback on how we can improve this content. If applicable, provide the first part of the sentence or string at issue.",
+    "description": "Placeholder for the details text area"
+  },
+  "theme.feedback.modal.submit": {
+    "message": "Submit",
+    "description": "Submit button text in the feedback modal"
+  },
+  "theme.feedback.thanks.title": {
+    "message": "Thank you!",
+    "description": "Title of the feedback modal after submission"
+  },
+  "theme.feedback.thanks.subtitle": {
+    "message": "We'll use your feedback to improve this page.",
+    "description": "Subtitle of the feedback modal after submission"
   }
 }

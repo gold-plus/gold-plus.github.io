@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useReactions, ReactionTypes } from '@site/src/hooks/useReactions';
 import { useClickOutside } from '@site/src/hooks/useClickOutside';
-import { SmileyIcon } from '@site/src/components/Icons/Smiley';
+import { SmileyIcon } from '@site/src/components/Icons';
 
 import clsx from 'clsx';
 

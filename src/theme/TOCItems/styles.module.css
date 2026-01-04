@@ -1,0 +1,15 @@
+.toc-items-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.toc-container-wrap {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
+}
+
+.toc-item-feedback {
+  flex-shrink: 0;
+}

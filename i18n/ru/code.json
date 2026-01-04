@@ -109,6 +109,10 @@
     "message": "На странице произошёл сбой.",
     "description": "The title of the fallback page when the page crashed"
   },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Прокрутка к началу",
+    "description": "The ARIA label for the back to top button"
+  },
   "theme.blog.archive.title": {
     "message": "Архив",
     "description": "The page & hero title of the blog archive page"
@@ -116,10 +120,6 @@
   "theme.blog.archive.description": {
     "message": "Архив",
     "description": "The page & hero description of the blog archive page"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Прокрутка к началу",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "Навигация по странице списка блогов",
@@ -244,10 +244,6 @@
     "message": "Теги:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Закрыть",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "предупреждение",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -272,6 +268,10 @@
     "message": "предупреждение",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрыть",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Навигация по последним постам в блоге",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -288,6 +288,10 @@
     "message": "Основное меню",
     "description": "The ARIA label for the main navigation"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Языки",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.NotFound.p1": {
     "message": "К сожалению, мы не смогли найти запрашиваемую вами страницу.",
     "description": "The first paragraph of the 404 page"
@@ -295,10 +299,6 @@
   "theme.NotFound.p2": {
     "message": "Пожалуйста, обратитесь к владельцу сайта, с которого вы перешли на эту ссылку, чтобы сообщить ему, что ссылка не работает.",
     "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Языки",
-    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "Содержание этой страницы",
@@ -316,14 +316,6 @@
     "message": "{readingTime} мин. чтения|{readingTime} мин. чтения|{readingTime} мин. чтения",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.docs.breadcrumbs.home": {
-    "message": "Главная страница",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Переключить перенос по строкам",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
   "theme.CodeBlock.copy": {
     "message": "Скопировать",
     "description": "The copy button label on code blocks"
@@ -335,6 +327,14 @@
   "theme.CodeBlock.copyButtonAriaLabel": {
     "message": "Скопировать в буфер обмена",
     "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Переключить перенос по строкам",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Главная страница",
+    "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "Свернуть сайдбар",
@@ -447,5 +447,73 @@
   "theme.docs.versionBadge.deprecated": {
     "message": "Устарел в",
     "description": "The deprecated label for version badge"
+  },
+  "theme.feedback.title": {
+    "message": "Обратная связь",
+    "description": "Title of the feedback"
+  },
+  "theme.feedback.wasThisHelpful": {
+    "message": "Была ли эта страница полезной?",
+    "description": "Main question in the feedback widget"
+  },
+  "theme.feedback.yes": {
+    "message": "Да",
+    "description": "The 'Yes' button in the feedback widget"
+  },
+  "theme.feedback.no": {
+    "message": "Нет",
+    "description": "The 'No' button in the feedback widget"
+  },
+  "theme.feedback.modal.title": {
+    "message": "Помогите улучшить эту страницу",
+    "description": "Title of the feedback modal"
+  },
+  "theme.feedback.modal.reason": {
+    "message": "Пожалуйста, укажите причину",
+    "description": "Label for the list of reasons in the feedback modal"
+  },
+  "theme.feedback.modal.reason.understand" : {
+    "message": "Содержимое сложно понять",
+    "description": "Reason option: content is confusing"
+  },
+  "theme.feedback.modal.reason.examples" : {
+    "message": "Примеры неверны / не работают",
+    "description": "Reason option: example is incorrect"
+  },
+  "theme.feedback.modal.reason.find" : {
+    "message": "Не удалось найти то, что мне нужно",
+    "description": "Reason option: information is missing"
+  },
+  "theme.feedback.modal.reason.outdate" : {
+    "message": "Устарело",
+    "description": "Reason option: content is outdated"
+  },
+  "theme.feedback.modal.reason.other" : {
+    "message": "Другое",
+    "description": "Reason option: other reason"
+  },
+  "theme.feedback.modal.error.noReason": {
+    "message": "Пожалуйста, выберите хотя бы один вариант.",
+    "description": "Error message when no reason is selected"
+  },
+  "theme.feedback.modal.tellmore": {
+    "message": "Расскажите подробнее",
+    "description": "Label for the optional details text area"
+  },
+  "theme.feedback.modal.placeholder": {
+    "message": "Предоставьте отзыв о том, как мы можем улучшить это содержимое. Если применимо, укажите первую часть предложения или строки, с которой связана проблема.",
+    "description": "Placeholder for the details text area"
+  },
+  "theme.feedback.modal.submit": {
+    "message": "Отправить",
+    "description": "Submit button text in the feedback modal"
+  },
+  "theme.feedback.thanks.title": {
+    "message": "Благодарим вас за важный отзыв!",
+    "description": "Title of the feedback modal after submission"
+  },
+  "theme.feedback.thanks.subtitle": {
+    "message": "Мы используем ваш отзыв, чтобы улучшить эту страницу.",
+    "description": "Subtitle of the feedback modal after submission"
   }
 }

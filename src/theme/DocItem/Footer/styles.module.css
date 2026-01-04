@@ -1,0 +1,10 @@
+.feedback-container {
+  margin-top: 2rem;
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .feedback-container {
+    display: block;
+  }
+}

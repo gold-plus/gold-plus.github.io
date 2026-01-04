@@ -28,7 +28,8 @@
     "react-dom": "^19.0.0",
     "react-photo-view": "^1.2.7",
     "react-tooltip": "^5.30.0",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "update-browserslist-db": "^1.2.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",

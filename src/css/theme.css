@@ -12,6 +12,15 @@
   font-display: swap;
 }
 
+/* keep layout stable */
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --ifm-container-width: 1280px;
   --ifm-container-width-xl: 1320px;
@@ -55,6 +64,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 
   --docs-anchor-highlighted-color: rgba(255, 200, 100, 0.4);
+
+--ifm-toc-highlight-fgcolor: #90caf9;
+--ifm-toc-highlight-bgcolor: rgba(30,136,229,.12);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -86,7 +98,7 @@
   --ifm-color-gray-lighter: #8991a0;
   --ifm-color-gray-lightest: #a3aad1;
 
-  --ifm-background-color: #111111;
+  --ifm-background-color: #1b1b1d;
   --ifm-font-color-base: #eeeeee;
   --ifm-navbar-background-color: #111111;
   --ifm-navbar-background-lighter: #252525;
@@ -99,6 +111,11 @@
 
   --docs-anchor-highlighted-color: rgba(255, 180, 50, 0.35);
   --docsearch-hit-active-color: var(--ifm-color-gray);
+  --ifm-toc-highlight-fgcolor: #90caf9;
+  --ifm-toc-highlight-bgcolor: rgba(144,202,249,.18);
+
+  --ifm-color-gray-800: #40454b;
+  --ifm-color-gray-900: #2b2d31;
 }
 
 /*.footer {
@@ -290,10 +307,6 @@ html.plugin-docs.docs-wrapper .container {
   max-width: 100%;
 }
 
-html.plugin-docs.docs-wrapper .container {
-  max-width: 100%;
-}
-
 /*.col--2 {
     --ifm-col-width: calc(2 / 12 * 100%);
 }
@@ -407,7 +420,7 @@ html.plugin-docs.docs-wrapper .container {
 
 .code-with-preview__preview {
   position: absolute;
-  right: 0;
+  right: var(--ifm-code-padding-horizontal);
   bottom: 0;
   padding: 0.4rem;
 }
@@ -421,6 +434,29 @@ html.plugin-docs.docs-wrapper .container {
 .code-with-preview .margin-top--md {
   margin-top: 0 !important;
   border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+@media (max-width: 650px) {
+  .code-with-preview__header {
+    display: block;
+    padding: 0;
+  }
+
+  .code-with-preview__tabs {
+    padding: 0 var(--ifm-code-padding-horizontal);
+  }
+
+  .code-with-preview__preview {
+    position: static;
+    width: 100%;
+    text-align: center;
+    background-color: var(--ifm-color-gray-lighter);
+    border-radius: 0 0 6px 6px;
+  }
+
+  .code-with-preview .margin-top--md {
+    border-top: none;
+  }
 }
 
 :root {
