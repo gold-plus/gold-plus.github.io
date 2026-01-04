@@ -20,7 +20,7 @@ If you did not find a solution to your problem, please let us know by creating a
 
 ---
 
-## 🛡️ Security
+## 🛡️ Security {#security}
 
 <details>
   <summary>**Will I get a VAC ban in Steam for using GoldClient?**</summary>
@@ -63,7 +63,7 @@ If you did not find a solution to your problem, please let us know by creating a
   <div>
     **No.**
 
-    GoldClient does not contain cheats (aimbot, wallhack, or other means of gaining an unfair advantage).
+    GoldClient does not contain cheats (aimbot, wallhack, or other means of gaining an unfair advantage). \
     The client does not modify game logic, shooting mechanics, or the network protocol.
 
     At the same time, GoldClient provides extended client-side features (improved radar, crosshair, visual elements),
@@ -76,7 +76,7 @@ If you did not find a solution to your problem, please let us know by creating a
 
 ---
 
-## ⚙️ Configuration and Features
+## ⚙️ Configuration and Features {#configuration}
 
 <details>
   <summary>**How do I transfer my config (config.cfg) from Steam?**</summary>
@@ -103,7 +103,7 @@ If you did not find a solution to your problem, please let us know by creating a
 
 ---
 
-## 🚫 Compatibility and Anti-Cheats
+## 🚫 Compatibility and Anti-Cheats {#compatibility-anticheat}
 
 <details>
   <summary>**Does GoldClient pass anti-cheat scanners (Wargods, ECD)?**</summary>
@@ -132,8 +132,7 @@ If you did not find a solution to your problem, please let us know by creating a
     **Yes.**
 
     When creating a local server, GoldClient is fully compatible with server-side plugins and addons. \
-    **AMX Mod X version 1.9 and higher** is supported, as well as plugins using **ReAPI**.
-
+    **AMX Mod X version 1.9 and higher** is supported, as well as plugins using **ReAPI**. \
     This is achieved through **ReHLDS API** support on the client side, which ensures proper server and plugin functionality when running a local server.
   </div>
 </details>
