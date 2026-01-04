@@ -495,3 +495,76 @@ html.plugin-docs.docs-wrapper .container {
   margin-top: 4px;
   margin-bottom: 4px;
 }
+
+/* FAQ */
+.faq-container details {
+  background-color: var(--ifm-card-background-color);
+  box-shadow: var(--ifm-global-shadow-lw);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-container details:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.faq-container summary {
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+.faq-container summary::before {
+  display: none !important;
+}
+
+.faq-container summary::after {
+  content: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.faq-container details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-container details[open] summary {
+  background-color: var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.faq-container details[open] {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.faq-container details > div {
+  padding: 20px;
+  line-height: 1.6;
+  background-color: var(--ifm-card-background-color);
+  color: var(--ifm-font-color-base);
+  animation: slideDown 0.35s ease-out;
+}
+
+.faq-container details > div > div {
+  border-top: 1px solid var(--ifm-color-emphasis-600);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+html.plugin-docs .table-of-contents li:has(> a.table-of-contents__link--active) > a {
+  background-color: rgb(from var(--ifm-color-emphasis-500) r g b / 0.2);
+}
