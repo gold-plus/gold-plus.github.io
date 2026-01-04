@@ -1,9 +1,15 @@
 
 .xhair-guide-preview {
-  background-color: var(--ifm-color-gray-lighter);
+  background-color: var(--ifm-color-gray-darker);
   border-radius: 6px;
   zoom: 200%;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+}
+
+@media (max-width: 650px) {
+  .xhair-guide-preview {
+    background-color: transparent;
+  }
 }
