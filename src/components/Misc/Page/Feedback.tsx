@@ -21,7 +21,7 @@ const REASONS = [
 
 const ROOT_PORTAL = '__docusaurus';
 
-export const Feedback: React.FC< { pageId: string, isSidebar?: boolean }> = ({ pageId, isSidebar = false }) => {
+export const Feedback: React.FC< { isSidebar?: boolean }> = ({ isSidebar = false }) => {
   // Pulls all state and logic from a centralized context
   const {
     modalRef, vote, loading, submitFeedback,

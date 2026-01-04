@@ -22,7 +22,7 @@ export default function FooterWrapper(props: Props): ReactNode {
       {showFeedback &&
         <div className={styles['feedback-container']}>
           <h3><Translate id="theme.feedback.title">Feedback</Translate></h3>
-          <Feedback pageId={metadata.id} />
+          <Feedback />
         </div>
       }
     </>

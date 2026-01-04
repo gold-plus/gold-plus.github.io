@@ -50,8 +50,10 @@ export function usePageFeedback(pageId: string) {
     setVote(newVote);
     localStorage.setItem(storageKey, JSON.stringify(newVote));
 
+    const docId = pageId.replace(/^\/|\/$/g, '').replace(/\//g, '-');
+
     // Prepare data object for Firestore
-    const docRef = doc(firestore, collectionName, pageId);
+    const docRef = doc(firestore, collectionName, docId);
     const dataToSend = {
       [choice]: increment(1),
     };

@@ -36,7 +36,7 @@ export default function TOCItemsWrapper(props) {
         </div>
         {showFeedback && (
           <div className={styles['toc-item-feedback']}>
-            <Feedback pageId={metadata.id} isSidebar={true} />
+            <Feedback isSidebar={true} />
           </div>
         )}
       </div>

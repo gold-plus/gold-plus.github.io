@@ -12,7 +12,7 @@ export default function LayoutWrapper(props: Props): ReactNode {
   const { metadata } = useDoc();
   return (
     <DocInfoProvider metadata={metadata}>
-      <FeedbackProvider pageId={metadata.id}>
+      <FeedbackProvider pageId={metadata.permalink}>
         <Layout {...props} />
       </FeedbackProvider>
     </DocInfoProvider>
