@@ -3,6 +3,7 @@ id: xhair-guide
 title: How to Configure the Perfect Crosshair in CS 1.6 | A Complete Guide
 sidebar_label: Crosshair Setup
 description: A detailed guide to full crosshair customization in CS 1.6 using GoldClient. Learn how to create a small crosshair, a red dot, configure a dynamic crosshair for recoil control, and much more.
+feedback: true
 ---
 
 import Tabs from '@theme/Tabs';

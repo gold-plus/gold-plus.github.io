@@ -2,6 +2,7 @@
 id: commands
 title: Console commands
 sidebar_position: 2
+feedback: true
 ---
 
 import { VersionBadge } from '@site/src/components/Misc/Badges'

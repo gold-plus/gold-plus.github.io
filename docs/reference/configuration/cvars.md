@@ -2,6 +2,7 @@
 id: cvars
 title: Консольные переменные
 sidebar_position: 1
+feedback: true
 ---
 
 import { SliderButton } from '@site/src/components/Image'
@@ -11,7 +12,7 @@ import { Table, Grid } from '@site/src/components/ResponsiveLayout';
 <br/>
 :::warning Страница в разработке
 Эта страница находится в стадии активного наполнения и корректирования<br/>
-Возможны ошибки, неточности и пропуски, и отсутствия перевода<br/>
+Возможны ошибки, неточности, пропуски и отсутствие перевода.<br/>
 Следите за обновлениями, чтобы получать актуальную информацию.
 :::
 

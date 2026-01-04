@@ -2,6 +2,7 @@
 id: launch-params
 title: Launch params
 sidebar_position: 3
+feedback: true
 ---
 
 import { VersionBadge } from '@site/src/components/Misc/Badges'

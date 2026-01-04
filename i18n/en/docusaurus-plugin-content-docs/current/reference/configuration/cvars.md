@@ -2,6 +2,7 @@
 id: cvars
 title: Console variables
 sidebar_position: 1
+feedback: true
 ---
 
 import { SliderButton } from '@site/src/components/Image'

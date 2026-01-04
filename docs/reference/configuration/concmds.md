@@ -2,6 +2,7 @@
 id: commands
 title: Консольные команды
 sidebar_position: 2
+feedback: true
 ---
 
 import { VersionBadge } from '@site/src/components/Misc/Badges'
@@ -10,7 +11,7 @@ import { Table } from '@site/src/components/ResponsiveLayout';
 <br/>
 :::warning Страница в разработке
 Эта страница находится в стадии активного наполнения и корректирования<br/>
-Возможны ошибки, неточности и пропуски, и отсутствия перевода<br/>
+Возможны ошибки, неточности, пропуски и отсутствие перевода.<br/>
 Следите за обновлениями, чтобы получать актуальную информацию
 :::
 
