@@ -14,5 +14,13 @@
   "feed.description": {
     "ru" : "Будьте в курсе новых функций, появляющихся в каждом выпуске",
     "en" : "Keep yourself up-to-date about new features in every release"
+  },
+  "changelog.release.description": {
+    "ru": "Список изменений версии {version}: новые функции, исправления и улучшения GoldClient.",
+    "en": "Changelog for GoldClient version {version}: new features, bug fixes, and improvements."
+  },
+  "changelog.description": {
+    "ru": "История изменений GoldClient. Текущая версия: {version}. Полный список новых функций и исправлений.",
+    "en": "GoldClient Changelog & Release Notes. Current version: {version}. Full list of new features and fixes."
   }
 }

@@ -27,6 +27,68 @@ type ChangelogEntry = {
   authors: Author[];
 };
 
+function cleanMarkdownLine(line: string): string {
+  let text = line
+    .replace(/^[\s\t]*[-*+]\s+/, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<[^>]*>/g, '')
+    .replace(/\s*\(@[^)]+\)/g, '')
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+    .replace(/!\[[^\]]*\]\([^\)]+\)/g, '')
+    .replace(/\s*\[[^\]]+\]/g, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/:[a-zA-Z0-9_+-]+:/g, '')
+    .replace(/\\/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return text;
+}
+
+function generateDescription(rawContent: string, versionTitle: string, defaultReleaseDescription): string {
+  const bodyBeforeTruncate = rawContent.split(/<!--\s*truncate\s*-->/i)[0];
+  const lines = bodyBeforeTruncate.split('\n');
+  const cleanItems: string[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#') || trimmed.startsWith('<!--')) {
+      continue;
+    }
+    const cleaned = cleanMarkdownLine(trimmed);
+    if (cleaned.length > 1) {
+      cleanItems.push(cleaned);
+    }
+  }
+
+  const MAX_LENGTH = 320;
+  let result = '';
+
+  for (const item of cleanItems) {
+    if (result.length === 0) {
+      result = item;
+      continue;
+    }
+
+    if (result.length + item.length + 2 <= MAX_LENGTH) {
+      result += `, ${item}`;
+    } else {
+      break;
+    }
+  }
+
+  if (!result) {
+      result = defaultReleaseDescription.replace('{version}', versionTitle);
+  } else {
+    if (!result.endsWith('.')) {
+      result += '.';
+    }
+  }
+
+  return result.replace(/'/g, "''");
+}
+
 function parseAuthor(committerLine: string): Author {
   const groups = committerLine.match(
     /- (?:(?<name>.*?) \()?\[@(?<alias>.*)\]\((?<url>.*?)\)\)?/,
@@ -73,7 +135,7 @@ export function createAuthorsMap(
   return authorsMap;
 }
 
-function toChangelogEntry(sectionContent: string, authorsData: Record<string, any>): ChangelogEntry | null {
+function toChangelogEntry(sectionContent: string, authorsData: Record<string, any>, defaultReleaseDescription : string): ChangelogEntry | null {
   const titleLine = sectionContent
     .match(/\n## .*/)?.[0]
     .trim()
@@ -89,6 +151,8 @@ function toChangelogEntry(sectionContent: string, authorsData: Record<string, an
   const isPrerelease = /beta|pre-release|rc/i.test(titleLine.toLowerCase());
   const cleanTitle = titleLine.replace(/ *(\([\d-]+\)|\[.*?\])/g, '');
 
+  const description = generateDescription(content, cleanTitle, defaultReleaseDescription);
+
   const { processedContent, imports } = processMdxComponents(cleanTitle, content, authorsData);
 
   let hour = 20;
@@ -101,6 +165,8 @@ function toChangelogEntry(sectionContent: string, authorsData: Record<string, an
   const finalContent = `---
 mdx:
  format: mdx
+title: '${cleanTitle}'
+description: '${description}'
 prerelease: ${isPrerelease}
 date: ${`${date}T${hour}:00`}${
       authors.length > 0
@@ -124,11 +190,11 @@ ${processedContent.replace(/####/g, '##')}`
   };
 }
 
-export function toChangelogEntries(filesContent: string[], authorsData: Record<string, any>): ChangelogEntry[] {
+export function toChangelogEntries(filesContent: string[], authorsData: Record<string, any>, defaultReleaseDescription : string): ChangelogEntry[] {
   publishTimes.clear();
   return filesContent
     .flatMap((content) => content.split(/(?=\n## )/))
-    .map((sectionContent) => toChangelogEntry(sectionContent, authorsData))
+    .map((sectionContent) => toChangelogEntry(sectionContent, authorsData, defaultReleaseDescription))
     .filter((s): s is ChangelogEntry => s !== null);
 }
 

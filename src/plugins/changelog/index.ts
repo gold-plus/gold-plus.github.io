@@ -56,14 +56,16 @@ function readChangelogFile(filename: string) {
   return fs.readFile(path.join(MonorepoRoot, filename), 'utf-8');
 }
 
-async function loadChangelogEntries(changelogFiles: string[], authorsData: Record<string, any>) {
+async function loadChangelogEntries(changelogFiles: string[], authorsData: Record<string, any>, defaultReleaseDescription : string) {
   const filesContent = await Promise.all(changelogFiles.map(readChangelogFile));
-  return toChangelogEntries(filesContent, authorsData);
+  return toChangelogEntries(filesContent, authorsData, defaultReleaseDescription);
 }
 
 export default async function ChangelogPlugin(context, options) {
   const generateDir = path.join(context.siteDir, 'changelog/',
     (context.i18n.currentLocale == context.i18n.defaultLocale) ? 'default' : context.i18n.currentLocale);
+
+  const { defaultReleaseDescription } = context.siteConfig.customFields;
 
   const blogOptions = {
     ...options,
@@ -94,7 +96,7 @@ export default async function ChangelogPlugin(context, options) {
     name: 'docusaurus-plugin-content-blog-changelog',
 
     async loadContent() {
-      const changelogEntries = await loadChangelogEntries(changelogFiles, authorsData);
+      const changelogEntries = await loadChangelogEntries(changelogFiles, authorsData, defaultReleaseDescription);
 
       // we have to create intermediate files here
       // unfortunately Docusaurus doesn't have yet any concept of virtual file

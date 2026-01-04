@@ -7,6 +7,8 @@ import ConfigLocalized from './docusaurus.config.localized.json';
 const defaultLocale = 'ru';
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
+const currentVersion = '2.5.6.0';
+
 const repoName = 'gold-plus';
 const webSite = 'https://goldclient.ru';
 
@@ -25,14 +27,19 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
   return value;
 }
 
+function getChangelogDescription() {
+  return getLocalizedConfigValue('changelog.description').replace('{version}', currentVersion);
+}
+
 const config: Config = {
   title: 'GoldClient',
   favicon: 'img/favicon.ico',
   customFields: {
-    currentVersion: '2.5.6.0',
+    currentVersion,
     downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe',
     useLangAsIcon: true,
     homeTitle: getLocalizedConfigValue('title'),
+    defaultReleaseDescription: getLocalizedConfigValue('changelog.release.description'),
   },
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -159,7 +166,7 @@ const config: Config = {
         // Otherwise the sitemap plugin will run them in postBuild()
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        blogDescription: 'Keep yourself up-to-date about new features in every release',
+        blogDescription: getChangelogDescription(),
         blogSidebarCount: 'ALL',
         blogSidebarTitle: 'Changelog',
         routeBasePath: '/changelog',
