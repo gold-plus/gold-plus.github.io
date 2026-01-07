@@ -15,6 +15,10 @@
     "message": "Changelog",
     "description": "Navbar item with label Changelog"
   },
+  "item.label.Downloads": {
+    "message": "Downloads",
+    "description": "Navbar item with label Downloads"
+  },
   "item.label.Blog": {
     "message": "Blog",
     "description": "Navbar item with label Blog"

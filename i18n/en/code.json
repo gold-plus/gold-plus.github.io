@@ -2,14 +2,26 @@
   "theme.home.title": {
     "message": "GoldClient"
   },
-  "theme.home.tagline": {
-    "message": "Alternative CS 1.6 client - built with stability and performance in mind."
+  "theme.home.description": {
+    "message": "Download GoldClient — the next generation of GSClient. A stable CS 1.6 client with high performance, latest updates, and enhanced security. Play now and enjoy!"
   },
-  "theme.home.download": {
+  "theme.home.schema.description": {
+    "message": "GoldClient — the next generation and official successor to the GSClient project. Featuring latest updates, enhanced security, and bug fixes."
+  },
+  "theme.home.tagline": {
+    "message": "Alternative CS 1.6 client — built with stability and performance in mind."
+  },
+  "theme.download": {
     "message": "Download"
   },
-  "theme.home.download.latest": {
-    "message": "Latest"
+  "theme.download.size": {
+    "message": "Size"
+  },
+  "theme.download.portable": {
+    "message": "Download the portable version"
+  },
+  "theme.home.download.version": {
+    "message": "Version : {version}"
   },
   "theme.home.download.count": {
     "message": "{count} download|{count} downloads"
@@ -43,7 +55,7 @@
     "message": "Tons of bug fixes, QoL improvements, and performance tweaks."
   },
   "theme.home.feature.steam": {
-    "message": "Full Steam compatibility - automatic account sync when Steam is running."
+    "message": "Full Steam compatibility — automatic account sync when Steam is running."
   },
   "theme.home.feature.updates": {
     "message": "Regular updates with improvements and fixes."

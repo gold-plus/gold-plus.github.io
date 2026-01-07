@@ -93,6 +93,8 @@
     1px 1px 0 #8c7a00,
     0 0 5px rgba(255, 223, 0, 0.6);
   font-family: 'Stratum2', sans-serif;
+  margin: 0;
+  line-height: 1.65;
 }
 
 .hero-subtitle {
@@ -103,6 +105,8 @@
   color: #554a0a;
   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 130%);
   mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 130%);
+  margin: 0;
+  line-height: 1.65;
 }
 
 .hero-description {

@@ -98,7 +98,8 @@ body {
   --ifm-color-gray-lighter: #8991a0;
   --ifm-color-gray-lightest: #a3aad1;
 
-  --ifm-background-color: #1b1b1d;
+  --ifm-background-color: #191919;
+  --ifm-card-background-color: #1f1f1f;
   --ifm-font-color-base: #eeeeee;
   --ifm-navbar-background-color: #111111;
   --ifm-navbar-background-lighter: #252525;

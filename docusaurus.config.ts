@@ -1,13 +1,11 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import * as path from 'path';
 import ConfigLocalized from './docusaurus.config.localized.json';
+import { Product } from './products.config';
 
 const defaultLocale = 'ru';
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
-
-const currentVersion = '2.5.6.0';
 
 const repoName = 'gold-plus';
 const webSite = 'https://goldclient.ru';
@@ -28,15 +26,13 @@ function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
 }
 
 function getChangelogDescription() {
-  return getLocalizedConfigValue('changelog.description').replace('{version}', currentVersion);
+  return getLocalizedConfigValue('changelog.description').replace('{version}', Product.gameClient?.version ?? 'unknown');
 }
 
 const config: Config = {
   title: 'GoldClient',
   favicon: 'img/favicon.ico',
   customFields: {
-    currentVersion,
-    downloadProduct: 'https://cdn.download-cs.net/cs16_russian.exe',
     useLangAsIcon: true,
     homeTitle: getLocalizedConfigValue('title'),
     defaultReleaseDescription: getLocalizedConfigValue('changelog.release.description'),
@@ -127,6 +123,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/changelog/', label: 'Changelog', position: 'left'},
+        {to: '/download/', label: 'Downloads', position: 'left'},
         {
           type: "localeDropdown",
           position: "right",

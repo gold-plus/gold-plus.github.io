@@ -2,14 +2,26 @@
   "theme.home.title": {
     "message": "GoldClient"
   },
-  "theme.home.tagline": {
-    "message": "Альтернативный клиент CS 1.6 - создан с учетом стабильности и производительности."
+  "theme.home.description": {
+    "message": "Скачайте GoldClient — новое поколение GSClient. Стабильный клиент CS 1.6 с повышенной производительностью, актуальные обновления и защита. Начните игру прямо сейчас!"
   },
-  "theme.home.download": {
+  "theme.home.schema.description": {
+    "message": "GoldClient — новое поколение и официальный преемник проекта GSClient. Актуальные обновления, защита и исправления ошибок."
+  },
+  "theme.home.tagline": {
+    "message": "Альтернативный клиент CS 1.6 — создан с учетом стабильности и производительности."
+  },
+  "theme.download": {
     "message": "Скачать"
   },
-  "theme.home.download.latest": {
-    "message": "Версия"
+  "theme.download.size": {
+    "message": "Размер"
+  },
+  "theme.download.portable": {
+    "message": "Скачать портативную версию"
+  },
+  "theme.home.download.version": {
+    "message": "Версия : {version}"
   },
   "theme.home.download.count": {
     "message": "{count} скачивание|{count} скачивания|{count} скачиваний"
@@ -43,7 +55,7 @@
     "message": "Большее количество исправлений, улучшений удобства и оптимизации."
   },
   "theme.home.feature.steam": {
-    "message": "Полная совместимость с Steam - автоматическая синхронизация аккаунта при запущенном Steam."
+    "message": "Полная совместимость с Steam — автоматическая синхронизация аккаунта при запущенном Steam."
   },
   "theme.home.feature.updates": {
     "message": "Регулярные обновления с улучшениями и исправлениями."

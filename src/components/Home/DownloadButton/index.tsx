@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import { usePlatform, Platform } from '@site/src/hooks/usePlatform';
 import { useDownloadCount } from '@site/src/hooks/useDownloadCount';
 import { useFormattedPlural } from '@site/src/hooks/useFormattedPlural';
+import { useProduct } from '@site/src/hooks/useProduct';
 
 import styles from './styles.module.css'
 
@@ -37,7 +38,7 @@ interface PlatformConfig {
 
 const windowsConfig: PlatformConfig = {
   icon: Icon,
-  textId: 'theme.home.download',
+  textId: 'theme.download',
   textDefault: 'Download',
   style: 'primary'
 };
@@ -85,13 +86,13 @@ const platformConfigs: Record<Platform, PlatformConfig> = {
 };
 
 export default function DownloadButton() {
-  const { siteConfig: { customFields }, i18n: { currentLocale } } = useDocusaurusContext();
+  const { i18n: { currentLocale } } = useDocusaurusContext();
   const { platform } = usePlatform();
   const tooltipId = `download-tooltip:${useId()}`;
   const buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>(null);
   const [buttonWidth, setButtonWidth] = useState(0);
-
-  const productId = `v${customFields.currentVersion}`;
+  const ClientProduct = useProduct('gameClient');
+  const productId = `v${ClientProduct.version ?? 'unknown'}`;
   const { count, incrementCount } = useDownloadCount(productId);
 
   useLayoutEffect(() => {
@@ -117,7 +118,7 @@ export default function DownloadButton() {
       <Link
         ref={buttonRef as React.Ref<HTMLAnchorElement>}
         className={buttonClass}
-        to={`${customFields.downloadProduct}`}
+        to={ClientProduct.files?.exe?.url ?? '#'}
         onClick={incrementCount}
         data-tooltip-id={config.tooltipText ? tooltipId : undefined}
       >
@@ -129,7 +130,7 @@ export default function DownloadButton() {
         </div>
         <div className={clsx(styles['wrap'], (count !== null && count > 0) && styles['has-count'])}>
           <div className={styles['version']}>
-            <Translate id='theme.home.download.latest'>Latest</Translate> : {`${customFields.currentVersion}`}
+            <Translate id='theme.home.download.version' values={{ version: ClientProduct.version ?? 'unknown' }}>{'Version : {version}'}</Translate>
           </div>
           {count !== null && count > 0 && (
             <span className={styles['count-text']}>

@@ -78,14 +78,6 @@
   margin-right: 10px;
 }
 
-.version {
-  font-size: 16px;
-  user-select: none;
-  font-weight: normal;
-  margin-top: 4px;
-  text-transform: none;
-}
-
 .icon {
   width: 30px;
   justify-content: center;
@@ -111,31 +103,29 @@
 .version, .count-text {
   grid-area: 1 / 1;
   width: 100%;
+  margin-top: 4px;
   text-align: center;
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  transition: opacity 0.15s ease-out;
   font-size: 16px;
   font-weight: normal;
+  user-select: none;
   text-transform: none;
 }
 
 .version {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .count-text {
   opacity: 0;
-  transform: translateY(10px);
 }
 
 @media (min-width: 996px) {
   a.button:hover .wrap.has-count .version {
     opacity: 0;
-    transform: translateY(-10px);
   }
 
   a.button:hover .wrap.has-count .count-text {
     opacity: 1;
-    transform: translateY(0);
   }
 }

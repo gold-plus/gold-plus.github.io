@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 import DownloadButton from '@site/src/components/Home/DownloadButton';
 import HomePreview from '@site/src/components/Home/Header/Preview';
@@ -53,12 +53,12 @@ export default function Header() {
           <div className={styles['hero-left']}>
             <div className={styles['hero-container-title']}>
               <GoldEffect tmMin={5000} tmMax={10000}>
-                  <div className={`${styles['hero-title']}`}>
+                  <h1 className={`${styles['hero-title']}`}>
                     <Translate id="theme.home.title">GoldClient</Translate>
-                  </div>
-                  <div className={styles['hero-subtitle']}>
+                  </h1>
+                  <h2 className={styles['hero-subtitle']}>
                     <Translate id="theme.home.tagline">Alternative CS 1.6 client with improvements and enhanced stability</Translate>
-                  </div>
+                  </h2>
               </GoldEffect>
               <div className={styles['hero-description']}>
                   <ul>
