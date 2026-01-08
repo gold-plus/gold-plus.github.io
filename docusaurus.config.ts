@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import ConfigLocalized from './docusaurus.config.localized.json';
 import { Product } from './products.config';
+import { locales, defaultLocale, localeConfigs } from './languages';
 
-const defaultLocale = 'ru';
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
 const repoName = 'gold-plus';
@@ -62,16 +62,9 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: defaultLocale,
-    locales: ['ru', 'en'],
-    localeConfigs: {
-      en: {
-        label: "English",
-      },
-      ru: {
-        label: "Русский",
-      },
-    },
+    defaultLocale,
+    locales: [...locales],
+    localeConfigs,
   },
 
   presets: [
@@ -112,7 +105,7 @@ const config: Config = {
     navbar: {
       title: 'Home',
       logo: {
-        alt: 'GoldClient Plus',
+        alt: 'GoldClient',
         src: 'img/logo.svg'
       },
       items: [
