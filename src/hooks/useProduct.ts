@@ -2,7 +2,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Product } from '@site/products.config';
 
 export function useProduct(productName: string) {
-  const { i18n: { currentLocale } } = useDocusaurusContext();
+  const { i18n: { currentLocale, defaultLocale } } = useDocusaurusContext();
   const data = Product[productName];
   if (!data) return null;
   const formattedDate = new Intl.DateTimeFormat(currentLocale, {
@@ -12,11 +12,18 @@ export function useProduct(productName: string) {
   }).format(new Date(data.releaseDate));
 
   const files = Object.keys(data.files).reduce((acc, key) => {
-    const file = data.files[key];
-    acc[key] = {
-      ...file,
-      size: formatSize(file.bytes, currentLocale, 'megabyte')
-    };
+    const rawFileData = data.files[key];
+    const file = rawFileData.url
+      ? rawFileData
+      : (rawFileData[currentLocale] || rawFileData[defaultLocale]);
+
+    if (file) {
+      acc[key] = {
+        ...file,
+        size: formatSize(file.bytes, currentLocale, 'megabyte')
+      };
+    }
+
     return acc;
   }, {} as any);
 

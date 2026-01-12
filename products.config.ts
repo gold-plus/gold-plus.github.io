@@ -3,13 +3,12 @@ export interface FileInfo {
   bytes: number;
 }
 
+type FlexibleFileInfo = FileInfo | Record<string, FileInfo>;
+
 export interface ProductData {
   version: string;
   releaseDate: string;
-  files: {
-    exe: FileInfo;
-    zip?: FileInfo;
-  };
+  files: Record<string, FlexibleFileInfo>;
 }
 
 export const Product: Record<string, ProductData> = {
@@ -18,8 +17,14 @@ export const Product: Record<string, ProductData> = {
     releaseDate: '2025-05-07', // yyyy-mm-dd
     files: {
       exe: {
-        url: 'https://cdn.download-cs.net/cs16_russian.exe',
-        bytes: 297610397
+        ru: {
+          url: 'https://cdn.download-cs.net/cs16_russian.exe',
+          bytes: 297610397
+        },
+        en: {
+          url: 'https://cdn.download-cs.net/cs16setup_eng.exe',
+          bytes: 306508525
+        }
       },
       //zip: {
       //  url: 'https://cdn.download-cs.net/cs16_russian.zip',
