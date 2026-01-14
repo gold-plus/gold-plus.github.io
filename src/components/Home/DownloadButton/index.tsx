@@ -3,30 +3,16 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import { Tooltip } from 'react-tooltip';
+import { AdvisoryModal } from '@site/src/components/Misc/AdvisoryModal';
 import clsx from 'clsx';
 
 import { usePlatform, Platform } from '@site/src/hooks/usePlatform';
 import { useDownloadCount } from '@site/src/hooks/useDownloadCount';
 import { useFormattedPlural } from '@site/src/hooks/useFormattedPlural';
 import { useProduct } from '@site/src/hooks/useProduct';
+import { DownloadIcon, WindowsDefenderIcon, WindowsIcon } from '@site/src/components/Icons';
 
 import styles from './styles.module.css'
-
-function Icon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" {...props}>
-      <path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24m296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24m-124 88c0-11-9-20-20-20s-20 9-20 20s9 20 20 20s20-9 20-20m64 0c0-11-9-20-20-20s-20 9-20 20s9 20 20 20s20-9 20-20"></path>
-    </svg>
-  )
-}
-
-function WindowsIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
-      <path fill="currentColor" d="M22.5 22.5H4V4h18.5v18.5zM44 4v18.5H25.5V4H44zM22.5 44H4V25.5h18.5V44zM44 44H25.5V25.5H44V44z" />
-    </svg>
-  );
-}
 
 interface PlatformConfig {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
@@ -34,13 +20,15 @@ interface PlatformConfig {
   textDefault: string;
   style: 'primary' | 'secondary' | 'disabled';
   tooltipText?: string;
+  showAdvisory?: boolean;
 }
 
 const windowsConfig: PlatformConfig = {
-  icon: Icon,
+  icon: DownloadIcon,
   textId: 'theme.download',
   textDefault: 'Download',
-  style: 'primary'
+  style: 'primary',
+  showAdvisory: true
 };
 
 const posixConfig: PlatformConfig = {
@@ -86,14 +74,14 @@ const platformConfigs: Record<Platform, PlatformConfig> = {
 };
 
 export default function DownloadButton() {
+  const ClientProduct = useProduct('gameClient');
   const { i18n: { currentLocale } } = useDocusaurusContext();
   const { platform } = usePlatform();
   const tooltipId = `download-tooltip:${useId()}`;
   const buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>(null);
   const [buttonWidth, setButtonWidth] = useState(0);
-  const ClientProduct = useProduct('gameClient');
-  const productId = `v${ClientProduct.version ?? 'unknown'}`;
-  const { count, incrementCount } = useDownloadCount(productId);
+  const { count, incrementCount } = useDownloadCount(`v${ClientProduct.version ?? 'unknown'}`);
+  const [showAdvisory, setShowAdvisory] = useState(false);
 
   useLayoutEffect(() => {
     if (buttonRef.current) {
@@ -113,13 +101,36 @@ export default function DownloadButton() {
     numberFormatOptions: { notation: 'compact', maximumFractionDigits: 1 }
   });
 
+  const storageKey = `download_skip_advisory_${(ClientProduct.version || 'common').replace(/\./g, '')}`;
+  const handleDownloadClick = (e: React.MouseEvent) => {
+    if (config.showAdvisory && ClientProduct.showAdvisory) {
+      const isHiddenByUser = typeof window !== 'undefined' && localStorage.getItem(storageKey) === 'true';
+      if (!isHiddenByUser) {
+        e.preventDefault();
+        setShowAdvisory(true);
+        return;
+      }
+    }
+
+    incrementCount();
+  };
+
+  const handleConfirmDownload = (dontShowAgain: boolean) => {
+    if (dontShowAgain) {
+      localStorage.setItem(storageKey, 'true');
+    }
+    setShowAdvisory(false);
+    incrementCount();
+    window.location.href = ClientProduct.files?.exe?.url ?? '#';
+  };
+
   return (
     <>
       <Link
         ref={buttonRef as React.Ref<HTMLAnchorElement>}
         className={buttonClass}
         to={ClientProduct.files?.exe?.url ?? '#'}
-        onClick={incrementCount}
+        onClick={handleDownloadClick}
         data-tooltip-id={config.tooltipText ? tooltipId : undefined}
       >
         <div className={styles['row']}>
@@ -144,6 +155,42 @@ export default function DownloadButton() {
           {config.tooltipText}
         </Tooltip>
       )}
+
+      <AdvisoryModal
+        isOpen={showAdvisory}
+        onClose={() => setShowAdvisory(false)}
+        onConfirm={handleConfirmDownload}
+        showDoNotDisturb={true}
+        confirmBtnClassName={styles['confirm-button']}
+        title={<Translate id="theme.modal.home.download.notice.title">Important installation info</Translate>}
+        confirmText={<Translate id="theme.modal.home.download.action.download">Download</Translate>}
+      >
+        <div className={styles['modal-content']}>
+          <div className={styles['modal-icon']}>
+            <WindowsDefenderIcon />
+          </div>
+          <p className={styles['notice-desc']}>
+            <Translate id="theme.modal.home.download.notice.description" values={{ br: <br /> }}>
+              The installer file (exe) was recently updated.
+              Windows might show a SmartScreen protection window when launching it.
+            </Translate>
+          </p>
+          <div className={styles['notice-instruction']}>
+            <span className={styles['notice-instruction-title']}>
+              <Translate id="theme.modal.home.download.notice.instructions.title">What to do:</Translate>
+            </span>
+            <p className={styles['notice-steps']}>
+              <Translate id="theme.modal.home.download.notice.instructions.steps">Click "More info", then "Run anyway".</Translate>
+            </p>
+            <p className={styles['notice-note']}>
+              <Translate id="theme.modal.home.download.notice.note" values={{ br: <br /> }}>
+                This is a standard safety check and does not indicate a threat.
+                The warning will go away automatically over time.
+              </Translate>
+            </p>
+          </div>
+        </div>
+      </AdvisoryModal>
     </>
   );
 }

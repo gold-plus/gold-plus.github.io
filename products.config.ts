@@ -9,12 +9,14 @@ export interface ProductData {
   version: string;
   releaseDate: string;
   files: Record<string, FlexibleFileInfo>;
+  showAdvisory?: boolean,
 }
 
 export const Product: Record<string, ProductData> = {
   gameClient: {
     version: '2.5.6.0',
     releaseDate: '2025-05-07', // yyyy-mm-dd
+    showAdvisory: false,
     files: {
       exe: {
         ru: {

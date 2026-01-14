@@ -2,8 +2,7 @@
 import React, { useState, useContext, createContext, ReactNode } from 'react';
 
 import { SubmitFeedbackFn, usePageFeedback } from '@site/src/hooks/usePageFeedback';
-import { useClickOutside } from '@site/src/hooks/useClickOutside';
-import { useKeyPress } from '@site/src/hooks/useKeyPress';
+import { FeedbackModal } from '@site/src/components/Misc/Page/FeedbackModal';
 
 // Defines possible states for modal visibility and content
 export type ModalState = 'hidden' | 'form' | 'thanks';
@@ -12,7 +11,6 @@ export type ModalState = 'hidden' | 'form' | 'thanks';
 interface FeedbackContextType {
   modalState: ModalState;
   setModalState: React.Dispatch<React.SetStateAction<ModalState>>;
-  modalRef: React.RefObject<HTMLDivElement>;
   selectedReasons: string[];
   setSelectedReasons: React.Dispatch<React.SetStateAction<string[]>>;
   comment: string;
@@ -22,7 +20,6 @@ interface FeedbackContextType {
   submitted: boolean;
   setSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
   vote: 'rating-yes' | 'rating-no' | null;
-  loading: boolean;
   submitFeedback: SubmitFeedbackFn;
   resetForm: () => void;
 }
@@ -45,14 +42,6 @@ export function FeedbackProvider({ children, pageId }: { children: ReactNode; pa
   // State to track if feedback was submitted in current session
   const [submitted, setSubmitted] = useState(false);
 
-  // Hook to close modal on outside click
-  const modalRef = useClickOutside(() => { setModalState('hidden') }, modalState !== 'hidden');
-
-  // Hook to close modal on Escape key press
-  useKeyPress('Escape', () => {
-    setModalState('hidden');
-  }, modalState !== 'hidden');
-
   // Resets form fields to initial state
   const resetForm = () => {
     setSelectedReasons([]);
@@ -63,7 +52,6 @@ export function FeedbackProvider({ children, pageId }: { children: ReactNode; pa
   // Assembles value object to be passed down through context
   const value = {
     ...pageFeedback,
-    modalRef,
     modalState, setModalState,
     selectedReasons, setSelectedReasons,
     comment, setComment,
@@ -72,7 +60,12 @@ export function FeedbackProvider({ children, pageId }: { children: ReactNode; pa
     resetForm,
   };
 
-  return <FeedbackContext.Provider value={value}>{children}</FeedbackContext.Provider>;
+  return (
+    <FeedbackContext.Provider value={value}>
+      {children}
+      <FeedbackModal />
+    </FeedbackContext.Provider>
+  );
 }
 
 // Custom hook for consuming feedback context

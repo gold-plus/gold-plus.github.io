@@ -129,3 +129,101 @@
     opacity: 1;
   }
 }
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-icon {
+  margin: 1rem 0 1rem 0;
+  font-size: 4rem;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-content .notice-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 1.5rem;
+}
+
+.modal-content .notice-instruction {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.2rem;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.modal-content .notice-instruction-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.modal-content .notice-steps {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin: 0;
+}
+
+.modal-content .notice-note {
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .footerContainer {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+}
+
+.confirm-button {
+  display: flex;
+  width: 55%;
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  --ifm-button-size-multiplier: 1.35;
+  font-size: calc(0.875rem * var(--ifm-button-size-multiplier));
+  font-weight: var(--ifm-button-font-weight);
+  vertical-align: middle;
+  white-space: nowrap;
+  transition-property: color, background, border-color;
+  transition-duration: var(--ifm-button-transition-duration);
+  transition-timing-function: var(--ifm-transition-timing-default);
+  background-image: linear-gradient(to top right, #039be5, #29b6f6);
+  color: #ffffff;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
+}
+
+.confirm-button:hover {
+  box-shadow:
+    0 4px 30px rgba(4, 175, 255, 0.1),
+    0 2px 30px rgba(11, 158, 255, 0.06);
+  filter: brightness(1.1);
+}

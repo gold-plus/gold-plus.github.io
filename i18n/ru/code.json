@@ -45,6 +45,34 @@
     "message": "Загрузка доступна только на ПК (Windows)",
     "description": "Tooltip hint for users on mobile devices"
   },
+  "theme.modal.home.download.notice.title": {
+    "message": "Важная информация об установке",
+    "description": "Modal title"
+  },
+  "theme.modal.home.download.notice.description": {
+    "message": "Файл установщика (exe) был недавно обновлён.{br}При его запуске Windows может показать окно защиты SmartScreen.",
+    "description": "Main explanation text"
+  },
+  "theme.modal.home.download.notice.instructions.title": {
+    "message": "Что делать в этом случае:",
+    "description": "Instructions header"
+  },
+  "theme.modal.home.download.notice.instructions.steps": {
+    "message": "Нажмите «Подробнее», затем «Выполнить в любом случае».",
+    "description": "Action steps"
+  },
+  "theme.modal.home.download.notice.note": {
+    "message": "Это стандартная проверка для свежих обновлений, она не означает, что файл опасен.{br}Со временем окно защиты SmartScreen перестанет появляться.",
+    "description": "Safety reassurance note"
+  },
+  "theme.modal.home.download.action.download": {
+    "message": "Cкачать",
+    "description": "Download button label"
+  },
+  "theme.modal.advisory.dontShowAgain": {
+    "message": "Больше не показывать",
+    "description": "Checkbox label"
+  },
   "theme.home.feature.addons": {
     "message": "Повышенная безопасность, различные визуальные дополнения такие как радар, киллфид и настраиваемый прицел, и другое."
   },
