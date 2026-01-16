@@ -16,22 +16,16 @@ export const Product: Record<string, ProductData> = {
   gameClient: {
     version: '2.5.6.0',
     releaseDate: '2025-05-07', // yyyy-mm-dd
-    showAdvisory: false,
+    showAdvisory: true,
     files: {
       exe: {
-        ru: {
-          url: 'https://cdn.download-cs.net/cs16_russian.exe',
-          bytes: 297610397
-        },
-        en: {
-          url: 'https://cdn.download-cs.net/cs16setup_eng.exe',
-          bytes: 306508525
-        }
+        url: 'https://cdn.download-cs.net/CS_GoldClient.exe',
+        bytes: 333213523
       },
-      //zip: {
-      //  url: 'https://cdn.download-cs.net/cs16_russian.zip',
-      //  bytes: 188743680
-      //}
+      zip: {
+        url: 'https://cdn.download-cs.net/CS_GoldClient.zip',
+        bytes: 410264478
+      }
     },
   },
   serverApi: {
