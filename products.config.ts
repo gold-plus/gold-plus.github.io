@@ -19,11 +19,11 @@ export const Product: Record<string, ProductData> = {
     showAdvisory: true,
     files: {
       exe: {
-        url: 'https://cdn.download-cs.net/CS_GoldClient.exe',
+        url: 'https://github.com/gold-plus/builds/releases/download/2.5.6.0/CS_GoldClient.exe',
         bytes: 333213523
       },
       zip: {
-        url: 'https://cdn.download-cs.net/CS_GoldClient.zip',
+        url: 'https://github.com/gold-plus/builds/releases/download/2.5.6.0/CS_GoldClient.zip',
         bytes: 410264478
       }
     },
