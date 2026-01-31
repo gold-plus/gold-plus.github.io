@@ -92,6 +92,8 @@ metita:
   title: Участник и тестировщик
   url: https://github.com/metita
   image_url: https://github.com/metita.png
+  socials:
+    github: metita
 
 next21:
   title: Источник идей и концепций
@@ -99,3 +101,10 @@ next21:
   image_url: https://github.com/CS-NextClient.png
   socials:
     github: next21
+
+d3stra:
+  title: Участник и тестировщик
+  url: https://www.youtube.com/@d3stra
+  image_url: /img/authors/d3stra.png
+  socials:
+    youtube: d3stra

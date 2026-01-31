@@ -92,6 +92,8 @@ metita:
   title: Contributor of tests and ideas
   url: https://github.com/metita
   image_url: https://github.com/metita.png
+  socials:
+    github: metita
 
 next21:
   title: Reference for ideas and concept
@@ -99,3 +101,10 @@ next21:
   image_url: https://github.com/CS-NextClient.png
   socials:
     github: next21
+
+d3stra:
+  title: Contributor of tests and ideas
+  url: https://www.youtube.com/@d3stra
+  image_url: /img/authors/d3stra.png
+  socials:
+    youtube: d3stra

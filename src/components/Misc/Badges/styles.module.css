@@ -181,6 +181,10 @@
   animation: unseen-pulse 2s ease-in-out infinite;
 }
 
+:global(html.plugin-blog-changelog .markdown) li.unseen > ul li::before {
+  content: none !important;
+}
+
 .unseen::after {
   content: '';
   position: absolute;

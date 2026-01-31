@@ -42,6 +42,14 @@
 - Added new `cl_righthand -2` mode - legacy knife left / weapons right (classic behavior without requiring `cl_lw 0`) [id:eaa0bb2]
 - Added ConVar `cl_sync_steam_favorites` to toggle synchronization of favorite servers with Steam (Default: 0) [id:448ef6f]
 - Added ConVar `spec_draw` to toggle the **Spectator UI** (black bars) — useful for moviemaking (@metita) [id:847de9a]
+- Added `Alt+Enter` support to instantly toggle between windowed and fullscreen modes (@hajimura) [id:c8ca0a5]
+- Added ConVar `sdl_enable_alt_enter` to enable `Alt+Enter` fullscreen/windowed mode (@hajimura) [id:c8ca0a5]
+- Added ConVar `spec_menu_on_duck` to enable/disable the spectator menu (@d3stra) [youtube=1-7KoGGxAK8?t=1823] [id:c8ca0a5]
+- Added **Nested Clipping** for transparent UI panels (CS:S style).
+    - Prevents visual clutter by masking overlapping windows
+    - Configurable via `ClipPopupOverlaps` and `ClipPopupAlphaThreshold` in scheme files [id:c8ca0a5]
+- Added support for **Rounded Corners** in VGUI frames (customizable in scheme via `FrameBorder`) [id:c8ca0a5]
+- Added `-watchscheme` launch parameter for automatic **Hot Reload** of VGUI schemes — updates UI immediately when theme files are modified (useful for creating themes) [id:c8ca0a5]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -71,6 +79,17 @@
 - Fixed `svc_centerprint` messages being truncated incorrectly (@metita) [id:cb321fc]
 - Fixed nickname validation to allow the `~` (tilde) symbol again (@metita) [id:448ef6f]
 - Fixed a bug where laser beams were invisible in some cases (@metita) [id:847de9a]
+- Fixed invisible enemies showing on HUD radar in some cases (@metita) [id:c8ca0a5]
+- Fixed a bug where the MOTD title could reset after UI scheme reloads caused by changing video resolution (@metita) [id:c8ca0a5]
+- Fixed incorrect rendering of `TE_PARTICLEBURST` particles (@metita) [id:c8ca0a5]
+- Fixed keyboard input blocking caused by disabled `spec_draw` (@metita) [id:c8ca0a5]
+- Fixed hostname persisting from previous server on listen servers (@metita) [id:c8ca0a5]
+- Fixed a crash when loading truncated or corrupted WAV sound files (@metita) [id:c8ca0a5] [stockbug]
+- Fixed a bug causing previously displayed `svc_centerprint` messages to reappear on-screen without server sending them during intermission (@metita) [id:c8ca0a5] [stockbug]
+- Fixed `data overflow` error when playing back demos recorded on content-heavy servers (@metita) [id:c8ca0a5] [stockbug]
+- Fixed spectator menu opening during death when spamming duck key (@d3stra) [youtube=1-7KoGGxAK8?t=1823] [id:c8ca0a5] [stockbug]
+- Fixed `Ctrl+Shift+Alt+R` shortcut for reloading UI schemes (now works correctly) [id:c8ca0a5] [stockbug]
+- Fixed a bug where resizable VGUI dialogs could go off-screen after changing video resolution [id:c8ca0a5]
 
 #### Authors 1 {#authors}
 <!-- authors -->
@@ -89,6 +108,7 @@
 - next21 ([@next21](https://github.com/CS-NextClient))
 - 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
 - metita ([@metita](https://github.com/metita))
+- d3stra ([@d3stra](https://www.youtube.com/@d3stra))
 
 
 ## 2.5.6.0 (2025-05-07)
