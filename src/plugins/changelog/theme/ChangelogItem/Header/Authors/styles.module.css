@@ -36,3 +36,11 @@
 .toggleButtonIconExpanded {
   transform: rotate(180deg);
 }
+
+.authorTooltip {
+  z-index: 20;
+  font-size: 14px;
+  padding: 2px 8px 2px 8px !important;
+  background-color: var(--ifm-font-color-base) !important;
+  color: var(--ifm-background-color) !important;
+}

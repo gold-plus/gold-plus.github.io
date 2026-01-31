@@ -5,12 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {type ReactNode, useState} from 'react';
+import React, {type ReactNode, useState, useId} from 'react';
 import clsx from 'clsx';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import ChangelogItemHeaderAuthor from '@theme/ChangelogItem/Header/Author';
 import IconExpand from '@theme/Icon/Expand';
 import type {Props} from '@theme/BlogPostItem/Header/Authors';
+import { Tooltip } from 'react-tooltip';
 
 import styles from './styles.module.css';
 
@@ -21,6 +22,7 @@ export default function BlogPostAuthors({className}: Props): ReactNode {
     assets,
   } = useBlogPost();
   const [expanded, setExpanded] = useState(false);
+  const tooltipId = `author-tooltip:${useId()}`;
   const authorsCount = authors.length;
   if (authorsCount === 0) {
     return null;
@@ -34,7 +36,12 @@ export default function BlogPostAuthors({className}: Props): ReactNode {
         className,
       )}>
       {filteredAuthors.map((author, idx) => (
-        <div className={styles.imageOnlyAuthorCol} key={idx}>
+        <div
+          className={styles.imageOnlyAuthorCol}
+          key={idx}
+          data-tooltip-id={tooltipId}
+          data-tooltip-content={author.key}
+        >
           <ChangelogItemHeaderAuthor
             author={{
               ...author,
@@ -53,6 +60,12 @@ export default function BlogPostAuthors({className}: Props): ReactNode {
           <IconExpand expanded={expanded} />
         </button>
       )}
+      <Tooltip
+        id={tooltipId}
+        place="top"
+        opacity={1.0}
+        className={styles.authorTooltip}
+      />
     </div>
   );
 }
