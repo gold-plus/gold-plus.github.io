@@ -67,7 +67,7 @@
 - Fixed `lservercfgfile.cfg` execution when creating a listen server (@esotericdesign)
 - Fixed sprite green color in **StatusIcon** user message (@esotericdesign)
 - Fixed buffer overflow when reading empty lines in `sentences.txt` (@scriptedsnark) [stockbug]
-- Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874][stockbug]
+- Fixed mouse aim getting stuck at max sniper zoom, an issue most noticeable with high-precision mice or high FPS (@hajimura) [youtube=8Z09xvpNQ3E?t=97] [issue=ValveSoftware/halflife/874] [stockbug]
 - Fixed a long-standing bug in Scoreboard where player counts for CT and Terrorist teams would be swapped (@Nord1cWarr1or) [stockbug]
 - Fixed `con_mono` (monospaced console font) when running via Valve Proton (@Nord1cWarr1or)
 - Fixed being disconnected from servers when alt-tabbing back into the game after a long period while `engine_no_render_minimized` is enabled (@Nord1cWarr1or)
@@ -90,13 +90,17 @@
 - Fixed spectator menu opening during death when spamming duck key (@d3stra) [youtube=1-7KoGGxAK8?t=1823] [id:c8ca0a5] [stockbug]
 - Fixed `Ctrl+Shift+Alt+R` shortcut for reloading UI schemes (now works correctly) [id:c8ca0a5] [stockbug]
 - Fixed a bug where resizable VGUI dialogs could go off-screen after changing video resolution [id:c8ca0a5]
+- Fixed HUD messages overlapping the game menu when displaced by the dynamic radar (@DeMNiX) [id:58ab4f9]
+- Fixed HUD messages overlapping and brightness issues as they now correctly respect server channel IDs (@gamikcs) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/93] [stockbug]
+- Fixed jittery player movement and position offset while driving vehicles (@Nord1cWarr1or) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/87]
+
 
 #### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 9 {#testers}
+#### Testers 12 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -109,6 +113,8 @@
 - 256bit ([@256bit](https://steamcommunity.com/profiles/76561198376087607))
 - metita ([@metita](https://github.com/metita))
 - d3stra ([@d3stra](https://www.youtube.com/@d3stra))
+- DeMNiX ([@DeMNiX](https://github.com/DeMNiX))
+- gamikcs ([@gamikcs](https://github.com/gamikcs))
 
 
 ## 2.5.6.0 (2025-05-07)

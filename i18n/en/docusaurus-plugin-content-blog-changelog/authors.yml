@@ -108,3 +108,17 @@ d3stra:
   image_url: /img/authors/d3stra.png
   socials:
     youtube: d3stra
+
+DeMNiX:
+  title: Contributor of tests and ideas
+  url: https://github.com/DeMNiX
+  image_url: https://github.com/DeMNiX.png
+  socials:
+    github: DeMNiX
+
+gamikcs:
+  title: Contributor of tests and ideas
+  url: https://github.com/gamikcs
+  image_url: https://github.com/gamikcs.png
+  socials:
+    github: gamikcs
