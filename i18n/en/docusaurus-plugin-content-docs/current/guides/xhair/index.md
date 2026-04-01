@@ -54,7 +54,7 @@ A **red dot crosshair** doesn't obstruct the enemy model and helps you focus on 
     'cl_crosshaircolor "255 0 0"',
     'cl_crosshair_drawoutline "1"',
     'cl_crosshairthickness "2"',
-    'cl_crosshair_outlinethickness "0.5"',
+    'cl_crosshair_outlinethickness "0.1"',
     'cl_crosshairusealpha "1"',
     'cl_crosshairalpha "255"',
     'cl_crosshairgap_useweaponvalue "0"'
@@ -238,7 +238,7 @@ This allows you to focus completely on shooting, not on trying to find your cros
 
 :::tip Maximum visibility in any situation
 Use a bright crosshair color (like green) together with a black outline.\
-`cl_crosshair_drawoutline "1"` and `cl_crosshair_outlinethickness "0.5"`\
+`cl_crosshair_drawoutline "1"` and `cl_crosshair_outlinethickness "0.1"`\
 The bright color will contrast with dark textures, and the black outline will contrast with light ones (like the sky on `de_dust2`).
 :::
 

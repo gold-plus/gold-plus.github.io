@@ -54,7 +54,7 @@ import XhairConfig from '@site/src/components/Misc/Xhair';
     'cl_crosshaircolor "255 0 0"',
     'cl_crosshair_drawoutline "1"',
     'cl_crosshairthickness "2"',
-    'cl_crosshair_outlinethickness "0.5"',
+    'cl_crosshair_outlinethickness "0.1"',
     'cl_crosshairusealpha "1"',
     'cl_crosshairalpha "255"',
     'cl_crosshairgap_useweaponvalue "0"'
@@ -238,7 +238,7 @@ import XhairConfig from '@site/src/components/Misc/Xhair';
 
 :::tip Максимальная видимость в любой ситуации
 Используйте любой яркий цвет прицела (например, зеленый), но вместе с черной обводкой\
-`cl_crosshair_drawoutline "1"` и `cl_crosshair_outlinethickness "0.5"`\
+`cl_crosshair_drawoutline "1"` и `cl_crosshair_outlinethickness "0.1"`\
 Яркий цвет будет контрастировать с темными текстурами, а черная обводка — со светлыми (например, с небом на `de_dust2`).
 :::
 
