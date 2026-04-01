@@ -22,7 +22,7 @@
 - Optimized Options dialog opening, removed delays and implemented avatar list caching
 - Improved `dev_console` ConVar: console can now be opened over loading dialogs
 - Improved server browser map filter: added support for exact map name search in quotes
-- Improved DHUD: messages now respect channels [stockbug]
+- Improved DHUD: messages now respect channels
 - Added support for custom sizes for the original radar via `hud.txt`
 - Added a validate to HUD radar config to prevent using a different map image for a map with the same name (@Nord1cWarr1or)
 - Improved `hud_headname` ConVar: added mode 2 to display the names of all players with their team color during demo playback
@@ -50,6 +50,9 @@
     - Configurable via `ClipPopupOverlaps` and `ClipPopupAlphaThreshold` in scheme files [id:c8ca0a5]
 - Added support for **Rounded Corners** in VGUI frames (customizable in scheme via `FrameBorder`) [id:c8ca0a5]
 - Added `-watchscheme` launch parameter for automatic **Hot Reload** of VGUI schemes — updates UI immediately when theme files are modified (useful for creating themes) [id:c8ca0a5]
+- Added support for `goldclient://` protocol for server connection and listen server creation via web browser (@metita) [id:c6b0386]
+- Added support for protocol 47 demos (@karaul0v) [id:c6b0386]
+- Added Escape scenario support to HUD radar (@esotericdesign) [id:c6b0386]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -93,6 +96,9 @@
 - Fixed HUD messages overlapping the game menu when displaced by the dynamic radar (@DeMNiX) [id:58ab4f9]
 - Fixed HUD messages overlapping and brightness issues as they now correctly respect server channel IDs (@gamikcs) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/93] [stockbug]
 - Fixed jittery player movement and position offset while driving vehicles (@Nord1cWarr1or) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/87]
+- Fixed a crash when parsing long vox/sentence strings [id:c6b0386]
+- Fixed MP3 music stopping playing after multiple custom tracks (e.g. RoundEnd sounds) (@metita) [id:c6b0386] [stockbug]
+- Fixed a bug where HUD radar showed enemies through visually opaque non-solid walls (@metita) [id:c6b0386]
 
 
 #### Authors 1 {#authors}
