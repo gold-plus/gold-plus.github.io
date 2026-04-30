@@ -29,12 +29,12 @@ export const Product: Record<string, ProductData> = {
     },
   },
   serverApi: {
-    version: '2.0.0.912',
-    releaseDate: '2025-01-08', // yyyy-mm-dd
+    version: '2.0.2.48',
+    releaseDate: '2026-05-01', // yyyy-mm-dd
     files: {
       exe: {
-        url: 'https://goldclient.ru/assets/api/goldclientapi-2.0.0.912.zip',
-        bytes: 209425
+        url: 'https://goldclient.ru/assets/api/goldclientapi-2.0.2.48.zip',
+        bytes: 218832
       },
     },
   }
