@@ -53,6 +53,7 @@
 - Added support for `goldclient://` protocol for server connection and listen server creation via web browser (@metita) [id:c6b0386]
 - Added support for protocol 47 demos (@karaul0v) [id:c6b0386]
 - Added Escape scenario support to HUD radar (@esotericdesign) [id:c6b0386]
+- Added ConVar `cl_cmdtickrate` to fully decouple movement physics from framerate (FPS), enforcing a consistent update tickrate regardless of FPS [id:de46cf5]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -97,9 +98,10 @@
 - Fixed HUD messages overlapping and brightness issues as they now correctly respect server channel IDs (@gamikcs) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/93] [stockbug]
 - Fixed jittery player movement and position offset while driving vehicles (@Nord1cWarr1or) [id:58ab4f9] [issue=goldclient-plus/GoldSrc-Tracker/87]
 - Fixed a crash when parsing long vox/sentence strings [id:c6b0386]
-- Fixed MP3 music stopping playing after multiple custom tracks (e.g. RoundEnd sounds) (@metita) [id:c6b0386] [stockbug]
+- Fixed MP3 music stopping playing after multiple custom tracks (e.g. RoundEnd sounds) (@metita) (@gamikcs) [id:de46cf5] [stockbug]
 - Fixed a bug where HUD radar showed enemies through visually opaque non-solid walls (@metita) [id:c6b0386]
-
+- Fixed a bug where the player gets completely stuck and unable to move on laggy servers when playing with extremely high FPS (@gamikcs) [id:de46cf5] [issue=goldclient-plus/GoldSrc-Tracker/99] [issue=ValveSoftware/halflife/3957] [stockbug]
+- Fixed a bug where loading large demo files would time out and forcefully drop back to the main menu (@Nord1cWarr1or) [issue=goldclient-plus/GoldSrc-Tracker/102] [id:de46cf5]
 
 #### Authors 1 {#authors}
 <!-- authors -->
