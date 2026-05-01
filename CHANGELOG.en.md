@@ -102,6 +102,7 @@
 - Fixed a bug where HUD radar showed enemies through visually opaque non-solid walls (@metita) [id:c6b0386]
 - Fixed a bug where the player gets completely stuck and unable to move on laggy servers when playing with extremely high FPS (@gamikcs) [id:de46cf5] [issue=goldclient-plus/GoldSrc-Tracker/99] [issue=ValveSoftware/halflife/3957] [stockbug]
 - Fixed a bug where loading large demo files would time out and forcefully drop back to the main menu (@Nord1cWarr1or) [issue=goldclient-plus/GoldSrc-Tracker/102] [id:de46cf5]
+- Fixed a bug where minimizing or restoring game window triggered false release events for unpressed bound keys, causing unintended actions and console spam (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/98] [id:908656d]
 
 #### Authors 1 {#authors}
 <!-- authors -->
