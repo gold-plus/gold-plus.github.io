@@ -54,6 +54,8 @@
 - Добавлена поддержка демо протокола 47 (@karaul0v) [id:c6b0386]
 - Добавлена поддержка сценария Escape для радара HUD (@esotericdesign) [id:c6b0386]
 - Добавлен ConVar `cl_cmdtickrate` для полной отвязки физики движений от частоты кадров (FPS), обеспечивая стабильный тикрейт обновлений независимо от FPS [id:de46cf5]
+- Добавлен параметр запуска `-gl_legacy` для принудительного использования legacy-режима OpenGL для совместимости [id:7305732]
+- Добавлены флаги стран во вкладках **Избранное**, **Друзья** и **История** в браузере серверов (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/115]
 
 #### :bug: Исправление {#fixes}
 
@@ -103,13 +105,15 @@
 - Исправлено застревание игрока на лагающих серверах при игре с очень высоким FPS (@gamikcs) [id:de46cf5] [issue=goldclient-plus/GoldSrc-Tracker/99] [issue=ValveSoftware/halflife/3957] [stockbug]
 - Исправлена ошибка, из-за которой предзагрузка больших демо-файлов обрывалась по тайм-ауту и ошибочно выкидывало в меню игры (@Nord1cWarr1or) [issue=goldclient-plus/GoldSrc-Tracker/102] [id:de46cf5]
 - Исправлен баг, из-за которого сворачивание или разворачивание окна игры вызывало ложные события отпускания для ненажатых забинденных клавиш, что приводило к случайным действиям и спаму в консоли (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/98] [id:908656d]
+- Исправлено некорректное применение `kRenderTransAlpha` к viewmodel при использовании через `gcl_write_rendermode` (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/113]
+- Исправлена некорректная обработка отпускания клавиш пользовательских биндов во время ввода в чат, если клавиша не была нажата (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/114] [id:7305732] [stockbug]
 
 #### Авторы 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры 12 {#testers}
+#### Тестеры 13 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -124,6 +128,7 @@
 - d3stra ([@d3stra](https://www.youtube.com/@d3stra))
 - DeMNiX ([@DeMNiX](https://github.com/DeMNiX))
 - gamikcs ([@gamikcs](https://github.com/gamikcs))
+- GLoOoccK ([@GLoOoccK](https://github.com/GLoOoccK))
 
 
 ## 2.5.6.0 (2025-05-07)

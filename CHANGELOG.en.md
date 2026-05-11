@@ -54,6 +54,8 @@
 - Added support for protocol 47 demos (@karaul0v) [id:c6b0386]
 - Added Escape scenario support to HUD radar (@esotericdesign) [id:c6b0386]
 - Added ConVar `cl_cmdtickrate` to fully decouple movement physics from framerate (FPS), enforcing a consistent update tickrate regardless of FPS [id:de46cf5]
+- Added `-gl_legacy` launch parameter to force legacy OpenGL mode for compatibility [id:7305732]
+- Added country flags to the **Favorites**, **Friends**, and **History** tabs in the server browser (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/115]
 
 #### :bug: Bug Fix {#fixes}
 
@@ -103,13 +105,15 @@
 - Fixed a bug where the player gets completely stuck and unable to move on laggy servers when playing with extremely high FPS (@gamikcs) [id:de46cf5] [issue=goldclient-plus/GoldSrc-Tracker/99] [issue=ValveSoftware/halflife/3957] [stockbug]
 - Fixed a bug where loading large demo files would time out and forcefully drop back to the main menu (@Nord1cWarr1or) [issue=goldclient-plus/GoldSrc-Tracker/102] [id:de46cf5]
 - Fixed a bug where minimizing or restoring game window triggered false release events for unpressed bound keys, causing unintended actions and console spam (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/98] [id:908656d]
+- Fixed `kRenderTransAlpha` not affecting viewmodels correctly when used through `gcl_write_rendermode` (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/113]
+- Fixed incorrect handling of key release events for custom key binds while typing in chat when the key was never pressed (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/114] [id:7305732] [stockbug]
 
 #### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 12 {#testers}
+#### Testers 13 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -124,6 +128,7 @@
 - d3stra ([@d3stra](https://www.youtube.com/@d3stra))
 - DeMNiX ([@DeMNiX](https://github.com/DeMNiX))
 - gamikcs ([@gamikcs](https://github.com/gamikcs))
+- GLoOoccK ([@GLoOoccK](https://github.com/GLoOoccK))
 
 
 ## 2.5.6.0 (2025-05-07)
