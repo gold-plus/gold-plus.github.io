@@ -107,6 +107,7 @@
 - Fixed a bug where minimizing or restoring game window triggered false release events for unpressed bound keys, causing unintended actions and console spam (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/98] [id:908656d]
 - Fixed `kRenderTransAlpha` not affecting viewmodels correctly when used through `gcl_write_rendermode` (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/113]
 - Fixed incorrect handling of key release events for custom key binds while typing in chat when the key was never pressed (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/114] [id:7305732] [stockbug]
+- Fixed incorrect application of view angles to the local player entity during the death state (@metita) [id:636de67]
 
 #### Authors 1 {#authors}
 <!-- authors -->
