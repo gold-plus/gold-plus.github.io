@@ -56,6 +56,7 @@
 - Added ConVar `cl_cmdtickrate` to fully decouple movement physics from framerate (FPS), enforcing a consistent update tickrate regardless of FPS [id:de46cf5]
 - Added `-gl_legacy` launch parameter to force legacy OpenGL mode for compatibility [id:7305732]
 - Added country flags to the **Favorites**, **Friends**, and **History** tabs in the server browser (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/115]
+- Added ConVar `cl_discord_join_mode` to control Discord **Join Game** functionality (0 = public connection, 1 = friends-only mode respecting Discord privacy settings) [id:40d4a74]
 
 #### :bug: Bug Fix {#fixes}
 
