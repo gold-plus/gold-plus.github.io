@@ -31,6 +31,7 @@ body {
   --ifm-color-primary-light: #333;
   --ifm-color-primary-lighter: #555;
   --ifm-color-primary-lightest: #777;
+  --ifm-footer-link-hover-color: #fff;
 
   --ifm-color-blue: #4a90e2;
   --ifm-color-blue-dark: #3d7cc9;
@@ -304,7 +305,7 @@ html.plugin-blog-changelog .container .row .col--2 {
 
 /* DOCS */
 
-html.plugin-docs.docs-wrapper .container {
+html.plugin-docs.docs-wrapper main .container {
   max-width: 100%;
 }
 

@@ -1,7 +1,12 @@
 import styles from './styles.module.css';
 import { useDateTimeFormat } from '@docusaurus/theme-common/internal';
 
-export function Version({ version, date }: { version: string, date: string }) {
+interface VersionProps {
+  version: string;
+  date: string;
+}
+
+export const Version: React.FC<VersionProps> = ({ version, date }) => {
   const atDate = new Date(date);
   const dateTimeFormat = useDateTimeFormat({
     day: 'numeric',

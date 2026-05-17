@@ -133,6 +133,47 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: "Docs",
+          items: [
+            {
+              label: "Tutorial",
+              to: "/docs/",
+            },
+          ],
+        },
+        {
+          title: "Downloads & Releases",
+          items: [
+            {
+              label: 'Downloads',
+              to: '/download/',
+            },
+            {
+              label: 'Changelog',
+              to: '/changelog/',
+            },
+          ],
+        },
+        {
+          title: "Project",
+          items: [
+            {
+              label: "Credits",
+              to: "/credits/",
+            },
+            {
+              label: "GitHub",
+              href: 'https://github.com/goldclient-plus/GoldSrc-Tracker',
+            },
+            {
+              label: "Sitemap",
+              href: "https://goldclient.ru/sitemap.xml"
+            }
+          ],
+        }
+      ],
       copyright: getLocalizedConfigValue('footer.copyright').replace("{year}", String(new Date().getFullYear())),
     },
     colorMode: {
