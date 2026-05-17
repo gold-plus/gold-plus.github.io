@@ -1,0 +1,46 @@
+import { Version, ChangeItem } from '@site/src/components/Misc/Changelog';
+
+<Version version="2.0.2.48" date="2026-05-01" />
+<ChangeItem type="new">
+	Добавлены форварды коннекта для детекта и проверки игроков с GoldClient:
+	- `goldclient_authorize`
+	- `goldclient_connect`
+	- `goldclient_api_ready`
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлен натив `gcl_send_hud_sprite` для отрисовки HUD-спрайтов. \
+	Позволяет выводить кастомные **.spr** файлы на экран клиента с контролем позиции, масштаба, скорости анимации, прозрачности и времени затухания
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлен натив `gcl_send_hud_sprite_full_screen` для простого вывода фуллскрин-оверлеев (наложения на весь экран)
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлен натив `gcl_viewmodelfx_begin` для работы с viewmodel оружия \
+	Позволяет задавать режимы рендера, цвета, прозрачность, скины и боди (submodels) с помощью `gcl_viewmodelfx_begin` и других функций
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлен `gcl_set_wpn_icon_for_next_deathmsg` \
+	Позволяет заменять иконку оружия в киллфиде (смертях в правом верхнем углу)
+</ChangeItem>
+<ChangeItem type="improve">
+	Улучшена стабильность авторизации между клиентом и сервером
+</ChangeItem>
+<ChangeItem type="fix">
+	Общие улучшения стабильности и мелкие фиксы багов под капотом
+</ChangeItem>
+
+<Version version="1.0.0.885 - 2.0.0.912" date="2022-02-04" />
+<ChangeItem type="new">
+	Самая первая публичная версия серверного API GoldClient
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлен натив `gcl_get_info`, который выдает дополнительную инфу об игроке, включая:
+	- Hardware ID (HWID), статус Steam
+	- Инфу об операционной системе (Название, Версия, Билд)
+	- Разрешение экрана (в игре и на рабочем столе)
+	- Откуда зашел игрок (Поиск серверов, Матчмейкинг, Инвайт друга и т.д.)
+</ChangeItem>
+<ChangeItem type="new">
+	Добавлены нативы `gcl_init_snapshot` и `gcl_take_snapshot` \
+	Позволяют делать скриншоты экрана игры (поддерживается PNG, BMP, JPEG) и отправлять их на удаленный веб-сервер
+</ChangeItem>

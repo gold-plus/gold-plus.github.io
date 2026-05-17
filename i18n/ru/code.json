@@ -20,6 +20,24 @@
   "theme.download.portable": {
     "message": "Скачать портативную версию"
   },
+  "theme.download.whatsNew": {
+    "message": "Что нового?"
+  },
+  "theme.changelog.badge.new": {
+    "message": "Новое"
+  },
+  "theme.changelog.badge.improve": {
+    "message": "Улучшение"
+  },
+  "theme.changelog.badge.fix": {
+    "message": "Исправление"
+  },
+  "theme.changelog.badge.remove": {
+    "message": "Удалено"
+  },
+  "theme.changelog.serverApi.title": {
+    "message": "История изменений - Серверный модуль API"
+  },
   "theme.home.download.version": {
     "message": "Версия : {version}"
   },

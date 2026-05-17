@@ -1,0 +1,46 @@
+import { Version, ChangeItem } from '@site/src/components/Misc/Changelog';
+
+<Version version="2.0.2.48" date="2026-05-01" />
+<ChangeItem type="new">
+	Added connection forwards for detection and validation of GoldClient players:
+	- `goldclient_authorize`
+	- `goldclient_connect`
+	- `goldclient_api_ready`
+</ChangeItem>
+<ChangeItem type="new">
+	Added the `gcl_send_hud_sprite` native for HUD sprite rendering \
+	Allows displaying custom **.spr** files on the client screen with control over position, scale, animation speed, transparency, and fade timings
+</ChangeItem>
+<ChangeItem type="new">
+	Added the `gcl_send_hud_sprite_full_screen` native for displaying full-screen overlays
+</ChangeItem>
+<ChangeItem type="new">
+	Added the `gcl_viewmodelfx_begin` native for weapon viewmodel operations \
+	Allows configuring render modes, colors, transparency, skins, and body (submodels) via `gcl_viewmodelfx_begin` and related functions
+</ChangeItem>
+<ChangeItem type="new">
+	Added `gcl_set_wpn_icon_for_next_deathmsg` \
+	Allows overriding the weapon icon in the kill feed
+</ChangeItem>
+<ChangeItem type="improve">
+	Improved authorization stability between client and server
+</ChangeItem>
+<ChangeItem type="fix">
+	General stability improvements and minor bug fixes
+</ChangeItem>
+
+<Version version="1.0.0.885 - 2.0.0.912" date="2022-02-04" />
+<ChangeItem type="new">
+	Initial public release of the GoldClient Server API
+</ChangeItem>
+<ChangeItem type="new">
+	Added the `gcl_get_info` native to retrieve additional player information, including:
+	- Hardware ID (HWID) and Steam status
+	- Operating system details (Name, Version, Build)
+	- Screen resolution (in-game and desktop)
+	- Connection source (Server Browser, Matchmaking, Friend Invite, etc.)
+</ChangeItem>
+<ChangeItem type="new">
+	Added `gcl_init_snapshot` and `gcl_take_snapshot` natives \
+	Enable capturing game screen snapshots (PNG, BMP, JPEG supported) and uploading them to a remote web server
+</ChangeItem>

@@ -5,11 +5,9 @@ import { Tooltip } from 'react-tooltip';
 
 import clsx from 'clsx';
 
-export const DownloadProductButton = ({ product }) => {
+export const DownloadProductButton = ({ product, children }) => {
   const { exe, zip } = product.files;
-
   const showZip = !!(exe && zip);
-
   const tooltipId = `tooltip:${useId()}`;
 
   const text = translate({
@@ -31,14 +29,19 @@ export const DownloadProductButton = ({ product }) => {
           <span className={styles['btn-meta']}><Translate id="theme.download.size">Size</Translate> {product.files.exe.size}</span>
         </div>
       </a>
-      <a
-        href={zip?.url || '#'}
-        className={clsx(styles['download-alt-link-box'], !showZip && styles['download-alt-link-box-hidden'])}
-        data-tooltip-id={tooltipId}
-        data-tooltip-content={text}>
-        <div className={styles['download-alt-link-icon']}/>
-        <div className={styles['download-alt-link']}>ZIP</div>
-      </a>
+      <div className={styles['product-actions-row']}>
+        {children}
+        {showZip && (
+          <a
+            href={zip?.url || '#'}
+            className={styles['download-alt-link-box']}
+            data-tooltip-id={tooltipId}
+            data-tooltip-content={text}>
+            <div className={styles['download-alt-link-icon']}/>
+            <div className={styles['download-alt-link']}>ZIP</div>
+          </a>
+        )}
+      </div>
       <Tooltip
         id={tooltipId}
         place="bottom"

@@ -20,6 +20,24 @@
   "theme.download.portable": {
     "message": "Download the portable version"
   },
+  "theme.download.whatsNew": {
+    "message": "What's new?"
+  },
+  "theme.changelog.badge.new": {
+    "message": "New"
+  },
+  "theme.changelog.badge.improve": {
+    "message": "Improve"
+  },
+  "theme.changelog.badge.fix": {
+    "message": "Fix"
+  },
+  "theme.changelog.badge.remove": {
+    "message": "Remove"
+  },
+  "theme.changelog.serverApi.title": {
+    "message": "Changelog - GoldClient Server API"
+  },
   "theme.home.download.version": {
     "message": "Version : {version}"
   },

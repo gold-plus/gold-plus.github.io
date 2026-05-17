@@ -20,15 +20,17 @@
   box-shadow: var(--ifm-global-shadow-md);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
-  top: calc(var(--ifm-navbar-height) - 2rem);
+  top: 0;
   box-shadow: 0 1.6px 3.6px 0 var(--feedback-box-shadow-medium), 0 .3px .9px 0 var(--feedback-box-shadow-light);
   border: 1px solid var(--feedback-border);
 }
 
 .modal-body {
   padding: 0.0rem 1.5rem 1.5rem 1.5rem;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .modal-body .title {
@@ -66,6 +68,7 @@
   align-items: center;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  flex-shrink: 0;
 }
 
 .modal-footer {
@@ -75,4 +78,5 @@
   padding: 1rem 1.5rem;
   background-color: var(--ifm-color-emphasis-100);
   border-top: 1px solid var(--ifm-color-emphasis-200);
+  flex-shrink: 0;
 }

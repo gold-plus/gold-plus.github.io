@@ -5,11 +5,18 @@ export interface FileInfo {
 
 type FlexibleFileInfo = FileInfo | Record<string, FileInfo>;
 
+export interface ChangelogInfo {
+  title: string;
+  buttonText: string;
+  fileName: string;
+}
+
 export interface ProductData {
   version: string;
   releaseDate: string;
   files: Record<string, FlexibleFileInfo>;
   showAdvisory?: boolean,
+  changelog?: ChangelogInfo;
 }
 
 export const Product: Record<string, ProductData> = {
@@ -37,5 +44,10 @@ export const Product: Record<string, ProductData> = {
         bytes: 218832
       },
     },
+    changelog: {
+      title: 'theme.changelog.serverApi.title',
+      buttonText: 'theme.download.whatsNew',
+      fileName: '_server-api-changelog.mdx'
+    }
   }
 };

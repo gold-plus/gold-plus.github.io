@@ -7,6 +7,7 @@ hide_table_of_contents: true
 import '@site/src/pages/download.css';
 import { useProduct } from '@site/src/hooks/useProduct';
 import { DownloadProductButton } from '@site/src/components/Misc/Page';
+import { ChangelogModal } from '@site/src/components/Misc/Changelog';
 
 export const Client = () => useProduct('gameClient');
 export const ServerApi = () => useProduct('serverApi');
@@ -44,7 +45,11 @@ export const ServerApi = () => useProduct('serverApi');
           <span className="download-header-date">{ServerApi().releaseDate}</span>
         </div>
         <div className="card__body download-card__body">
-          <DownloadProductButton product={ServerApi()} />
+          <DownloadProductButton product={ServerApi()}>
+            {ServerApi().changelog && (
+              <ChangelogModal changelogConfig={ServerApi().changelog} />
+            )}
+          </DownloadProductButton>
         </div>
         <div className="download-card__footer">
           <div className="download-footer-left">

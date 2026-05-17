@@ -25,10 +25,17 @@
 
 .card {
   /*padding: 1.5rem 2rem;*/
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(0px, calc(4vw - 1rem), 2rem);
+  padding-right: clamp(0px, calc(4vw - 1rem), 2rem);
   border-radius: 0;
   margin: 0;
+  --ifm-list-left-padding: clamp(1rem, 3vw, 2rem);
+}
+
+.card :global(.card__body) li,
+.card :global(.card__body) code {
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
 }
 
 .card:first-child {
