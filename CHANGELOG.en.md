@@ -1,5 +1,5 @@
 
-## 2.5.7.0 (2025-10-19) [Beta]
+## 2.5.7.0 (2026-07-05)
 
 #### :rocket: New Feature {#new}
 
@@ -109,13 +109,14 @@
 - Fixed `kRenderTransAlpha` not affecting viewmodels correctly when used through `gcl_write_rendermode` (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/113]
 - Fixed incorrect handling of key release events for custom key binds while typing in chat when the key was never pressed (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/114] [id:7305732] [stockbug]
 - Fixed incorrect application of view angles to the local player entity during the death state (@metita) [id:636de67]
+- Fixed anti-cheat false positives caused by the recent mouse precision update (@denyamad) [id:71520b0]
 
 #### Authors 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Testers 13 {#testers}
+#### Testers 14 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -131,6 +132,7 @@
 - DeMNiX ([@DeMNiX](https://github.com/DeMNiX))
 - gamikcs ([@gamikcs](https://github.com/gamikcs))
 - GLoOoccK ([@GLoOoccK](https://github.com/GLoOoccK))
+- denyamad ([@denyamad](https://steamcommunity.com/id/denyamad))
 
 
 ## 2.5.6.0 (2025-05-07)

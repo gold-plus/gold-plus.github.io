@@ -21,17 +21,17 @@ export interface ProductData {
 
 export const Product: Record<string, ProductData> = {
   gameClient: {
-    version: '2.5.6.0',
-    releaseDate: '2025-05-07', // yyyy-mm-dd
+    version: '2.5.7.0',
+    releaseDate: '2026-07-05', // yyyy-mm-dd
     showAdvisory: true,
     files: {
       exe: {
-        url: 'https://github.com/gold-plus/builds/releases/download/2.5.6.0/CS_GoldClient.exe',
-        bytes: 333213523
+        url: 'https://github.com/gold-plus/builds/releases/download/2.5.7.0/CS_GoldClient.exe',
+        bytes: 394741470
       },
       zip: {
-        url: 'https://github.com/gold-plus/builds/releases/download/2.5.6.0/CS_GoldClient.zip',
-        bytes: 410264478
+        url: 'https://github.com/gold-plus/builds/releases/download/2.5.7.0/CS_GoldClient.zip',
+        bytes: 437975430
       }
     },
   },

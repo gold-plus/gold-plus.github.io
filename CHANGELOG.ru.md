@@ -1,5 +1,5 @@
 
-## 2.5.7.0 (2025-10-19) [Beta]
+## 2.5.7.0 (2026-07-05)
 
 #### :rocket: Новое {#new}
 
@@ -109,13 +109,14 @@
 - Исправлено некорректное применение `kRenderTransAlpha` к viewmodel при использовании через `gcl_write_rendermode` (@GLoOoccK) [id:7305732] [issue=goldclient-plus/GoldSrc-Tracker/113]
 - Исправлена некорректная обработка отпускания клавиш пользовательских биндов во время ввода в чат, если клавиша не была нажата (@gamikcs) [issue=goldclient-plus/GoldSrc-Tracker/114] [id:7305732] [stockbug]
 - Исправлена ошибка, из-за которой вращение камеры передавалось модели игрока после смерти (@metita) [id:636de67]
+- Исправлены ложные срабатывания античитов в демо-анализаторах из-за недавнего улучшения точности мыши (@denyamad) [id:71520b0]
 
 #### Авторы 1 {#authors}
 <!-- authors -->
 
 - s1lent ([@s1lent](https://github.com/s1lentq))
 
-#### Тестеры 13 {#testers}
+#### Тестеры 14 {#testers}
 <!-- testers -->
 
 - hajimura ([@hajimura](https://github.com/hajimura))
@@ -131,6 +132,7 @@
 - DeMNiX ([@DeMNiX](https://github.com/DeMNiX))
 - gamikcs ([@gamikcs](https://github.com/gamikcs))
 - GLoOoccK ([@GLoOoccK](https://github.com/GLoOoccK))
+- denyamad ([@denyamad](https://steamcommunity.com/id/denyamad))
 
 
 ## 2.5.6.0 (2025-05-07)
